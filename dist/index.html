@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/froala_blocks.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  <style>
+  #navigator {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .container_full{
+    padding: 0px;
+  }
+
+  .tail_title_font{
+    color:#FF0000;
+    font-weight:bold
+  }
+  </style>
+</head>
+<body>
+<header class='bg-dark header-over header-fixed' id="navigator">
+  <div class="container">
+    <nav class="navbar transparent navbar-expand-md">
+      <div id="urlrouter">
+        <a class="navbar-brand" href="./homepage.html#anchor">
+          <img src="./imgs/logo.png" height="20" alt="image">
+        </a>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav11" aria-controls="navbarNav11" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="./megawise.html" data-toggle="dropdown" id="Product" role="button" aria-haspopup="true" aria-expanded="false">
+            Product
+            </a>
+            <div class="dropdown-menu" aria-labelledby="Solutions" id="urlrouter">
+              <a class="dropdown-item" href="./megawise.html">Megawise</a>
+              <a class="dropdown-item" href="./dbmachine.html">Database Machine</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="./solutions.html" data-toggle="dropdown" id="Solutions" role="button" aria-haspopup="true" aria-expanded="false">
+            Solutions
+            </a>
+            <div class="dropdown-menu" aria-labelledby="Solutions" id="urlrouter">
+              <a class="dropdown-item" href="./solutions.html#finance">Finance</a>
+              <a class="dropdown-item" href="./solutions.html#government">Government</a>
+              <a class="dropdown-item" href="./solutions.html#telecoms">Telecoms</a>
+              <a class="dropdown-item" href="./solutions.html#healthcare">Healthcare</a>
+              <a class="dropdown-item" href="./solutions.html#retail">Retail</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="./news.html" data-toggle="dropdown" id="Press" role="button" aria-haspopup="true" aria-expanded="false">
+            Resources
+            </a>
+            <div class="dropdown-menu" aria-labelledby="Press" id="urlrouter">
+              <a class="dropdown-item" href="./news.html#anchor">News</a>
+              <a class="dropdown-item" href="./blog.html#anchor">Blog</a>
+            </div>
+          </li>
+          <li class="nav-item" id="urlrouter">
+            <a class="nav-link" href="./careers.html#anchor">Careers</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="./company.html" data-toggle="dropdown" id="About" role="button" aria-haspopup="true" aria-expanded="false">
+            About
+            </a>
+            <div class="dropdown-menu" aria-labelledby="About" id="urlrouter">
+              <a class="dropdown-item" href="./company.html#anchor">Company</a>
+              <a class="dropdown-item" href="./team.html#anchor">Team</a>
+              <a class="dropdown-item" href="./contact.html#anchor">Contact</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<section id="contentfield" class="container_full" data-block-type="contents" data-id="15" draggable="true">
+</section>
+<footer class="fdb-block footer-small bg-dark fp-active" data-block-type="footers" data-id="1">
+  <div class="container_full">
+    <div class="row align-items-top text-center text-md-left">
+      <div class="col-3 text-center" id="urlrouter">
+        <h3 class="tail_title_font">Product</h3>
+        <p><a href="./features.html#overview">Overview</a></p>
+        <p><a href="./features.html#features">Features</a></p>
+      </div>
+      <div class="col-2 text-center" id="urlrouter">
+        <h3 class="tail_title_font">Solutions</h3>
+        <p><a href="./solutions.html#finance">Finance</a></p>
+        <p><a href="./solutions.html#government">Government</a></p>
+        <p><a href="./solutions.html#telecoms">Telecoms</a></p>
+        <p><a href="./solutions.html#healthcare">Healthcare</a></p>
+        <p><a href="./solutions.html#retail">Retail</a></p>
+      </div>
+      <div class="col-2 text-center" id="urlrouter">
+        <h3 class="tail_title_font">Press</h3>
+        <p><a href="./news.html#anchor">News</a></p>
+        <p><a href="./blog.html#anchor">Blog</a></p>
+      </div>
+      <div class="col-2 text-center" id="urlrouter">
+        <a href="./careers.html#anchor"><h3 class="tail_title_font">Careers</h3></a>
+      </div>
+      <div class="col-2 text-center" id="urlrouter">
+        <h3 class="tail_title_font">Press</h3>
+        <p><a href="./company.html#anchor">Company</a></p>
+        <p><a href="./team.html#anchor">Team</a></p>
+        <p><a href="./contact.html#anchor">Contact</a></p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col text-center">
+        © 2018 Zilliz. All Rights Reserved
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var getPage = function (url, callback) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var txt = xhr.responseText;
+        txt = txt.split('<body>')[1].split('</body>')[0];
+        var tag = url.split('#')[1];
+        callback(txt, tag);
+      }
+    }
+
+    xhr.open("GET", url, false );
+    xhr.send();
+  }
+
+  var renderPage = function(url) {
+    getPage(url, function (innerhtml, tag) {
+      document.querySelector('#contentfield').innerHTML = innerhtml;
+      if (tag) {
+        var sel = "[name=\'" + tag + "\']";
+        var t = $(sel).offset().top;
+        $(window).scrollTop(t);
+      }
+    })
+  }
+
+  var chooseBlock = function (e) {
+    e.preventDefault();
+    renderPage(this.href);
+  }
+
+  var els = document.querySelectorAll('#urlrouter a');
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+
+    el.addEventListener('click', chooseBlock);
+  }
+
+  renderPage("./homepage.html");
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
