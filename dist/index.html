@@ -22,6 +22,8 @@
     color:#FF0000;
     font-weight:bold
   }
+
+  .nav > li:hover .dropdown-menu { display: block; }
   </style>
 </head>
 <body>
@@ -95,8 +97,8 @@
     <div class="row align-items-top text-center text-md-left">
       <div class="col-3 text-center" id="urlrouter">
         <h3 class="tail_title_font">Product</h3>
-        <p><a href="./features.html#overview">Overview</a></p>
-        <p><a href="./features.html#features">Features</a></p>
+        <p><a href="./megawise.html">Megawise</a></p>
+        <p><a href="./dbmachine.html">Database Machine</a></p>
       </div>
       <div class="col-2 text-center" id="urlrouter">
         <h3 class="tail_title_font">Solutions</h3>
@@ -107,7 +109,7 @@
         <p><a href="./solutions.html#retail">Retail</a></p>
       </div>
       <div class="col-2 text-center" id="urlrouter">
-        <h3 class="tail_title_font">Press</h3>
+        <h3 class="tail_title_font">Resources</h3>
         <p><a href="./news.html#anchor">News</a></p>
         <p><a href="./blog.html#anchor">Blog</a></p>
       </div>
@@ -129,6 +131,10 @@
     </div>
   </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
 <script>
   var getPage = function (url, callback) {
@@ -172,11 +178,23 @@
   }
 
   renderPage("./homepage.html");
-</script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  function dropdownOpen() {
+
+      var $dropdownLi = $('li.dropdown');
+
+      $dropdownLi.mouseover(function() {
+          $(this).addClass('open');
+      }).mouseout(function() {
+          $(this).removeClass('open');
+      });
+  }
+
+  $(document).ready(function(){
+    $(document).off('click.bs.dropdown.data-api');
+    dropdownOpen();
+  });
+</script>
 
 </body>
 </html>
