@@ -140,7 +140,7 @@ footer {
     }
   }
 
-  &.bg-dark {
+  &.bg-black {
     background: #2d313c;
     color: mix($black, $white, 5%);
 
@@ -159,7 +159,8 @@ header {
 
   .navbar-nav {
     a.nav-link {
-      color: #777;
+      color: #dcdcdc;
+      font-weight:bold;
 
       &:hover {
         color: $primary-color;
@@ -177,10 +178,11 @@ header {
   	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  &.bg-dark {
+  &.bg-black {
     .navbar-nav {
       a.nav-link {
         color: #dcdcdc;
+        font-weight:bold;
 
         &:hover {
           color: $primary-color;
@@ -204,8 +206,8 @@ header + header {
   border-top: solid 1px #EEE;
 }
 
-.bg-dark {
-  background-color: #2d313c;
+.bg-black {
+  background-color: #000000!important;
   color: mix($black, $white, 5%);
 }
 
