@@ -1,0 +1,36 @@
+
+@font-face {
+    font-family: 'antonregular';
+    src: url('../fonts/anton-webfont.woff2') format('woff2'),
+         url('../fonts/anton-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'candalregular';
+    src: url('../fonts/candal-webfont.woff2') format('woff2'),
+         url('../fonts/candal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hammersmithoneregular';
+    src: url('../fonts/hammersmithone-regular-webfont.woff2') format('woff2'),
+         url('../fonts/hammersmithone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'playbold';
+    src: url('../fonts/play-bold-webfont.woff2') format('woff2'),
+         url('../fonts/play-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
