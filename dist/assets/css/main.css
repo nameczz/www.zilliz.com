@@ -6,6 +6,18 @@
   z-index: 1000;
 }
 
+.img-fluid{
+  max-width:5em!important;
+  height:auto;
+}
+
+.bg-img{
+  background-position:center;
+  background-size:100%;
+  background-color: #495057;
+  padding:14em 0;
+}
+
 .container_full{
   padding: 0em!important;
 }
@@ -55,7 +67,6 @@
 }
 
 .img-circle {
-  display: block;
   max-width: 100%;
   border-radius: 50%!important;
 }
@@ -79,4 +90,24 @@
   font-weight:normal!important;
   color:#ffffff!important;
   -webkit-font-smoothing:antialiased;
+}
+
+.icon-style-sm {
+  font-size:20!important;
+  color:black;
+}
+
+.icon-style-md {
+  font-size:60px!important;
+  color:black;
+}
+
+.icon-style-lg {
+  font-size:100px!important;
+  color:black;
+}
+
+.img-blur{
+  -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+  filter: blur(5px);
 }

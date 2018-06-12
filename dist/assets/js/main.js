@@ -32,7 +32,7 @@ var chooseBlock = function (e) {
 	renderPage(this.href);
 }
 
-renderPage("./homepage.html");
+renderPage("./megawise.html");
 
 /*function dropdownOpen() {
 

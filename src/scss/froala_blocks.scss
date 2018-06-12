@@ -102,13 +102,12 @@
 
   img.fdb-icon {
     width: auto;
-    width: 60px;
+    width: 4em;
   }
 
   img.fdb-icon-round {
-    width: auto;
-    width: 60px;
-    @include border-radius(60px);
+    width: 4em;
+    @include border-radius(4em);
   }
 
   .row-100 {
