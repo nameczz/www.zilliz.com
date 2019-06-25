@@ -1,0 +1,39 @@
+$list_bg_color : black;
+
+.drop-down{
+  ul{
+    border: 0;
+    margin: 0;
+  }
+  .list-show {
+    display: visible;
+    position: absolute;
+    top: 56px;
+    z-index: 10;
+    background-color: $list_bg_color;
+    color: rgb(241, 205, 205);
+    list-style: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    li {
+      width: 80px;
+      text-align: center;
+      font-size: 16px;
+      a {
+        display: block;
+        padding: 5px 0;
+        color: #FFF;
+        &:hover {
+          text-decoration: none;
+          background: #2d313c;
+        }
+      }
+    }
+  }
+
+  .list-hide{
+    display: none;
+
+  }
+}
