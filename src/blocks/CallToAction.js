@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from 'gatsby'
-import logo from "../images/icons/coffee.svg" // Tell Webpack this JS file uses this image
 import bg from '../images/hero/blue.svg';
 import Carousel from 'rmc-m-carousel'
 
