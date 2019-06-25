@@ -1,21 +1,20 @@
 import React from "react"
 import { Link } from 'gatsby'
 import logo from "../images/icons/coffee.svg" // Tell Webpack this JS file uses this image
-import bg from '../images/hero/purple.svg';
+import bg from '../images/hero/blue.svg';
 import Carousel from 'rmc-m-carousel'
 
 const CallToAction = () => {
   return (
     <div>
       <Carousel>
-        <section className="fdb-block fdb-viewport bg-dark" style={{ backgroundImage: `url(${bg})` }}>
+        <section className="fdb-block bg-dark fdb-viewport" style={{ backgroundImage: `url(${bg})` }}>
           <div className="container justify-content-center align-items-center d-flex">
             <div className="row justify-content-center text-center">
               <div className="col-12 col-md-8">
-                <img alt="logo" className="fdb-icon" src={logo} />
-                <h1>Froala Design 1111111</h1>
+                <h1>ZilliZ</h1>
                 <p className="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-dark">Call to Action</a></p>
+                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -24,10 +23,9 @@ const CallToAction = () => {
           <div className="container justify-content-center align-items-center d-flex">
             <div className="row justify-content-center text-center">
               <div className="col-12 col-md-8">
-                <img alt="logo" className="fdb-icon" src={logo} />
-                <h1>Froala Design 2222222</h1>
-                <p className="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-dark">Call to Action</a></p>
+                <h1>Milvus</h1>
+                <p className="lead">A Distributed High Performance Vector Database System</p>
+                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Get Started</a></p>
               </div>
             </div>
           </div>
@@ -36,10 +34,9 @@ const CallToAction = () => {
           <div className="container justify-content-center align-items-center d-flex">
             <div className="row justify-content-center text-center">
               <div className="col-12 col-md-8">
-                <img alt="logo" className="fdb-icon" src={logo} />
-                <h1>Froala Design 333333</h1>
-                <p className="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-dark">Call to Action</a></p>
+                <h1>Megawise</h1>
+                <p className="lead">OmniSci has redefined the limits of speed and scale in big data querying and visualization</p>
+                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Learn More</a></p>
               </div>
             </div>
           </div>
@@ -63,16 +60,7 @@ const CallToAction = () => {
           </div>
         </div>
       </section>
-      <footer className="fdb-block footer-large bg-dark fp-active" data-block-type="footers" data-id="22">
-        <div className="container">
-          <div className="row align-items-top text-center text-md-left">
-            <div className="col-12 col-sm-6 col-md-4" style={{ zIndex: 1000 }}><h3><strong>Country A</strong></h3><p>Street Address 52<br />Contact Name</p><p>+44 827 312 5002</p><p><a href="https://www.froala.com">countrya@amazing.com</a></p></div>
-            <div className="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0" style={{ zIndex: 1000 }}><h3><strong>Country B</strong></h3><p>Street Address 100<br />
-              Contact Name</p><p>+13 827 312 5002</p><p><a href="https://www.froala.com">countryb@amazing.com</a></p></div>
-            <div className="col-12 col-md-4 mt-5 mt-md-0 text-md-left" style={{ zIndex: 1000 }}><h3><strong>About Us</strong></h3><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   )
 }
