@@ -46,11 +46,14 @@ const WhyZilliz = () => (
         </div>
       </div>
     </section>
-    {/* GPUS DS */}
+    {/* DATA PROCESSING EVOLUTION */}
     <section className="fdb-block fp-active" data-block-type="contents" data-id="17" draggable="true">
       <div className="container" style={{ minWidth: '1140px' }}>
         <div className="row text-center">
-          <div className="col-12" style={{ zIndex: 10000 }}><h1>DATA PROCESSING EVOLUTION</h1><p className="h2"><em>Faster Data Access Less Data Movement.</em></p></div>
+          <div className="col-12" style={{ zIndex: 10000 }}>
+            <h1>DATA PROCESSING EVOLUTION</h1>
+            <p className="h2"><em>Faster Data Access Less Data Movement.</em></p>
+          </div>
         </div>
         <div className='content'>
           {/* item-hadoop */}

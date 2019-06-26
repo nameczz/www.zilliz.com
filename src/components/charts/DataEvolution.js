@@ -194,6 +194,7 @@ export class Spark extends React.Component {
             }
           },
           barWidth: 75,
+          hoverAnimation: true,
           data: [
             {
               name: H_READ,

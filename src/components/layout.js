@@ -24,7 +24,11 @@ const Layout = ({ children }) => {
   //   }
   // `)
   return (
-    <>
+    <div onClick={()=>{
+      if(document) {
+        document.querySelector('.md-nav-contaienr').classList.add('ele-hide')
+      }
+    }}>
       <Header />
       <div>
         <main>{children}</main>
@@ -63,7 +67,7 @@ const Layout = ({ children }) => {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 

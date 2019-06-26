@@ -16,10 +16,6 @@ export default function HTML(props) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/2.0.0/css/froala_blocks.min.css"  type="text/css"/>
-        {/* <script src="https://unpkg.com/react/umd/react.production.js" crossorigin />
-        <script src="https://unpkg.com/react-dom/umd/react-dom.production.js" crossorigin/>
-        <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin/> */}
-
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

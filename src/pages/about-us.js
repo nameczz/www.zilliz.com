@@ -8,7 +8,7 @@ import CEO from '../images/photos/ceo.png'
 
 const TimelineComp = () => {
   return (
-      <Timeline lineColor={'#ddd'}>
+      <Timeline lineColor={'#f6f4f4'}>
           <TimelineItem
               key="001"
               dateText="2019 Feb"
@@ -25,7 +25,7 @@ const TimelineComp = () => {
               dateText="2018 Nov"
               dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
               bodyContainerStyle={{
-              background: '#ddd',
+              background: '#f6f4f4',
               padding: '20px',
               borderRadius: '8px',
               boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -38,7 +38,7 @@ const TimelineComp = () => {
               dateText="2018 Oct"
               dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
               bodyContainerStyle={{
-              background: '#ddd',
+              background: '#f6f4f4',
               padding: '20px',
               borderRadius: '8px',
               boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -51,7 +51,7 @@ const TimelineComp = () => {
               dateText="2018 Aug"
               dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
               bodyContainerStyle={{
-              background: '#ddd',
+              background: '#f6f4f4',
               padding: '20px',
               borderRadius: '8px',
               boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -64,7 +64,7 @@ const TimelineComp = () => {
               dateText="2018 Mar"
               dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
               bodyContainerStyle={{
-              background: '#ddd',
+              background: '#f6f4f4',
               padding: '20px',
               borderRadius: '8px',
               boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -77,7 +77,7 @@ const TimelineComp = () => {
               dateText="2018 Jan"
               dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
               bodyContainerStyle={{
-              background: '#ddd',
+              background: '#f6f4f4',
               padding: '20px',
               borderRadius: '8px',
               boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -118,12 +118,10 @@ const TimelineComp = () => {
           <TimelineItem
               key="003"
               dateText="2017 Mar"
-              dateInnerStyle={{ background: '#06C' }}
+              dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
           >
               <h3>研发完成基于硬件加速的数据处理引擎</h3>
           </TimelineItem>
-
-
 
           <TimelineItem
               key="004"
