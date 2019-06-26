@@ -1,11 +1,27 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 import './about-us.scss'
 import CEO from '../images/photos/ceo.png'
 
+const Intro = () => {
+  return (
+      <section class="fdb-block">
+          <div class="container">
+              <div class="row">
+              <div class="col text-left">
+                  <h2>ZILLIZ News</h2>
+              </div>
+              </div>
+          </div>
+      </section>
+  )
+}
 const WhyZilliz = () => (
   <Layout>
+    <SEO title="Latest News" />
+        <Intro />
     <section className="fdb-block" data-block-type="contents" data-id="4" draggable="true">
       <div className="container">
         <div className="row align-items-center">

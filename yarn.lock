@@ -9341,6 +9341,13 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
+react-visibility-sensor@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npm.taobao.org/react-visibility-sensor/download/react-visibility-sensor-5.0.2.tgz#e360fff81572cb3a2a9fd680484447a9da09a55d"
+  integrity sha1-42D/+BVyyzoqn9aASERHqdoJpV0=
+  dependencies:
+    prop-types "^15.6.2"
+
 react@^16.8.4, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
@@ -11354,6 +11361,15 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+vertical-timeline-component-for-react@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npm.taobao.org/vertical-timeline-component-for-react/download/vertical-timeline-component-for-react-1.0.6.tgz#eba36af70f6568a4798599148aa8975ed8423de8"
+  integrity sha1-66Nq9w9laKR5hZkUiqiXXthCPeg=
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+    react-visibility-sensor "^5.0.2"
 
 vm-browserify@^1.0.1:
   version "1.1.0"

@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
-
+import { Link } from 'gatsby'
 import Header from '../blocks/Header';
 
 import "./layout.css"
@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
             </div>
             <div className="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0" style={{ zIndex: 1000 }}>
               <h3><strong>Company</strong></h3>
-              <p><a href="https://www.zilliz.com">About Us</a></p>
-              <p><a href="https://www.zilliz.com">News Center</a></p>
+              <p><Link to="/aboutus">About Us</Link></p>
+              <p><Link to="/news">Latest News</Link></p>
               <p><a href="https://www.zilliz.com">Company Culture</a></p>
             </div>
             <div className="col-12 col-md-4 mt-5 mt-md-0 text-md-left" style={{ zIndex: 1000 }}>
