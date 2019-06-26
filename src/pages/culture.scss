@@ -1,0 +1,156 @@
+
+// heros
+$hero__size: 48px;
+$hero__border__size: 1px;
+
+section {
+    position: relative;
+    text-align: left;
+    height: 100%;
+    .word-break {
+      word-break: break-all;
+    }
+    .disable-selection {
+      user-select: none;
+      pointer-events: none;
+    }
+    .flexbox {
+      position: relative;
+      display: flex;
+      height: 100%;
+      z-index: 20;
+      ul, ol {
+        margin: 0;
+      }
+      ul > li {
+        list-style: none;
+      }
+      &.rowEnd {
+        justify-content: flex-end;
+      }
+      &.row {
+        flex-direction: row;
+      }
+      &.col {
+        flex-direction: column;
+      }
+      &.center-box {
+        align-items: center;
+        justify-content: center;
+      }
+      &.center-v-box {
+        align-items: center;
+      }
+      &.text-center {
+        text-align: center;
+      }
+      .selfTop,.selfLeft {
+        align-self: flex-start;
+      }
+    }
+  }
+
+.flexbox {
+    display: flex;
+    height: 100%;
+    &.rowEnd {
+      justify-content: flex-end;
+    }
+    &.row {
+      flex-direction: row;
+    }
+    &.col {
+      flex-direction: column;
+    }
+    &.center-box {
+      align-items: center;
+      justify-content: center;
+    }
+    &.center-v-box {
+      align-items: center;
+    }
+    &.text-center {
+      text-align: center;
+    }
+    .selfTop,.selfLeft {
+      align-self: flex-start;
+    }
+  }
+
+  .fullsize {
+    width: 100%;
+    height: 100%;
+  }
+  .width40 {
+    width: 40%;
+    overflow: hidden;
+  }
+  .width50 {
+    width: 50%;
+    overflow: hidden;
+  }
+  .width60 {
+    width: 60%;
+    overflow: hidden;
+  }
+  .width100 {
+    width: 100%;
+    overflow: hidden;
+  }
+  .height100 {
+    height: 100%;
+  }
+  .indent-left {
+    padding-left: 2em;
+  }
+  .indent-top {
+    padding-top: 2em;
+  }
+  .indent-right {
+    padding-right: 2em;
+  }
+  .indent {
+    padding: 100px 1em;
+  }
+  .indent2x {
+    padding: 2em;
+  }
+  .text-white {
+    color: #FFF;
+  }
+  .text-black {
+    color: #111;
+  }
+  .text-alpha-30 {
+    opacity: .3;
+  }
+  .text-size-03em {
+    font-size: 0.3em;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+
+  .heros {
+    display: flex;
+    flex-wrap: wrap;
+    width: $hero__size * 10 + $hero__border__size * 10 + 10;
+    padding: 10px;
+    li {
+      width: $hero__size;
+      height: $hero__size;
+      img {
+        margin: 0;
+        padding: 0;
+        border: none;
+        vertical-align: top;
+        width: $hero__size;
+        height: $hero__size;
+        transition: all .15s ease-in-out; 
+        &:hover {
+          transform: scale(1.5)
+        }
+      }
+    }
+  }
