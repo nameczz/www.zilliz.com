@@ -47,7 +47,7 @@ const Header = () => {
                   <Link className="nav-link" to="/why-zilliz">Why Zilliz</Link>
                 </li>
                 <li className='nav-item drop-down' onClick={ toggleSubNavShow }>
-                  <a className='nav-link' >Product
+                  <a className='nav-link' href='javascript:void(0)' >Product
                     <svg t="1561497657372" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3057" width="16" height="16"><path d="M517.61 688.417c9.004 0.189 18.004-3.11 24.837-9.945l279.402-279.402c13.197-13.197 13.243-34.926-0.141-48.311-13.479-13.479-35.02-13.434-48.311-0.141l-255.741 255.741-255.741-255.741c-13.293-13.293-34.832-13.34-48.311 0.141-13.385 13.385-13.34 35.113-0.141 48.311l279.402 279.402c6.833 6.833 15.838 10.181 24.837 9.945z" p-id="3058" fill="#ffffff"></path></svg>
                   </a>
                 </li>
@@ -57,7 +57,7 @@ const Header = () => {
                 </div>
                 <li className="nav-item"><Link className="nav-link" to="/news">News</Link></li>
                 <li className='nav-item drop-down' onClick={ toggleSubNavShow }>
-                  <a className='nav-link' >Our Culture
+                  <a className='nav-link' href='javascript:void(0)' >Our Culture
                     <svg t="1561497657372" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3057" width="16" height="16"><path d="M517.61 688.417c9.004 0.189 18.004-3.11 24.837-9.945l279.402-279.402c13.197-13.197 13.243-34.926-0.141-48.311-13.479-13.479-35.02-13.434-48.311-0.141l-255.741 255.741-255.741-255.741c-13.293-13.293-34.832-13.34-48.311 0.141-13.385 13.385-13.34 35.113-0.141 48.311l279.402 279.402c6.833 6.833 15.838 10.181 24.837 9.945z" p-id="3058" fill="#ffffff"></path></svg>
                     {/* <svg t="1561497913193" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3417" width="16" height="16"><path d="M506.39 335.583c-9.004-0.189-18.004 3.11-24.837 9.945l-279.402 279.402c-13.197 13.197-13.243 34.926 0.141 48.311 13.479 13.479 35.020 13.434 48.311 0.141l255.741-255.741 255.741 255.741c13.293 13.293 34.832 13.34 48.311-0.141 13.385-13.385 13.34-35.113 0.141-48.311l-279.402-279.402c-6.833-6.833-15.838-10.181-24.837-9.945z" p-id="3418" fill="#ffffff"></path></svg> */}
                   </a>
@@ -92,7 +92,7 @@ const Header = () => {
             </ul>
             <ul className="navbar-nav justify-content-end ml-auto">
               <li className='nav-item drop-down' onMouseEnter={handleDropDown} onMouseLeave={handleDropDown}>
-                <a className='nav-link' href="javascript:return false;">Our Culture
+                <a className='nav-link' href="javascript:void(0)">Our Culture
                     <svg t="1561497657372" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3057" width="16" height="16"><path d="M517.61 688.417c9.004 0.189 18.004-3.11 24.837-9.945l279.402-279.402c13.197-13.197 13.243-34.926-0.141-48.311-13.479-13.479-35.02-13.434-48.311-0.141l-255.741 255.741-255.741-255.741c-13.293-13.293-34.832-13.34-48.311 0.141-13.385 13.385-13.34 35.113-0.141 48.311l279.402 279.402c6.833 6.833 15.838 10.181 24.837 9.945z" p-id="3058" fill="#ffffff"></path></svg>
                   {/* <svg t="1561497913193" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3417" width="16" height="16"><path d="M506.39 335.583c-9.004-0.189-18.004 3.11-24.837 9.945l-279.402 279.402c-13.197 13.197-13.243 34.926 0.141 48.311 13.479 13.479 35.020 13.434 48.311 0.141l255.741-255.741 255.741 255.741c13.293 13.293 34.832 13.34 48.311-0.141 13.385-13.385 13.34-35.113 0.141-48.311l-279.402-279.402c-6.833-6.833-15.838-10.181-24.837-9.945z" p-id="3418" fill="#ffffff"></path></svg> */}
                 </a>
