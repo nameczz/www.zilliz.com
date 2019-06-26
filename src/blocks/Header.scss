@@ -1,23 +1,24 @@
-$list_bg_color : black;
+$list_bg_color : #2d313c;
 
 .drop-down{
-  ul{
-    border: 0;
-    margin: 0;
+  .list {
+    display: none;
   }
   .list-show {
-    display: visible;
+    display: block;
     position: absolute;
     top: 56px;
     z-index: 10;
-    background-color: $list_bg_color;
-    color: rgb(241, 205, 205);
+    background-color: #2d313c;
+    color: #f2f2f2;
     list-style: none;
     border: 0;
     margin: 0;
     padding: 0;
+
+    .product { width: 88px;}
+    .about-us { width: 117px;}
     li {
-      width: 80px;
       text-align: center;
       font-size: 16px;
       a {
@@ -30,10 +31,5 @@ $list_bg_color : black;
         }
       }
     }
-  }
-
-  .list-hide{
-    display: none;
-
   }
 }
