@@ -13,9 +13,13 @@ export default function HTML(props) {
         />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/2.0.0/css/froala_blocks.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/2.0.0/css/froala_blocks.min.css"  type="text/css"/>
+        {/* <script src="https://unpkg.com/react/umd/react.production.js" crossorigin />
+        <script src="https://unpkg.com/react-dom/umd/react-dom.production.js" crossorigin/>
+        <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin/> */}
+
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

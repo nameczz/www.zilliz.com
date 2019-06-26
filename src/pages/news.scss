@@ -1,0 +1,28 @@
+.news-top-container {
+  margin: 0 0 30px 0  !important;
+}
+
+.add-margin {
+  margin-bottom: 50px;
+}
+.news-container {
+  padding: 0 !important;
+  
+  img {
+    max-width: 100%;
+  }
+
+  .text-container {
+    padding: 40px 20px;
+
+    h4 {
+      margin-bottom: 20px;
+      white-space:  nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}
