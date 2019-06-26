@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
               <h3><strong>Company</strong></h3>
               <p><Link to="/aboutus">About Us</Link></p>
               <p><Link to="/news">Latest News</Link></p>
-              <p><a href="https://www.zilliz.com">Company Culture</a></p>
+              <p><Link to="/culture">Company Culture</Link></p>
             </div>
             <div className="col-12 col-md-4 mt-5 mt-md-0 text-md-left" style={{ zIndex: 1000 }}>
               <h3><strong>Contact Us</strong></h3>
