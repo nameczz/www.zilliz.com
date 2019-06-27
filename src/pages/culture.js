@@ -381,9 +381,14 @@ const Culture = props => {
         scrollCallback: onScroll,
     };
 
-    return (
-        <div className="culture">
-            <SEO title="Culture" />
+  return (
+    <div className="culture" onClick={()=>{
+        if(document && document.querySelector('.md-nav-contaienr')) {
+          document.querySelector('.md-nav-contaienr').classList.add('ele-hide')
+        }
+        return false;
+      }}>
+        <SEO title="Culture" />
             <RHeader>
                 <Header />
             </RHeader>
@@ -410,6 +415,13 @@ const Culture = props => {
             <RFooter>
                 <SimpleFooter />
             </RFooter>
+    </div>
+  )
+    
+
+    return (
+        <div className="culture">
+            
         </div>
     )
 }

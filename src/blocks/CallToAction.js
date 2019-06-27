@@ -13,7 +13,7 @@ const CallToAction = () => {
               <div className="col-12 col-md-8">
                 <h1>ZilliZ</h1>
                 <p className="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Learn More</a></p>
+                <p className="mt-5"><Link to='/' className="btn btn-primary">Learn More</Link></p>
               </div>
             </div>
           </div>
@@ -24,7 +24,8 @@ const CallToAction = () => {
               <div className="col-12 col-md-8">
                 <h1>Milvus</h1>
                 <p className="lead">A Distributed High Performance Vector Database System</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Get Started</a></p>
+                <p className="mt-5"><Link to='https://www.milvus.com/docs/en/QuickStart/' className="btn btn-primary">Get Started</Link></p>
+
               </div>
             </div>
           </div>
@@ -35,7 +36,7 @@ const CallToAction = () => {
               <div className="col-12 col-md-8">
                 <h1>Megawise</h1>
                 <p className="lead">OmniSci has redefined the limits of speed and scale in big data querying and visualization</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Learn More</a></p>
+                <p className="mt-5"><Link to='/megawise' className="btn btn-primary">Learn More</Link></p>
               </div>
             </div>
           </div>
