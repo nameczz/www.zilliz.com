@@ -11,6 +11,7 @@ $list_bg_color : #2d313c;
   }
 
   @include respond-to('md') {
+    cursor: pointer;
     .icon-list {
       display: visible; 
       position: absolute;
@@ -46,6 +47,7 @@ $list_bg_color : #2d313c;
   .list-show {
     display: block;
     position: absolute;
+    padding: 0 0 0 5px;
     top: 60px;
     z-index: 10;
     background-color: #2d313c;
@@ -65,7 +67,7 @@ $list_bg_color : #2d313c;
 
     // .about-us{ width: 100%}
     li {
-      text-align: center;
+      text-align: left;
       font-size: 16px;
 
       a {

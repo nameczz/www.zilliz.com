@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from "../components/layout";
+import SEO from '../components/seo';
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 
 import './about-us.scss'
@@ -142,6 +143,7 @@ const TimelineComp = () => {
 }
 const WhyZilliz = () => (
   <Layout>
+  <SEO title='About us' />
     <section className="fdb-block" data-block-type="contents" data-id="4" draggable="true">
       <div className="container">
         <div className="row align-items-center">

@@ -337,7 +337,13 @@ const options = {
 };
 const Culture = props => {
   return (
-    <>
+    <div onClick={()=>{
+        console.log('clicked')
+        if(document && document.querySelector('.md-nav-contaienr')) {
+          document.querySelector('.md-nav-contaienr').classList.add('ele-hide')
+        }
+        return false;
+      }}>
         <SEO title="Culture" />
         <RHeader>
             <Header />
@@ -362,7 +368,7 @@ const Culture = props => {
             <Section><GreatProduct /></Section>
             <Section><ProtectCulture /></Section>
         </SectionsContainer>
-    </>
+    </div>
   )
 }
 

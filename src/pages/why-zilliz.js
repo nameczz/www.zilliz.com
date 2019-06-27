@@ -1,5 +1,7 @@
 import React from 'react'
 import Layout from "../components/layout";
+import SEO from '../components/seo';
+
 import { Hadoop, Spark, GPUSpark, Rapids } from '../components/charts/DataEvolution'
 import { RectTop, RectVBottom, RectMiddle } from '../components/charts/arrows'
 import { ETLPie, RobertDay, RobertNewDay } from '../components/charts/ETLPie'
@@ -7,6 +9,7 @@ import './why-zilliz.scss'
 
 const WhyZilliz = () => (
   <Layout>
+    <SEO title='why zilliz' />
     <section className="fdb-block" style={{ backgroundImage: `url(https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//shapes/8.svg)` }} data-block-type="contents" data-id="3" draggable="true">
       <div className="container">
         <div className="row align-items-center">
@@ -46,7 +49,20 @@ const WhyZilliz = () => (
         </div>
       </div>
     </section>
-    {/* DATA PROCESSING EVOLUTION */}
+    {/* Robot's Day */}
+    <section className="fdb-block fp-active" data-block-type="contents" data-id="8" draggable="true">
+      <div className="container">
+        <div className="row align-items-center" >
+          <div className="col-12 col-md-12 col-lg-6 col-xl-5">
+          <h1>Robot's Day</h1>
+            <p className="lead">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          </div>
+          <div className="col-12 col-md-8 m-auto ml-lg-auto mr-lg-0 col-lg-6 pt-5 pt-lg-0" style={{ height: '475px' }}>
+            <RobertDay />
+          </div>
+        </div>
+      </div>
+    </section>
     <section className="fdb-block fp-active" data-block-type="contents" data-id="17" draggable="true">
       <div className="container" style={{ minWidth: '1140px' }}>
         <div className="row text-center">
@@ -108,20 +124,7 @@ const WhyZilliz = () => (
         </div>
       </div>
     </section>
-  {/* Robot's Day */}
-    <section className="fdb-block" data-block-type="contents" data-id="7" draggable="true">
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-12 col-md-6 mb-4 mb-md-0" style={{ height: '475px'}} >
-            <RobertDay />
-          </div>
-          <div className="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
-            <h1>Robot's Day</h1>
-            <p className="lead">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
     {/* Robot's New Day */}
     <section className="fdb-block fp-active" data-block-type="contents" data-id="8" draggable="true">
       <div className="container">
