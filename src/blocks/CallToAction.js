@@ -11,7 +11,7 @@ const CallToAction = () => {
           <div className="container justify-content-center align-items-center d-flex">
             <div className="row justify-content-center text-center">
               <div className="col-12 col-md-8">
-                <h1>ZilliZ</h1>
+                <h1>Zilliz</h1>
                 <p className="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 <p className="mt-5"><Link to='/' className="btn btn-primary">Learn More</Link></p>
               </div>

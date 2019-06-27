@@ -33,7 +33,7 @@ const ReinventDataScience = () => {
         <div className="container">
             <div className="flexbox center-box">
                 <h2 className="indent width50">
-                    ZILLIZ IS CREATED <br />
+                    Zilliz IS CREATED <br />
                     TO REINVENT <br />
                     DATA SCIENCE.
                 </h2>

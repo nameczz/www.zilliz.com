@@ -67,6 +67,8 @@ const Header = () => {
                   <li className='about-us'><Link className='nav-link' to='/culture'>Our Culture</Link></li>
                   <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/socialposition/list?lang=en' target='blank'>Career</a></li>
                 </div>
+                <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/socialposition/list' target='blank'>Career</a></li>
+
               </ul>
 
             </div>
@@ -92,6 +94,7 @@ const Header = () => {
               </li>
             </ul>
             <ul className="navbar-nav justify-content-end ml-auto">
+            <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/socialposition/list' target='blank'>Career</a></li>
               <li className='nav-item drop-down' onMouseEnter={handleDropDown} onMouseLeave={handleDropDown}>
                 <a className='nav-link' href="javascript:void(0)">About Us &nbsp;
                 <svg t="1561600107498"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
@@ -99,7 +102,7 @@ const Header = () => {
                 </a>
                 <ul className='list' onMouseEnter={handleSublist} onMouseLeave={handleSublist}>
                   <li className='about-us'><Link className='nav-link' to='/culture'>Our Culture</Link></li>
-                  <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/socialposition/list' target='blank'>Career</a></li>
+                  <li className='about-us'><Link className='nav-link' to='/about-us'>About Zilliz</Link></li>
                 </ul>
               </li>
             </ul>
