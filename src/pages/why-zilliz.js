@@ -9,7 +9,7 @@ import './why-zilliz.scss'
 
 const WhyZilliz = () => (
   <Layout>
-    <SEO title='why zilliz' />
+    <SEO title='why Zilliz' />
     <section className="fdb-block" style={{ backgroundImage: `url(https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//shapes/8.svg)` }} data-block-type="contents" data-id="3" draggable="true">
       <div className="container">
         <div className="row align-items-center">
