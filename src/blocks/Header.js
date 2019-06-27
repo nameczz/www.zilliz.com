@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from 'gatsby'
 import logo from "../images/logo.svg" // Tell Webpack this JS file uses this image
 import './Header.scss'
-
+/* disable jsx-a11y/anchor-is-valid*/
 const Header = () => {
   let timeOut = undefined;
   const handleDropDown = event => {
@@ -65,7 +65,7 @@ const Header = () => {
                 </li>
                 <div className='sub-navlist'>
                   <li className='about-us'><Link className='nav-link' to='/culture'>Our Culture</Link></li>
-                  <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/socialposition/list' target='blank'>Career</a></li>
+                  <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/socialposition/list?lang=en' target='blank'>Career</a></li>
                 </div>
               </ul>
 
