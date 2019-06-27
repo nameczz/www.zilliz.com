@@ -23,12 +23,12 @@ $list_bg_color : #2d313c;
       top: 60px;
       background-color: #2d313c;
       z-index: 100000;
-      width: 120px;
+      width: 140px;
       text-align: left;
-      
+      padding: 5px 0 0 5px;
       ul {
         li {
-          padding: 0 5px;
+          padding:  0 0 5px 15px;
         }
       }
     }
@@ -46,11 +46,10 @@ $list_bg_color : #2d313c;
   .list-show {
     display: block;
     position: absolute;
-    margin-top: 60px;
+    top: 60px;
     z-index: 10;
     background-color: #2d313c;
     color: #f2f2f2;
-    // width: 100%;
     list-style: none;
     border: 0;
     margin: 0;
