@@ -417,13 +417,6 @@ const Culture = props => {
             </RFooter>
     </div>
   )
-    
-
-    return (
-        <div className="culture">
-            
-        </div>
-    )
 }
 
 export default Culture;
