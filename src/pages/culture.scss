@@ -1,12 +1,22 @@
+@import './include_media';
 
 // heros
 $hero__size: 48px;
 $hero__border__size: 1px;
-
+// common css
+.hide-if-too-small {
+  @include media('<=1000px') { display: none !important; }
+}
+.fullsize-if-too-small {
+  @include media('<=1000px') { width: 100% !important; }
+}
 section {
     position: relative;
     text-align: left;
     height: 100%;
+    .container {
+      height: 100%;
+    }
     .word-break {
       word-break: break-all;
     }
@@ -21,6 +31,7 @@ section {
       z-index: 20;
       ul, ol {
         margin: 0;
+        padding: 0;
       }
       ul > li {
         list-style: none;
@@ -154,3 +165,17 @@ section {
       }
     }
   }
+
+.Navigation a {
+  background-color: #FFF;
+}
+
+.culture footer {
+  padding: 0 !important;
+}
+.checkCircles {
+  i {
+    margin: 5px;
+    font-size: 40px;
+  }
+}
