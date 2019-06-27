@@ -68,8 +68,8 @@ const ReinventDataScience = () => {
 
 const ChangingHow = () => {
     return (
-        <section style={{background: `no-repeat center bottom/60% url(${CHANGEBG}) #FFFFFF`}}>
-            <div className="container">
+        <section style={{ background : `#FFFFFF no-repeat url(${CHANGEBG})`, backgroundSize: 'auto 50%', backgroundPosition:'center top 80%'}}>
+            <div className="container" >
             <div className="flexbox text-center">
                 <h2 className="width50 indent">CHANGING HOW <br />PEOPLE <br />INTERACT WITH <br />DATA </h2>
                 <h2 className="width50 indent">WILL ALWAYS <br />CHANGE <br />THE WORLD</h2>
@@ -181,8 +181,8 @@ const AmazingPeople = () => {
 
 const DemandExcellence = () => {
     return (
-        <section style={{background: `no-repeat 8% center/35% url(${demandExcellencebg}) #0077B5`}}>
-        <div className="container">
+        <section style={{background:  `#0077B5`}}>
+        <div className="container" style={{ background: `no-repeat 8% center/35% url(${demandExcellencebg})` }}>
         <div className="flexbox center-v-box rowEnd">
             <h1 className="indent width50 text-white">DEMAND <br /> EXCELLENCE</h1>
         </div>
