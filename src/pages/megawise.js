@@ -1,5 +1,6 @@
 import React from "react";
 import bg from '../images/hero/blue.svg';
+import {Link } from 'gatsby'
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,7 +15,7 @@ const Megawise = props => {
               <div className="col-12 col-md-8">
                 <h1>Megawise</h1>
                 <p className="lead">OmniSci has redefined the limits of speed and scale in big data querying and visualization</p>
-                <p className="mt-5"><a href="https://www.zilliz.com" className="btn btn-primary">Learn More</a></p>
+                <p className="mt-5"><Link to="/megawise" className="btn btn-primary">Learn More</Link></p>
               </div>
             </div>
           </div>

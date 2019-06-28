@@ -94,11 +94,13 @@ section {
   }
   .width40 {
     width: 40%;
-    overflow: hidden;
+    // overflow: hidden;
   }
   .width50 {
     width: 50%;
+    @include media('<=1000px') { width: 100% }
     overflow: hidden;
+
   }
   .width60 {
     width: 60%;
@@ -122,6 +124,8 @@ section {
   }
   .indent {
     padding: 100px 1em;
+    @include media('<=1000px') { padding: 100px 0; }
+
   }
   .indent2x {
     padding: 2em;
@@ -166,8 +170,11 @@ section {
     }
   }
 
+.Navigation {
+  @include media('<=1000px') { display: none !important; }
+}
 .Navigation a {
-  background-color: #FFF;
+  background-color: #FFF !important;
 }
 
 .culture footer {
@@ -178,4 +185,20 @@ section {
     margin: 5px;
     font-size: 40px;
   }
+}
+.demand-exellence{
+  background: #0077B5 no-repeat 8% center/35% url('../images/demandExcellence.png');
+  @include media('<=1000px') { 
+    background: #0077B5;
+  }
+}
+.ChangingHow {
+  background: #FFFFFF no-repeat url('../images/changing.png') ;
+  background-size: auto 50%;
+  background-position: center top 80%;
+  @include media('<=1000px') {
+    background: #0077B5;
+   }
+
+  
 }
