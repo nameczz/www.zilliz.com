@@ -34,7 +34,7 @@ const TimelineComp = () => {
               <h3 style={{ color: '#329ef7' }}>发布MegaWise数据库1.2版</h3>
           </TimelineItem>
           <TimelineItem
-              key="002"
+              key="003"
               dateText="2018 Oct"
               dateInnerStyle={{ background: '#329ef7', color: '#000' }}
               bodyContainerStyle={{
@@ -46,7 +46,7 @@ const TimelineComp = () => {
               <h3>发布第二代MegaWise数据库一体机</h3>
           </TimelineItem>
           <TimelineItem
-              key="002"
+              key="004"
               dateText="2018 Aug"
               dateInnerStyle={{ background: '#329ef7', color: '#000' }}
               bodyContainerStyle={{
@@ -58,7 +58,7 @@ const TimelineComp = () => {
               <h3>发布硬件加速的AI大数据整体解决方案</h3>
           </TimelineItem>
           <TimelineItem
-              key="002"
+              key="005"
               dateText="2018 Mar"
               dateInnerStyle={{ background: '#329ef7', color: '#000' }}
               bodyContainerStyle={{
@@ -70,7 +70,7 @@ const TimelineComp = () => {
               <h3>发布MegaWise数据库1.1版</h3>
           </TimelineItem>
           <TimelineItem
-              key="002"
+              key="006"
               dateText="2018 Jan"
               dateInnerStyle={{ background: '#329ef7', color: '#000' }}
               bodyContainerStyle={{
@@ -82,37 +82,37 @@ const TimelineComp = () => {
               <h3>获得一千万美元A1轮投资</h3>
           </TimelineItem>
           <TimelineItem
-              key="003"
+              key="0063"
               dateText="2017 Dec"
           >
               <h3>发布MegaWise数据库一体机</h3>
           </TimelineItem>
           <TimelineItem
-              key="003"
+              key="0053"
               dateText="2017 Aug"
           >
               <h3>获得数千万人民币天使轮投资</h3>
           </TimelineItem>
           <TimelineItem
-              key="003"
+              key="00d3"
               dateText="2017 July"
           >
               <h3>获得NVIDIA创投Inception计划扶持</h3>
           </TimelineItem>
           <TimelineItem
-              key="003"
+              key="00ds3"
               dateText="2017 June"
           >
               <h3>加入OpenPower Foundation</h3>
           </TimelineItem>
           <TimelineItem
-              key="003"
+              key="0a03"
               dateText="2017 May"
           >
               <h3>发布MegaWise数据库1.0版</h3>
           </TimelineItem>
           <TimelineItem
-              key="003"
+              key="0A03"
               dateText="2017 Mar"
               dateInnerStyle={{ background: '#329ef7', color: '#000' }}
           >
@@ -120,14 +120,14 @@ const TimelineComp = () => {
           </TimelineItem>
 
           <TimelineItem
-              key="004"
+              key="0Z04"
               dateText="2016 Mar"
               dateInnerStyle={{ background: '#9fe6b8' }}
           >
               <h3>获得数百万人民币种子轮投资</h3>
           </TimelineItem>
           <TimelineItem
-              key="004"
+              key="00X4"
               dateText="2016 Mar"
               dateInnerStyle={{ background: '#9fe6b8' }}
           >

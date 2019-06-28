@@ -5,8 +5,6 @@ import Header from '../blocks/Header';
 import SimpleFooter from '../blocks/SimpleFooter';
 import SEO from '../components/seo';
 import Texture from '../components/Texture';
-import CHANGEBG from '../images/changing.png';
-import demandExcellencebg from '../images/demandExcellence.png';
 import './culture.scss';
 
 const EngineeringCurlture = () => {
@@ -185,7 +183,7 @@ const DemandExcellence = () => {
             <div className="container demand-exellence">
                 <div className="flexbox center-v-box rowEnd">
                     <h1 className="indent width50 text-white">
-                        DEMAND <br /> 
+                        DEMAND <br />
                         EXCELLENCE
                     </h1>
                 </div>
@@ -279,11 +277,11 @@ const Greatness = () => {
                     <h2 className="indent text-white">
                         GREATNESS <br />
                         AND COMFORT  <br />NEVER  <br />COEXIST.
-            </h2>
+                    </h2>
                     <div className="indent selfTop width50 text-alpha-30 hide-if-too-small" style={{ height: '84vh' }}>
                         <div className="checkCircles overflow-hidden disable-selection text-white">
-                            {Array(8 * 14).fill(1).map(() => {
-                                return <><i class="fas fa-check"></i> <i class="far fa-circle"></i></>
+                            {Array(8 * 14).fill(1).map((item, key) => {
+                                return <span key={`${key}-key`}><i className="fas fa-check"></i> <i className="far fa-circle"></i></span>
                             })}
                         </div>
                     </div>

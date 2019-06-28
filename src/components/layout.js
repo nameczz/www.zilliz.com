@@ -18,7 +18,6 @@ const Layout = ({ children }) => {
   // `)
   return (
     <div onClick={()=>{
-      console.log('clicked')
       if(document && document.querySelector('.md-nav-contaienr')) {
         document.querySelector('.md-nav-contaienr').classList.add('ele-hide')
       }
