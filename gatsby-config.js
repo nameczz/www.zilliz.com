@@ -7,6 +7,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+     // i18n plugin
+    'gatsby-transformer-json',
+     {
+       resolve: `gatsby-source-filesystem`,
+       options: {
+         name: `data`,
+         path: `${__dirname}/src/data/`
+       }
+     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -1,0 +1,21 @@
+{
+  "layout": {
+    "header": {
+      "why_zilliz": "为什么Zilliz",
+      "product": "产品",
+      "news": "新闻",
+      "career":"职业发展",
+      "about_us": "关于我们",
+      "product_list": ["Milvus", "MegaWise"],
+      "aboutus_list": ["企业文化", "关于Zilliz"]
+    },
+    "footer": {
+      "product": "产品",
+      "product_list": ["MegaWise", "Milvus"],
+      "company": "公司",
+      "company_list": ["关于Zilliz", "公司新闻", "企业文化"],
+      "contact": "联系我们",
+      "contact_list": ["021-33687058", "info@zilliz.com", "上海徐汇区桂箐路69号桂箐园28栋6C"]
+    }
+  }
+}

@@ -149,27 +149,64 @@ const OneNew = props => {
     </div>
   )
 }
-const News = () => (
-  <Layout>
-    <SEO title="Latest News" />
-    <section className="fdb-block bg-dark fdb-viewport" style={{ backgroundImage: `url(${bg})` }}>
-      <div className="container justify-content-center align-items-center d-flex">
-        <div className="row justify-content-center text-center">
-          <div className="col-12 col-md-8">
-            <h1>News&nbsp;&nbsp;Center</h1>
-            <p className="lead">here you see what we do in the market </p>
+const News = ({data, pageContext}) => {
+  const { locale } = pageContext;
+  const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+  return (
+    <Layout data={layout} locale={locale}>
+      <SEO title="Latest News" />
+      <section className="fdb-block bg-dark fdb-viewport" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="container justify-content-center align-items-center d-flex">
+          <div className="row justify-content-center text-center">
+            <div className="col-12 col-md-8">
+              <h1>News&nbsp;&nbsp;Center</h1>
+              <p className="lead">here you see what we do in the market </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section className="fdb-block fp-active" data-block-type="features" data-id="2">
-      <div className="container">
-        <div className="row text-left">
-          {newsList.map((news, i) => <OneNew news={news} key={i} />)}
+      </section>
+      <section className="fdb-block fp-active" data-block-type="features" data-id="2">
+        <div className="container">
+          <div className="row text-left">
+            {newsList.map((news, i) => <OneNew news={news} key={i} />)}
+          </div>
         </div>
-      </div>
-    </section>
-  </Layout>
-)
+      </section>
+    </Layout>
+  )
+}
 
+
+export const QueryNews = graphql`
+  query QueryNews($locale:String) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout","index"]}}) {
+    edges {
+      node {
+        childLayoutJson {
+          layout {
+            header {
+              why_zilliz
+              about_us
+              aboutus_list
+              career
+              news
+              product
+              product_list
+            }
+            footer {
+              product
+              product_list
+              company
+              company_list
+              contact
+              contact_list
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+`
 export default News

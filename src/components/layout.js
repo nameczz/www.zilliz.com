@@ -1,39 +1,26 @@
 import React from "react"
-import PropTypes from "prop-types"
-// import { useStaticQuery, graphql } from "gatsby"
 import Header from '../blocks/Header';
 import Footer from '../blocks/Footer';
 
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
+export default props => {
+    const {data, children, locale} = props;
+    const {header, footer} = data;
+    console.log(`locale in layout is ${locale}`)
   return (
-    <div onClick={()=>{
-      if(document && document.querySelector('.md-nav-contaienr')) {
+    <div onClick={() => {
+      if (document && document.querySelector('.md-nav-contaienr')) {
         document.querySelector('.md-nav-contaienr').classList.add('ele-hide')
       }
       return false;
     }}>
-      <Header />
+      <Header data={header} locale={locale} />
       <div>
         <main>{children}</main>
-        <Footer />
+        <Footer data={footer} locale={locale} />
       </div>
     </div>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout

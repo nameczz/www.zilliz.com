@@ -1,5 +1,28 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const locales = require("./src/constants/locales");
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  return new Promise(resolve => {
+    deletePage(page)
+
+    Object.keys(locales).map(lang => {
+      const localizedPath = locales[lang].default
+        ? page.path
+        : locales[lang].path + page.path
+      console.log(lang)
+      return createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          locale: lang
+        }
+      })
+    })
+    resolve()
+  })
+}
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions

@@ -355,7 +355,14 @@ const ProtectCulture = () => {
 }
 
 
-const Culture = props => {
+const Culture = ({data, pageContext}) => {
+
+    console.log(data);
+    const { locale } = pageContext;
+    console.log(`locale in culture page is: ${locale}`)
+    const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+    const {header} = layout;
+
     const [initState, setInitState] = useState(null);
     const onScroll = (e) => {
         if (initState === null) {
@@ -391,7 +398,7 @@ const Culture = props => {
         }}>
             <SEO title="Culture" />
             <RHeader>
-                <Header />
+                <Header data={header} locale={locale} />
             </RHeader>
             <SectionsContainer {...options} activeSection={initState}>
                 <Section><EngineeringCurlture /></Section>
@@ -420,4 +427,35 @@ const Culture = props => {
     )
 }
 
+export const queryInCulture = graphql`
+  query queryInCulture($locale:String) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout"]}}) {
+    edges {
+      node {
+        childLayoutJson {
+          layout {
+            header {
+              why_zilliz
+              about_us
+              aboutus_list
+              career
+              news
+              product
+              product_list
+            }
+            footer {
+              product
+              product_list
+              company
+              company_list
+              contact
+              contact_list
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
 export default Culture;

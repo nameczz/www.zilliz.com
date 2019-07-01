@@ -5,9 +5,12 @@ import {Link } from 'gatsby'
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const Megawise = props => {
+const Megawise = ({data, pageContext}) => {
+  const { locale } = pageContext;
+  const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+
   return (
-      <Layout>
+      <Layout data={layout} locale={locale}>
         <SEO title="Megawise" />
         <section className="fdb-block fdb-viewport bg-dark" style={{ backgroundImage: `url(${bg})` }}>
           <div className="container justify-content-center align-items-center d-flex">
@@ -24,4 +27,36 @@ const Megawise = props => {
   )
 }
 
+export const QueryMegawise = graphql`
+  query QueryMegawise($locale:String) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout","index"]}}) {
+    edges {
+      node {
+        childLayoutJson {
+          layout {
+            header {
+              why_zilliz
+              about_us
+              aboutus_list
+              career
+              news
+              product
+              product_list
+            }
+            footer {
+              product
+              product_list
+              company
+              company_list
+              contact
+              contact_list
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+`
 export default Megawise
