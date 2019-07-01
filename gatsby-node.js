@@ -3,10 +3,9 @@ const locales = require("./src/constants/locales");
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
-
+  // console.log(page)
   return new Promise(resolve => {
     deletePage(page)
-
     Object.keys(locales).map(lang => {
       const localizedPath = locales[lang].default
         ? page.path
@@ -44,7 +43,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      }
     `
   ).then(result => {
     if (result.errors) {
@@ -52,21 +50,26 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
 
-      createPage({
-        path: post.node.frontmatter.path,
-        component: blogPost,
-        context: {
-          slug: post.node.frontmatter.path,
-          previous,
-          next,
-        },
+      Object.keys(locales).map(lang => {
+        console.log(`${locales[lang].default}------${locales[lang].path + post.node.frontmatter.path}`)
+        createPage({
+          path: locales[lang].default ? post.node.frontmatter.path : locales[lang].path + post.node.frontmatter.path ,
+          component: blogPost,
+          context: {
+            slug: post.node.frontmatter.path,
+            locale: lang,
+            previous,
+            next,
+          },
+        })
       })
+    
     })
 
     // Create blog post list pages
@@ -85,7 +88,7 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
     });
-  })
+  }).catch(err=>console.log(err))
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from 'gatsby'
 import  LocalizeLink  from '../components/localizedLink';
 import logo from "../images/logo.svg" // Tell Webpack this JS file uses this image
 import './Header.scss'
@@ -50,12 +49,11 @@ const Header = ({ data, locale }) => {
     if(window){
       const {origin, href} = window.location;
       const arr = href.split(origin);
-      window.location.href = locale == 'en' 
+      window.location.href = locale === 'en' 
         ? `${ origin }/cn${arr[1]}`
         : `${origin}/${arr[1].slice(4)}`
     }
   }
-
   return (
     <header className="bg-dark">
       <div className="container">
@@ -90,7 +88,7 @@ const Header = ({ data, locale }) => {
                   <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
                 </div>
                 <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/zilliz?lang=en' target='blank'>{career}</a></li>
-                <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '切换中文' : 'switch to English' }</span></li>
+                <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '切换中文' : 'Switch to English' }</span></li>
               </ul>
 
             </div>
@@ -127,7 +125,7 @@ const Header = ({ data, locale }) => {
                   <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
                 </ul>
               </li>
-              <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '切换中文' : 'switch to English' }</span></li>
+              <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '切换中文' : 'Switch to English' }</span></li>
             </ul>
           </div>
         </nav>

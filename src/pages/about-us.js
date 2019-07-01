@@ -220,7 +220,7 @@ return (
 
 export const QueryAboutUs = graphql`
   query QueryAboutus($locale:String) {
-  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout","index"]}}) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout"]}}) {
     edges {
       node {
         childLayoutJson {

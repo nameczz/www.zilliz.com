@@ -357,12 +357,43 @@ const ProtectCulture = () => {
 
 const Culture = ({data, pageContext}) => {
 
-    console.log(data);
+    // to do: what's wrong with graphql query
+    // console.log(data);
+    // console.log(`locale in culture page is: ${locale}`)
+    // const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+    // const {header} = layout;
     const { locale } = pageContext;
-    console.log(`locale in culture page is: ${locale}`)
-    const layout = data.allFile.edges[0].node.childLayoutJson.layout;
-    const {header} = layout;
-
+    const header = locale === 'en'
+        ?  {
+            "why_zilliz": "Why Zilliz",
+            "about_us": "About Us",
+            "aboutus_list": [
+              "Our Culture",
+              "About Zilliz"
+            ],
+            "career": "Career",
+            "news": "News",
+            "product": "Product",
+            "product_list": [
+              "Milvus",
+              "MegaWise"
+            ]
+          }
+        : {
+            "why_zilliz": "为什么Zilliz",
+            "about_us": "关于我们",
+            "aboutus_list": [
+              "企业文化",
+              "关于Zilliz"
+            ],
+            "career": "职业发展",
+            "news": "新闻",
+            "product": "产品",
+            "product_list": [
+              "Milvus",
+              "MegaWise"
+            ]
+          }
     const [initState, setInitState] = useState(null);
     const onScroll = (e) => {
         if (initState === null) {
@@ -428,8 +459,8 @@ const Culture = ({data, pageContext}) => {
 }
 
 export const queryInCulture = graphql`
-  query queryInCulture($locale:String) {
-  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout"]}}) {
+  query MyQuery {
+  allFile(filter: {name: {eq: "en"}, relativeDirectory: {in: ["layout"]}}) {
     edges {
       node {
         childLayoutJson {
@@ -443,19 +474,12 @@ export const queryInCulture = graphql`
               product
               product_list
             }
-            footer {
-              product
-              product_list
-              company
-              company_list
-              contact
-              contact_list
-            }
           }
         }
       }
     }
   }
 }
+
 `
 export default Culture;
