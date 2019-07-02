@@ -1,11 +1,13 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+import LocalizeLink from '../components/localizedLink'
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
   pageContext
 }) {
+  // console.log(data);
   const { currentPage, numPages, locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const isFirst = currentPage === 1;
@@ -21,15 +23,16 @@ export default function Template({
         {
           edges.map(edge => {
             const { node } = edge;
+            if(node.fileAbsolutePath.indexOf(`${locale}.md`) === -1 ) return '';
             return (
               <div key={node.id} className="col-md-10" style={{ 'paddingLeft': 0 }}>
                 <div className="row no-gutters border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
                   <div className="col p-4 d-flex flex-column position-static">
                     <strong className="d-inline-block mb-2 text-primary">{node.frontmatter.author}</strong>
-                    <h3 className="mb-0"><Link to={node.frontmatter.path}>{node.frontmatter.title}</Link></h3>
+                    <h3 className="mb-0"><LocalizeLink locale={locale} to={node.frontmatter.path}>{node.frontmatter.title}</LocalizeLink></h3>
                     <div className="mb-1 text-muted">{node.frontmatter.date}</div>
                     <p className="card-text mb-auto">{node.excerpt}</p>
-                    <Link className="stretched-link" to={node.frontmatter.path}>Continue reading</Link>
+                    <LocalizeLink locale={locale} className="stretched-link" to={node.frontmatter.path}>Continue reading</LocalizeLink>
                   </div>
                 </div>
               </div>
@@ -47,14 +50,14 @@ export default function Template({
           }}
         >
           {!isFirst && (
-            <Link to={prevPage} rel="prev">
+            <LocalizeLink locale={locale} to={prevPage} rel="prev">
               ← Previous Page
-            </Link>
+            </LocalizeLink>
           )}
-          {!isLast && (
-            <Link to={nextPage} rel="next">
+          {(!isLast && edges.length == 10) && (
+            <LocalizeLink locale={locale} to={nextPage} rel="next">
               Next Page →
-            </Link>
+            </LocalizeLink>
           )}
         </ul>
       </div>
@@ -79,6 +82,7 @@ export const pageQuery = graphql`
             author
             title
           }
+          fileAbsolutePath
         }
       }
     },

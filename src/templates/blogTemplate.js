@@ -1,7 +1,8 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import LocalizedLink from "../components/localizedLink";
 export default function Template(props) {
 
   console.log(props);
@@ -16,7 +17,7 @@ export default function Template(props) {
     <Layout data={layout} locale={locale}>
       <SEO title={frontmatter.title} />
       <div className="blog-post-container container" style={{ 'paddingTop': '3vh', 'paddingBottom': '5vh' }}>
-        <Link to="/blog">Return to blogs</Link>
+        <LocalizedLink locale={locale} to="/blog">Return to blogs</LocalizedLink>
         <div className="blog-post">
           <h2>{frontmatter.title}</h2>
           <p className="blog-post-meta">{frontmatter.date}</p>
@@ -25,7 +26,7 @@ export default function Template(props) {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
-        <Link to="/blog">Return to blogs</Link>
+        <LocalizedLink locale={locale} to="/blog">Return to blogs</LocalizedLink>
       </div>
     </Layout>
   )

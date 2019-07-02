@@ -1,6 +1,6 @@
 import React from "react";
 import bg from '../images/hero/blue.svg';
-import {Link } from 'gatsby'
+import {Link, graphql} from 'gatsby'
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
