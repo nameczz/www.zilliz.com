@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link,graphql } from 'gatsby'
 import Layout from "../components/layout";
 import SEO from '../components/seo';
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
@@ -136,8 +136,11 @@ const TimelineComp = () => {
       </Timeline>
   )
 }
-const WhyZilliz = () => (
-  <Layout>
+const AboutUs = ({data, pageContext}) => {
+  const { locale } = pageContext;
+  const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+return (
+  <Layout data={layout} locale={locale}>
   <SEO title='About us' />
     <section className="fdb-block" data-block-type="contents" data-id="4" draggable="true">
       <div className="container">
@@ -213,6 +216,38 @@ const WhyZilliz = () => (
       </div>
     </section>
   </Layout>
-)
+)}
 
-export default WhyZilliz
+export const QueryAboutUs = graphql`
+  query QueryAboutus($locale:String) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout"]}}) {
+    edges {
+      node {
+        childLayoutJson {
+          layout {
+            header {
+              why_zilliz
+              about_us
+              aboutus_list
+              career
+              news
+              product
+              product_list
+            }
+            footer {
+              product
+              product_list
+              company
+              company_list
+              contact
+              contact_list
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+`
+export default AboutUs

@@ -355,7 +355,45 @@ const ProtectCulture = () => {
 }
 
 
-const Culture = props => {
+const Culture = ({data, pageContext}) => {
+
+    // to do: what's wrong with graphql query
+    // console.log(data);
+    // console.log(`locale in culture page is: ${locale}`)
+    // const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+    // const {header} = layout;
+    const { locale } = pageContext;
+    const header = locale === 'en'
+        ?  {
+            "why_zilliz": "Why Zilliz",
+            "about_us": "About Us",
+            "aboutus_list": [
+              "Our Culture",
+              "About Zilliz"
+            ],
+            "career": "Career",
+            "news": "News",
+            "product": "Product",
+            "product_list": [
+              "Milvus",
+              "MegaWise"
+            ]
+          }
+        : {
+            "why_zilliz": "为什么Zilliz",
+            "about_us": "关于我们",
+            "aboutus_list": [
+              "企业文化",
+              "关于Zilliz"
+            ],
+            "career": "职业发展",
+            "news": "新闻",
+            "product": "产品",
+            "product_list": [
+              "Milvus",
+              "MegaWise"
+            ]
+          }
     const [initState, setInitState] = useState(null);
     const onScroll = (e) => {
         if (initState === null) {
@@ -391,7 +429,7 @@ const Culture = props => {
         }}>
             <SEO title="Culture" />
             <RHeader>
-                <Header />
+                <Header data={header} locale={locale} />
             </RHeader>
             <SectionsContainer {...options} activeSection={initState}>
                 <Section><EngineeringCurlture /></Section>
@@ -420,4 +458,29 @@ const Culture = props => {
     )
 }
 
+export const queryInCulture = graphql`
+  query MyQuery {
+  allFile(filter: {name: {eq: "en"}, relativeDirectory: {in: ["layout"]}}) {
+    edges {
+      node {
+        childLayoutJson {
+          layout {
+            header {
+              why_zilliz
+              about_us
+              aboutus_list
+              career
+              news
+              blog
+              product
+              product_list
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+`
 export default Culture;
