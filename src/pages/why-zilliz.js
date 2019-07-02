@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from "../components/layout";
 import SEO from '../components/seo';
+import { graphql } from 'gatsby'
 
 import { Hadoop, Spark, GPUSpark, Rapids } from '../components/charts/DataEvolution'
 import { RectTop, RectVBottom, RectMiddle } from '../components/charts/arrows'

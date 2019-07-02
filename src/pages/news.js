@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from "../components/layout";
+import { graphql } from 'gatsby'
 import SEO from "../components/seo";
 import './about-us.scss'
 import news_181213 from '../images/photos/news-20181213.jpg'
