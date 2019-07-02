@@ -1,6 +1,8 @@
 const path = require(`path`);
 const locales = require("./src/constants/locales");
 
+const langs = Object.keys(locales);
+
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
   // console.log(page)
@@ -98,28 +100,6 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
     // console.log('___________________________________________________', 'cn blog page done')
-
-    // posts.forEach((post, index) => {
-    //   const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    //   const next = index === 0 ? null : posts[index - 1].node
-
-    //   Object.keys(locales).map(lang => {
-    //     createPage({
-    //       path: locales[lang].default ? post.node.frontmatter.path : locales[lang].path + post.node.frontmatter.path ,
-    //       component: blogPost,
-    //       context: {
-    //         slug: post.node.frontmatter.path,
-    //         locale: lang,
-    //         previous,
-    //         next,
-    //       },
-    //     })
-    //   })
-
-    // })
-
-    // Create blog post list pages
-
 
     const postsPerPage = 10;
     const cnNumPages = Math.ceil(posts_cn.length / postsPerPage);

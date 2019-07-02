@@ -54,7 +54,7 @@ export default function Template({
               ← Previous Page
             </LocalizeLink>
           )}
-          {(!isLast && edges.length == 10) && (
+          {(!isLast && edges.length === 10) && (
             <LocalizeLink locale={locale} to={nextPage} rel="next">
               Next Page →
             </LocalizeLink>
