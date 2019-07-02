@@ -52,6 +52,7 @@ export const pageQuery = graphql`
                     product_list
                     product
                     news
+                    blog
                     career
                     aboutus_list
                     about_us

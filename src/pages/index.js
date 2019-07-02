@@ -29,6 +29,7 @@ export const Query = graphql`
               aboutus_list
               career
               news
+              blog
               product
               product_list
             }

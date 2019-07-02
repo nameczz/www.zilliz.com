@@ -10,12 +10,14 @@ const Header = ({ data, locale }) => {
     product,
     product_list, 
     news, 
+    blog,
     career, 
     about_us, 
-    aboutus_list 
+    aboutus_list,
   } = data;
 
   let timeOut = undefined;
+
   const handleDropDown = event => {
     const content = event.currentTarget.lastChild;
     event.type === 'mouseenter'
@@ -77,6 +79,7 @@ const Header = ({ data, locale }) => {
                   <li className='product'><LocalizeLink locale={ locale } className='nav-link' to='/megawise'>{product_list[1]}</LocalizeLink></li>
                 </div>
                 <li className="nav-item"><LocalizeLink locale={ locale } className="nav-link" to="/news">{news}</LocalizeLink></li>
+                <li className="nav-item"><LocalizeLink locale={ locale }  className="nav-link" to="/blog">{blog}</LocalizeLink></li>
                 <li className='nav-item drop-down' onClick={ toggleSubNavShow }>
                   <span className='nav-link' ><span>{about_us}</span> &nbsp;
                   <svg t="1561600107498"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
@@ -88,13 +91,13 @@ const Header = ({ data, locale }) => {
                   <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
                 </div>
                 <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/zilliz?lang=en' target='blank'>{career}</a></li>
-                <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '切换中文' : 'Switch to English' }</span></li>
+                <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '中文' : 'English' }</span></li>
               </ul>
-
             </div>
           </div>
           {/* 展开的nav */}
           <div className="navbar-collapse all-nav-container" id="navbarNav13">
+            {/* nav left side */}
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <LocalizeLink locale={ locale }  className="nav-link" to="/why-zilliz">{why_zilliz}</LocalizeLink>
@@ -112,7 +115,11 @@ const Header = ({ data, locale }) => {
               <li className="nav-item">
                 <LocalizeLink locale={ locale }  className="nav-link" to="/news">{news}</LocalizeLink>
               </li>
+              <li className="nav-item">
+                <LocalizeLink locale={ locale }  className="nav-link" to="/blog">{blog}</LocalizeLink>
+              </li>
             </ul>
+            {/* nav right side */}
             <ul className="navbar-nav justify-content-end ml-auto">
               <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/zilliz?lang=en' target='blank'>{career}</a></li>
               <li className='nav-item drop-down' onMouseEnter={handleDropDown} onMouseLeave={handleDropDown}>
@@ -125,7 +132,7 @@ const Header = ({ data, locale }) => {
                   <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
                 </ul>
               </li>
-              <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '切换中文' : 'Switch to English' }</span></li>
+              <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '中文' : 'English' }</span></li>
             </ul>
           </div>
         </nav>

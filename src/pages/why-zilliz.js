@@ -149,7 +149,7 @@ const WhyZilliz = ({data, pageContext}) => {
 
 export const WhyZillizQuery = graphql`
   query WhyZillizQuery($locale:String) {
-  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout","index"]}}) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout"]}}) {
     edges {
       node {
         childLayoutJson {
@@ -160,6 +160,7 @@ export const WhyZillizQuery = graphql`
               aboutus_list
               career
               news
+              blog
               product
               product_list
             }

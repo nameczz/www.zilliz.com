@@ -4,6 +4,7 @@
       "why_zilliz": "Why Zilliz",
       "product": "Product",
       "news": "News",
+      "blog": "Blog",
       "career":"Career",
       "about_us": "About Us",
       "product_list": ["Milvus", "MegaWise"],
@@ -13,7 +14,7 @@
       "product": "Zilliz Product",
       "product_list": ["MegaWise", "Milvus"],
       "company": "Company",
-      "company_list": ["About Us", "Latest News", "Company Culture"],
+      "company_list": ["About Us", "Latest News", "Blog","Company Culture"],
       "contact": "Contact Us",
       "contact_list": ["021-33687058", "info@zilliz.com", "上海徐汇区桂箐路69号桂箐园28栋6C"]
     }

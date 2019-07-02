@@ -179,7 +179,7 @@ const News = ({data, pageContext}) => {
 
 export const QueryNews = graphql`
   query QueryNews($locale:String) {
-  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout","index"]}}) {
+  allFile(filter: {name: {eq: $locale}, relativeDirectory: {in: ["layout"]}}) {
     edges {
       node {
         childLayoutJson {
@@ -190,6 +190,7 @@ export const QueryNews = graphql`
               aboutus_list
               career
               news
+              blog
               product
               product_list
             }

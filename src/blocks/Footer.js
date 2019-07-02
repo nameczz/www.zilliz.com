@@ -1,7 +1,8 @@
 import React from "react"
-import { Link } from 'gatsby'
+import  LocalizeLink  from '../components/localizedLink';
 
-const Footer = ({data}) => {
+
+const Footer = ({data, locale}) => {
   const {
     company, 
     company_list,
@@ -17,14 +18,15 @@ const Footer = ({data}) => {
           <div className="row align-items-top text-center text-md-left">
             <div className="col-12 col-sm-6 col-md-4" style={{ zIndex: 1000 }}>
               <h3><strong>{product}</strong></h3>
-              <p><Link to="/megawise">{product_list[0]}</Link></p>
+              <p><LocalizeLink locale={locale} to="/megawise">{product_list[0]}</LocalizeLink></p>
               <p><a href="https://www.milvus.io" target='blank'>{product_list[1]}</a></p>
             </div>
             <div className="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0" style={{ zIndex: 1000 }}>
               <h3><strong>{company}</strong></h3>
-              <p><Link to="/about-us">{company_list[0]}</Link></p>
-              <p><Link to="/news">{company_list[1]}</Link></p>
-              <p><Link to="/culture">{company_list[2]}</Link></p>
+              <p><LocalizeLink locale={locale} to="/about-us">{company_list[0]}</LocalizeLink></p>
+              <p><LocalizeLink locale={locale} to="/news">{company_list[1]}</LocalizeLink></p>
+              <p><LocalizeLink locale={locale} to="/blog">{company_list[2]}</LocalizeLink></p>
+              <p><LocalizeLink locale={locale} to="/culture">{company_list[3]}</LocalizeLink></p>
             </div>
             <div className="col-12 col-md-4 mt-5 mt-md-0 text-md-left" style={{ zIndex: 1000 }}>
               <h3><strong>{contact}</strong></h3>

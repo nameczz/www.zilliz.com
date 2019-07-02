@@ -27,6 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   
   const blogPost = path.resolve(`./src/templates/blogTemplate.js`)
+  const blogList = path.resolve('./src/templates/blogListTemplate.js')
   return graphql(
     `
       {
@@ -43,6 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+      }
     `
   ).then(result => {
     if (result.errors) {
@@ -57,7 +59,6 @@ exports.createPages = ({ graphql, actions }) => {
       const next = index === 0 ? null : posts[index - 1].node
 
       Object.keys(locales).map(lang => {
-        console.log(`${locales[lang].default}------${locales[lang].path + post.node.frontmatter.path}`)
         createPage({
           path: locales[lang].default ? post.node.frontmatter.path : locales[lang].path + post.node.frontmatter.path ,
           component: blogPost,
@@ -77,16 +78,20 @@ exports.createPages = ({ graphql, actions }) => {
     const numPages = Math.ceil(posts.length / postsPerPage);
 
     Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `/blog` : `blog/${i + 1}`,
-        component: path.resolve('./src/templates/blogListTemplate.js'),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1
-        },
-      });
+      Object.keys(locales).map(lang => {
+        let path = locales[lang].default ? '' : `/${lang}`
+        createPage({
+          path:  i === 0 ? `${path}/blog` : `${path}blog/${i + 1}`,
+          component: blogList,
+          context: {
+            locale: lang,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1
+          },
+        })
+      })
     });
   }).catch(err=>console.log(err))
 }
