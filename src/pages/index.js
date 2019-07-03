@@ -7,7 +7,7 @@ import CallToAction from '../blocks/CallToAction';
 const IndexPage = ({data, pageContext}) => {
   const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
-  console.log(`locale in index page is: ${locale}`)
+  // console.log(`locale in index page is: ${locale}`)
   return (
       <Layout data={ layout } locale = {locale}>
         <SEO title="Home" />
