@@ -70,10 +70,19 @@ module.exports = {
     //     trackingId: "UA-142992812-2",
     //   },
     // },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     
+    // add Google Analytics gtag.js to a site
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: `UA-142992812-2`,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true,
+      },
+    },
     // gatsby GDPR
     {
       resolve: `gatsby-plugin-cookiehub`,

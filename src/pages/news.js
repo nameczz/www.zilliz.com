@@ -136,7 +136,7 @@ const OneNew = props => {
   const { news } = props;
   const { title, text, imgSite, link, date } = news;
   return (
-    <div className="col-12 col-md-8 m-auto col-lg-4 news-top-container" style={{ zIndex: 10000 }}>
+    <div className="col-12 col-md-8 m-auto col-lg-4 news-top-container">
       <a href={link} target='blank' style={{ display: 'block' }}>
         <div className="fdb-box news-container">
           <div style={{height: '200px', overflow: 'hidden'}}><img alt="imageSite" src={imgSite} /></div>
