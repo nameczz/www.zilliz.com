@@ -72,13 +72,14 @@ module.exports = {
     // },
     
     // add Google Analytics gtag.js to a site
+    // however this doesn't work, switch to add it in /src/html.js
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
         // your google analytics tracking id
         trackingId: `UA-142992812-2`,
         // Puts tracking script in the head instead of the body
-        head: false,
+        head: true,
         // enable ip anonymization
         anonymize: true,
       },
