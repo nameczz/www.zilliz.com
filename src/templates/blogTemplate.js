@@ -5,7 +5,7 @@ import SEO from "../components/seo";
 import LocalizedLink from "../components/localizedLink";
 export default function Template(props) {
 
-  console.log(props);
+  // console.log(props);
   const { data, pageContext } = props;
 
   const { locale } = pageContext;

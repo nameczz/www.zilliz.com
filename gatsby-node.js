@@ -1,8 +1,6 @@
 const path = require(`path`);
 const locales = require("./src/constants/locales");
 
-const langs = Object.keys(locales);
-
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
   // console.log(page)
