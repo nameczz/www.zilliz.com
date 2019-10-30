@@ -1,0 +1,28 @@
+.footer {
+  height: 400px;
+  background-color: #28292e;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    display: block;
+    height: 51px;
+    width: 227px;
+  }
+  .left {
+    color: rgba(216, 216, 216, 0.46);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 20px;
+  }
+
+  .right {
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 1px;
+    border: 1px solid #52545c;
+  }
+}

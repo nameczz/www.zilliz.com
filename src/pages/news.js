@@ -21,7 +21,6 @@ import news_170713 from '../images/photos/news-20170713.jpg'
 import news_170711 from '../images/photos/news-20170711.jpg'
 import news_170709 from '../images/photos/news-20170709.jpg'
 
-import bg from '../images/hero/blue.svg';
 import './news.scss'
 
 const newsList = [
@@ -156,7 +155,7 @@ const News = ({data, pageContext}) => {
   return (
     <Layout data={layout} locale={locale}>
       <SEO title="Latest News" />
-      <section className="fdb-block bg-dark fdb-viewport" style={{ backgroundImage: `url(${bg})` }}>
+      <section className="fdb-block bg-dark fdb-viewport">
         <div className="container justify-content-center align-items-center d-flex">
           <div className="row justify-content-center text-center">
             <div className="col-12 col-md-8">

@@ -106,7 +106,7 @@ const GlobalDataSize = () => {
 
 const Heros = () => {
     const { allFile } = useStaticQuery(graphql`
-    {
+    query allFile{
         allFile(filter: {base: {regex:"/(.*)_(.*)_(.*).png/" }}) {
             edges {
               node {
@@ -458,29 +458,4 @@ const Culture = ({data, pageContext}) => {
     )
 }
 
-export const queryInCulture = graphql`
-  query MyQuery {
-  allFile(filter: {name: {eq: "en"}, relativeDirectory: {in: ["layout"]}}) {
-    edges {
-      node {
-        childLayoutJson {
-          layout {
-            header {
-              why_zilliz
-              about_us
-              aboutus_list
-              career
-              news
-              blog
-              product
-              product_list
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-`
 export default Culture;

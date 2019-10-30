@@ -1,0 +1,220 @@
+.infini {
+  section {
+    padding-bottom: 125px;
+    margin-bottom: 125px;
+  }
+  h3 {
+    margin: 0 auto;
+  }
+  h3,
+  p {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  .sub-nav {
+    height: 60px;
+    line-height: 60px;
+    background: rgba(40, 41, 46, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    h3 {
+      color: #d8d8d8;
+      font-style: Semibold;
+    }
+    ul {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      display: inline-flex;
+      li {
+        margin: 0 10px;
+        letter-spacing: 5px;
+        font-style: Medium;
+      }
+    }
+    a {
+      color: #d8d8d8;
+    }
+  }
+
+  .landing {
+    height: 880px;
+    background: linear-gradient(180deg, rgba(40, 41, 46, 0) 0%, #28292e 100%);
+    position: relative;
+    h3 {
+      width: 600px;
+      position: absolute;
+      height: 150px;
+      left: 16.67%;
+      top: 260px;
+      font-size: 60px;
+      line-height: 70px;
+      /* or 117% */
+      color: #fff;
+    }
+    p {
+      width: 600px;
+      position: absolute;
+      height: 90px;
+      left: 16.67%;
+      top: 450px;
+      font-size: 20px;
+      line-height: 30px;
+      /* or 150% */
+
+      color: #fff;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    button {
+      position: absolute;
+      top: 605px;
+      left: 16.67%;
+    }
+  }
+
+  .p2 {
+    h3 {
+      /* 对十亿级数据集进行查询和可视化交互 秒内 */
+      font-size: 60px;
+      line-height: 80px;
+      /* or 133% */
+      text-align: center;
+      letter-spacing: 5px;
+      color: #4fc4f9;
+      max-width: 940px;
+    }
+  }
+
+  .features {
+    h3 {
+      /* Infini Analytics 特性 */
+      font-size: 50px;
+      line-height: 70px;
+      /* identical to box height, or 117% */
+
+      color: #fff;
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    ul {
+      display: inline-flex;
+      li {
+        font-size: 20px;
+
+        h4 {
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+        color: #fff;
+        text-align: center;
+        width: 31%;
+        margin: 0 4%;
+      }
+    }
+  }
+
+  .p4 {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    h3 {
+      margin-bottom: 135px;
+      font-size: 50px;
+      text-align: center;
+      color: #fff;
+    }
+    .content {
+      position: relative;
+      text-align: center;
+      img {
+        width: 80%;
+      }
+      .megawise {
+        /* Megawise充分利用GPU的并行处理 */
+        position: absolute;
+        left: 150px;
+        right: 0%;
+        top: 0%;
+        bottom: 6.4%;
+
+        font-size: 20px;
+        line-height: 35px;
+        /* or 175% */
+        width: 312px;
+        color: #fff;
+      }
+    }
+  }
+  .solution {
+    h3 {
+      margin-bottom: 45px;
+      font-size: 50px;
+      text-align: center;
+      color: #fff;
+    }
+    p.leading {
+      color: #fff;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      max-width: 940px;
+      margin: 0 auto;
+      margin-bottom: 100px;
+    }
+    .tab {
+      border-bottom: 3px solid #a8c4e1;
+      font-size: 40px;
+      display: inline-flex;
+      justify-content: space-evenly;
+      padding: 0 5%;
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      color: #fff;
+      li {
+        line-height: 70px;
+        position: relative;
+        cursor: pointer;
+        padding: 0 5%;
+        &.current {
+          font-weight: bold;
+        }
+        &.current::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          background: #4fc4f9;
+          height: 10px;
+          width: 100%;
+          border-radius: 5px;
+          z-index: 10;
+        }
+      }
+    }
+    ul.tab-content {
+      display: inline-flex;
+      margin: 0 auto;
+      h4 {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      h5 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      li {
+        font-size: 20px;
+        color: #fff;
+        text-align: left;
+        width: 30%;
+        margin: 0 5%;
+        ul li {
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

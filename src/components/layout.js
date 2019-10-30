@@ -1,25 +1,17 @@
-import React from "react"
-import Header from '../blocks/Header';
-import Footer from '../blocks/Footer';
+import React from "react";
+import Nav from "../blocks/Nav";
+import Footer from "../blocks/Footer";
 
-import "./layout.css"
+import "./layout.scss";
 
 export default props => {
-    const {data, children, locale} = props;
-    const {header, footer} = data;
+  const { data, children, locale } = props;
+  const { header, footer } = data;
   return (
-    <div onClick={() => {
-      if (document && document.querySelector('.md-nav-contaienr')) {
-        document.querySelector('.md-nav-contaienr').classList.add('ele-hide')
-      }
-      return false;
-    }}>
-      <Header data={header} locale={locale} />
-      <div>
-        <main>{children}</main>
-        <Footer data={footer} locale={locale} />
-      </div>
+    <div>
+      <Nav data={header} locale={locale} />
+      <main className="wrapper after-nav">{children}</main>
+      <Footer data={footer} locale={locale} />
     </div>
-  )
-}
-
+  );
+};
