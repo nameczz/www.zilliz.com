@@ -1,28 +1,64 @@
 .footer {
-  height: 400px;
+  height: 350px;
   background-color: #28292e;
   display: flex;
   justify-content: space-between;
   .logo {
     display: block;
-    height: 51px;
     width: 227px;
   }
   .left {
+    text-align: left;
     color: rgba(216, 216, 216, 0.46);
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
     line-height: 20px;
   }
 
   .right {
-  }
-  .bottom {
+    padding-top: 50px;
+    color: #d8d8d8;
+    line-height: 1.7;
+    a {
+      color: #d8d8d8;
+    }
+    padding-right: 20px;
+    width: 50%;
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
-    height: 1px;
-    border: 1px solid #52545c;
+    h4 {
+      margin-bottom: 20px;
+    }
+  }
+}
+.bottom-footer {
+  background-color: #28292e;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: #d8d8d8;
+  border-top: 1px solid #52545c;
+  .wechat:hover svg {
+    fill: #5cc928;
+  }
+  
+  .wechat {
+    cursor: default;
+    display: inline-block;
+    position: relative;
+  }
+  .wechat img {
+    display: none;
+    position: absolute;
+    top: -154px;
+    right: 0;
+  }
+  
+  .wechat:hover img {
+    display: block;
+    top: -154px;
   }
 }

@@ -10,7 +10,7 @@ export default props => {
   return (
     <div>
       <Nav data={header} locale={locale} />
-      <main className="wrapper after-nav">{children}</main>
+      <main className="wrapper">{children}</main>
       <Footer data={footer} locale={locale} />
     </div>
   );

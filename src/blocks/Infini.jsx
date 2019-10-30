@@ -15,13 +15,13 @@ const Infini = ({ data, locale }) => {
         <h3>INFINI ANALYTICS</h3>
         <ul>
           <li>
-            <a href="#">特性</a>
+            <a href="/#features">特性</a>
           </li>
           <li>
-            <a href="#">架构与组件</a>
+            <a href="/#arch">架构与组件</a>
           </li>
           <li>
-            <a href="#">解决方案</a>
+            <a href="/#solution">解决方案</a>
           </li>
           <li>
             <a href="#">申请试用</a>
@@ -41,14 +41,14 @@ const Infini = ({ data, locale }) => {
           平台具备高吞吐、高性价比、低延时三重优势，单位算力成本降至传统方案的
           10% 。
         </p>
-        <button className="button">查看文档</button>
+        <a className="button">查看文档</a>
       </section>
 
       <section className="p2">
         <h3>对十亿级数据集进行查询和可视化交互秒内响应</h3>
       </section>
 
-      <section className="features">
+      <section className="features" id="features">
         <h3>Infini Analytics 特性</h3>
         <ul>
           <li>
@@ -76,14 +76,14 @@ const Infini = ({ data, locale }) => {
         </ul>
       </section>
 
-      <section className="p4">
+      <section className="arch" id="arch">
         <h3>Infini Analytics 架构与组件</h3>
         <div className="content">
           <img src={infiniArch} />
         </div>
       </section>
 
-      <section className="solution">
+      <section className="solution" id="solution">
         <h3>解决方案</h3>
         <p className="leading">
           Infini Analytics 使用 GPU

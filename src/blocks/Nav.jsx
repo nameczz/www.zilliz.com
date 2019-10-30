@@ -5,7 +5,7 @@ import "./Nav.scss";
 
 const Nav = ({ data, locale }) => {
   return (
-    <nav className="nav wrapper">
+    <nav className="wrapper nav">
       <div className="left">
       <LocalizeLink locale={locale} to="/" className="logo">
         <img src={logo} alt="logo" />
