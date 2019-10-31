@@ -9,14 +9,14 @@ const SubNav = () => (
     <h3>About Us</h3>
     <ul>
       <li>
-        <a href="/#mission">Mission</a>
+        <a href="/aboutus#mission">Mission</a>
       </li>
       <li>
-        <a href="/#history">历程</a>
+        <a href="/aboutus#history">历程</a>
       </li>
       <li>
-        <a href="/#news">新闻</a>
-        <a href="/#friends">合作伙伴</a>
+        <a href="/aboutus#news">新闻</a>
+        <a href="/aboutus#friends">合作伙伴</a>
       </li>
     </ul>
   </nav>
