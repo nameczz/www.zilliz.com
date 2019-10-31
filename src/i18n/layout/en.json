@@ -1,76 +1,77 @@
 {
-  "layout": {
-    "header": {
-      "product": "Product",
-      "aboutus": "About Us",
-      "joinus": "Join Us",
-      "feature": "Feature",
-      "arch": "架构与组件",
-      "solution": "Solution",
-      "infiniAnalytics": "INFINI ANALYTICS",
-      "doc": "Doc"
+    "layout": {
+      "header": {
+        "product": "Products",
+        "aboutus": "About Us",
+        "joinus": "Join Us",
+        "feature": "Features",
+        "arch": "Architecture",
+        "solution": "Solutions",
+        "infiniAnalytics": "ZILLIZ ANALYTICS",
+        "doc": "Documentation"
+      },
+      "footer": {
+        "contactButton": "Contact Us",
+        "contactLeading": "Reinvent data science with heterogeneity",
+        "address": "Room 6C, Building 28, Guiqing Park, 69 Guiqing Rd, Xuhui, Shanghai, China",
+        "phone": "021-33687058",
+        "email": "info@zilliz.com",
+        "infiniAnalytics": "ZILLIZ Analytics",
+        "aboutZilliz": "About ZILLIZ",
+        "news": "News",
+        "product": "Product",
+        "company": "Company",
+        "joinus": "Join Us",
+        "culture": "Z Star",
+        "socialCareer": "Social Recruiting",
+        "schoolCareer": "Campus Recruiting"
+      }
     },
-    "footer": {
-      "contactButton": "Contact Us",
-      "contactLeading": "Transform your organization through accelerated analytics",
-      "address": "上海徐汇区桂箐路69号桂箐园28栋6C",
-      "phone": "021-33687058",
-      "email": "info@zilliz.com",
-      "infiniAnalytics": "Infini Analytics",
-      "aboutZilliz": "About ZILLIZ",
-      "news": "News",
-      "product": "Product",
-      "company": "Company",
-      "joinus": "Join Us",
-      "culture": "Z星文化",
-      "socialCareer": "社会招聘",
-      "schoolCareer": "校园招聘"
-    }
-  },
-  "contact": {
-    "leading": "Transform your organization through accelerated analytics"
-  },
-  "infini": {
-    "landing": {
-      "h3": "Infini Analytics 超大规模数据科学平台",
-      "leading": "使用 GPU的大规模并行处理和视觉渲染能力进行数据可视化呈现。与传统方案相比，Infini Analytics平台具备高吞吐、高性价比、低延时三重优势，单位算力成本降至传统方案的10% 。",
-      "button": "Documentation"
+    "contact": {
+      "leading": "Transform your organization through accelerated analytics"
     },
-    "features": {
-      "h2": "对十亿级数据集进行查询和可视化交互秒内响应",
-      "h3": "Infini Analytics 特性",
-      "f1Title": "开放",
-      "f1P": "将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。",
-      "f2Title": "高效",
-      "f2P": "充分利用CPU或GPU硬件的并行性计算能力。无需索引、预聚合或采样等预处理就能实现对企业中最大数据集的SQL查询和可视化交互分析。",
-      "f3Title": "清晰",
-      "f3P": "融合空间和时间数据的分析，能够帮您洞见事件全貌，不仅是发生了什么，更能了解发生的时间、地点。精细粒度的地理空间和时间序列数据的可视化使您能够看清数据的大海和海里的每一滴水。"
-    },
-    "arch": {
-      "h3": "Infini Analytics 架构与组件"
-    },
-    "solution": {
-      "h3": "Solutions",
-      "leading": "Infini Analytics 使用 GPU的大规模并行处理和视觉渲染能力进行数据可视化呈现。与传统方案相比，Infini Analytics 平台具备高吞吐、高性价比、低延时三重优势，单位算力成本降至传统方案的10% 。用户可以对十亿级数据集进行查询和可视化交互，并获得秒内响应。",
-      "tab1": "物流",
-      "tab2": "电信",
-      "question": "Question",
-      "solution": "Solution",
-      "effect": "Effect",
-      "q1": "随着车辆运行数据和供应链管理数据的急剧增加，出现了提高物流行业效率和客户体验的新机遇。物流领导者希望在最短的时间里得出关于如何减少燃油消耗，提高操作员安全性，降低维护成本，优化车辆利用率的战略决策。",
-      "s1": "Infini 时空数据分析平台为物流行业提供了从生产线到最后一公里的全供应链分析能力，为数据分析师提供了对数十亿行车辆运行数据和供应链管理数据进行实时分析的能力",
-      "detail": "Check Technique Detail",
-      "el1-1": "提高准实交付率",
-      "el1-2": "通过机器学习算法优化投递路线",
-      "el1-3": "对车辆运行信息进行全方位的分析",
-      "el1-4": "监控司机行为",
-      "el1-5": "实施基于状态的维护",
-      "q2": "数十亿的社交和互联网交互，移动终端日志以及传感器数据在整个电信网络中不断流动。伴随革命性5G通信技术的数据风暴，电信公司希望实时数据分析，能够快速发现网络异常并在用户受到影响之前解决它们，从而提高服务可用性和网络可靠性。",
-      "s2": "在 Infini 面板上直观地显示数十亿条记录，使电信行业分析师可视化客户流失，快速又轻松的构建一系列图表，以识别不同数据集或地理位置之间的模式和相关性，探索使客户满意并优化网络运营的新方法。",
-      "el2-1": "快速发现网络异常以进行现场服务和预防性维护",
-      "el2-2": "了解客户流失的历史模式以建立预测性机器学习模型",
-      "el3-3": "通过信号强度的地理空间分析改善客户体验"
-
+    "infini": {
+      "landing": {
+        "h3": "Visualized and Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data",
+        "leading": "ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.",
+        "button": "Documentation"
+      },
+      "features": {
+        "h2": "Returns query results for billion-scale datasets in sub-seconds",
+        "h3": "Features",
+        "f1Title": "Seamless integration between traditional data analytics and modern data science",
+        "f1P": "ZILLIZ Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Natively supporting SQL queries and visualized, interactive analytics, ZILLIZ Analytics is compatible with multiple mainstream machine learning models.",
+        "f2Title": "Thorough utilization of hardware resources",
+        "f2P": "Thoroughly utilizing the parallel processing power of GPUs/CPUs, ZILLIZ Analytics can perform SQL queries and visualized, interactive analytics on massive datasets without any pre-processing, including indexing, pre-aggregation, and downsampling, etc.",
+        "f3Title": "Efficient unity between heterogeneous geospatial and temporal data from different sources",
+        "f3P": "ZILLIZ Analytics unites analytics between geospatial and temporal data to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both view the big picture and focus on every detail."
+      },
+      "arch": {
+        "h3": "Architecture"
+      },
+      "solution": {
+        "h3": "Solutions",
+        "leading": "ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.",
+        "tab1": "Logistics",
+        "tab2": "Telecommunications",
+        "question": "Question",
+        "solution": "Solution",
+        "effect": "Effect",
+        "q1": "As the data for vehicle operations and supply chain management grows fast, the logistics industry needs to make effective decisions as fast as possible to decrease fuel consumption, reduce maintenance cost, and increase vehicle utilization rate.",
+        "s1": "ZILLIZ Analytics empowers the logistics industry with the ability to analyze the whole supply chain, starting from the production line to the last kilometer in delivery. Data analysts can then analyze billion-scale datasets for vehicle operation and supply chain management in real time.",
+        "detail": "Check Technique Detail",
+        "el1-1": "Increased on-time delivery rate",
+        "el1-2": "Optimized delivery routes by machine learning algorithms",
+        "el1-3": "Geospatial and temporal analytics of vehicle operations",
+        "el1-4": "Driver behavior monitoring in real time",
+        "el1-5": "Real-time vehicle maintenance based on vehicle condition",
+        "q2": "Massive-scale internet log files and sensor data keeps flowing in the telecommunications network in real time. As the advent of 5G dramatically increases the quantity of data, the telecommunications industry needs to perform real-time data analytics to quickly discover and resolve network problems, thus effectively increasing the usability and reliability of the network.",
+        "s2": "ZILLIZ Analytics can visually display billion-scale datasets, thus empowering analysts in the telecommunications industry with new methods to perform network operations optimization, customer loss analysis, and research in modes and correlation among different datasets or geological locations.",
+        "el2-1": "Real-time network monitoring for onsite service and preventive maintenance",
+        "el2-2": "Knowledge about the history pattern of customer loss to establish a predictive machine learning model",
+        "el3-3": "Improved customer experience through geospatial analysis based on signal intensity"
+  
+      }
     }
   }
-}
+  
