@@ -89,7 +89,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
           文档
         </a>
       </nav>
-      <div>{subNav}</div>
+      {subNav}
     </>
   );
 };
