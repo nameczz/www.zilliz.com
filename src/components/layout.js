@@ -19,7 +19,7 @@ export default props => {
     <div>
       <Nav nav={nav} data={header} locale={locale} subNav={subNav} />
       <main className={wrapperClass}>{children}</main>
-      <Contact locale={locale} />
+      <Contact data={data} locale={locale} />
       <Footer data={footer} locale={locale} />
     </div>
   );

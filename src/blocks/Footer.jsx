@@ -1,62 +1,62 @@
 import React from "react";
 import logo from "../images/logo-gray.svg"; // Tell Webpack this JS file uses this image
 import qrCode from "../images/qrcode.jpeg"; // Tell Webpack this JS file uses this image
+import LocalizeLink from "../components/localizedLink";
 
 import "./Footer.scss";
 
-const Footer = () => {
-  // const {
-  //   company,
-  //   company_list,
-  //   contact,
-  //   contact_list,
-  //   product,
-  //   product_list,
-  // } = data;
+const Footer = ({ data, locale }) => {
   return (
     <>
       <footer className="wrapper footer">
         <div className="left">
           <img className="logo" src={logo} alt="logo" />
-          上海徐汇区桂箐路69号桂箐园28栋6C
+          {data.address}
           <br />
-          021-33687058
+          {data.phone}
           <br />
-          info@zilliz.com
+          {data.email}
         </div>
 
         <div className="right">
           <div className="item">
-            <h4>产品</h4>
+            <h4>{data.product}</h4>
             <ul>
-              <li>Infini Analytics</li>
+              <li>{data.infiniAnalytics}</li>
               <li>
                 <a href="https://www.milvus.io/">Milvus</a>
               </li>
             </ul>
           </div>
 
-          
-
           <div className="item">
-            <h4>公司</h4>
+            <h4>{data.company}</h4>
             <ul>
-              <li><a href="/aboutus">关于 ZILLIZ</a></li>
-              <li><a href="/news">新闻</a></li>
+              <li>
+                <LocalizeLink locale={locale} to="/aboutus">
+                  {data.aboutZilliz}
+                </LocalizeLink>
+              </li>
+              <li>
+                <LocalizeLink locale={locale} to="/news">
+                  {data.news}
+                </LocalizeLink>
+              </li>
             </ul>
           </div>
 
           <div className="item">
-            <h4>加入我们</h4>
+            <h4>{data.joinus}</h4>
             <ul>
               <li>
-                <a href="#!">Z星文化</a>
+                <a href="https://zilliz.gllue.com/portal/socialpositions?page=1&gql=">
+                  {data.socialCareer}
+                </a>
               </li>
               <li>
-                <a href="https://zilliz.gllue.com/portal/socialpositions?page=1&gql=">社会招聘</a>
-              </li>
-              <li>
-                <a href="https://zilliz.gllue.com/portal/campuspositions?gql=">校园招聘</a>
+                <a href="https://zilliz.gllue.com/portal/campuspositions?gql=">
+                  {data.schoolCareer}
+                </a>
               </li>
             </ul>
           </div>
@@ -64,7 +64,9 @@ const Footer = () => {
       </footer>
       <footer className="wrapper bottom-footer">
         <div className="bottom-footer-container">
-          <div>@ {new Date().getFullYear()} ZILLIZ <sup>TM</sup></div>
+          <div>
+            @ {new Date().getFullYear()} ZILLIZ <sup>TM</sup>
+          </div>
           <div>
             <a href="#!" className="wechat" onClick={e => e.preventDefault()}>
               <svg

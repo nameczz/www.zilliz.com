@@ -60,7 +60,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                 locale={locale}
                 to="/"
               >
-                产品
+                {data.product}
               </LocalizeLink>
             </li>
             <li>
@@ -71,12 +71,14 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                 to="/aboutus"
                 target="_blank"
               >
-                关于我们
+                {data.aboutus}
               </LocalizeLink>
             </li>
             <li>
               {nav.current === "joinUs" && <Current />}
-              <a href="https://zilliz.gllue.com/portal/zilliz">加入我们</a>
+              <a href="https://zilliz.gllue.com/portal/zilliz">
+                {data.joinus}
+              </a>
             </li>
           </ul>
         </div>
@@ -86,7 +88,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          文档
+          {data.doc}
         </a>
       </nav>
       {subNav}
