@@ -22,7 +22,9 @@
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 20px;
-    img { margin-bottom: 20px;}
+    img {
+      margin-bottom: 20px;
+    }
     @include media("<=1000px") {
       margin-bottom: 20px;
     }
@@ -67,12 +69,29 @@
     justify-content: space-between;
     box-sizing: border-box;
   }
+  sup {
+    position: relative;
+    font-size: 9px;
+  }
   background-color: #28292e;
   height: 40px;
   line-height: 40px;
   color: #d8d8d8;
+  a {
+    color: #d8d8d8;
+    &:hover {
+      color: #4fc4f9;
+    }
+  }
   .wechat:hover svg {
     fill: #5cc928;
+  }
+  .locale {
+    margin-right: 10px;
+    font-family: "Noto Sans CJK SC";
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
   }
 
   .wechat {
@@ -94,5 +113,11 @@
     display: block;
     top: -154px;
   }
+  .github {
+    margin-left: 10px;
+    svg {
+      position: relative;
+      top: 3px;
+    }
+  }
 }
-
