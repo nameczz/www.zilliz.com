@@ -1,25 +1,42 @@
+@import "../components/include_media.scss";
+
 .footer {
   height: 350px;
   background-color: #28292e;
   display: flex;
   justify-content: space-between;
+  @include media("<=1000px") {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
   .logo {
     display: block;
     width: 227px;
   }
   .left {
+    padding-top: 50px;
     text-align: left;
     color: rgba(216, 216, 216, 0.46);
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 20px;
+    img { margin-bottom: 20px;}
+    @include media("<=1000px") {
+      margin-bottom: 20px;
+    }
   }
 
   .right {
     padding-top: 50px;
     color: #d8d8d8;
     line-height: 1.7;
+    .item {
+      @include media("<=1000px") {
+        margin-bottom: 20px;
+      }
+    }
     a {
       color: #d8d8d8;
     }
@@ -27,38 +44,55 @@
     width: 50%;
     display: flex;
     justify-content: space-between;
+    @include media("<=1000px") {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      width: 90%;
+      margin-bottom: 50px;
+    }
     h4 {
+      @include media("<=1000px") {
+        margin-bottom: 5px;
+      }
       margin-bottom: 20px;
     }
   }
 }
 .bottom-footer {
+  .bottom-footer-container {
+    border-top: 1px solid #52545c;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
   background-color: #28292e;
   height: 40px;
   line-height: 40px;
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
   color: #d8d8d8;
-  border-top: 1px solid #52545c;
   .wechat:hover svg {
     fill: #5cc928;
   }
-  
+
   .wechat {
     cursor: default;
     display: inline-block;
     position: relative;
+    img {
+      display: none;
+      position: absolute;
+      top: -154px;
+      right: 0;
+    }
+    svg {
+      position: relative;
+      top: 6px;
+    }
   }
-  .wechat img {
-    display: none;
-    position: absolute;
-    top: -154px;
-    right: 0;
-  }
-  
   .wechat:hover img {
     display: block;
     top: -154px;
   }
 }
+

@@ -12,7 +12,8 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC|Roboto&display=swap" rel="stylesheet" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
