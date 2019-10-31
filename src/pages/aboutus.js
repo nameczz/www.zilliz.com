@@ -24,51 +24,16 @@ const SubNav = () => (
 
 const pageAboutUs = ({ data, pageContext }) => {
   const { locale } = pageContext;
-  const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const nav = {
     current: 'aboutus'
   }
   return (
-    <Layout data={layout} locale={locale} nav={nav} subNav={<SubNav />}>
+    <Layout locale={locale} nav={nav} subNav={<SubNav />}>
       <SEO title="关于我们" />
       <AboutUs />
     </Layout>
   );
 };
 
-export const Query = graphql`
-  query QueryPageAboutus($locale: String) {
-    allFile(
-      filter: { name: { eq: $locale }, relativeDirectory: { in: ["layout"] } }
-    ) {
-      edges {
-        node {
-          childLayoutJson {
-            layout {
-              header {
-                why_zilliz
-                about_us
-                aboutus_list
-                career
-                news
-                blog
-                product
-                product_list
-              }
-              footer {
-                product
-                product_list
-                company
-                company_list
-                contact
-                contact_list
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default pageAboutUs;

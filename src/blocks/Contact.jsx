@@ -2,7 +2,8 @@ import React from "react";
 
 import "./Contact.scss";
 
-const Contact = () => {
+const Contact = ({data}) => {
+  console.log(data)
   // const {
   //   company,
   //   company_list,
@@ -14,8 +15,8 @@ const Contact = () => {
   return (
     <>
       <section className="wrapper contact">
-      <p>Transform your organization through accelerated analytics</p>
-      <a className="contact-button" href="#!">联系我们</a>
+      <p>{data.footer.contactLeading}</p>
+      <a className="contact-button" href="#!">{data.footer.contactButton}</a>
       </section>
     </>
   );

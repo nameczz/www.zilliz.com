@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from "../components/layout";
 import { graphql } from 'gatsby'
 import SEO from "../components/seo";
-import './about-us.scss'
 import news_181213 from '../images/photos/news-20181213.jpg'
 import news_181211 from '../images/photos/news-20181211.jpg'
 import news_180606 from '../images/photos/news-20180606.jpg'
@@ -185,22 +184,8 @@ export const QueryNews = graphql`
         childLayoutJson {
           layout {
             header {
-              why_zilliz
-              about_us
-              aboutus_list
-              career
-              news
-              blog
+              aboutus
               product
-              product_list
-            }
-            footer {
-              product
-              product_list
-              company
-              company_list
-              contact
-              contact_list
             }
           }
         }

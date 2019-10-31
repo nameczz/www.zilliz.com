@@ -2,31 +2,31 @@ const path = require(`path`);
 const locales = require("./src/constants/locales");
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
+  const { createPage, deletePage } = actions;
   // console.log(page)
   return new Promise(resolve => {
-    deletePage(page)
+    deletePage(page);
     Object.keys(locales).map(lang => {
       const localizedPath = locales[lang].default
         ? page.path
-        : locales[lang].path + page.path
+        : locales[lang].path + page.path;
       return createPage({
         ...page,
         path: localizedPath,
         context: {
-          locale: lang
-        }
-      })
-    })
-    resolve()
-  })
-}
+          locale: lang,
+        },
+      });
+    });
+    resolve();
+  });
+};
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/blogTemplate.js`)
-  const blogList = path.resolve('./src/templates/blogListTemplate.js')
+  const blogPost = path.resolve(`./src/templates/blogTemplate.js`);
+  const blogList = path.resolve("./src/templates/blogListTemplate.js");
   return graphql(
     `
       {
@@ -49,7 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
   ).then(result => {
     // console.log(`--------result is --------------: ${result}`);
     if (result.errors) {
-      throw result.errors
+      throw result.errors;
     }
 
     // Create blog posts pages.
@@ -62,41 +62,41 @@ exports.createPages = ({ graphql, actions }) => {
       // console.log(post.node.fileAbsolutePath);
       const absFilePath = post.node.fileAbsolutePath;
       const type = absFilePath.substring(absFilePath.length - 5);
-      type === 'cn.md'
-        ? posts_cn.push(post)
-        : posts_en.push(post)
+      type === "cn.md" ? posts_cn.push(post) : posts_en.push(post);
     });
     // console.log('___________________________________________________', `posts_en.length:${posts_en.length}, posts_cn.length: ${posts_cn.length}`)
 
     posts_en.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
       createPage({
         path: post.node.frontmatter.path,
         component: blogPost,
         context: {
           slug: post.node.frontmatter.path,
-          locale: 'en',
+          locale: "en",
           previous,
           next,
         },
-      })
-    })
+      });
+    });
     // console.log('___________________________________________________', 'en blog page done')
     posts_cn.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
       createPage({
-        path: 'cn' + post.node.frontmatter.path,
+        path: "cn" + post.node.frontmatter.path,
         component: blogPost,
         context: {
           slug: post.node.frontmatter.path,
-          locale: 'cn',
+          locale: "cn",
           previous,
           next,
         },
-      })
-    })
+      });
+    });
     // console.log('___________________________________________________', 'cn blog page done')
 
     const postsPerPage = 10;
@@ -108,13 +108,13 @@ exports.createPages = ({ graphql, actions }) => {
         path: i === 0 ? `cn/blog` : `cn/blog/${i + 1}`,
         component: blogList,
         context: {
-          locale: 'cn',
+          locale: "cn",
           limit: postsPerPage,
           skip: i * postsPerPage,
           cnNumPages,
-          currentPage: i + 1
+          currentPage: i + 1,
         },
-      })
+      });
     });
     // console.log('___________________________________________________', 'cn bloglist page done')
 
@@ -123,16 +123,15 @@ exports.createPages = ({ graphql, actions }) => {
         path: i === 0 ? `/blog` : `/blog/${i + 1}`,
         component: blogList,
         context: {
-          locale: 'en',
+          locale: "en",
           limit: postsPerPage,
           skip: i * postsPerPage,
           enNumPages,
-          currentPage: i + 1
+          currentPage: i + 1,
         },
-      })
+      });
     });
     // console.log('___________________________________________________', 'en bloglist page done')
-
 
     //   Array.from({ length: numPages }).forEach((_, i) => {
     //     Object.keys(locales).map(lang => {
@@ -151,17 +150,17 @@ exports.createPages = ({ graphql, actions }) => {
     //     })
     //   });
     // }).catch(err=>console.log(err))
-  })
-}
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-      const { createNodeField } = actions
+  const { createNodeField } = actions;
 
-      if (node.internal.type === `MarkdownRemark`) {
-        createNodeField({
-          name: `slug`,
-          node,
-          value: node.frontmatter.path,
-        })
-      }
-    }
+  if (node.internal.type === `MarkdownRemark`) {
+    createNodeField({
+      name: `slug`,
+      node,
+      value: node.frontmatter.path,
+    });
+  }
+};

@@ -1,21 +1,28 @@
 import React from "react";
 import Layout from "../components/layout";
+import LocalizeLink from "../components/localizedLink";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Infini from "../blocks/Infini";
 
-const SubNav = () => (
+const SubNav = ({ data, locale }) => (
   <nav className="wrapper sub-nav">
-    <h3>INFINI ANALYTICS</h3>
+    <h3>{data.infiniAnalytics}</h3>
     <ul>
       <li>
-        <a href="/#features">特性</a>
+        <LocalizeLink locale={locale} to="/#features">
+          {data.feature}
+        </LocalizeLink>
       </li>
       <li>
-        <a href="/#arch">架构与组件</a>
+        <LocalizeLink locale={locale} to="/#arch">
+          {data.arch}
+        </LocalizeLink>
       </li>
       <li>
-        <a href="/#solution">解决方案</a>
+        <LocalizeLink locale={locale} to="/#solution">
+          {data.solution}
+        </LocalizeLink>
       </li>
     </ul>
   </nav>
@@ -24,14 +31,20 @@ const SubNav = () => (
 const IndexPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
-  // console.log(`locale in index page is: ${locale}`)
+  const infini = data.allFile.edges[0].node.childLayoutJson.infini;
+  console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
     current: "index",
   };
   return (
-    <Layout data={layout} locale={locale} nav={nav} subNav={<SubNav />}>
+    <Layout
+      data={layout}
+      locale={locale}
+      nav={nav}
+      subNav={<SubNav data={layout.header} locale={locale} />}
+    >
       <SEO title="首页" />
-      <Infini />
+      <Infini data={infini} />
     </Layout>
   );
 };
@@ -46,22 +59,72 @@ export const Query = graphql`
           childLayoutJson {
             layout {
               header {
-                why_zilliz
-                about_us
-                aboutus_list
-                career
-                news
-                blog
                 product
-                product_list
+                aboutus
+                feature
+                arch
+                joinus
+                solution
+                infiniAnalytics
+                doc
               }
               footer {
+                contactButton
+                contactLeading
+                address
+                phone
+                email
+                infiniAnalytics
+                aboutZilliz
+                news
                 product
-                product_list
                 company
-                company_list
-                contact
-                contact_list
+                joinus
+                culture
+                socialCareer
+                schoolCareer
+              }
+            }
+            infini {
+              landing {
+                h3
+                leading
+                button
+              }
+              features {
+                h2
+                h3
+                f1Title
+                f1P
+                f2Title
+                f2P
+                f3Title
+                f3P
+              }
+              arch {
+                h3
+              }
+              solution {
+                h3
+                leading
+                tab1
+                tab2
+                question
+                solution
+                effect
+                q1
+                s1
+                detail
+                el1_1
+                el1_2
+                el1_3
+                el1_4
+                el1_5
+                q2
+                s2
+                el2_1
+                el2_2
+                el3_3
               }
             }
           }
