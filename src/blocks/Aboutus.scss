@@ -3,16 +3,48 @@
 .aboutus {
   padding-bottom: 50px;
   section {
-    padding-top: 75px;
+    // padding-top: 75px;
     padding-bottom: 70px;
     margin-bottom: 75px;
     @include media("<=1000px") {
       margin-bottom: 25px;
-      padding-bottom: 25px;
+      // padding-bottom: 25px;
+    }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    font-size: 60px;
+    line-height: 70px;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #fff;
+    max-width: 940px;
+    margin: 0 auto 20px;
+    @include media("<=1000px") {
+      font-size: 32px;
+      margin-bottom: 40px;
+      line-height: 1.3;
+      margin-bottom: 0 auto 5px;
     }
   }
   h3 {
     margin: 0 auto;
+    font-size: 25px;
+    line-height: 45px;
+    color: #fff;
+    @include media("<=1000px") {
+      font-size: 16px;
+      margin-bottom: 40px;
+      line-height:1.7;
+    }
+  }
+  p {
+    color: #4fc4f9;
+    margin-bottom: 36px;
   }
   h3,
   p {
@@ -22,137 +54,54 @@
   .landing {
     height: 300px;
     position: relative;
-    // background: url(../images/aboutus-logo.png) no-repeat top center;
-    h3 {
-      @include media("<=1000px") {
-        width: auto;
-        font-size: 28px;
-        left: 5%;
-        top: 110px;
-      }
-      width: 600px;
-      position: absolute;
-      height: 150px;
-      left: 16.67%;
-      top: 260px;
-      font-size: 60px;
-      line-height: 70px;
-      /* or 117% */
-      color: #fff;
-    }
-    p {
-      @include media("<=1000px") {
-        width: auto;
-        font-size: 14px;
-        left: 5%;
-        top: 260px;
-      }
-      width: 600px;
-      position: absolute;
-      height: 90px;
-      left: 16.67%;
-      top: 450px;
-      font-size: 20px;
-      line-height: 30px;
-      /* or 150% */
-
-      color: #fff;
-    }
-    a.button {
-      @include media("<=1000px") {
-        left: 5%;
-        top: 460px;
-      }
-      position: absolute;
-      top: 605px;
-      left: 16.67%;
+    background-image: url(../images/aboutus-logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include media("<=1000px") {
+      width: 100%;
+      height: 100px;
+      background-size: contain;
+      font-size: 28px;
     }
   }
 
   .mission {
-    position: relative;
-    h2 {
-      @include media("<=1000px") {
-        font-size: 24px;
-        margin-bottom: 25px;
-        line-height: 1.7;
-      }
-      /* 对十亿级数据集进行查询和可视化交互 秒内 */
-      font-size: 60px;
-      line-height: 80px;
-      /* or 133% */
-      text-align: center;
-      letter-spacing: 5px;
-      color: #4fc4f9;
-      max-width: 940px;
-      margin: 0 auto 135px;
-    }
     h3 {
-      /* Infini Analytics 特性 */
-      font-size: 50px;
-      line-height: 70px;
-      /* identical to box height, or 117% */
-      @include media("<=1000px") {
-        font-size: 22px;
-        margin-bottom: 40px;
-      }
-      color: #fff;
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    ul {
-      @include media("<=1000px") {
-        display: flex;
-        flex-direction: column;
-      }
-      display: inline-flex;
-      li {
-        @include media("<=1000px") {
-          width: 95%;
-          margin: 0 auto 30px;
-          font-size: 16px;
-          line-height: 1.7;
-        }
-        font-size: 20px;
-
-        h4 {
-          margin-bottom: 20px;
-          font-weight: bold;
-        }
-        color: #fff;
-        text-align: center;
-        width: 31%;
-        margin: 0 4%;
-      }
+      max-width: 764px;
     }
     .mission-icon {
       position: relative;
-      width: 100%;
+      width: 180px;
       height: 200px;
-      background: url(../images/aboutus-mission.png) no-repeat center top;
+      background-image: url(../images/aboutus-mission.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
     }
     .mission-moon {
-      background: url(../images/aboutus-shape-2.png) no-repeat center center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      width: 100%;
+      background-image: url(../images/aboutus-shape-2.png);
+      background-repeat: no-repeat;
+      background-position: center center;
       height: 720px;
-      text-align: center;
+      @include media("<=1000px") {
+        height: 200px;
+        img {
+          height: 80%;
+        }
+      }
     }
   }
 
   .work {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    h3 {
-      margin-bottom: 135px;
-      font-size: 50px;
-      text-align: center;
-      color: #fff;
-      @include media("<=1000px") {
-        font-size: 24px;
-        margin-bottom: 55px;
-      }
-    }
     .work-icon {
       background: url(../images/aboutus-work.png) no-repeat center center;
-      width: 100%;
+      width: 180px;
       height: 200px;
     }
     .work-calendar {
@@ -160,6 +109,13 @@
       height: 720px;
       text-align: center;
       background: url(../images/aboutus-shape-1.png) no-repeat center center;
+      @include media("<=1000px") {
+        height: 200px;
+        img {
+          width: 80%;
+          height: auto;
+        }
+      }
     }
   }
   .friends {
@@ -170,32 +126,13 @@
     }
   }
   .joinus {
-    h3 {
-      margin-bottom: 45px;
-      font-size: 50px;
-      text-align: center;
-      color: #fff;
-      @include media("<=1000px") {
-        font-size: 24px;
-      }
-    }
-    p.leading {
-      color: #fff;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: center;
-      max-width: 940px;
-      margin: 0 auto;
-      margin-bottom: 100px;
-      @include media("<=1000px") {
-        font-size: 16px;
-      }
-    }
-    .joinus-icon{
-            width: 100%;
+    .joinus-icon {
+      width: 100%;
       height: 200px;
       background: url(../images/aboutus-joinus.png) no-repeat top center;
-
+    }
+    h3 {
+      max-width: 888px;
     }
   }
 }
