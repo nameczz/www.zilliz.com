@@ -8,5 +8,5 @@ export default props => {
   let path;
 
   !language.default ? (path = `/${locale}${to}`) : (path = to);
-  return <Link className={props.className} children={children} to={path} />;
+  return <Link {...props} className={props.className} children={children} to={path} />;
 };
