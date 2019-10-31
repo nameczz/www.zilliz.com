@@ -28,7 +28,6 @@ const pageAboutUs = ({ data, pageContext }) => {
   const nav = {
     current: 'aboutus'
   }
-  // console.log(`locale in index page is: ${locale}`)
   return (
     <Layout data={layout} locale={locale} nav={nav} subNav={<SubNav />}>
       <SEO title="关于我们" />

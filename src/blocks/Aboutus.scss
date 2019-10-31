@@ -1,6 +1,6 @@
 @import "../components/include_media.scss";
 
-.infini {
+.aboutus {
   padding-bottom: 50px;
   section {
     padding-top: 75px;
@@ -20,8 +20,9 @@
   }
 
   .landing {
-    height: 800px;
+    height: 300px;
     position: relative;
+    // background: url(../images/aboutus-logo.png) no-repeat top center;
     h3 {
       @include media("<=1000px") {
         width: auto;
@@ -68,7 +69,8 @@
     }
   }
 
-  .features {
+  .mission {
+    position: relative;
     h2 {
       @include media("<=1000px") {
         font-size: 24px;
@@ -123,11 +125,21 @@
         margin: 0 4%;
       }
     }
+    .mission-icon {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: url(../images/aboutus-mission.png) no-repeat center top;
+    }
+    .mission-moon {
+      background: url(../images/aboutus-shape-2.png) no-repeat center center;
+      height: 720px;
+      text-align: center;
+    }
   }
 
-  .arch {
+  .work {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-
     h3 {
       margin-bottom: 135px;
       font-size: 50px;
@@ -138,29 +150,26 @@
         margin-bottom: 55px;
       }
     }
-    .content {
-      position: relative;
+    .work-icon {
+      background: url(../images/aboutus-work.png) no-repeat center center;
+      width: 100%;
+      height: 200px;
+    }
+    .work-calendar {
+      width: 100%;
+      height: 720px;
       text-align: center;
-      img {
-        width: 80%;
-      }
-      .megawise {
-        /* Megawise充分利用GPU的并行处理 */
-        position: absolute;
-        left: 150px;
-        right: 0%;
-        top: 0%;
-        bottom: 6.4%;
-
-        font-size: 20px;
-        line-height: 35px;
-        /* or 175% */
-        width: 312px;
-        color: #fff;
-      }
+      background: url(../images/aboutus-shape-1.png) no-repeat center center;
     }
   }
-  .solution {
+  .friends {
+    .friends-icon {
+      width: 100%;
+      height: 200px;
+      background: url(../images/aboutus-friend.png) no-repeat top center;
+    }
+  }
+  .joinus {
     h3 {
       margin-bottom: 45px;
       font-size: 50px;
@@ -182,80 +191,11 @@
         font-size: 16px;
       }
     }
-    .tab {
-      border-bottom: 3px solid #a8c4e1;
-      font-size: 40px;
-      display: inline-flex;
-      justify-content: space-evenly;
-      padding: 0 5%;
-      width: 90%;
-      text-align: center;
-      margin: 0 auto;
-      margin-bottom: 50px;
-      color: #fff;
-      li {
-        line-height: 70px;
-        position: relative;
-        cursor: pointer;
-        padding: 0 5rem;
-        @include media("<=1000px") {
-          padding: 0 1rem;
-          font-size: 18px;
-        }
-        &.current {
-          font-weight: 400;
-        }
-        &.current::after {
-          content: "";
-          position: absolute;
-          bottom: -5px;
-          left: 0;
-          background: #4fc4f9;
-          height: 10px;
-          width: 100%;
-          border-radius: 5px;
-          z-index: 10;
-        }
-      }
-    }
-    ul.tab-content {
-      display: inline-flex;
-      margin: 0 auto;
-      @include media("<=1000px") {
-        display: flex;
-        flex-direction: column;
-      }
-      h4 {
-        margin-bottom: 20px;
-        font-weight: bold;
-      }
-      h5 {
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      li {
-        @include media("<=1000px") {
-          width: 95%;
-          margin: 0 auto 30px;
-          font-size: 16px;
-          line-height: 1.7;
-        }
-        font-size: 20px;
-        color: #fff;
-        text-align: left;
-        width: 30%;
-        margin: 0 5%;
-        img {
-          display: block;
-          margin: 0 auto 20px auto;
-        }
-        ul li {
-          width: 100%;
-          text-align: left;
-        }
-      }
+    .joinus-icon{
+            width: 100%;
+      height: 200px;
+      background: url(../images/aboutus-joinus.png) no-repeat top center;
+
     }
   }
 }
-
