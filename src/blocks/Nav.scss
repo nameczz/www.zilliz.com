@@ -1,16 +1,18 @@
 @import '../components/include_media.scss';
 
+html[lang=en] {
+  .sub-nav ul li, .nav .right {
+    letter-spacing: 2px;
+  }
+}
 .nav {
-  height: 80px;
+  height: 50px;
   background: #28292e;
   display: flex;
   top: 0;
   left: 0;
   z-index: 1000;
   justify-content: space-between;
-  @include media("<=1000px") {
-    height: 50px;
-  }
   .logo {
     display: inline-flex;
     margin-right: 90px;
@@ -22,7 +24,7 @@
       @include media("<=1000px") {
         width: 75px;
       }
-      width: 100px;
+      width: 80px;
       display: inline-block;
     }
   }
@@ -57,6 +59,7 @@
     display: inline-flex;
     align-items: center;
     letter-spacing: 5px;
+    
     @include media("<=1000px") {
       letter-spacing: 0px;
     }
@@ -71,16 +74,16 @@
 
 .sub-nav {
   background-color: rgba(40, 41, 46, 0.85);
-  height: 60px;
-  line-height: 60px;
+  height: 70px;
+  line-height: 70px;
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   @include media("<=1000px") {
-    height: 45px;
-    line-height: 45px;
+    height: 70px;
+    line-height: 70px;
   }
   h3 {
     color: #d8d8d8;
@@ -94,6 +97,7 @@
       @include media("<=1000px") {
         letter-spacing: 0px;
       }
+      text-transform: uppercase;
       letter-spacing: 5px;
       font-style: Medium;
       &:not(:last-child) {
