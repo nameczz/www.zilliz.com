@@ -1,77 +1,86 @@
 import React from "react";
-import logo from "../images/logo-gray.svg"; // Tell Webpack this JS file uses this image
+import logo from "../images/footer-logo.png"; // Tell Webpack this JS file uses this image
 import qrCode from "../images/qrcode.jpeg"; // Tell Webpack this JS file uses this image
 import LocalizeLink from "../components/localizedLink";
+import { globalHistory } from '@reach/router'
 
 import "./Footer.scss";
 
-const Footer = ({ data, locale }) => {
+const Footer = (props) => {
+  const { data, locale } = props;
   const l = locale === "cn" ? "en" : "cn";
-  const to = window.location.pathname.replace("/en/", "/").replace("/cn/", "/");
+  let to = globalHistory.location.pathname.replace("/en/", "/").replace("/cn/", "/");
+
   return (
     <>
-      <footer className="wrapper footer">
-        <div className="left">
-          <img className="logo" src={logo} alt="logo" />
-          {data.address}
-          <br />
-          {data.phone}
-          <br />
-          {data.email}
-        </div>
-
-        <div className="right">
-          <div className="item">
-            <h4>{data.product}</h4>
-            <ul>
-              <li>{data.infiniAnalytics}</li>
-              <li>
-                <a href="https://www.milvus.io/">Milvus</a>
-              </li>
-            </ul>
+      <footer className="wrapper footer-wrapper">
+        <div className="inner-container footer">
+          <div className="left">
+            <img className="logo" src={logo} alt="logo" />
+            <span dangerouslySetInnerHTML={{ __html: data.address }}></span>
+            <br />
+            {data.phone}
+            <br />
+            {data.email}
           </div>
 
-          <div className="item">
-            <h4>{data.company}</h4>
-            <ul>
-              <li>
-                <LocalizeLink locale={locale} to="/aboutus">
-                  {data.aboutZilliz}
-                </LocalizeLink>
-              </li>
-              <li>
+          <div className="right">
+            <div className="item">
+              <h4>{data.product}</h4>
+              <ul>
+                <li>
+                  <LocalizeLink locale={locale} to="/">
+                    {data.infiniAnalytics}
+                  </LocalizeLink>
+                </li>
+                <li>
+                  <a href="https://www.milvus.io/">Milvus</a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="item">
+              <h4>{data.company}</h4>
+              <ul>
+                <li>
+                  <LocalizeLink locale={locale} to="/aboutus">
+                    {data.aboutZilliz}
+                  </LocalizeLink>
+                </li>
+                {/* <li>
                 <LocalizeLink locale={locale} to="/news">
                   {data.news}
                 </LocalizeLink>
-              </li>
-            </ul>
-          </div>
+              </li> */}
+              </ul>
+            </div>
 
-          <div className="item">
-            <h4>{data.joinus}</h4>
-            <ul>
-              <li>
-                <a href="https://zilliz.gllue.com/portal/socialpositions?page=1&gql=">
-                  {data.socialCareer}
-                </a>
-              </li>
-              <li>
-                <a href="https://zilliz.gllue.com/portal/campuspositions?gql=">
-                  {data.schoolCareer}
-                </a>
-              </li>
-            </ul>
+            <div className="item">
+              <h4>{data.joinus}</h4>
+              <ul>
+                <li>
+                  <a href="https://zilliz.gllue.com/portal/socialpositions?page=1&gql=">
+                    {data.socialCareer}
+                  </a>
+                </li>
+                <li>
+                  <a href="https://zilliz.gllue.com/portal/campuspositions?gql=">
+                    {data.schoolCareer}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
       <footer className="wrapper bottom-footer">
-        <div className="bottom-footer-container">
+        <div className="inner-container bottom-footer-container">
           <div>
             @ {new Date().getFullYear()} ZILLIZ <sup>TM</sup>
           </div>
           <div>
             <LocalizeLink className="locale" locale={l} to={to}>
-              {locale === "cn" ? "EN" : "中文"}
+              {locale === "cn" ? "EN" : "中"}
             </LocalizeLink>
             <a href="#!" className="wechat" onClick={e => e.preventDefault()}>
               <svg

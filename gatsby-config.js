@@ -23,20 +23,20 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `blogs`,
-                path: `${__dirname}/src/pages/blogs`,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/src/pages/blogs/assets`,
-                name: `assets`,
-            },
-        },
+        // {
+        //     resolve: `gatsby-source-filesystem`,
+        //     options: {
+        //         name: `blogs`,
+        //         path: `${__dirname}/src/pages/blogs`,
+        //     },
+        // },
+        // {
+        //     resolve: `gatsby-source-filesystem`,
+        //     options: {
+        //         path: `${__dirname}/src/pages/blogs/assets`,
+        //         name: `assets`,
+        //     },
+        // },
         {
             resolve: `gatsby-transformer-remark`,
             options: {

@@ -22,21 +22,22 @@ const Infini = ({ data, locale }) => {
         <h3>{data.landing.h3}</h3>
         <h4>{data.landing.h4}</h4>
         <p>{data.landing.leading}</p>
-        <a
-          rel="noopener noreferrer"
-          className="button"
-          href="http://infini-analytics.github.io/"
-          target="_blank"
-        >
-          {data.landing.button}
-        </a>
+        <div className="button-area">
+          <a
+            rel="noopener noreferrer"
+            className="button buttonMega"
+            href="https://github.com/megawise/docs"
+            target="_blank"
+          >
+            {data.landing.buttonMega}
+          </a>
+        </div>
       </section>
 
       <section className="features" id="features">
-        <h2 dangerouslySetInnerHTML={{__html: data.features.h2}} />
-
+        <h2 dangerouslySetInnerHTML={{ __html: data.features.h2 }} />
         <h3>{data.features.h3}</h3>
-        <ul>
+        <ul className="item-list">
           <li>
             <img src={f1} alt={data.features.f1Title} />
             <h4>{data.features.f1Title}</h4>
@@ -60,7 +61,7 @@ const Infini = ({ data, locale }) => {
       <section className="arch" id="arch">
         <h3>{data.arch.h3}</h3>
         <div className="content">
-          <img src={locale === 'cn' ? cn : en} alt={data.arch.h3} />
+          <img width="100%" src={locale === "cn" ? cn : en} alt={data.arch.h3} />
         </div>
       </section>
 
@@ -87,7 +88,7 @@ const Infini = ({ data, locale }) => {
           </li>
         </ul>
         {solutionTab === 0 && (
-          <ul className="tab-content">
+          <ul className="tab-content item-list">
             <li>
               <img src={s1} alt={data.solution.question} />
               <h5>{data.solution.question}</h5>
@@ -115,7 +116,7 @@ const Infini = ({ data, locale }) => {
           </ul>
         )}
         {solutionTab === 1 && (
-          <ul className="tab-content">
+          <ul className="tab-content item-list">
             <li>
               <img src={s1} alt={data.solution.question} />
               <h5>{data.solution.question}</h5>

@@ -15,7 +15,12 @@ h6 {
   margin: 0;
   padding: 0;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 100;
 }
 
@@ -35,7 +40,6 @@ body {
   @include media("<=1000px") {
     font-size: 14px;
   }
-  
 }
 ::selection {
   background-color: #4fc4f9;
@@ -53,20 +57,17 @@ a {
 
 .button {
   cursor: pointer;
-  height: 46px;
-  line-height: 46px;
   min-width: 160px;
   color: #4fc4f9;
   font-size: 20px;
   font-weight: 500;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   text-align: center;
   background: none;
   box-sizing: border-box;
   border: 2px solid #4fc4f9;
   border-radius: 22.5px;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 0.5rem 2rem;
 }
 
 .wrapper {
@@ -89,4 +90,18 @@ main.wrapper {
   position: relative;
   top: -70px;
 }
+.inner-container {
+  width: 1000px;
+  @include media("<=1000px") {
+    width: auto;
+  }
+  margin: 0 auto;
+}
+main.wrapper-about {
+  position: relative;
+}
 
+.not-found {
+  background: #fff;
+  height: 100%;
+}

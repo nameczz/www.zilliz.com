@@ -9,9 +9,12 @@ html[lang=en] {
     }
   }
 }
+.nav-wrapper {
+  background: #101010;
+
+}
 .nav {
   height: 50px;
-  background: #28292e;
   display: flex;
   top: 0;
   left: 0;
@@ -19,7 +22,7 @@ html[lang=en] {
   justify-content: space-between;
   .logo {
     display: inline-flex;
-    margin-right: 90px;
+    margin-right: 50px;
     @include media("<=1000px") {
       margin-right: 20px;
     }
@@ -47,6 +50,8 @@ html[lang=en] {
         &.current {
           opacity: 1;
           font-weight: bold;
+        }
+        &.current svg {
           color: #4fc4f9;
         }
         &:hover {
@@ -75,14 +80,15 @@ html[lang=en] {
     }
   }
 }
-
-.sub-nav {
+.sub-nav-wrapper {
   background-color: rgba(40, 41, 46, 0.85);
-  height: 70px;
-  line-height: 70px;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+.sub-nav {
+  height: 70px;
+  line-height: 70px;
   display: flex;
   justify-content: space-between;
   @include media("<=1000px") {
@@ -91,6 +97,9 @@ html[lang=en] {
   }
   h3 {
     color: #d8d8d8;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     @include media("<=1000px") {
       font-size: 12px;
     }
@@ -103,12 +112,11 @@ html[lang=en] {
       }
       text-transform: uppercase;
       letter-spacing: 5px;
-      font-style: Medium;
       &:not(:last-child) {
         @include media("<=1000px") {
           margin: 0 3px;
         }
-        margin: 0 10px;
+        margin-right: 20px;
       }
     }
   }

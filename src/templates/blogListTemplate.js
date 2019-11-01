@@ -65,26 +65,26 @@ export default function Template({
   )
 }
 
-export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          id
-          excerpt
-          frontmatter {
-            date(formatString: "DD MMMM, YYYY")
-            path
-            author
-            title
-          }
-          fileAbsolutePath
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query blogPageQuery($skip: Int!, $limit: Int!) {
+//     allMarkdownRemark(
+//       sort: { fields: [frontmatter___date], order: DESC }
+//       limit: $limit
+//       skip: $skip
+//     ) {
+//       edges {
+//         node {
+//           id
+//           excerpt
+//           frontmatter {
+//             date(formatString: "DD MMMM, YYYY")
+//             path
+//             author
+//             title
+//           }
+//           fileAbsolutePath
+//         }
+//       }
+//     }
+//   }
+// `

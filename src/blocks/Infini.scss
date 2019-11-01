@@ -5,6 +5,9 @@ html[lang="en"] {
     .features h4 {
       text-transform: uppercase;
     }
+    .solution h5 {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -27,6 +30,55 @@ html[lang="en"] {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
+  ul.item-list {
+    h4 {
+      margin-bottom: 20px;
+    }
+    h5 {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+    @include media("<=1000px") {
+      display: flex;
+      flex-direction: column;
+    }
+    display: inline-flex;
+    li {
+      line-height: 1.7;
+      @include media("<=1000px") {
+        width: 95%;
+        margin: 0 auto 30px;
+        font-size: 16px;
+        line-height: 1.7;
+        text-align: center;
+      }
+      font-size: 20px;
+
+      h4 {
+        margin-bottom: 20px;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        height: 45px;
+        color: #fff;
+      }
+      p {
+        text-align: left;
+        font-size: 15px;
+      }
+      img {
+        width: 25%
+      }
+      color: #d8d8d8;
+      text-align: left;
+      width: 31%;
+      margin: 0 2%;
+    }
+    a {
+      font-size: 16px;
+      text-decoration: underline;
+    }
+  }
+
   .landing {
     height: 500px;
     position: relative;
@@ -40,7 +92,7 @@ html[lang="en"] {
       width: 600px;
       position: absolute;
       height: 150px;
-      left: 16.67%;
+      left: 0;
       top: 260px;
       font-size: 60px;
       line-height: 70px;
@@ -49,10 +101,10 @@ html[lang="en"] {
     }
     h4 {
       position: absolute;
-      left: 16.67%;
+      left: 0;
       top: 340px;
       color: #fff;
-      font-size: 20px;
+      font-size: 24px;
       @include media("<=1000px") {
         width: auto;
         font-size: 14px;
@@ -69,25 +121,32 @@ html[lang="en"] {
         left: 5%;
         top: 260px;
       }
-      width: 600px;
+      width: 580px;
       position: absolute;
       height: 90px;
-      left: 16.67%;
+      left: 0;
       top: 400px;
       font-size: 16px;
-      line-height: 30px;
+      line-height: 1.5;
       /* or 150% */
 
       color: #fff;
     }
-    a.button {
+    .button-area {
       @include media("<=1000px") {
         left: 5%;
-        top: 460px;
+        top: 440px;
       }
       position: absolute;
-      top: 505px;
-      left: 16.67%;
+      top: 525px;
+      left: 0;
+    }
+    .button {
+      margin-right: 10px;
+      @include media("<=1000px") {
+        display: block;
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -118,38 +177,6 @@ html[lang="en"] {
       text-align: center;
       margin-bottom: 80px;
     }
-    ul {
-      @include media("<=1000px") {
-        display: flex;
-        flex-direction: column;
-      }
-      display: inline-flex;
-      li {
-        line-height: 1.7;
-        @include media("<=1000px") {
-          width: 95%;
-          margin: 0 auto 30px;
-          font-size: 16px;
-          line-height: 1.7;
-          text-align: center;
-        }
-        font-size: 20px;
-
-        h4 {
-          margin-bottom: 20px;
-          line-height: 1.5;
-          height: 45px;
-        }
-        p {
-          text-align: left;
-          font-size: 15px;
-        }
-        color: #fff;
-        text-align: left;
-        width: 31%;
-        margin: 0 2%;
-      }
-    }
   }
 
   .arch {
@@ -168,9 +195,6 @@ html[lang="en"] {
     .content {
       position: relative;
       text-align: center;
-      img {
-        width: 80%;
-      }
       .megawise {
         /* Megawise充分利用GPU的并行处理 */
         position: absolute;
@@ -211,7 +235,7 @@ html[lang="en"] {
       }
     }
     .tab {
-      border-bottom: 3px solid #a8c4e1;
+      border-bottom: 2px solid #a8c4e1;
       font-size: 40px;
       display: inline-flex;
       justify-content: space-evenly;
@@ -225,22 +249,25 @@ html[lang="en"] {
         line-height: 70px;
         position: relative;
         cursor: pointer;
-        padding: 0 5rem;
+        padding: 0 1rem;
         font-size: 25px;
+        opacity: 0.5;
         @include media("<=1000px") {
           padding: 0 1rem;
           font-size: 18px;
         }
         &.current {
+          color: #FFF;
           font-weight: 400;
+          opacity: 1;
         }
         &.current::after {
           content: "";
           position: absolute;
-          bottom: -5px;
+          bottom: -3px;
           left: 0;
           background: #4fc4f9;
-          height: 10px;
+          height: 5px;
           width: 100%;
           border-radius: 5px;
           z-index: 10;
@@ -254,40 +281,18 @@ html[lang="en"] {
         display: flex;
         flex-direction: column;
       }
-      h4 {
-        margin-bottom: 20px;
+
+      ul {
+        list-style: circle;
+        padding: 0 10px;
       }
-      h5 {
-        font-size: 25px;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      li {
-        @include media("<=1000px") {
-          width: 95%;
-          margin: 0 auto 30px;
-          font-size: 16px;
-          line-height: 1.7;
-        }
+
+      ul li {
+        width: 100%;
         font-size: 15px;
-        color: #fff;
         text-align: left;
-        width: 30%;
-        margin: 0 5%;
-        img {
-          display: block;
-          margin: 0 auto 20px auto;
-        }
-        ul {
-          @include media("<=1000px") {
-            padding: 10px;
-          }
-          list-style: circle;
-        }
-        ul li {
-          font-size: 15px;
-          width: 100%;
-          text-align: left;
+        @include media("<=1000px") {
+          line-height: 1.5;
         }
       }
     }

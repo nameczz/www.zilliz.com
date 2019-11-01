@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Contact.scss";
 
-const Contact = ({data}) => {
+const Contact = ({ data }) => {
   // const {
   //   company,
   //   company_list,
@@ -13,9 +13,13 @@ const Contact = ({data}) => {
   // } = data;
   return (
     <>
-      <section className="wrapper contact">
-      <p>{data.footer.contactLeading}</p>
-      <a className="contact-button" href="#!">{data.footer.contactButton}</a>
+      <section className="wrapper contact-wrapper">
+        <div className="inner-container contact">
+          <p>{data.footer && data.footer.contactLeading}</p>
+          <a className="contact-button" href="http://megawise-apply-2019.mikecrm.com/CQ2YcFR">
+            {data.footer && data.footer.contactButton}
+          </a>
+        </div>
       </section>
     </>
   );
