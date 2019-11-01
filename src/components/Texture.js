@@ -39,7 +39,7 @@ const Texture = props => {
             svg.style('stroke-linecap', 'round')
             svg.style('stroke-dasharray', ('1, 3'));
         }
-    }, []);
+    }, [fillColor, method, size, strokeColor, type]);
     return (
         <div ref={ref} style={{position: 'absolute', width: '100%', height: '100%', left: 0, top: 0, zIndex: 1}}></div> 
     )

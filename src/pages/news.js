@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from "../components/layout";
 import { graphql } from 'gatsby'
 import SEO from "../components/seo";
-import './about-us.scss'
 import news_181213 from '../images/photos/news-20181213.jpg'
 import news_181211 from '../images/photos/news-20181211.jpg'
 import news_180606 from '../images/photos/news-20180606.jpg'
@@ -21,7 +20,6 @@ import news_170713 from '../images/photos/news-20170713.jpg'
 import news_170711 from '../images/photos/news-20170711.jpg'
 import news_170709 from '../images/photos/news-20170709.jpg'
 
-import bg from '../images/hero/blue.svg';
 import './news.scss'
 
 const newsList = [
@@ -156,7 +154,7 @@ const News = ({data, pageContext}) => {
   return (
     <Layout data={layout} locale={locale}>
       <SEO title="Latest News" />
-      <section className="fdb-block bg-dark fdb-viewport" style={{ backgroundImage: `url(${bg})` }}>
+      <section className="fdb-block bg-dark fdb-viewport">
         <div className="container justify-content-center align-items-center d-flex">
           <div className="row justify-content-center text-center">
             <div className="col-12 col-md-8">
@@ -186,22 +184,8 @@ export const QueryNews = graphql`
         childLayoutJson {
           layout {
             header {
-              why_zilliz
-              about_us
-              aboutus_list
-              career
-              news
-              blog
+              aboutus
               product
-              product_list
-            }
-            footer {
-              product
-              product_list
-              company
-              company_list
-              contact
-              contact_list
             }
           }
         }

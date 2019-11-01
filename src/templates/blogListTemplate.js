@@ -66,7 +66,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!, $locale: String!) {
+  query blogPageQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
@@ -85,34 +85,6 @@ export const pageQuery = graphql`
           fileAbsolutePath
         }
       }
-    },
-    allFile(filter: {relativeDirectory: {eq: "layout"}, name: {eq: $locale}}) {
-          edges {
-            node {
-              childLayoutJson {
-                layout {
-                  header {
-                    why_zilliz
-                    product_list
-                    product
-                    news
-                    blog
-                    career
-                    aboutus_list
-                    about_us
-                  }
-                  footer {
-                    company
-                    company_list
-                    contact
-                    contact_list
-                    product
-                    product_list
-                  }
-                }
-              }
-            }
-          }
-        }
+    }
   }
 `

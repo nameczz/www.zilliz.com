@@ -2,10 +2,11 @@ module.exports = {
   en: {
     path: 'en',
     locale: 'English',
-    default: true
+    default: false
   },
   cn: {
     path: 'cn',
-    locale: 'Chinese'
+    locale: 'Chinese',
+    default: true
   }
 }

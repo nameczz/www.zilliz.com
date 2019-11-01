@@ -1,0 +1,118 @@
+@import '../components/include_media.scss';
+
+html[lang=en] {
+  .sub-nav ul li, .nav .right {
+    letter-spacing: 2px;
+    @include media("<=1000px") {
+      letter-spacing: 1px;
+      font-size: 9px;
+    }
+  }
+}
+.nav {
+  height: 50px;
+  background: #28292e;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  justify-content: space-between;
+  .logo {
+    display: inline-flex;
+    margin-right: 90px;
+    @include media("<=1000px") {
+      margin-right: 20px;
+    }
+    align-items: center;
+    img {
+      @include media("<=1000px") {
+        width: 75px;
+      }
+      width: 80px;
+      display: inline-block;
+    }
+  }
+  .nav-links {
+    display: inline-flex;
+    align-items: center;
+    li {
+      display: inline-block;
+      margin-right: 50px;
+      @include media("<=1000px") {
+        margin-right: 10px;
+      }
+      a {
+        color: #fff;
+        opacity: 0.5;
+        &.current {
+          opacity: 1;
+          font-weight: bold;
+          color: #4fc4f9;
+        }
+        &:hover {
+          color: #4fc4f9;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .left {
+    display: flex;
+  }
+  .right {
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 5px;
+    
+    @include media("<=1000px") {
+      letter-spacing: 0px;
+    }
+  }
+  svg {
+    margin-right: 10px;
+    @include media("<=1000px") {
+      display: none;
+    }
+  }
+}
+
+.sub-nav {
+  background-color: rgba(40, 41, 46, 0.85);
+  height: 70px;
+  line-height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  @include media("<=1000px") {
+    height: 70px;
+    line-height: 70px;
+  }
+  h3 {
+    color: #d8d8d8;
+    @include media("<=1000px") {
+      font-size: 12px;
+    }
+  }
+  ul {
+    display: inline-flex;
+    li {
+      @include media("<=1000px") {
+        letter-spacing: 0px;
+      }
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-style: Medium;
+      &:not(:last-child) {
+        @include media("<=1000px") {
+          margin: 0 3px;
+        }
+        margin: 0 10px;
+      }
+    }
+  }
+  a {
+    color: #d8d8d8;
+  }
+}

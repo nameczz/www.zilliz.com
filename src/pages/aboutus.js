@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import LocalizeLink from "../components/localizedLink";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
-import Infini from "../blocks/Infini";
+import AboutUs from "../blocks/AboutUs";
 
 const SubNav = ({ data, locale }) => (
   <nav className="wrapper sub-nav">
@@ -28,13 +28,12 @@ const SubNav = ({ data, locale }) => (
   </nav>
 );
 
-const IndexPage = ({ data, pageContext }) => {
+const AboutUsPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
-  const infini = data.allFile.edges[0].node.childLayoutJson.infini;
-  // console.log(`locale in index page is: ${locale}`, data, pageContext);
+  console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
-    current: "index",
+    current: "aboutus",
   };
   return (
     <Layout
@@ -43,14 +42,14 @@ const IndexPage = ({ data, pageContext }) => {
       nav={nav}
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
-      <SEO title="首页" lang={locale} />
-      <Infini data={infini} locale={locale} />
+      <SEO title="About Us" />
+      <AboutUs  />
     </Layout>
   );
 };
 
 export const Query = graphql`
-  query Query($locale: String) {
+  query AboutQuery($locale: String) {
     allFile(
       filter: { name: { eq: $locale }, relativeDirectory: { in: ["layout"] } }
     ) {
@@ -88,7 +87,6 @@ export const Query = graphql`
             infini {
               landing {
                 h3
-                h4
                 leading
                 button
               }
@@ -135,4 +133,4 @@ export const Query = graphql`
   }
 `;
 
-export default IndexPage;
+export default AboutUsPage;

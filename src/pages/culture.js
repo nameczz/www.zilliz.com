@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { SectionsContainer, Section, Header as RHeader, Footer as RFooter } from 'react-fullpage';
-import Header from '../blocks/Header';
 import SimpleFooter from '../blocks/SimpleFooter';
 import SEO from '../components/seo';
 import Texture from '../components/Texture';
@@ -106,7 +105,7 @@ const GlobalDataSize = () => {
 
 const Heros = () => {
     const { allFile } = useStaticQuery(graphql`
-    {
+    query allFile{
         allFile(filter: {base: {regex:"/(.*)_(.*)_(.*).png/" }}) {
             edges {
               node {
@@ -428,9 +427,6 @@ const Culture = ({data, pageContext}) => {
             return false;
         }}>
             <SEO title="Culture" />
-            <RHeader>
-                <Header data={header} locale={locale} />
-            </RHeader>
             <SectionsContainer {...options} activeSection={initState}>
                 <Section><EngineeringCurlture /></Section>
                 <Section><ReinventDataScience /></Section>
@@ -458,29 +454,4 @@ const Culture = ({data, pageContext}) => {
     )
 }
 
-export const queryInCulture = graphql`
-  query MyQuery {
-  allFile(filter: {name: {eq: "en"}, relativeDirectory: {in: ["layout"]}}) {
-    edges {
-      node {
-        childLayoutJson {
-          layout {
-            header {
-              why_zilliz
-              about_us
-              aboutus_list
-              career
-              news
-              blog
-              product
-              product_list
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-`
 export default Culture;
