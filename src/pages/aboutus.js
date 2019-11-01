@@ -5,32 +5,36 @@ import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import AboutUs from "../blocks/AboutUs";
 
-const SubNav = ({ data, locale }) => (
-  <nav className="wrapper sub-nav">
-    <h3>{data.aboutus}</h3>
-    <ul>
-      <li>
-        <LocalizeLink locale={locale} to="/#features">
-          {data.hope}
-        </LocalizeLink>
-      </li>
-      <li>
-        <LocalizeLink locale={locale} to="/#arch">
-          {data.history}
-        </LocalizeLink>
-      </li>
-      <li>
-        <LocalizeLink locale={locale} to="/#solution">
-          {data.chance}
-        </LocalizeLink>
-      </li>
-    </ul>
-  </nav>
-);
+const SubNav = ({ data, locale }) => {
+  const preLink = "/aboutus";
+  return (
+    <nav className="wrapper sub-nav">
+      <h3>{data.aboutus}</h3>
+      <ul>
+        <li>
+          <LocalizeLink locale={locale} to={`${preLink}/#mission`}>
+            {data.hope}
+          </LocalizeLink>
+        </li>
+        <li>
+          <LocalizeLink locale={locale} to={`${preLink}/#history`}>
+            {data.history}
+          </LocalizeLink>
+        </li>
+        <li>
+          <LocalizeLink locale={locale} to={`${preLink}/#joinus`}>
+            {data.chance}
+          </LocalizeLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
 const AboutUsPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+  const aboutus = data.allFile.edges[0].node.childLayoutJson.aboutus;
   console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
     current: "aboutus",
@@ -43,7 +47,7 @@ const AboutUsPage = ({ data, pageContext }) => {
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
       <SEO title="首页" />
-      <AboutUs  />
+      <AboutUs data={aboutus} />
     </Layout>
   );
 };
@@ -83,46 +87,22 @@ export const Query = graphql`
                 schoolCareer
               }
             }
-            infini {
-              landing {
-                h3
-                leading
-                button
-              }
-              features {
+            aboutus {
+              mission {
+                p
                 h2
                 h3
-                f1Title
-                f1P
-                f2Title
-                f2P
-                f3Title
-                f3P
               }
-              arch {
+              history{
+                p
+                h2
                 h3
               }
-              solution {
+              joinus{
+                p
+                h2
                 h3
-                leading
-                tab1
-                tab2
-                question
-                solution
-                effect
-                q1
-                s1
-                detail
-                el1_1
-                el1_2
-                el1_3
-                el1_4
-                el1_5
-                q2
-                s2
-                el2_1
-                el2_2
-                el3_3
+                button
               }
             }
           }

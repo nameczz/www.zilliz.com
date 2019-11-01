@@ -11,7 +11,7 @@
       "solution": "解决方案",
       "hope": "愿景",
       "history": "历程",
-      "chance": "机会"
+      "chance": "加入我们"
     },
     "footer": {
       "contactButton": "联系我们",
@@ -81,13 +81,13 @@
       "h2": "重新定义数据科学",
       "h3": "将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。 产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。"
     },
-    "work": {
+    "history": {
       "p": "what we do",
       "h2": "Accelerate The Development of AI",
       "h3": "专注于研发面向人工智能的新一代数据处理和分析平台"
     },
     "friends": {
-      "p": "hhhh",
+      "p": "hhhh"
     },
     "joinus": {
       "p": "加入我们",

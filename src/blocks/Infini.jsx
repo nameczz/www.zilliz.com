@@ -32,7 +32,6 @@ const Infini = ({ data, locale }) => {
 
       <section className="features" id="features">
         <h2>{data.features.h2}</h2>
-
         <h3>{data.features.h3}</h3>
         <ul>
           <li>

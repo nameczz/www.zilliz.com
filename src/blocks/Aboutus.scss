@@ -97,14 +97,14 @@
     }
   }
 
-  .work {
+  .history {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    .work-icon {
+    .history-icon {
       background: url(../images/aboutus-work.png) no-repeat center center;
       width: 180px;
       height: 200px;
     }
-    .work-calendar {
+    .history-calendar {
       width: 100%;
       height: 720px;
       text-align: center;
@@ -133,6 +133,7 @@
     }
     h3 {
       max-width: 888px;
+      margin-bottom:10px;
     }
   }
 }
