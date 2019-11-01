@@ -3,7 +3,7 @@ import moon from "../images/aboutus-moon.png"
 import calendar from "../images/aboutus-calendar.png"
 import "./Aboutus.scss";
 
-const AboutUs = ({ data, locale }) => {
+const AboutUs = ({ data }) => {
   return (
     <section className="aboutus">
       <section className="landing"></section>

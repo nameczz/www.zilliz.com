@@ -44,6 +44,7 @@ const AboutUsPage = ({ data, pageContext }) => {
       data={layout}
       locale={locale}
       nav={nav}
+      wrapperClass={'wrapper-about'}
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
       <SEO title="首页" />
