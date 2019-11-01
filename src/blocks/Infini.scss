@@ -56,6 +56,7 @@ html[lang="en"] {
       @include media("<=1000px") {
         width: auto;
         font-size: 14px;
+        line-height: 1.5;
         left: 5%;
         top: 180px;
       }
@@ -64,6 +65,7 @@ html[lang="en"] {
       @include media("<=1000px") {
         width: auto;
         font-size: 14px;
+        line-height: 1.7;
         left: 5%;
         top: 260px;
       }

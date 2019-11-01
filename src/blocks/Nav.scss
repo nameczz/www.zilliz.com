@@ -3,6 +3,10 @@
 html[lang=en] {
   .sub-nav ul li, .nav .right {
     letter-spacing: 2px;
+    @include media("<=1000px") {
+      letter-spacing: 1px;
+      font-size: 9px;
+    }
   }
 }
 .nav {
