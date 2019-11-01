@@ -26,7 +26,7 @@ const Infini = ({ data, locale }) => {
           <a
             rel="noopener noreferrer"
             className="button buttonMega"
-            href="https://infini-analytics.github.io/#/install_infini_sql_en"
+            href="https://github.com/megawise/docs"
             target="_blank"
           >
             {data.landing.buttonMega}
@@ -36,7 +36,6 @@ const Infini = ({ data, locale }) => {
 
       <section className="features" id="features">
         <h2 dangerouslySetInnerHTML={{ __html: data.features.h2 }} />
-
         <h3>{data.features.h3}</h3>
         <ul className="item-list">
           <li>

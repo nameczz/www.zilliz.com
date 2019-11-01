@@ -2,12 +2,15 @@ import React from "react";
 import logo from "../images/footer-logo.png"; // Tell Webpack this JS file uses this image
 import qrCode from "../images/qrcode.jpeg"; // Tell Webpack this JS file uses this image
 import LocalizeLink from "../components/localizedLink";
+import { globalHistory } from '@reach/router'
 
 import "./Footer.scss";
 
-const Footer = ({ data, locale }) => {
+const Footer = (props) => {
+  const { data, locale } = props;
   const l = locale === "cn" ? "en" : "cn";
-  const to = window.location.pathname.replace("/en/", "/").replace("/cn/", "/");
+  let to = globalHistory.location.pathname.replace("/en/", "/").replace("/cn/", "/");
+
   return (
     <>
       <footer className="wrapper footer-wrapper">

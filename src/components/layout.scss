@@ -15,7 +15,12 @@ h6 {
   margin: 0;
   padding: 0;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 100;
 }
 
@@ -35,7 +40,6 @@ body {
   @include media("<=1000px") {
     font-size: 14px;
   }
-  
 }
 ::selection {
   background-color: #4fc4f9;
@@ -93,8 +97,11 @@ main.wrapper {
   }
   margin: 0 auto;
 }
+main.wrapper-about {
+  position: relative;
+}
 
 .not-found {
-  background: #FFF;
+  background: #fff;
   height: 100%;
 }

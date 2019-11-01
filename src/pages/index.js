@@ -43,6 +43,7 @@ const IndexPage = ({ data, pageContext }) => {
       data={layout}
       locale={locale}
       nav={nav}
+      pageContext={pageContext}
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
       <SEO title="ZILLIZ Analytics" lang={locale} />
@@ -50,6 +51,7 @@ const IndexPage = ({ data, pageContext }) => {
     </Layout>
   );
 };
+
 
 export const Query = graphql`
   query Query($locale: String) {

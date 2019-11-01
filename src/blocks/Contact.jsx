@@ -15,9 +15,9 @@ const Contact = ({ data }) => {
     <>
       <section className="wrapper contact-wrapper">
         <div className="inner-container contact">
-          <p>{data.footer.contactLeading}</p>
-          <a className="contact-button" href="#!">
-            {data.footer.contactButton}
+          <p>{data.footer && data.footer.contactLeading}</p>
+          <a className="contact-button" href="http://megawise-apply-2019.mikecrm.com/CQ2YcFR">
+            {data.footer && data.footer.contactButton}
           </a>
         </div>
       </section>

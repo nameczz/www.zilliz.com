@@ -99,6 +99,7 @@ html[lang=en] {
     color: #d8d8d8;
     font-weight: bold;
     letter-spacing: 2px;
+    text-transform: uppercase;
     @include media("<=1000px") {
       font-size: 12px;
     }

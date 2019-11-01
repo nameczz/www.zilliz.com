@@ -1,49 +1,41 @@
 import React from "react";
+import logo from "../images/aboutus-logo.png";
 import moon from "../images/aboutus-moon.png"
-import calendar from "../images/aboutus-calendar.png"
+import calendar from "../images/aboutus-roadmap.png"
 import "./Aboutus.scss";
 
-const AboutUs = ({ data, locale }) => {
+const AboutUs = ({ data }) => {
   return (
     <section className="aboutus">
-      <section className="landing"></section>
+      <section className="landing">
+        <img src={logo} alt="logo" />
+      </section>
       <section className="mission" id="mission">
-        <div className="mission-icon" />
-        <p>我们的愿景</p>
+        <div className="mission-icon icon">
+        </div>
+        <p>{data.mission.p}</p>
         <h2>
-          重新定义数据科学
+          {data.mission.h2}
         </h2>
-        <h3>
-          将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。 产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。
-        </h3>
-        <div className="mission-moon">
-          <img src={moon} />
+        <div className="mission-pic">
+          <img src={moon} alt="moon" />
         </div>
       </section>
 
-      <section className="work" id="work">
-        <div className="work-icon" />
-        <p>what we do</p>
-        <h2>Accelerate The Development of AI</h2>
-        <h3>专注于研发面向人工智能的新一代数据处理和分析平台</h3>
-        <div className="work-calendar">
-          <img src={calendar} />
+      <section className="roadmap" id="roadmap">
+        <div className="roadmap-icon icon" />
+        <p>{data.roadmap.p}</p>
+        <h2>{data.roadmap.h2}</h2>
+        <div className="roadmap-calendar">
+          <img src={calendar} alt="roadmap" />
         </div>
       </section>
 
-      <section className="friends" id="friends">
-        <div className="friends-icon"></div>
-        <p>我们的合作伙伴</p>
-        <h2>这些机构给予了我们支持</h2>
-      </section>
-      <section className="joinus" id="friends">
-        <div className="joinus-icon"></div>
-        <p>加入我们</p>
-        <h2>ZILLIZ 正在成长，期待你的加入</h2>
-        <h3>
-          “Be Hero”的团队文化，致力于打造一支精干、战斗力强、勇于创新的队伍，提倡以数据为基础、系统化解决复杂问题的工作方法，鼓励学习，奖励创新。
-        </h3>
-        <button className="button">查看职位和机会</button>
+      <section className="joinus" id="opportunities">
+        <div className="joinus-icon icon"></div>
+        <p>{data.joinus.p}</p>
+        <h2>{data.joinus.h2}</h2>
+        <button className="button">{data.joinus.button}</button>
       </section>
     </section>
   );
