@@ -5,6 +5,9 @@ html[lang="en"] {
     .features h4 {
       text-transform: uppercase;
     }
+    .solution h5 {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -54,13 +57,18 @@ html[lang="en"] {
       h4 {
         margin-bottom: 20px;
         line-height: 1.5;
+        letter-spacing: 2px;
         height: 45px;
+        color: #fff;
       }
       p {
         text-align: left;
         font-size: 15px;
       }
-      color: #fff;
+      img {
+        width: 25%
+      }
+      color: #d8d8d8;
       text-align: left;
       width: 31%;
       margin: 0 2%;
@@ -80,7 +88,7 @@ html[lang="en"] {
       width: 600px;
       position: absolute;
       height: 150px;
-      left: 16.67%;
+      left: 0;
       top: 260px;
       font-size: 60px;
       line-height: 70px;
@@ -89,10 +97,10 @@ html[lang="en"] {
     }
     h4 {
       position: absolute;
-      left: 16.67%;
+      left: 0;
       top: 340px;
       color: #fff;
-      font-size: 20px;
+      font-size: 24px;
       @include media("<=1000px") {
         width: auto;
         font-size: 14px;
@@ -109,13 +117,13 @@ html[lang="en"] {
         left: 5%;
         top: 260px;
       }
-      width: 600px;
+      width: 580px;
       position: absolute;
       height: 90px;
-      left: 16.67%;
+      left: 0;
       top: 400px;
       font-size: 16px;
-      line-height: 30px;
+      line-height: 1.5;
       /* or 150% */
 
       color: #fff;
@@ -127,7 +135,7 @@ html[lang="en"] {
       }
       position: absolute;
       top: 525px;
-      left: 16.67%;
+      left: 0;
     }
     .button {
       margin-right: 10px;
@@ -183,9 +191,6 @@ html[lang="en"] {
     .content {
       position: relative;
       text-align: center;
-      img {
-        width: 80%;
-      }
       .megawise {
         /* Megawise充分利用GPU的并行处理 */
         position: absolute;
@@ -226,7 +231,7 @@ html[lang="en"] {
       }
     }
     .tab {
-      border-bottom: 3px solid #a8c4e1;
+      border-bottom: 2px solid #a8c4e1;
       font-size: 40px;
       display: inline-flex;
       justify-content: space-evenly;
@@ -240,22 +245,25 @@ html[lang="en"] {
         line-height: 70px;
         position: relative;
         cursor: pointer;
-        padding: 0 5rem;
+        padding: 0 1rem;
         font-size: 25px;
+        opacity: 0.5;
         @include media("<=1000px") {
           padding: 0 1rem;
           font-size: 18px;
         }
         &.current {
+          color: #FFF;
           font-weight: 400;
+          opacity: 1;
         }
         &.current::after {
           content: "";
           position: absolute;
-          bottom: -5px;
+          bottom: -3px;
           left: 0;
           background: #4fc4f9;
-          height: 10px;
+          height: 5px;
           width: 100%;
           border-radius: 5px;
           z-index: 10;

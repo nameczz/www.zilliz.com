@@ -25,16 +25,8 @@ const Infini = ({ data, locale }) => {
         <div className="button-area">
           <a
             rel="noopener noreferrer"
-            className="button"
-            href="http://infini-analytics.github.io/"
-            target="_blank"
-          >
-            {data.landing.button}
-          </a>
-          <a
-            rel="noopener noreferrer"
             className="button buttonMega"
-            href="http://infini-analytics.github.io/"
+            href="https://infini-analytics.github.io/#/install_infini_sql_en"
             target="_blank"
           >
             {data.landing.buttonMega}
@@ -70,7 +62,7 @@ const Infini = ({ data, locale }) => {
       <section className="arch" id="arch">
         <h3>{data.arch.h3}</h3>
         <div className="content">
-          <img src={locale === "cn" ? cn : en} alt={data.arch.h3} />
+          <img width="100%" src={locale === "cn" ? cn : en} alt={data.arch.h3} />
         </div>
       </section>
 

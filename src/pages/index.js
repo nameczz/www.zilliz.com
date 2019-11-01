@@ -6,7 +6,8 @@ import SEO from "../components/seo";
 import Infini from "../blocks/Infini";
 
 export const SubNav = ({ data, locale }) => (
-  <nav className="wrapper sub-nav">
+  <nav className="wrapper sub-nav-wrapper">
+    <div className="inner-container sub-nav">
     <h3>{data.infiniAnalytics}</h3>
     <ul>
       <li>
@@ -25,6 +26,7 @@ export const SubNav = ({ data, locale }) => (
         </LocalizeLink>
       </li>
     </ul>
+    </div>
   </nav>
 );
 

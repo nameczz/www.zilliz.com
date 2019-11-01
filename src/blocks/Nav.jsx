@@ -47,7 +47,8 @@ const Current = () => (
 const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
   return (
     <>
-      <nav className="wrapper nav">
+      <nav className="wrapper nav-wrapper">
+        <div className="inner-container nav">
         <div className="left">
           <LocalizeLink locale={locale} to="/" className="logo">
             <img src={logo} alt="logo" />
@@ -90,6 +91,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
         >
           {data.doc}
         </a>
+        </div>
       </nav>
       {subNav}
     </>

@@ -57,13 +57,13 @@ a {
   color: #4fc4f9;
   font-size: 20px;
   font-weight: 500;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   text-align: center;
   background: none;
   box-sizing: border-box;
   border: 2px solid #4fc4f9;
   border-radius: 22.5px;
-  padding:0.5rem 1rem;
+  padding: 0.5rem 2rem;
 }
 
 .wrapper {
@@ -85,6 +85,13 @@ main.wrapper {
   background-size: 100%;
   position: relative;
   top: -70px;
+}
+.inner-container {
+  width: 1000px;
+  @include media("<=1000px") {
+    width: auto;
+  }
+  margin: 0 auto;
 }
 
 .not-found {

@@ -19,7 +19,9 @@ export default props => {
   return (
     <div>
       <Nav nav={nav} data={header} locale={locale} subNav={subNav} />
-      <main className={wrapperClass}>{children}</main>
+      <main className={wrapperClass}>
+        <div className="inner-container">{children}</div>
+      </main>
       <Contact data={data} locale={locale} />
       <Footer data={footer} locale={locale} />
     </div>
