@@ -8,14 +8,14 @@
       "arch": "Architecture",
       "solution": "Solutions",
       "infiniAnalytics": "ZILLIZ ANALYTICS",
-      "doc": "Documentation",
-      "hope": "Mission",
-      "history": "History",
-      "chance": "JoinUs"
+      "doc": "Doc",
+      "mission": "mission",
+      "roadmap": "roadmap",
+      "chance": "joinus"
     },
     "footer": {
       "contactButton": "Contact Us",
-      "contactLeading": "Reinvent data science with heterogeneous computation",
+      "contactLeading": "Exploit the potential of data to the fullest with heterogeneous computation",
       "address": "Room 6C, Building 28, Guiqing Park, 69 Guiqing Rd, Xuhui, Shanghai, China",
       "phone": "021-33687058",
       "email": "info@zilliz.com",
@@ -29,25 +29,26 @@
       "socialCareer": "Social Recruiting",
       "schoolCareer": "Campus Recruiting"
     }
-  },
+},
   "contact": {
     "leading": "Reinvent data science with heterogeneous computation"
   },
   "infini": {
     "landing": {
-      "h3": "Visualized and Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data",
-      "h4": "面向海量时空数据的可视化交互分析平台",
-      "leading": "ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.",
-      "button": "Documentation"
+      "h3": "ZILLIZ Analytics",
+      "h4": "Analytics Platform for Massive-Scale Geospatial and Temporal Data",
+      "leading": "Implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency.",
+      "button": "Documentation",
+      "buttonMega": "MegaWise GPU Database"
     },
     "features": {
-      "h2": "Returns query results for billion-scale datasets in sub-seconds",
+      "h2": "Returns query results for billion-scale datasets in subseconds",
       "h3": "Features",
-      "f1Title": "Seamless integration between traditional data analytics and modern data science",
+      "f1Title": "Seamless integration",
       "f1P": "ZILLIZ Analytics integrates traditional data analytics, modern data science, and intelligent workflow based on geospatial and temporal analytics into one open platform. Natively supporting SQL queries and visualized, interactive analytics, ZILLIZ Analytics is compatible with multiple mainstream machine learning models.",
-      "f2Title": "Thorough utilization of hardware resources",
+      "f2Title": "Thorough utilization of resources",
       "f2P": "Thoroughly utilizing the parallel processing power of GPUs/CPUs, ZILLIZ Analytics can perform SQL queries and visualized, interactive analytics on massive datasets without any pre-processing, including indexing, pre-aggregation, and downsampling, etc.",
-      "f3Title": "Efficient unity between heterogeneous geospatial and temporal data from different sources",
+      "f3Title": "Efficient Unity",
       "f3P": "ZILLIZ Analytics unites analytics between geospatial and temporal data to help you gain a panoramic view of time and location. With fine-grained visualization of geospatial and temporal datasets, you can both view the big picture and focus on every detail."
     },
     "arch": {
@@ -55,7 +56,7 @@
     },
     "solution": {
       "h3": "Solutions",
-      "leading": "ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.",
+      "leading": "ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in subseconds.",
       "tab1": "Logistics",
       "tab2": "Telecommunications",
       "question": "Question",
@@ -79,18 +80,17 @@
   "aboutus": {
     "mission": {
       "p": "Our Mission",
-      "h2": "重新定义数据科学",
-      "h3": "将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。 产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。"
+      "h2": "Redefine Data Science",
     },
     "roadmap": {
       "p": "What we do",
-      "h2": "Accelerate The Development of AI",
+      "h2": "Accelerate The Development of AI"
     },
     "joinus": {
-      "p": "Join Us",
-      "h2": "ZILLIZ 正在成长，期待你的加入",
+      "p": "Career",
+      "h2": "ZILLIZ is growing, come and join us! ",
       "h3": "“Be Hero”的团队文化，致力于打造一支精干、战斗力强、勇于创新的队伍，提倡以数据为基础、系统化解决复杂问题的工作方法，鼓励学习，奖励创新。",
-      "button": "查看职位和机会"
+      "button": "Looking for optunities"
     }
   }
 }

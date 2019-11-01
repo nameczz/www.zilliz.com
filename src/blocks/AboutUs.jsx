@@ -8,7 +8,7 @@ const AboutUs = ({ data }) => {
   return (
     <section className="aboutus">
       <section className="landing">
-        <img src={logo} />
+        <img src={logo} alt="logo" />
       </section>
       <section className="mission" id="mission">
         <div className="mission-icon">
@@ -18,7 +18,7 @@ const AboutUs = ({ data }) => {
           {data.mission.h2}
         </h2>
         <div className="mission-pic">
-          <img src={moon} />
+          <img src={moon} alt="moon" />
         </div>
       </section>
 
@@ -27,7 +27,7 @@ const AboutUs = ({ data }) => {
         <p>{data.roadmap.p}</p>
         <h2>{data.roadmap.h2}</h2>
         <div className="roadmap-calendar">
-          <img src={calendar} />
+          <img src={calendar} alt="roadmap" />
         </div>
       </section>
 

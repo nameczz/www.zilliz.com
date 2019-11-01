@@ -9,13 +9,13 @@
       "feature": "特效",
       "arch": "架构与组件",
       "solution": "解决方案",
-      "hope": "愿景",
-      "history": "历程",
+      "mission": "愿景",
+      "roadmap": "历程",
       "chance": "加入我们"
     },
     "footer": {
       "contactButton": "联系我们",
-      "contactLeading": "通过异构计算重新定义数据科学",
+      "contactLeading": "借助异构计算深度挖掘数据潜力",
       "address": "上海徐汇区桂箐路69号桂箐园28栋6C",
       "phone": "021-33687058",
       "email": "info@zilliz.com",
@@ -38,7 +38,8 @@
       "h3": "ZILLIZ Analytics",
       "h4": "面向海量时空数据的可视化交互分析平台",
       "leading": "使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势。",
-      "button": "文档"
+      "button": "文档",
+      "buttonMega": "MegaWise GPU 数据库"
     },
     "features": {
       "h2": "对十亿级数据集的查询分析<br />提供亚秒级响应",
@@ -80,7 +81,6 @@
     "mission": {
       "p": "我们的愿景",
       "h2": "重新定义数据科学",
-      "h3": "将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。 产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。"
     },
     "roadmap": {
       "p": "我们专注于",

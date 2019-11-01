@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Infini from "../blocks/Infini";
 
-const SubNav = ({ data, locale }) => (
+export const SubNav = ({ data, locale }) => (
   <nav className="wrapper sub-nav">
     <h3>{data.infiniAnalytics}</h3>
     <ul>
@@ -43,11 +43,12 @@ const IndexPage = ({ data, pageContext }) => {
       nav={nav}
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
-      <SEO title="首页" lang={locale} />
+      <SEO title="ZILLIZ Analytics" lang={locale} />
       <Infini data={infini} locale={locale} />
     </Layout>
   );
 };
+
 
 export const Query = graphql`
   query Query($locale: String) {
@@ -91,6 +92,7 @@ export const Query = graphql`
                 h4
                 leading
                 button
+                buttonMega
               }
               features {
                 h2

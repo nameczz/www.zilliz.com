@@ -67,8 +67,8 @@ export const Query = graphql`
                 aboutus
                 joinus
                 doc
-                hope 
-                history
+                mission 
+                roadmap
                 chance
               }
               footer {
@@ -92,7 +92,6 @@ export const Query = graphql`
               mission {
                 p
                 h2
-                h3
               }
               roadmap{
                 p
