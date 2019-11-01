@@ -36,6 +36,7 @@
   "infini": {
     "landing": {
       "h3": "Visualized and Interactive Analytics Platform for Massive-Scale Geospatial and Temporal Data",
+      "h4": "面向海量时空数据的可视化交互分析平台",
       "leading": "ZILLIZ Analytics implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency. While significantly reducing the computation cost per unit, ZILLIZ Analytics can return query results for billion-scale datasets in sub-seconds.",
       "button": "Documentation"
     },
@@ -81,13 +82,9 @@
       "h2": "重新定义数据科学",
       "h3": "将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。 产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。"
     },
-    "history": {
+    "roadmap": {
       "p": "What we do",
       "h2": "Accelerate The Development of AI",
-      "h3": "专注于研发面向人工智能的新一代数据处理和分析平台"
-    },
-    "friends": {
-      "p": "hhhh"
     },
     "joinus": {
       "p": "Join Us",

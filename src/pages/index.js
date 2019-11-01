@@ -30,9 +30,9 @@ const SubNav = ({ data, locale }) => (
 
 const IndexPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
-  console.log(`locale in index page is: ${locale}`, data, pageContext);
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const infini = data.allFile.edges[0].node.childLayoutJson.infini;
+  // console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
     current: "index",
   };

@@ -17,7 +17,7 @@ const SubNav = ({ data, locale }) => {
           </LocalizeLink>
         </li>
         <li>
-          <LocalizeLink locale={locale} to={`${preLink}/#history`}>
+          <LocalizeLink locale={locale} to={`${preLink}/#roadmap`}>
             {data.history}
           </LocalizeLink>
         </li>
@@ -94,10 +94,9 @@ export const Query = graphql`
                 h2
                 h3
               }
-              history{
+              roadmap{
                 p
                 h2
-                h3
               }
               joinus{
                 p
