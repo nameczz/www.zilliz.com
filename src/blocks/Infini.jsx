@@ -22,18 +22,28 @@ const Infini = ({ data, locale }) => {
         <h3>{data.landing.h3}</h3>
         <h4>{data.landing.h4}</h4>
         <p>{data.landing.leading}</p>
-        <a
-          rel="noopener noreferrer"
-          className="button"
-          href="http://infini-analytics.github.io/"
-          target="_blank"
-        >
-          {data.landing.button}
-        </a>
+        <div className="button-area">
+          <a
+            rel="noopener noreferrer"
+            className="button"
+            href="http://infini-analytics.github.io/"
+            target="_blank"
+          >
+            {data.landing.button}
+          </a>
+          <a
+            rel="noopener noreferrer"
+            className="button buttonMega"
+            href="http://infini-analytics.github.io/"
+            target="_blank"
+          >
+            {data.landing.buttonMega}
+          </a>
+        </div>
       </section>
 
       <section className="features" id="features">
-        <h2 dangerouslySetInnerHTML={{__html: data.features.h2}} />
+        <h2 dangerouslySetInnerHTML={{ __html: data.features.h2 }} />
 
         <h3>{data.features.h3}</h3>
         <ul className="item-list">
@@ -60,7 +70,7 @@ const Infini = ({ data, locale }) => {
       <section className="arch" id="arch">
         <h3>{data.arch.h3}</h3>
         <div className="content">
-          <img src={locale === 'cn' ? cn : en} alt={data.arch.h3} />
+          <img src={locale === "cn" ? cn : en} alt={data.arch.h3} />
         </div>
       </section>
 

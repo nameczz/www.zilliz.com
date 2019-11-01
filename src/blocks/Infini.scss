@@ -120,14 +120,21 @@ html[lang="en"] {
 
       color: #fff;
     }
-    a.button {
+    .button-area {
       @include media("<=1000px") {
         left: 5%;
-        top: 460px;
+        top: 440px;
       }
       position: absolute;
-      top: 505px;
+      top: 525px;
       left: 16.67%;
+    }
+    .button {
+      margin-right: 10px;
+      @include media("<=1000px") {
+        display: block;
+        margin-bottom: 10px;
+      }
     }
   }
 

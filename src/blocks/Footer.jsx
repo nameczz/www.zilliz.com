@@ -39,11 +39,11 @@ const Footer = ({ data, locale }) => {
                   {data.aboutZilliz}
                 </LocalizeLink>
               </li>
-              <li>
+              {/* <li>
                 <LocalizeLink locale={locale} to="/news">
                   {data.news}
                 </LocalizeLink>
-              </li>
+              </li> */}
             </ul>
           </div>
 

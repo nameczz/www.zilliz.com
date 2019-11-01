@@ -12,7 +12,7 @@
       },
       "footer": {
         "contactButton": "Contact Us",
-        "contactLeading": "Reinvent data science with heterogeneous computation",
+        "contactLeading": "Exploit the potential of data to the fullest with heterogeneous computation",
         "address": "Room 6C, Building 28, Guiqing Park, 69 Guiqing Rd, Xuhui, Shanghai, China",
         "phone": "021-33687058",
         "email": "info@zilliz.com",
@@ -35,7 +35,8 @@
         "h3": "ZILLIZ Analytics",
         "h4": "Analytics Platform for Massive-Scale Geospatial and Temporal Data",
         "leading": "Implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency.",
-        "button": "Documentation"
+        "button": "Documentation",
+        "buttonMega": "MegaWise GPU Database"
       },
       "features": {
         "h2": "Returns query results for billion-scale datasets in subseconds",

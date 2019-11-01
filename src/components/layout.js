@@ -15,6 +15,7 @@ export default props => {
     wrapperClass = "wrapper",
   } = props;
   const { header, footer } = data;
+
   return (
     <div>
       <Nav nav={nav} data={header} locale={locale} subNav={subNav} />
