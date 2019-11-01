@@ -36,7 +36,7 @@ const Infini = ({ data, locale }) => {
         <h2 dangerouslySetInnerHTML={{__html: data.features.h2}} />
 
         <h3>{data.features.h3}</h3>
-        <ul>
+        <ul className="item-list">
           <li>
             <img src={f1} alt={data.features.f1Title} />
             <h4>{data.features.f1Title}</h4>
@@ -87,7 +87,7 @@ const Infini = ({ data, locale }) => {
           </li>
         </ul>
         {solutionTab === 0 && (
-          <ul className="tab-content">
+          <ul className="tab-content item-list">
             <li>
               <img src={s1} alt={data.solution.question} />
               <h5>{data.solution.question}</h5>
@@ -115,7 +115,7 @@ const Infini = ({ data, locale }) => {
           </ul>
         )}
         {solutionTab === 1 && (
-          <ul className="tab-content">
+          <ul className="tab-content item-list">
             <li>
               <img src={s1} alt={data.solution.question} />
               <h5>{data.solution.question}</h5>
