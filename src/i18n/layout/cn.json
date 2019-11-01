@@ -6,7 +6,7 @@
       "joinus": "加入我们",
       "doc": "文档",
       "infiniAnalytics": "ZILLIZ ANALYTICS",
-      "feature": "特效",
+      "feature": "特性",
       "arch": "架构",
       "solution": "解决方案",
       "mission": "愿景",
@@ -15,7 +15,7 @@
     },
     "footer": {
       "contactButton": "联系我们",
-      "contactLeading": "借助异构计算深度挖掘数据潜力",
+      "contactLeading": "充分挖掘数据潜力",
       "address": "上海徐汇区桂箐路69号桂箐园28栋6C",
       "phone": "021-33687058",
       "email": "info@zilliz.com",
