@@ -42,7 +42,7 @@ const AboutUsPage = ({ data, pageContext }) => {
       nav={nav}
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
-      <SEO title="首页" />
+      <SEO title="About Us" />
       <AboutUs  />
     </Layout>
   );
@@ -123,7 +123,7 @@ export const Query = graphql`
                 s2
                 el2_1
                 el2_2
-                el3_3
+                el2_3
               }
             }
           }

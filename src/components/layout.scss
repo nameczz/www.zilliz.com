@@ -16,7 +16,7 @@ h6 {
   padding: 0;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 400;
+  font-weight: 100;
 }
 
 #gatsby-focus-wrapper,
@@ -35,6 +35,10 @@ body {
   @include media("<=1000px") {
     font-size: 14px;
   }
+  
+}
+::selection {
+  background-color: #4fc4f9;
 }
 
 ul,
@@ -61,6 +65,8 @@ a {
   box-sizing: border-box;
   border: 2px solid #4fc4f9;
   border-radius: 22.5px;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .wrapper {
@@ -79,6 +85,8 @@ a {
 
 main.wrapper {
   background: url(../images/hero.png) no-repeat top center;
-  background-size: auto;
+  background-size: 100%;
+  position: relative;
+  top: -70px;
 }
 

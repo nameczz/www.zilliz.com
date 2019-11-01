@@ -32,7 +32,7 @@ const IndexPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const infini = data.allFile.edges[0].node.childLayoutJson.infini;
-  console.log(`locale in index page is: ${locale}`, data, pageContext);
+  // console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
     current: "index",
   };
@@ -43,8 +43,8 @@ const IndexPage = ({ data, pageContext }) => {
       nav={nav}
       subNav={<SubNav data={layout.header} locale={locale} />}
     >
-      <SEO title="首页" />
-      <Infini data={infini} />
+      <SEO title="首页" lang={locale} />
+      <Infini data={infini} locale={locale} />
     </Layout>
   );
 };
@@ -88,6 +88,7 @@ export const Query = graphql`
             infini {
               landing {
                 h3
+                h4
                 leading
                 button
               }
@@ -124,7 +125,7 @@ export const Query = graphql`
                 s2
                 el2_1
                 el2_2
-                el3_3
+                el2_3
               }
             }
           }

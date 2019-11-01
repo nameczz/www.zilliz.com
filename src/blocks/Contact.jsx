@@ -3,7 +3,6 @@ import React from "react";
 import "./Contact.scss";
 
 const Contact = ({data}) => {
-  console.log(data)
   // const {
   //   company,
   //   company_list,

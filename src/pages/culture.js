@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { SectionsContainer, Section, Header as RHeader, Footer as RFooter } from 'react-fullpage';
-import Header from '../blocks/Header';
 import SimpleFooter from '../blocks/SimpleFooter';
 import SEO from '../components/seo';
 import Texture from '../components/Texture';
@@ -428,9 +427,6 @@ const Culture = ({data, pageContext}) => {
             return false;
         }}>
             <SEO title="Culture" />
-            <RHeader>
-                <Header data={header} locale={locale} />
-            </RHeader>
             <SectionsContainer {...options} activeSection={initState}>
                 <Section><EngineeringCurlture /></Section>
                 <Section><ReinventDataScience /></Section>
