@@ -4,11 +4,14 @@
       "product": "产品",
       "aboutus": "关于我们",
       "joinus": "加入我们",
+      "doc": "文档",
+      "infiniAnalytics": "INFINI ANALYTICS",
       "feature": "特效",
       "arch": "架构与组件",
       "solution": "解决方案",
-      "infiniAnalytics": "INFINI ANALYTICS",
-      "doc": "文档"
+      "hope": "愿景",
+      "history": "历程",
+      "chance": "机会"
     },
     "footer": {
       "contactButton": "联系我们",
@@ -70,7 +73,27 @@
       "el2-1": "快速发现网络异常以进行现场服务和预防性维护",
       "el2-2": "了解客户流失的历史模式以建立预测性机器学习模型",
       "el3-3": "通过信号强度的地理空间分析改善客户体验"
-
+    }
+  },
+  "aboutus": {
+    "mission":{
+      "p": "我们的愿景",
+      "h2": "重新定义数据科学",
+      "h3": "将传统数据分析，数据科学算法以及基于时空数据分析的智能工作流程融合在同一个开放平台。 产品支持原生SQL查询和交互式可视化分析能力，同时具备整合强大的机器学习框架的良好扩展性。"
+    },
+    "work":{
+      "p": "what we do",
+      "h2": "Accelerate The Development of AI",
+      "h3": "专注于研发面向人工智能的新一代数据处理和分析平台"
+    },
+    "friends": {
+      "p":"hhhh",
+    },
+    "joinus":{
+      "p": "加入我们",
+       "h2": "ZILLIZ 正在成长，期待你的加入",
+       "h3": "“Be Hero”的团队文化，致力于打造一支精干、战斗力强、勇于创新的队伍，提倡以数据为基础、系统化解决复杂问题的工作方法，鼓励学习，奖励创新。",
+       "button": "查看职位和机会"
     }
   }
 }

@@ -7,21 +7,21 @@ import AboutUs from "../blocks/AboutUs";
 
 const SubNav = ({ data, locale }) => (
   <nav className="wrapper sub-nav">
-    <h3>{data.infiniAnalytics}</h3>
+    <h3>{data.aboutus}</h3>
     <ul>
       <li>
         <LocalizeLink locale={locale} to="/#features">
-          {data.feature}
+          {data.hope}
         </LocalizeLink>
       </li>
       <li>
         <LocalizeLink locale={locale} to="/#arch">
-          {data.arch}
+          {data.history}
         </LocalizeLink>
       </li>
       <li>
         <LocalizeLink locale={locale} to="/#solution">
-          {data.solution}
+          {data.chance}
         </LocalizeLink>
       </li>
     </ul>
@@ -60,12 +60,11 @@ export const Query = graphql`
               header {
                 product
                 aboutus
-                feature
-                arch
                 joinus
-                solution
-                infiniAnalytics
                 doc
+                hope 
+                history
+                chance
               }
               footer {
                 contactButton
