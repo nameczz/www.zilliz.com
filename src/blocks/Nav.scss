@@ -71,6 +71,7 @@ html[lang="en"] {
 
     @include media("<=1000px") {
       letter-spacing: 0px;
+      color: #fff;
     }
   }
   svg {
