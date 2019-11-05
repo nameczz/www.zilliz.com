@@ -49,16 +49,27 @@ exports.createPages = ({ actions, graphql }) => {
     const menuList = result.data.allMarkdownRemark.edges.map(
       ({ node }) => node.frontmatter
     );
-    console.log(menuList);
+
+    const defaultLang = Object.keys(locales).find(
+      lang => locales[lang].default
+    );
+    console.log(defaultLang);
+
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const locale = node.frontmatter.type;
+      const localizedPath =
+        locale === defaultLang
+          ? `/docs/${node.frontmatter.path}`
+          : `${locale}/docs/${node.frontmatter.path}`;
+
       return createPage({
-        // path: `${locale}/docs${node.frontmatter.path}`,
-        path: node.frontmatter.path,
+        path: localizedPath,
+        // path: node.frontmatter.path,
         component: docTemplate,
         context: {
           locale,
-          menuList,
+          menuList: menuList.filter(v => v.type === locale),
+          old: node.frontmatter.path,
         }, // additional data can be passed via context
       });
     });
@@ -196,14 +207,14 @@ exports.createPages = ({ actions, graphql }) => {
 //   });
 // };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    createNodeField({
-      name: `slug`,
-      node,
-      value: node.frontmatter.path,
-    });
-  }
-};
+//   if (node.internal.type === `MarkdownRemark`) {
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value: node.frontmatter.path,
+//     });
+//   }
+// };

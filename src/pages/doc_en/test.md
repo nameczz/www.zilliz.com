@@ -1,5 +1,5 @@
 ---
-path: "/en/blog/my-first-post"
+path: "endoc"
 type: "en"
 title: "my first blog"
 ---

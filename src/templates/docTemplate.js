@@ -42,8 +42,8 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($path: String!, $locale: String) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($locale: String, $old: String) {
+    markdownRemark(frontmatter: { path: { eq: $old } }) {
       html
       frontmatter {
         path

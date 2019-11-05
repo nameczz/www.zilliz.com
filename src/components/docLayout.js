@@ -12,7 +12,7 @@ export default props => {
     locale,
     nav,
     subNav,
-    wrapperClass = "wrapper",
+    wrapperClass = "doc-wrapper",
   } = props;
   const { header, footer } = data;
   return (

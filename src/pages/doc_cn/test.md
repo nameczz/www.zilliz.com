@@ -1,5 +1,5 @@
 ---
-path: "/cn/blog/my-first-post"
+path: "doc_cn"
 type: "cn"
 title: "我的第一篇博客"
 ---
