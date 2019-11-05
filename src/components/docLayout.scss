@@ -1,0 +1,101 @@
+@import "./include_media.scss";
+html {
+  height: 100%;
+}
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+}
+
+#gatsby-focus-wrapper,
+#___gatsby {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(180deg, #28292e 0%, #52545c 100%);
+  background-attachment: fixed;
+  height: 100%;
+  font-family: "Noto Sans SC Thin", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  @include media("<=1000px") {
+    font-size: 14px;
+  }
+}
+::selection {
+  background-color: #4fc4f9;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: #4fc4f9;
+  text-decoration: none;
+}
+
+.button {
+  cursor: pointer;
+  min-width: 160px;
+  color: #4fc4f9;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-align: center;
+  background: none;
+  box-sizing: border-box;
+  border: 2px solid #4fc4f9;
+  border-radius: 22.5px;
+  padding: 0.5rem 2rem;
+}
+
+.wrapper {
+  display: flex;
+  .menu-container {
+    flex: 0 0 300px;
+  }
+  .inner-container {
+    flex: 1;
+  }
+}
+
+.wrapper-aboutus {
+  padding: 0 5rem;
+}
+
+.inner-container {
+  width: 1000px;
+  @include media("<=1000px") {
+    width: auto;
+  }
+  margin: 0 auto;
+}
+main.wrapper-about {
+  position: relative;
+}
+
+.not-found {
+  background: #fff;
+  height: 100%;
+}

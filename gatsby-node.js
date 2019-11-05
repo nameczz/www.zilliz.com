@@ -21,6 +21,50 @@ exports.onCreatePage = ({ page, actions }) => {
   });
 };
 
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
+  const docTemplate = path.resolve(`src/templates/docTemplate.js`);
+
+  return graphql(`
+    {
+      allMarkdownRemark(limit: 1000) {
+        edges {
+          node {
+            frontmatter {
+              path
+              title
+              type
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    // get menulist from md file
+    const menuList = result.data.allMarkdownRemark.edges.map(
+      ({ node }) => node.frontmatter
+    );
+    console.log(menuList);
+    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const locale = node.frontmatter.type;
+      return createPage({
+        // path: `${locale}/docs${node.frontmatter.path}`,
+        path: node.frontmatter.path,
+        component: docTemplate,
+        context: {
+          locale,
+          menuList,
+        }, // additional data can be passed via context
+      });
+    });
+  });
+};
+
 // exports.createPages = ({ graphql, actions }) => {
 //   const { createPage } = actions;
 
