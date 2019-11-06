@@ -107,3 +107,10 @@ main.wrapper-about {
   background: #fff;
   height: 100%;
 }
+
+.gradient {
+  background: -webkit-linear-gradient(right, #eee, rgba(79,196,249,0.9));
+    color: rgba(79,196,249,0.9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
