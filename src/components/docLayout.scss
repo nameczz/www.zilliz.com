@@ -70,13 +70,14 @@ a {
   padding: 0.5rem 2rem;
 }
 
-.doc-wrapper {
+main.doc-wrapper {
   display: flex;
   .menu-container {
     flex: 0 0 300px;
   }
   .inner-container {
     flex: 1;
+
   }
 }
 
@@ -91,10 +92,6 @@ a {
   }
   margin: 0 auto;
 }
-main.wrapper-about {
-  position: relative;
-}
-
 .not-found {
   background: #fff;
   height: 100%;

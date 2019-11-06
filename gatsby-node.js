@@ -32,9 +32,12 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              path
+              id
               title
-              type
+              lang
+              label1
+              label2
+              label3
             }
           }
         }
@@ -49,18 +52,17 @@ exports.createPages = ({ actions, graphql }) => {
     const menuList = result.data.allMarkdownRemark.edges.map(
       ({ node }) => node.frontmatter
     );
-
+    console.log(menuList)
     const defaultLang = Object.keys(locales).find(
       lang => locales[lang].default
     );
-    console.log(defaultLang);
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const locale = node.frontmatter.type;
+      const locale = node.frontmatter.lang;
       const localizedPath =
         locale === defaultLang
-          ? `/docs/${node.frontmatter.path}`
-          : `${locale}/docs/${node.frontmatter.path}`;
+          ? `/docs/${node.frontmatter.id}`
+          : `${locale}/docs/${node.frontmatter.id}`;
 
       return createPage({
         path: localizedPath,
@@ -68,8 +70,8 @@ exports.createPages = ({ actions, graphql }) => {
         component: docTemplate,
         context: {
           locale,
-          menuList: menuList.filter(v => v.type === locale),
-          old: node.frontmatter.path,
+          menuList: menuList.filter(v => v.lang === locale),
+          old: node.frontmatter.id,
         }, // additional data can be passed via context
       });
     });

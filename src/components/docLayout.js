@@ -1,9 +1,10 @@
 import React from "react";
 import Nav from "../blocks/Nav";
+import Menu from "../blocks/Menu";
 import Contact from "../blocks/Contact";
 import Footer from "../blocks/Footer";
 
-import "./layout.scss";
+import "./docLayout.scss";
 
 export default props => {
   const {
@@ -12,6 +13,7 @@ export default props => {
     locale,
     nav,
     subNav,
+    menuList,
     wrapperClass = "doc-wrapper",
   } = props;
   const { header, footer } = data;
@@ -19,7 +21,7 @@ export default props => {
     <div>
       <Nav nav={nav} data={header} locale={locale} subNav={subNav} />
       <main className={wrapperClass}>
-        <div className="menu-container">Menu</div>
+        <Menu menuList={menuList}></Menu>
         <div className="inner-container">{children}</div>
       </main>
       <Contact data={data} locale={locale} />

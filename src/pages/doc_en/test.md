@@ -1,6 +1,6 @@
 ---
-path: "endoc"
-type: "en"
+id: "doc"
+lang: "en"
 title: "my first blog"
 ---
 

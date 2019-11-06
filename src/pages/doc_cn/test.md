@@ -1,7 +1,9 @@
 ---
-path: "doc_cn"
-type: "cn"
+id: "doc"
+lang: "cn"
 title: "我的第一篇博客"
+label1: "Zilliz Analytics"
+label2: "User Book"
 ---
 
 # 安装 Infini 可视化交互分析界面

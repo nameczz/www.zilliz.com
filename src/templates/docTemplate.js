@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/docLayout";
-import LocalizeLink from "../components/localizedLink";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import "./docTemplate.scss";
@@ -24,13 +23,13 @@ export default function Template({
       locale={locale}
       nav={nav}
       pageContext={pageContext}
-      // subNav={<SubNav data={layout.header} locale={locale} />}
+      menuList={menuList}
     >
       <SEO title="ZILLIZ Analytics" lang={locale} />
       <div className="doc-post-container">
         <div className="doc-post">
-          {/* <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2> */}
+          <h1>{frontmatter.title}</h1>
+          <h2>{frontmatter.date}</h2>
           <div
             className="doc-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -43,10 +42,10 @@ export default function Template({
 
 export const pageQuery = graphql`
   query($locale: String, $old: String) {
-    markdownRemark(frontmatter: { path: { eq: $old } }) {
+    markdownRemark(frontmatter: { id: { eq: $old }, lang: { eq: $locale } }) {
       html
       frontmatter {
-        path
+        id
         title
       }
     }
