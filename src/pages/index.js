@@ -1,34 +1,9 @@
 import React from "react";
 import Layout from "../components/layout";
-import LocalizeLink from "../components/localizedLink";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Infini from "../blocks/Infini";
-
-export const SubNav = ({ data, locale }) => (
-  <nav className="wrapper sub-nav-wrapper">
-    <div className="inner-container sub-nav">
-    <h3>{data.infiniAnalytics}</h3>
-    <ul>
-      <li>
-        <LocalizeLink locale={locale} to="/#features">
-          {data.feature}
-        </LocalizeLink>
-      </li>
-      <li>
-        <LocalizeLink locale={locale} to="/#arch">
-          {data.arch}
-        </LocalizeLink>
-      </li>
-      <li>
-        <LocalizeLink locale={locale} to="/#solution">
-          {data.solution}
-        </LocalizeLink>
-      </li>
-    </ul>
-    </div>
-  </nav>
-);
+import SubNav from '../blocks/SubNav';
 
 const IndexPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
@@ -44,14 +19,13 @@ const IndexPage = ({ data, pageContext }) => {
       locale={locale}
       nav={nav}
       pageContext={pageContext}
-      subNav={<SubNav data={layout.header} locale={locale} />}
+      subNav={<SubNav data={layout.header} locale={locale} current="overview" />}
     >
       <SEO title="ZILLIZ Analytics" lang={locale} />
       <Infini data={infini} locale={locale} />
     </Layout>
   );
 };
-
 
 export const Query = graphql`
   query Query($locale: String) {
@@ -63,7 +37,10 @@ export const Query = graphql`
           childLayoutJson {
             layout {
               header {
+                overview
+                analytics
                 product
+                milvus
                 aboutus
                 feature
                 arch

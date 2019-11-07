@@ -17,7 +17,7 @@ const Infini = ({ data, locale }) => {
   };
 
   return (
-    <section className={`infini ${locale}`}>
+    <section className={`infini section ${locale}`}>
       <section className="landing">
         <h3>{data.landing.h3}</h3>
         <h4>{data.landing.h4}</h4>
