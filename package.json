@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "d3": "^5.9.2",
+    "d3-array": "^2.3.3",
     "d3-scale": "^3.0.0",
     "echarts": "^4.2.1",
     "gatsby": "^2.10.0",
