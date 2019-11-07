@@ -1,7 +1,14 @@
+@import "../pages/include_media";
+
 .doc-post-container {
-  padding: 1rem;
-  background: #eee;
-  min-height: 400px;
+  padding: 5rem;
+  padding-top: 6rem;
+  background: #fff;
+  min-height: 60vh;
+  @include media("<=1000px") {
+    padding:1rem;
+    padding-top:2rem;
+  }
   article,
   aside,
   details,
@@ -53,10 +60,6 @@
   }
   dfn {
     font-style: italic;
-  }
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
   }
   mark {
     background-color: #ff0;
@@ -222,7 +225,7 @@
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: 4.6rem;
     color: inherit;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -230,6 +233,10 @@
     text-rendering: optimizeLegibility;
     font-size: 2.25rem;
     line-height: 1.1;
+    @include media("<=1000px") {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
   }
   h2 {
     margin-left: 0;
@@ -247,6 +254,9 @@
     text-rendering: optimizeLegibility;
     font-size: 1.62671rem;
     line-height: 1.1;
+    @include media("<=1000px") {
+      font-size: 1rem;
+    }
   }
   h3 {
     margin-left: 0;
@@ -264,6 +274,9 @@
     text-rendering: optimizeLegibility;
     font-size: 1.38316rem;
     line-height: 1.1;
+    @include media("<=1000px") {
+      font-size: 1rem;
+    }
   }
   h4 {
     margin-left: 0;

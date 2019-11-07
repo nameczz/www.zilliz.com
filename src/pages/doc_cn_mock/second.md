@@ -1,7 +1,7 @@
 ---
-id: "doc"
+id: "second"
 lang: "cn"
-title: "我的第一篇博客"
+title: "second"
 label1: "用户手册"
 label2: "Infini"
 ---

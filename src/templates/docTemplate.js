@@ -24,12 +24,12 @@ export default function Template({
       nav={nav}
       pageContext={pageContext}
       menuList={menuList}
+      id={frontmatter.id}
     >
       <SEO title="ZILLIZ Analytics" lang={locale} />
       <div className="doc-post-container">
         <div className="doc-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+          {/* <h1>{frontmatter.title}</h1> */}
           <div
             className="doc-post-content"
             dangerouslySetInnerHTML={{ __html: html }}

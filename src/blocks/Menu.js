@@ -3,15 +3,14 @@ import LocalizeLink from "../components/localizedLink";
 import arrow from "../images/icons/arrow.svg";
 import "./Menu.scss";
 
-const findItem = (key, arr) => {
+const findItem = (key, value, arr) => {
   let find = undefined;
   arr.forEach(v => {
-    if (v.title === key) {
+    if (find) return
+    if (v[key] === value) {
       find = v;
-      return;
-    }
-    if (v.children && v.children.length) {
-      find = findItem(key, v.children);
+    } else if (v.children && v.children.length) {
+      find = findItem(key, value, v.children);
     }
   });
   return find;
@@ -19,11 +18,15 @@ const findItem = (key, arr) => {
 
 const Menu = props => {
   const preLink = "/docs";
-  const { menuList } = props;
+  const { menuList, activeDoc } = props;
+
+  const [menuStatus, setMenuStatus] = useState(false)
 
   const [realMenuList, setRealMenuList] = useState([]);
   useEffect(() => {
     const generateMenu = list => {
+
+      // get all labels , make sure will generate menu from top to bottom
       const labelKeys = Object.keys(menuList[0])
         .filter(v => v.includes("label"))
         .sort((a, b) => a[a.length - 1] - b[b.length - 1]);
@@ -36,7 +39,7 @@ const Menu = props => {
           return copyMenu;
         }
 
-        // top level menu
+        // find top menu by current label
         const topMenu = list.filter(v => {
           if (!labelKeys[index] || !v[labelKeys[index]]) {
             return index > 0 ? (v[parentLabel] ? true : false) : true;
@@ -49,11 +52,13 @@ const Menu = props => {
             ...v,
             children: [],
             showChildren: false,
+            isActive: false,
+            isLast: !labelKeys[index]
           };
           if (index === 0) {
             copyMenu.push(item);
           } else {
-            const parent = findItem(v[parentLabel], copyMenu);
+            const parent = findItem('title', v[parentLabel], copyMenu);
             parent && parent.children.push(item);
           }
         });
@@ -63,14 +68,42 @@ const Menu = props => {
       };
     };
 
-    setRealMenuList(generateMenu(menuList)());
-  }, [menuList]);
+    const checkActive = (list) => {
+      const findDoc = findItem('id', activeDoc, list)
+      const labelKeys = Object.keys(findDoc)
+        .filter(v => v.includes("label"))
+
+      findDoc.isActive = true
+
+      labelKeys.forEach(label => {
+        const parentDoc = findItem('title', findDoc[label], list)
+        parentDoc && (parentDoc.showChildren = true)
+      })
+    }
+
+    const arr = generateMenu(menuList)()
+    checkActive(arr)
+    setRealMenuList(arr);
+  }, [menuList, activeDoc]);
+
+  const [screenWidth, setScreenWidth] = useState(null);
+  useEffect(() => {
+    setScreenWidth(document.body.clientWidth);
+    const cb = () => {
+      setScreenWidth(document.body.clientWidth);
+    };
+    window.addEventListener("resize", cb);
+    return () => {
+      window.removeEventListener("resize", cb);
+    };
+  }, []);
+
 
   const generageMenuDom = (list, className = "") => {
-    return list.map((doc, index) => (
-      <div className={className} key={doc.id}>
+    return list.map(doc => (
+      <div className={`${className} ${doc.isLast && 'menu-last-level'} ${doc.isActive && 'active'}`} key={doc.id}>
         <div className="menu_name-wrapper">
-          <LocalizeLink locale={doc.lang} to={`${preLink}/${doc.id}`}>
+          <LocalizeLink locale={doc.lang} className="text" to={`${preLink}/${doc.id}`}>
             {doc.title}
           </LocalizeLink>
 
@@ -80,7 +113,7 @@ const Menu = props => {
               alt="arrow"
               className={`arrow ${doc.showChildren ? 'top' : ''}`}
               onClick={() => {
-                toggleMenu(doc);
+                toggleMenuChild(doc);
               }}
             ></img>
           ) : null}
@@ -94,17 +127,30 @@ const Menu = props => {
     ));
   };
 
-  const toggleMenu = doc => {
+  const toggleMenuChild = doc => {
     const copyMenu = JSON.parse(JSON.stringify(realMenuList))
-    const findDoc = findItem(doc.title, copyMenu);
+    const findDoc = findItem('title', doc.title, copyMenu);
     findDoc.showChildren = !findDoc.showChildren
     setRealMenuList(copyMenu);
   };
 
+  const toggleMenu = (status) => {
+    setMenuStatus(status)
+  }
+
   return (
-    <section className="menu-container">
-      {generageMenuDom(realMenuList, "menu-top-level")}
-    </section>
+    <>
+      <section className={`menu-container ${menuStatus ? '' : 'hide'}`}>
+        {
+
+          screenWidth <= 1000 ? (<i class="fas fa-times close" onClick={() => { toggleMenu(false) }}></i>) : null
+        }
+
+        <h1 className="title border-bottom">ZILLIZ ANALYTICS</h1>
+        {generageMenuDom(realMenuList, "menu-top-level border-bottom")}
+      </section>
+      {!menuStatus ? <div className="mini-menu-control" onClick={() => { toggleMenu(true) }}><i class="fas fa-bars"></i></div> : null}
+    </>
   );
 };
 

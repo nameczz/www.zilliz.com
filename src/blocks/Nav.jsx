@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import React from "react";
+
 import LocalizeLink from "../components/localizedLink";
 import logo from "../images/logo.svg"; // Tell Webpack this JS file uses this image
 import "./Nav.scss";
@@ -99,33 +101,33 @@ const PcNav = ({ data, locale, nav = {}, subNav = <></> }) => {
   );
 };
 
-const MobileNav = ({ data, locale, nav = {} }) => {
-  return (
-    <nav className="wrapper nav-wrapper">
-      <div className="inner-container nav">
-        <div className="left">
-          <LocalizeLink locale={locale} to="/" className="logo">
-            <img src={logo} alt="logo" />
-          </LocalizeLink>
-        </div>
-        <div className="right">liebiao</div>
-      </div>
-    </nav>
-  );
-};
+// const MobileNav = ({ data, locale, nav = {} }) => {
+//   return (
+//     <nav className="wrapper nav-wrapper">
+//       <div className="inner-container nav">
+//         <div className="left">
+//           <LocalizeLink locale={locale} to="/" className="logo">
+//             <img src={logo} alt="logo" />
+//           </LocalizeLink>
+//         </div>
+//         <div className="right">liebiao</div>
+//       </div>
+//     </nav>
+//   );
+// };
 
 const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
-  const [screenWidth, setScreenWidth] = useState(null);
-  useEffect(() => {
-    setScreenWidth(document.body.clientWidth);
-    const cb = () => {
-      setScreenWidth(document.body.clientWidth);
-    };
-    window.addEventListener("resize", cb);
-    return () => {
-      window.removeEventListener("resize", cb);
-    };
-  }, []);
+  // const [screenWidth, setScreenWidth] = useState(null);
+  // useEffect(() => {
+  //   setScreenWidth(document.body.clientWidth);
+  //   const cb = () => {
+  //     setScreenWidth(document.body.clientWidth);
+  //   };
+  //   window.addEventListener("resize", cb);
+  //   return () => {
+  //     window.removeEventListener("resize", cb);
+  //   };
+  // }, []);
 
   return (
     <>
