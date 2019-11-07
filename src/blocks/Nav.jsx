@@ -129,11 +129,14 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
 
   return (
     <>
+      {/* hide for now. 
+
       {screenWidth >= 1000 ? (
         <PcNav data={data} locale={locale} nav={nav} subNav={subNav}></PcNav>
       ) : (
         <MobileNav data={data} locale={locale} nav={nav}></MobileNav>
-      )}
+      )} */}
+      <PcNav data={data} locale={locale} nav={nav} subNav={subNav}></PcNav>
     </>
   );
 };
