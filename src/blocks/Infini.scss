@@ -12,16 +12,6 @@ html[lang="en"] {
 }
 
 .infini {
-  padding-bottom: 50px;
-  section {
-    padding-top: 75px;
-    padding-bottom: 70px;
-    margin-bottom: 75px;
-    @include media("<=1000px") {
-      margin-bottom: 25px;
-      padding-bottom: 25px;
-    }
-  }
   h3 {
     margin: 0 auto;
   }
