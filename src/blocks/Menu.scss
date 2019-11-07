@@ -1,10 +1,40 @@
 .menu-container {
-  .menu-item {
-    padding: 10px 0 10px 40px;
+  .menu-top-level {
+    padding: 10px 20px 10px 40px;
     cursor: pointer;
   }
-  .menu-child{
+
+  .menu-child {
     margin: 10px 0;
+    padding-left: 8px;
     cursor: pointer;
+  }
+
+  .menu-child-wrapper {
+    transition: all 0.5s linear;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 600ms ease;
+
+    &.open {
+      max-height: 400px;
+    }
+  }
+
+  .menu_name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow {
+    position: relative;
+    width: 20px;
+    transform: rotate(180deg);
+    color: #fff;
+    cursor: pointer;
+    &.top{
+      transform: rotate(0);
+    }
   }
 }
