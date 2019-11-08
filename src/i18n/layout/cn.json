@@ -125,5 +125,34 @@
         "p": "MegaWise 无需事先构建索引、降采样或预聚合，借助 GPU 等硬件加速器的性能红利提供即时查询能力，即使面向十亿级数据记录也可以达到几十到几百毫秒的响应速度。"
       }
     }
+  },
+  "bi": {
+    "landing": {
+      "h3": "Infini",
+      "h4": "Analytics Interface",
+      "p": "Browser-based data visualization interface that provides visualized, interactive representations of massive-scale geospatial and temporal data in real time.",
+      "readMore": "查看详情"
+    },
+    "features": {
+      "h3": "特性",
+      "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
+      "viewDoc": "查看文档",
+      "f1": {
+        "h4": "Faster than light",
+        "p": "Completes all procedures from data query to graphic rendering in a flash for massive-scale geospatial and temporal data."
+      },
+      "f2": {
+        "h4": "Full visualization and interactivity",
+        "p": "Visually interacts with plots, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+      },
+      "f3": {
+        "h4": "Multiple customizable plots",
+        "p": "Customizes multiple plot types. You can freely choose your favorite style."
+      },
+      "f4": {
+        "h4": "Real-time map rendering",
+        "p": "Renders billions of geospatial data on the map in a flash. Seamless merge with maps will add tremendous business value to data."
+      }
+    }
   }
 }
