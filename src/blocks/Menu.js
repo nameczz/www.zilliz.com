@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import LocalizeLink from "../components/localizedLink";
-import arrow from "../images/icons/arrow.svg";
 import "./Menu.scss";
 
 const findItem = (key, value, arr) => {
@@ -112,20 +111,20 @@ const Menu = props => {
           ) : doc.isMenu === "true" ? (
             <span className="text">{doc.title}</span>
           ) : (
-            <LocalizeLink
-              locale={doc.lang}
-              className="text"
-              to={`${preLink}/${doc.id}`}
-            >
-              {doc.title}
-            </LocalizeLink>
-          )}
+                <LocalizeLink
+                  locale={doc.lang}
+                  className="text"
+                  to={`${preLink}/${doc.id}`}
+                >
+                  {doc.title}
+                </LocalizeLink>
+              )}
 
           {doc.children && doc.children.length ? (
             <i
               className={`fas fa-chevron-down arrow ${
                 doc.showChildren ? "" : "top"
-              }`}
+                }`}
               onClick={() => {
                 toggleMenuChild(doc);
               }}
