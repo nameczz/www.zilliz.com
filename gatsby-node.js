@@ -26,6 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const docTemplate = path.resolve(`src/templates/docTemplate.js`);
 
+  // isMenu outLink can be add when need to use
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
