@@ -1,18 +1,18 @@
 import React from "react"
-import  LocalizeLink  from '../components/localizedLink';
+import LocalizeLink from '../components/localizedLink';
 import logo from "../images/logo.svg" // Tell Webpack this JS file uses this image
 import './Header.scss'
 /* disable jsx-a11y/anchor-is-valid*/
 const Header = ({ data, locale }) => {
 
   const {
-    why_zilliz,  
+    why_zilliz,
     product,
-    product_list, 
-    news, 
+    product_list,
+    news,
     blog,
-    career, 
-    about_us, 
+    career,
+    about_us,
     aboutus_list,
   } = data;
 
@@ -48,11 +48,11 @@ const Header = ({ data, locale }) => {
     return false;
   }
   const toggleLanguage = () => {
-    if(window){
-      const {origin, href} = window.location;
+    if (window) {
+      const { origin, href } = window.location;
       const arr = href.split(origin);
-      window.location.href = locale === 'en' 
-        ? `${ origin }/cn${arr[1]}`
+      window.location.href = locale === 'en'
+        ? `${origin}/cn${arr[1]}`
         : `${origin}/${arr[1].slice(4)}`
     }
   }
@@ -60,7 +60,7 @@ const Header = ({ data, locale }) => {
     <header className="bg-dark">
       <div className="container">
         <nav className="navbar navbar-expand-lg" style={{ padding: 0 }}>
-          <LocalizeLink locale={ locale }  to="/" className="navbar-brand">
+          <LocalizeLink locale={locale} to="/" className="navbar-brand">
             <img src={logo} height="50" alt="logo" style={{ overflow: 'visible ' }} />
           </LocalizeLink>
           {/* 缩起来的nav */}
@@ -69,29 +69,29 @@ const Header = ({ data, locale }) => {
             <div className="navbar-collapse md-nav-contaienr ele-hide" id="navbarNav13">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <LocalizeLink locale={ locale }  className="nav-link" to="/why-zilliz">{why_zilliz}</LocalizeLink>
+                  <LocalizeLink locale={locale} className="nav-link" to="/why-zilliz">{why_zilliz}</LocalizeLink>
                 </li>
-                <li className='nav-item drop-down' onClick={ toggleSubNavShow }>
-                  <span className='nav-link' ><span>{product}</span> &nbsp;<svg t="1561600107498"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg></span>
+                <li className='nav-item drop-down' onClick={toggleSubNavShow}>
+                  <span className='nav-link' ><span>{product}</span> &nbsp;<svg t="1561600107498" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg></span>
                 </li>
                 <div className="sub-navlist">
                   <li className='product'><a className='nav-link' href='https://milvus.io/' target='blank'>{product_list[0]}</a></li>
-                  <li className='product'><LocalizeLink locale={ locale } className='nav-link' to='/megawise'>{product_list[1]}</LocalizeLink></li>
+                  <li className='product'><LocalizeLink locale={locale} className='nav-link' to='/megawise'>{product_list[1]}</LocalizeLink></li>
                 </div>
-                <li className="nav-item"><LocalizeLink locale={ locale } className="nav-link" to="/news">{news}</LocalizeLink></li>
-                <li className="nav-item"><LocalizeLink locale={ locale }  className="nav-link" to="/blog">{blog}</LocalizeLink></li>
-                <li className='nav-item drop-down' onClick={ toggleSubNavShow }>
+                <li className="nav-item"><LocalizeLink locale={locale} className="nav-link" to="/news">{news}</LocalizeLink></li>
+                <li className="nav-item"><LocalizeLink locale={locale} className="nav-link" to="/blog">{blog}</LocalizeLink></li>
+                <li className='nav-item drop-down' onClick={toggleSubNavShow}>
                   <span className='nav-link' ><span>{about_us}</span> &nbsp;
-                  <svg t="1561600107498"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
+                  <svg t="1561600107498" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
                     {/* <svg t="1561497913193" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3417" width="16" height="16"><path d="M506.39 335.583c-9.004-0.189-18.004 3.11-24.837 9.945l-279.402 279.402c-13.197 13.197-13.243 34.926 0.141 48.311 13.479 13.479 35.020 13.434 48.311 0.141l255.741-255.741 255.741 255.741c13.293 13.293 34.832 13.34 48.311-0.141 13.385-13.385 13.34-35.113 0.141-48.311l-279.402-279.402c-6.833-6.833-15.838-10.181-24.837-9.945z" p-id="3418" fill="#ffffff"></path></svg> */}
                   </span>
                 </li>
                 <div className='sub-navlist'>
-                  <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/culture'>{aboutus_list[0]}</LocalizeLink></li>
-                  <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
+                  <li className='about-us'><LocalizeLink locale={locale} className='nav-link' to='/culture'>{aboutus_list[0]}</LocalizeLink></li>
+                  <li className='about-us'><LocalizeLink locale={locale} className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
                 </div>
                 <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/zilliz?lang=en' target='blank'>{career}</a></li>
-                <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '中文' : 'English' }</span></li>
+                <li className='about-us' style={{ cursor: 'pointer' }}><span className='nav-link' onClick={toggleLanguage} >{locale === 'en' ? '中文' : 'English'}</span></li>
               </ul>
             </div>
           </div>
@@ -100,23 +100,23 @@ const Header = ({ data, locale }) => {
             {/* nav left side */}
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <LocalizeLink locale={ locale }  className="nav-link" to="/why-zilliz">{why_zilliz}</LocalizeLink>
+                <LocalizeLink locale={locale} className="nav-link" to="/why-zilliz">{why_zilliz}</LocalizeLink>
               </li>
               <li className='nav-item drop-down' onMouseEnter={handleDropDown} onMouseLeave={handleDropDown}>
                 <span className='nav-link'><span>{product}</span> &nbsp;
-                <svg t="1561600107498"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
+                <svg t="1561600107498" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
                   {/* <svg t="1561497913193" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3417" width="16" height="16"><path d="M506.39 335.583c-9.004-0.189-18.004 3.11-24.837 9.945l-279.402 279.402c-13.197 13.197-13.243 34.926 0.141 48.311 13.479 13.479 35.020 13.434 48.311 0.141l255.741-255.741 255.741 255.741c13.293 13.293 34.832 13.34 48.311-0.141 13.385-13.385 13.34-35.113 0.141-48.311l-279.402-279.402c-6.833-6.833-15.838-10.181-24.837-9.945z" p-id="3418" fill="#ffffff"></path></svg> */}
                 </span>
                 <ul className='list' onMouseEnter={handleSublist} onMouseLeave={handleSublist}>
                   <li className='product'><a className='nav-link' href='https://milvus.io/' target='blank'>{product_list[0]}</a></li>
-                  <li className='product'><LocalizeLink locale={ locale } className='nav-link' to='/megawise'>{product_list[1]}</LocalizeLink></li>
+                  <li className='product'><LocalizeLink locale={locale} className='nav-link' to='/megawise'>{product_list[1]}</LocalizeLink></li>
                 </ul>
               </li>
               <li className="nav-item">
-                <LocalizeLink locale={ locale }  className="nav-link" to="/news">{news}</LocalizeLink>
+                <LocalizeLink locale={locale} className="nav-link" to="/news">{news}</LocalizeLink>
               </li>
               <li className="nav-item">
-                <LocalizeLink locale={ locale }  className="nav-link" to="/blog">{blog}</LocalizeLink>
+                <LocalizeLink locale={locale} className="nav-link" to="/blog">{blog}</LocalizeLink>
               </li>
             </ul>
             {/* nav right side */}
@@ -124,15 +124,15 @@ const Header = ({ data, locale }) => {
               <li className='about-us'><a className='nav-link' href='https://zilliz.gllue.com/portal/zilliz?lang=en' target='blank'>{career}</a></li>
               <li className='nav-item drop-down' onMouseEnter={handleDropDown} onMouseLeave={handleDropDown}>
                 <span className='nav-link'><span>{about_us}</span> &nbsp;
-                <svg t="1561600107498"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
+                <svg t="1561600107498" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4496" width="16" height="16"><path d="M511.872 676.8a32 32 0 0 1-23.232-9.984l-251.264-265.6a32 32 0 0 1 46.528-43.968l228.032 241.088 228.224-241.088a32.064 32.064 0 0 1 45.248-1.28c12.8 12.16 13.376 32.448 1.28 45.248l-251.52 265.6a32 32 0 0 1-23.296 9.984z" p-id="4497" fill="#ffffff"></path></svg>
                   {/* <svg t="1561497913193" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3417" width="16" height="16"><path d="M506.39 335.583c-9.004-0.189-18.004 3.11-24.837 9.945l-279.402 279.402c-13.197 13.197-13.243 34.926 0.141 48.311 13.479 13.479 35.020 13.434 48.311 0.141l255.741-255.741 255.741 255.741c13.293 13.293 34.832 13.34 48.311-0.141 13.385-13.385 13.34-35.113 0.141-48.311l-279.402-279.402c-6.833-6.833-15.838-10.181-24.837-9.945z" p-id="3418" fill="#ffffff"></path></svg> */}
                 </span>
                 <ul className='list' onMouseEnter={handleSublist} onMouseLeave={handleSublist}>
-                  <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/culture'>{aboutus_list[0]}</LocalizeLink></li>
-                  <li className='about-us'><LocalizeLink locale={ locale } className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
+                  <li className='about-us'><LocalizeLink locale={locale} className='nav-link' to='/culture'>{aboutus_list[0]}</LocalizeLink></li>
+                  <li className='about-us'><LocalizeLink locale={locale} className='nav-link' to='/about-us'>{aboutus_list[1]}</LocalizeLink></li>
                 </ul>
               </li>
-              <li className='about-us' style={{cursor: 'pointer'}}><span className='nav-link' onClick={toggleLanguage} >{ locale === 'en' ? '中文' : 'English' }</span></li>
+              <li className='about-us' style={{ cursor: 'pointer' }}><span className='nav-link' onClick={toggleLanguage} >{locale === 'en' ? '中文' : 'English'}</span></li>
             </ul>
           </div>
         </nav>

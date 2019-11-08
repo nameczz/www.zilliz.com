@@ -5,8 +5,10 @@ import "./Nav.scss";
 
 const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
   const [open, setOpen] = useState(false);
-  const isZilliz = ['/', 'index', 'megawise', 'infini'].indexOf(nav.current) !== -1 && open;
-
+  const isZilliz =
+    ["/", "index", "megawise", "infini", "doc"].indexOf(nav.current) !== -1 &&
+    open;
+  const showSubNav = !open && nav.current !== "doc";
   return (
     <>
       <nav className="wrapper nav-wrapper">
@@ -19,15 +21,17 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
             <ul className={`nav-links ${open ? "show" : "hide"}`}>
               {isZilliz && <li>ZILLIZ Analaytics</li>}
               {open && subNav}
-              {!isZilliz && <li className="root">
-                <LocalizeLink
-                  className={nav.current === "index" ? "current" : ""}
-                  locale={locale}
-                  to="/"
-                >
-                  {open ? `ZILLIZ Analaytics` : data.analytics}
-                </LocalizeLink>
-              </li>}
+              {!isZilliz && (
+                <li className="root">
+                  <LocalizeLink
+                    className={nav.current === "index" ? "current" : ""}
+                    locale={locale}
+                    to="/"
+                  >
+                    {open ? `ZILLIZ Analaytics` : data.analytics}
+                  </LocalizeLink>
+                </li>
+              )}
               <li className="root">
                 <a
                   href="http://milvus.io"
@@ -42,6 +46,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                   className={nav.current === "aboutus" ? "current" : ""}
                   locale={locale}
                   to="/aboutus"
+                  target="_blank"
                 >
                   {data.aboutus}
                 </LocalizeLink>
@@ -57,14 +62,16 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
               </li>
               {open && (
                 <li>
-                  <a
-                    className="right"
-                    href="http://infini-analytics.github.io/"
-                    rel="noopener noreferrer"
+                  <LocalizeLink
+                    className={`${
+                      nav.current === "doc" ? "current" : ""
+                    } right`}
+                    locale={locale}
+                    to="/docs/analytics_overview"
                     target="_blank"
                   >
                     {data.doc}
-                  </a>
+                  </LocalizeLink>
                 </li>
               )}
             </ul>
@@ -81,17 +88,17 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
               <i className="fas fa-times"></i>
             )}
           </a>
-          <a
-            className="right"
-            href="http://infini-analytics.github.io/"
-            rel="noopener noreferrer"
+          <LocalizeLink
+            className={`${nav.current === "doc" ? "current" : ""} right`}
+            locale={locale}
+            to="/docs/analytics_overview"
             target="_blank"
           >
             {data.doc}
-          </a>
+          </LocalizeLink>
         </div>
       </nav>
-      {!open && (
+      {showSubNav && (
         <nav className="wrapper sub-nav-wrapper">
           <div className="inner-container sub-nav">
             <ul> {subNav}</ul>

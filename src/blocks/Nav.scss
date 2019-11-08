@@ -2,11 +2,15 @@
 
 .nav-wrapper {
   background: #101010;
+  padding: 0 !important;
   @include media("<=1000px") {
-    padding: 0 !important;
     position: fixed;
     width: 100%;
     z-index: 100;
+  }
+  .inner-container {
+    width: 95%;
+    padding: 0 auto;
   }
 }
 .nav {
@@ -74,6 +78,7 @@
       position: fixed;
       z-index: 100;
       background-color: rgba(82, 84, 92, 1);
+        box-shadow: 0 10px 10px 0 rgba(40,41,46,0.5);
       top: 50px;
       left: 0;
       width: 100%;

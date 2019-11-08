@@ -125,5 +125,34 @@
         "p": "MegaWise does not need indexing, downsampling, or pre-aggregation. With the support of GPUs, MegaWise can perform real-time queries for billion-scale datasets in tens or hundreds of milliseconds."
       }
     }
+  },
+  "bi": {
+    "landing": {
+      "h3": "Infini",
+      "h4": "Analytics Interface",
+      "p": "Browser-based data visualization interface that provides visualized, interactive representations of massive-scale geospatial and temporal data in real time.",
+      "readMore": "Read More"
+    },
+    "features": {
+      "h3": "Features",
+      "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
+      "viewDoc": "View Doc",
+      "f1": {
+        "h4": "Faster than light",
+        "p": "Completes all procedures from data query to graphic rendering in a flash for massive-scale geospatial and temporal data."
+      },
+      "f2": {
+        "h4": "Full visualization and interactivity",
+        "p": "Visually interacts with plots, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+      },
+      "f3": {
+        "h4": "Multiple customizable plots",
+        "p": "Customizes multiple plot types. You can freely choose your favorite style."
+      },
+      "f4": {
+        "h4": "Real-time map rendering",
+        "p": "Renders billions of geospatial data on the map in a flash. Seamless merge with maps will add tremendous business value to data."
+      }
+    }
   }
 }

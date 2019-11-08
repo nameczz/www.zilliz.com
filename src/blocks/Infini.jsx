@@ -7,6 +7,7 @@ import s2 from "../images/icon-solution-2.png";
 import s3 from "../images/icon-solution-3.png";
 import cn from "../images/horizontal-cn.png";
 import en from "../images/horizontal-en.png";
+import LocalizeLink from "../components/localizedLink";
 import "./Infini.scss";
 
 const Infini = ({ data, locale }) => {
@@ -22,14 +23,13 @@ const Infini = ({ data, locale }) => {
         <h4>{data.landing.h4}</h4>
         <p>{data.landing.leading}</p>
         <div className="button-area">
-          <a
-            rel="noopener noreferrer"
+          <LocalizeLink
             className="button buttonMega"
-            href="https://github.com/megawise/docs"
-            target="_blank"
+            locale={locale}
+            to="/docs/megawise_intro"
           >
             {data.landing.buttonMega}
-          </a>
+          </LocalizeLink>
         </div>
       </section>
 
@@ -60,7 +60,11 @@ const Infini = ({ data, locale }) => {
       <section className="arch" id="arch">
         <h3>{data.arch.h3}</h3>
         <div className="content">
-          <img width="100%" src={locale === "cn" ? cn : en} alt={data.arch.h3} />
+          <img
+            width="100%"
+            src={locale === "cn" ? cn : en}
+            alt={data.arch.h3}
+          />
         </div>
       </section>
 
