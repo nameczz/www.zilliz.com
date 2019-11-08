@@ -8,15 +8,13 @@ export default function Template({
   data,
   pageContext, // this prop will be injected by the GraphQL query below.
 }) {
-  console.log(data);
   const { locale, menuList } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   const nav = {
-    current: "index",
+    current: "doc",
   };
-  console.log(menuList);
   return (
     <Layout
       data={layout}
@@ -57,6 +55,9 @@ export const pageQuery = graphql`
           childLayoutJson {
             layout {
               header {
+                overview
+                analytics
+                milvus
                 product
                 aboutus
                 feature
