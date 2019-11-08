@@ -6,9 +6,10 @@ import "./Nav.scss";
 const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
   const [open, setOpen] = useState(false);
   const isZilliz =
-    ["/", "index", "megawise", "infini", "doc"].indexOf(nav.current) !== -1 &&
+    ["/", "index", "megawise", "infini"].indexOf(nav.current) !== -1 &&
     open;
-  const showSubNav = !open && nav.current !== "doc";
+    console.log(nav.current)
+  const showSubNav = !open && nav.current !== "doc" && nav.current !== "aboutus";
   return (
     <>
       <nav className="wrapper nav-wrapper">
