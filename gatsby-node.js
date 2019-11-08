@@ -38,8 +38,6 @@ exports.createPages = ({ actions, graphql }) => {
               label1
               label2
               label3
-              outLink
-              isMenu
             }
           }
         }
@@ -54,7 +52,7 @@ exports.createPages = ({ actions, graphql }) => {
     const menuList = result.data.allMarkdownRemark.edges.map(
       ({ node }) => node.frontmatter
     );
-    console.log(menuList)
+    console.log(menuList);
     const defaultLang = Object.keys(locales).find(
       lang => locales[lang].default
     );

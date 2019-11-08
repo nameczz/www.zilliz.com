@@ -5,9 +5,11 @@
   padding-top: 6rem;
   background: #fff;
   min-height: 60vh;
+  font-size: 20px;
   @include media("<=1000px") {
-    padding:1rem;
-    padding-top:2rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    font-size: 14px;
   }
   article,
   aside,
@@ -241,7 +243,7 @@
   h2 {
     margin-left: 0;
     margin-right: 0;
-    margin-top: 0;
+    margin-top: 4rem;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -392,6 +394,8 @@
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
+    font-weight: normal;
+    color: #101010;
   }
   figure {
     margin-left: 0;
