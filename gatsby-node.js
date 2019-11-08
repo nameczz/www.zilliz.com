@@ -26,6 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const docTemplate = path.resolve(`src/templates/docTemplate.js`);
 
+  // isMenu outLink can be add when need to use
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -52,7 +53,7 @@ exports.createPages = ({ actions, graphql }) => {
     const menuList = result.data.allMarkdownRemark.edges.map(
       ({ node }) => node.frontmatter
     );
-    console.log(menuList)
+    console.log(menuList);
     const defaultLang = Object.keys(locales).find(
       lang => locales[lang].default
     );

@@ -92,6 +92,13 @@ module.exports = {
               maxWidth: 800,
             },
           },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              maintainCase: true
+            }
+          }
+
         ],
       },
     },
