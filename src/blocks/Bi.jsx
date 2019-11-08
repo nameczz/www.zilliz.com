@@ -4,7 +4,7 @@ import f2 from '../images/megawise_img_b.png';
 import f3 from '../images/megawise_img_c.png';
 import f4 from '../images/megawise_img_d.png';
 
-import "./Megawise.scss";
+import "./bi.scss";
 
 const Bi = ({ data, locale }) => {
   const { landing, features } = data;

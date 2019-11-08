@@ -62,7 +62,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                 </a>
               </li>
               {open && (
-                <li>
+                <li className="root">
                   <LocalizeLink
                     className={`${
                       nav.current === "doc" ? "current" : ""

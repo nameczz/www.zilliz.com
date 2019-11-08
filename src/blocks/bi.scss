@@ -1,6 +1,6 @@
 @import "../components/include_media.scss";
 
-.megawise {
+.bi {
   line-height: 1.7;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   color: #fafafa;
@@ -119,13 +119,13 @@
   @include media("<=1000px") {
     li {
       display: block;
-      margin: 0 0 40px 20px;
+      margin: 0 0 20px 20px;
       h4 {
         margin-bottom: 10px;
       }
       img {
         width: 95%;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
       }
     }
     img {
@@ -134,7 +134,7 @@
   }
 }
 
-main.wrapper-megawise {
+main.wrapper-bi {
   background: url(../images/megawise-bg.png) no-repeat top center;
   background-size: 100%;
   position: relative;

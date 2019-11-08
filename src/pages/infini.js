@@ -20,7 +20,7 @@ const InfiniPage = ({ data, pageContext }) => {
       locale={locale}
       nav={nav}
       pageContext={pageContext}
-      wrapperClass={"wrapper-infini"}
+      wrapperClass={"wrapper-bi"}
       subNav={
         <SubNav data={layout.header} locale={locale} current="infini" />
       }
