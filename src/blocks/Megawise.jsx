@@ -4,6 +4,7 @@ import f2 from "../images/megawise_img_b.png";
 import f3 from "../images/megawise_img_c.png";
 import f4 from "../images/megawise_img_d.png";
 import LocalizeLink from "../components/localizedLink";
+import Comparison from "../components/Comparison"
 
 import "./Megawise.scss";
 
@@ -65,6 +66,18 @@ const Megawise = ({ data, locale }) => {
         >
           {features.viewDoc}
         </LocalizeLink>
+      </section>
+      <section>
+        <Comparison
+          title={'性能对比'}
+          products={[
+            { label: `MegaWise -> node: 1`, performance: 0.01 },
+            { label: `Redshift -> node: 6`, performance: 1.56 },
+            { label: `Spark 2.4 -> node: 21`, performance: 2.36 },
+            { label: `Presto 0.214 -> node: 21`, performance: 3.54 }
+          ]}
+          reviseMultiple={true}
+        />
       </section>
     </section>
   );

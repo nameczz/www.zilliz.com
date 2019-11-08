@@ -8,7 +8,6 @@ import s3 from "../images/icon-solution-3.png";
 import cn from "../images/horizontal-cn.png";
 import en from "../images/horizontal-en.png";
 import LocalizeLink from "../components/localizedLink";
-
 import "./Infini.scss";
 
 const Infini = ({ data, locale }) => {

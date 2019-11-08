@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import LocalizeLink from "../components/localizedLink";
-import arrow from "../images/icons/arrow.svg";
 import "./Menu.scss";
 
 const findItem = (key, value, arr) => {
   let find = undefined;
   arr.forEach(v => {
-    if (find) return
+    if (find) return;
     if (v[key] === value) {
       find = v;
     } else if (v.children && v.children.length) {
@@ -20,12 +19,11 @@ const Menu = props => {
   const preLink = "/docs";
   const { menuList, activeDoc } = props;
 
-  const [menuStatus, setMenuStatus] = useState(false)
+  const [menuStatus, setMenuStatus] = useState(false);
 
   const [realMenuList, setRealMenuList] = useState([]);
   useEffect(() => {
     const generateMenu = list => {
-
       // get all labels , make sure will generate menu from top to bottom
       const labelKeys = Object.keys(menuList[0])
         .filter(v => v.includes("label"))
@@ -53,12 +51,12 @@ const Menu = props => {
             children: [],
             showChildren: true,
             isActive: false,
-            isLast: !labelKeys[index]
+            isLast: !labelKeys[index],
           };
           if (index === 0) {
             copyMenu.push(item);
           } else {
-            const parent = findItem('title', v[parentLabel], copyMenu);
+            const parent = findItem("title", v[parentLabel], copyMenu);
             parent && parent.children.push(item);
           }
         });
@@ -68,59 +66,72 @@ const Menu = props => {
       };
     };
 
-    const checkActive = (list) => {
-      const findDoc = findItem('id', activeDoc, list)
-      const labelKeys = Object.keys(findDoc)
-        .filter(v => v.includes("label"))
+    const checkActive = list => {
+      const findDoc = findItem("id", activeDoc, list);
+      const labelKeys = Object.keys(findDoc).filter(v => v.includes("label"));
 
-      findDoc.isActive = true
+      findDoc.isActive = true;
 
       labelKeys.forEach(label => {
-        const parentDoc = findItem('title', findDoc[label], list)
-        parentDoc && (parentDoc.showChildren = true)
-      })
-    }
+        const parentDoc = findItem("title", findDoc[label], list);
+        parentDoc && (parentDoc.showChildren = true);
+      });
+    };
 
-    const arr = generateMenu(menuList)()
-    checkActive(arr)
+    const arr = generateMenu(menuList)();
+    checkActive(arr);
     setRealMenuList(arr);
   }, [menuList, activeDoc]);
 
   const [screenWidth, setScreenWidth] = useState(null);
   useEffect(() => {
-    const clientWidth = document.body.clientWidth;
-    setScreenWidth(document.body.clientWidth);
-    setMenuStatus(clientWidth > 1000)
     const cb = () => {
       setScreenWidth(document.body.clientWidth);
+      setMenuStatus(document.body.clientWidth > 1000);
     };
+    cb();
     window.addEventListener("resize", cb);
     return () => {
       window.removeEventListener("resize", cb);
     };
   }, []);
 
-
   const generageMenuDom = (list, className = "") => {
     return list.map(doc => (
-      <div className={`${className} ${doc.isLast && 'menu-last-level'} ${doc.isActive && 'active'}`} key={doc.id}>
+      <div
+        className={`${className} ${doc.isLast &&
+          "menu-last-level"} ${doc.isActive && "active"}`}
+        key={doc.id}
+      >
         <div className="menu_name-wrapper">
-          <LocalizeLink locale={doc.lang} className="text" to={`${preLink}/${doc.id}`}>
-            {doc.title}
-          </LocalizeLink>
+          {doc.outLink ? (
+            <a href={doc.outLink} className="text">
+              {doc.title}
+            </a>
+          ) : doc.isMenu === "true" ? (
+            <span className="text">{doc.title}</span>
+          ) : (
+                <LocalizeLink
+                  locale={doc.lang}
+                  className="text"
+                  to={`${preLink}/${doc.id}`}
+                >
+                  {doc.title}
+                </LocalizeLink>
+              )}
 
           {doc.children && doc.children.length ? (
-            <img
-              src={arrow}
-              alt="arrow"
-              className={`arrow ${doc.showChildren ? 'top' : ''}`}
+            <i
+              className={`fas fa-chevron-down arrow ${
+                doc.showChildren ? "" : "top"
+                }`}
               onClick={() => {
                 toggleMenuChild(doc);
               }}
-            ></img>
+            ></i>
           ) : null}
         </div>
-        <div className={`menu-child-wrapper ${doc.showChildren ? 'open' : ''}`} >
+        <div className={`menu-child-wrapper ${doc.showChildren ? "open" : ""}`}>
           {doc.children && doc.children.length
             ? generageMenuDom(doc.children, "menu-child")
             : null}
@@ -130,28 +141,41 @@ const Menu = props => {
   };
 
   const toggleMenuChild = doc => {
-    const copyMenu = JSON.parse(JSON.stringify(realMenuList))
-    const findDoc = findItem('title', doc.title, copyMenu);
-    findDoc.showChildren = !findDoc.showChildren
+    const copyMenu = JSON.parse(JSON.stringify(realMenuList));
+    const findDoc = findItem("title", doc.title, copyMenu);
+    findDoc.showChildren = !findDoc.showChildren;
     setRealMenuList(copyMenu);
   };
 
-  const toggleMenu = (status) => {
-    setMenuStatus(status)
-  }
+  const toggleMenu = status => {
+    setMenuStatus(status);
+  };
 
   return (
     <>
-      <section className={`menu-container ${menuStatus ? '' : 'hide'}`}>
-        {
-
-          screenWidth <= 1000 ? (<i className="fas fa-times close" onClick={() => { toggleMenu(false) }}></i>) : null
-        }
+      <section className={`menu-container ${menuStatus ? "" : "hide"}`}>
+        {screenWidth <= 1000 ? (
+          <i
+            className="fas fa-times close"
+            onClick={() => {
+              toggleMenu(false);
+            }}
+          ></i>
+        ) : null}
 
         <h1 className="title border-bottom">ZILLIZ ANALYTICS</h1>
         {generageMenuDom(realMenuList, "menu-top-level border-bottom")}
       </section>
-      {!menuStatus ? <div className="mini-menu-control" onClick={() => { toggleMenu(true) }}><i className="fas fa-bars"></i></div> : null}
+      {!menuStatus ? (
+        <div
+          className="mini-menu-control"
+          onClick={() => {
+            toggleMenu(true);
+          }}
+        >
+          <i className="fas fa-bars"></i>
+        </div>
+      ) : null}
     </>
   );
 };
