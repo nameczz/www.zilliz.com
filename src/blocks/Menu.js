@@ -51,7 +51,7 @@ const Menu = props => {
           const item = {
             ...v,
             children: [],
-            showChildren: false,
+            showChildren: true,
             isActive: false,
             isLast: !labelKeys[index]
           };
@@ -88,7 +88,9 @@ const Menu = props => {
 
   const [screenWidth, setScreenWidth] = useState(null);
   useEffect(() => {
+    const clientWidth = document.body.clientWidth;
     setScreenWidth(document.body.clientWidth);
+    setMenuStatus(clientWidth > 1000)
     const cb = () => {
       setScreenWidth(document.body.clientWidth);
     };
@@ -143,13 +145,13 @@ const Menu = props => {
       <section className={`menu-container ${menuStatus ? '' : 'hide'}`}>
         {
 
-          screenWidth <= 1000 ? (<i class="fas fa-times close" onClick={() => { toggleMenu(false) }}></i>) : null
+          screenWidth <= 1000 ? (<i className="fas fa-times close" onClick={() => { toggleMenu(false) }}></i>) : null
         }
 
         <h1 className="title border-bottom">ZILLIZ ANALYTICS</h1>
         {generageMenuDom(realMenuList, "menu-top-level border-bottom")}
       </section>
-      {!menuStatus ? <div className="mini-menu-control" onClick={() => { toggleMenu(true) }}><i class="fas fa-bars"></i></div> : null}
+      {!menuStatus ? <div className="mini-menu-control" onClick={() => { toggleMenu(true) }}><i className="fas fa-bars"></i></div> : null}
     </>
   );
 };

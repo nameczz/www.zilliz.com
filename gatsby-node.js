@@ -37,6 +37,7 @@ exports.createPages = ({ actions, graphql }) => {
               lang
               label1
               label2
+              label3
             }
           }
         }

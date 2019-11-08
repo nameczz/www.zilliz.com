@@ -19,9 +19,12 @@
   background: #28292e;
   color: #fff;
   transition: all .2s linear;
-  &.hide{
-    transform: translate3d(-100%,0,0);
+  @include media("<=1000px"){
+    &.hide{
+      transform: translate3d(-100%,0,0);
+    }
   }
+  
 
   .title{
     padding: 30px 0;
