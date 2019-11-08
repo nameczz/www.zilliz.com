@@ -19,12 +19,13 @@ const MegawisePage = ({ data, pageContext }) => {
       data={layout}
       locale={locale}
       nav={nav}
+      pageContext={pageContext}
       wrapperClass={"wrapper-megawise"}
       subNav={
         <SubNav data={layout.header} locale={locale} current="megawise" />
       }
     >
-      <SEO title="Data Analytics Engine" />
+      <SEO title="Data Analytics Engine" lang={locale} />
       <Megawise data={megawise} locale={locale} />
     </Layout>
   );

@@ -1,6 +1,4 @@
-// import React, { useState, useEffect } from "react";
-import React from "react";
-
+import React, { useState } from "react";
 import LocalizeLink from "../components/localizedLink";
 import logo from "../images/logo.svg"; // Tell Webpack this JS file uses this image
 import "./Nav.scss";
@@ -47,7 +45,10 @@ const Current = () => (
   </svg>
 );
 
-const PcNav = ({ data, locale, nav = {}, subNav = <></> }) => {
+const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
+  const [open, setOpen] = useState(false);
+  const isZilliz = ['/', 'index', 'megawise', 'infini'].indexOf(nav.current) !== -1 && open;
+
   return (
     <>
       <nav className="wrapper nav-wrapper">
@@ -56,19 +57,29 @@ const PcNav = ({ data, locale, nav = {}, subNav = <></> }) => {
             <LocalizeLink locale={locale} to="/" className="logo">
               <img src={logo} alt="logo" />
             </LocalizeLink>
-            <ul className="nav-links">
-              <li>
-                {nav.current === "index" && <Current />}
+
+            <ul className={`nav-links ${open ? "show" : "hide"}`}>
+              {isZilliz && <li>ZILLIZ Analaytics</li>}
+              {open && subNav}
+              {!isZilliz && <li className="root">
                 <LocalizeLink
                   className={nav.current === "index" ? "current" : ""}
                   locale={locale}
                   to="/"
                 >
-                  {data.product}
+                  {open ? `ZILLIZ Analaytics` : data.analytics}
                 </LocalizeLink>
+              </li>}
+              <li className="root">
+                <a
+                  href="http://milvus.io"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {data.milvus}
+                </a>
               </li>
-              <li>
-                {nav.current === "aboutus" && <Current />}
+              <li className="root">
                 <LocalizeLink
                   className={nav.current === "aboutus" ? "current" : ""}
                   locale={locale}
@@ -78,14 +89,41 @@ const PcNav = ({ data, locale, nav = {}, subNav = <></> }) => {
                   {data.aboutus}
                 </LocalizeLink>
               </li>
-              <li>
-                {nav.current === "joinUs" && <Current />}
-                <a href="https://zilliz.gllue.com/portal/zilliz">
+              <li className="root">
+                <a
+                  href="https://zilliz.gllue.com/portal/zilliz"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   {data.joinus}
                 </a>
               </li>
+              {open && (
+                <li>
+                  <a
+                    className="right"
+                    href="http://infini-analytics.github.io/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {data.doc}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
+          <a
+            className="rightMenu"
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            {!open ? (
+              <i className="fas fa-bars"></i>
+            ) : (
+                <i className="fas fa-times"></i>
+              )}
+          </a>
           <a
             className="right"
             href="http://infini-analytics.github.io/"
@@ -96,49 +134,13 @@ const PcNav = ({ data, locale, nav = {}, subNav = <></> }) => {
           </a>
         </div>
       </nav>
-      {subNav}
-    </>
-  );
-};
-
-// const MobileNav = ({ data, locale, nav = {} }) => {
-//   return (
-//     <nav className="wrapper nav-wrapper">
-//       <div className="inner-container nav">
-//         <div className="left">
-//           <LocalizeLink locale={locale} to="/" className="logo">
-//             <img src={logo} alt="logo" />
-//           </LocalizeLink>
-//         </div>
-//         <div className="right">liebiao</div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
-  // const [screenWidth, setScreenWidth] = useState(null);
-  // useEffect(() => {
-  //   setScreenWidth(document.body.clientWidth);
-  //   const cb = () => {
-  //     setScreenWidth(document.body.clientWidth);
-  //   };
-  //   window.addEventListener("resize", cb);
-  //   return () => {
-  //     window.removeEventListener("resize", cb);
-  //   };
-  // }, []);
-
-  return (
-    <>
-      {/* hide for now. 
-
-      {screenWidth >= 1000 ? (
-        <PcNav data={data} locale={locale} nav={nav} subNav={subNav}></PcNav>
-      ) : (
-        <MobileNav data={data} locale={locale} nav={nav}></MobileNav>
-      )} */}
-      <PcNav data={data} locale={locale} nav={nav} subNav={subNav}></PcNav>
+      {!open && (
+        <nav className="wrapper sub-nav-wrapper">
+          <div className="inner-container sub-nav">
+            <ul> {subNav}</ul>
+          </div>
+        </nav>
+      )}
     </>
   );
 };
