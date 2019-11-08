@@ -20,7 +20,7 @@ const AboutUsPage = ({ data, pageContext }) => {
       wrapperClass={"wrapper-about"}
       hasSubNav={false}
     >
-      <SEO title="About us" />
+      <SEO title="About us" lang={locale} />
       <AboutUs data={aboutus} />
     </Layout>
   );

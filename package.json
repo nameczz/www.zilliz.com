@@ -5,10 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "d3": "^5.9.2",
     "d3-array": "^2.3.3",
-    "d3-scale": "^3.0.0",
-    "echarts": "^4.2.1",
     "gatsby": "^2.10.0",
     "gatsby-image": "^2.2.1",
     "gatsby-plugin-cookiehub": "^1.0.0",
@@ -31,9 +28,7 @@
     "react-dom": "^16.8.6",
     "react-fullpage": "^0.1.19",
     "react-helmet": "^5.2.1",
-    "rmc-m-carousel": "^1.0.8",
-    "textures": "^1.2.0",
-    "vertical-timeline-component-for-react": "^1.0.6"
+    "rmc-m-carousel": "^1.0.8"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

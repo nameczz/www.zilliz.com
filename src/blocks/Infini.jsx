@@ -7,8 +7,6 @@ import s2 from "../images/icon-solution-2.png";
 import s3 from "../images/icon-solution-3.png";
 import cn from "../images/horizontal-cn.png";
 import en from "../images/horizontal-en.png";
-import Comparison from "../components/Comparison"
-
 import "./Infini.scss";
 
 const Infini = ({ data, locale }) => {
@@ -19,17 +17,7 @@ const Infini = ({ data, locale }) => {
 
   return (
     <section className={`infini section ${locale}`}>
-      <Comparison
-        title={'性能对比'}
-        products={[
-          { name: 'MegaWise', node: 1, performance: 0.01 },
-          { name: 'Redshift', node: 6, performance: 1.56 },
-          { name: "Spark 2.4", node: 21, performance: 2.36 },
-          { name: "Presto 0.214", node: 21, performance: 3.54 }
-        ]}
-        reviseMultiple={true}
-      />
-      {/* <section className="landing">
+      <section className="landing">
         <h3>{data.landing.h3}</h3>
         <h4>{data.landing.h4}</h4>
         <p>{data.landing.leading}</p>
@@ -43,7 +31,7 @@ const Infini = ({ data, locale }) => {
             {data.landing.buttonMega}
           </a>
         </div>
-      </section> */}
+      </section>
 
       <section className="features" id="features">
         <h2 dangerouslySetInnerHTML={{ __html: data.features.h2 }} />
