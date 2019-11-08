@@ -17,9 +17,11 @@
   position: relative;
   padding: 0 40px;
   background: #28292e;
+  box-sizing: border-box;
   color: #fff;
   transition: all .2s linear;
   @include media("<=1000px"){
+    padding: 0 20px;
     &.hide{
       transform: translate3d(-100%,0,0);
     }
@@ -48,7 +50,7 @@
     padding: 20px 0px 40px 0px;
     cursor: pointer;
     .menu_name-wrapper{
-      font-size: 30px;
+      font-size: 22px;
       @include media("<=1000px") {
         font-size: 14px;
       }
@@ -60,23 +62,25 @@
 
   .menu-child {
     margin: 10px 0;
-    padding-left: 8px;
     cursor: pointer;
   }
 
   .menu-last-level{
     margin-left: 10px;
-    .menu_name-wrapper{
-      .text{
-        color: #b0b0b9;
-      }
-    }
+    border-left: 4px solid transparent;
+    
     &.active{
       border-left: 4px solid #4fc4f9;
       .menu_name-wrapper{
         .text{
           color: #fff;
         }
+      }
+    }
+
+    .menu_name-wrapper{
+      .text{
+        color: #b0b0b9;
       }
     }
   }
@@ -104,6 +108,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 8px;
     .text{
       color: #fff;
     }
@@ -111,12 +116,15 @@
 
   .arrow {
     position: relative;
-    width: 20px;
+    font-size: 18px;
     transform: rotate(180deg);
     color: #fff;
     cursor: pointer;
     &.top{
       transform: rotate(0);
+    }
+    @include media("<=1000px") {
+      font-size: 14px;
     }
   }
 }

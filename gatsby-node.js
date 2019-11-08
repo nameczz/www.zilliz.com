@@ -38,6 +38,8 @@ exports.createPages = ({ actions, graphql }) => {
               label1
               label2
               label3
+              outLink
+              isMenu
             }
           }
         }

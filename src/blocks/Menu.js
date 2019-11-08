@@ -88,12 +88,12 @@ const Menu = props => {
 
   const [screenWidth, setScreenWidth] = useState(null);
   useEffect(() => {
-    const clientWidth = document.body.clientWidth;
-    setScreenWidth(document.body.clientWidth);
-    setMenuStatus(clientWidth > 1000)
+
     const cb = () => {
       setScreenWidth(document.body.clientWidth);
+      setMenuStatus(document.body.clientWidth > 1000)
     };
+    cb()
     window.addEventListener("resize", cb);
     return () => {
       window.removeEventListener("resize", cb);
@@ -105,19 +105,21 @@ const Menu = props => {
     return list.map(doc => (
       <div className={`${className} ${doc.isLast && 'menu-last-level'} ${doc.isActive && 'active'}`} key={doc.id}>
         <div className="menu_name-wrapper">
-          <LocalizeLink locale={doc.lang} className="text" to={`${preLink}/${doc.id}`}>
-            {doc.title}
-          </LocalizeLink>
+          {
+            doc.outLink ? <a href={doc.outLink} className="text">{doc.title}</a> :
+              doc.isMenu === 'true' ? <span className="text">{doc.title}</span>
+                :
+                (<LocalizeLink locale={doc.lang} className="text" to={`${preLink}/${doc.id}`}>
+                  {doc.title}
+                </LocalizeLink>)
+          }
+
 
           {doc.children && doc.children.length ? (
-            <img
-              src={arrow}
-              alt="arrow"
-              className={`arrow ${doc.showChildren ? 'top' : ''}`}
-              onClick={() => {
-                toggleMenuChild(doc);
-              }}
-            ></img>
+            <i className={`fas fa-chevron-down arrow ${doc.showChildren ? 'top' : ''}`} onClick={() => {
+              toggleMenuChild(doc);
+            }}></i>
+
           ) : null}
         </div>
         <div className={`menu-child-wrapper ${doc.showChildren ? 'open' : ''}`} >
@@ -144,7 +146,6 @@ const Menu = props => {
     <>
       <section className={`menu-container ${menuStatus ? '' : 'hide'}`}>
         {
-
           screenWidth <= 1000 ? (<i className="fas fa-times close" onClick={() => { toggleMenu(false) }}></i>) : null
         }
 
