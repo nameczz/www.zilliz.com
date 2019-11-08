@@ -11,7 +11,7 @@ const Comparison = props => {
   const right = [];
   products.forEach(product => {
     const width = DEFAULT_MAX_WIDTH * (reviseMultiple ? widthBenchmark / product.performance : product.performance / widthBenchmark)
-    const label = `${product.name}:  ${product.label}`;
+    const label = product.label;
     left.push({ label, width, });
     const multiple = (reviseMultiple ? multipleBenchmark / product.performance : product.performance / multipleBenchmark).toFixed(1)
     right.push({ multiple, isBenchmark: multiple == 1 });

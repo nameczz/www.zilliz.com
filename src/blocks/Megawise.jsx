@@ -59,10 +59,10 @@ const Megawise = ({ data, locale }) => {
         <Comparison
           title={'性能对比'}
           products={[
-            { name: 'MegaWise', label: `node: 1`, performance: 0.01 },
-            { name: 'Redshift', label: `node: 6`, performance: 1.56 },
-            { name: "Spark 2.4", label: `node: 21`, performance: 2.36 },
-            { name: "Presto 0.214", label: `node: 21`, performance: 3.54 }
+            { label: `MegaWise -> node: 1`, performance: 0.01 },
+            { label: `Redshift -> node: 6`, performance: 1.56 },
+            { label: `Spark 2.4 -> node: 21`, performance: 2.36 },
+            { label: `Presto 0.214 -> node: 21`, performance: 3.54 }
           ]}
           reviseMultiple={true}
         />
