@@ -21,6 +21,63 @@ exports.onCreatePage = ({ page, actions }) => {
   });
 };
 
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
+  const docTemplate = path.resolve(`src/templates/docTemplate.js`);
+
+  return graphql(`
+    {
+      allMarkdownRemark(limit: 1000) {
+        edges {
+          node {
+            frontmatter {
+              id
+              title
+              lang
+              label1
+              label2
+              label3
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    // get menulist from md file
+    const menuList = result.data.allMarkdownRemark.edges.map(
+      ({ node }) => node.frontmatter
+    );
+    console.log(menuList)
+    const defaultLang = Object.keys(locales).find(
+      lang => locales[lang].default
+    );
+
+    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const locale = node.frontmatter.lang;
+      const localizedPath =
+        locale === defaultLang
+          ? `/docs/${node.frontmatter.id}`
+          : `${locale}/docs/${node.frontmatter.id}`;
+
+      return createPage({
+        path: localizedPath,
+        // path: node.frontmatter.path,
+        component: docTemplate,
+        context: {
+          locale,
+          menuList: menuList.filter(v => v.lang === locale),
+          old: node.frontmatter.id,
+        }, // additional data can be passed via context
+      });
+    });
+  });
+};
+
 // exports.createPages = ({ graphql, actions }) => {
 //   const { createPage } = actions;
 
@@ -152,14 +209,14 @@ exports.onCreatePage = ({ page, actions }) => {
 //   });
 // };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    createNodeField({
-      name: `slug`,
-      node,
-      value: node.frontmatter.path,
-    });
-  }
-};
+//   if (node.internal.type === `MarkdownRemark`) {
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value: node.frontmatter.path,
+//     });
+//   }
+// };
