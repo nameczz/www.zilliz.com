@@ -17,7 +17,7 @@ const AboutUs = ({ data }) => {
         <h2>
           {data.mission.h2}
         </h2>
-        <div className="mission-pic">
+        <div className="mission-pic big-pic">
           <img src={moon} alt="moon" />
         </div>
       </section>
@@ -26,7 +26,7 @@ const AboutUs = ({ data }) => {
         <div className="roadmap-icon icon" />
         <p>{data.roadmap.p}</p>
         <h2>{data.roadmap.h2}</h2>
-        <div className="roadmap-calendar">
+        <div className="roadmap-calendar big-pic">
           <img src={calendar} alt="roadmap" />
         </div>
       </section>
