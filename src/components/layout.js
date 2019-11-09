@@ -12,11 +12,9 @@ export default props => {
     locale,
     nav,
     subNav,
-    pageContext,
     wrapperClass = "wrapper",
   } = props;
   const { header, footer } = data;
-console.log(pageContext)
   return (
     <div>
       <Nav nav={nav} data={header} locale={locale} subNav={subNav} />

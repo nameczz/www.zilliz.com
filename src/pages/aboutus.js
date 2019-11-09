@@ -1,37 +1,8 @@
 import React from "react";
 import Layout from "../components/layout";
-import LocalizeLink from "../components/localizedLink";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import AboutUs from "../blocks/AboutUs";
-
-const SubNav = ({ data, locale }) => {
-  const preLink = "/aboutus";
-  return (
-    <nav className="wrapper sub-nav-wrapper">
-      <div className="inner-container sub-nav">
-        <h3>{data.aboutus}</h3>
-        <ul>
-          <li>
-            <LocalizeLink locale={locale} to={`${preLink}/#mission`}>
-              {data.mission}
-            </LocalizeLink>
-          </li>
-          <li>
-            <LocalizeLink locale={locale} to={`${preLink}/#roadmap`}>
-              {data.roadmap}
-            </LocalizeLink>
-          </li>
-          <li>
-            <LocalizeLink locale={locale} to={`${preLink}/#opportunities`}>
-              {data.chance}
-            </LocalizeLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
 
 const AboutUsPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
@@ -47,9 +18,9 @@ const AboutUsPage = ({ data, pageContext }) => {
       locale={locale}
       nav={nav}
       wrapperClass={"wrapper-about"}
-      subNav={<SubNav data={layout.header} locale={locale} />}
+      hasSubNav={false}
     >
-      <SEO title="About us" />
+      <SEO title="About us" lang={locale} />
       <AboutUs data={aboutus} />
     </Layout>
   );
@@ -65,13 +36,13 @@ export const Query = graphql`
           childLayoutJson {
             layout {
               header {
+                overview
+                analytics
+                milvus
                 product
                 aboutus
                 joinus
                 doc
-                mission
-                roadmap
-                chance
               }
               footer {
                 contactButton
