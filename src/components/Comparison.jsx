@@ -1,21 +1,34 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react";
 import { min, max } from "d3-array";
-import "./Comparison.scss"
+import "./Comparison.scss";
 
 const Comparison = props => {
   const DEFAULT_MAX_WIDTH = 100;
   const { title = "", products = [], reviseMultiple = false } = props;
-  const widthBenchmark = reviseMultiple ? min(products, p => p.performance) : max(products, p => p.performance)
-  const multipleBenchmark = reviseMultiple ? max(products, p => p.performance) : min(products, p => p.performance)
+  const widthBenchmark = reviseMultiple
+    ? min(products, p => p.performance)
+    : max(products, p => p.performance);
+  const multipleBenchmark = reviseMultiple
+    ? max(products, p => p.performance)
+    : min(products, p => p.performance);
   const left = [];
   const right = [];
   products.forEach(product => {
-    const width = DEFAULT_MAX_WIDTH * (reviseMultiple ? widthBenchmark / product.performance : product.performance / widthBenchmark)
+    const width =
+      DEFAULT_MAX_WIDTH *
+      (reviseMultiple
+        ? widthBenchmark / product.performance
+        : product.performance / widthBenchmark);
     const label = product.label;
-    left.push({ label, width, });
-    const multiple = (reviseMultiple ? multipleBenchmark / product.performance : product.performance / multipleBenchmark).toFixed(1)
+    left.push({ label, width });
+    const multiple = (reviseMultiple
+      ? multipleBenchmark / product.performance
+      : product.performance / multipleBenchmark
+    ).toFixed(1);
+
+    // eslint-disable-next-line 
     right.push({ multiple, isBenchmark: multiple == 1 });
-  })
+  });
 
   let hasBeenInViewport = false;
   const rootContainer = useRef(null);
@@ -25,17 +38,24 @@ const Comparison = props => {
     }
     const target = rootContainer.current;
     if (target.getBoundingClientRect().top <= window.innerHeight) {
-      [].forEach.call(document.querySelectorAll('.line'), div => div.classList.add('line-animation'));
-      [].forEach.call(document.querySelectorAll('.label'), div => div.classList.add('label-animation'));
-      [].forEach.call(document.querySelectorAll('.right-label'), div => div.classList.add('right-animation'));
+      [].forEach.call(document.querySelectorAll(".line"), div =>
+        div.classList.add("line-animation")
+      );
+      [].forEach.call(document.querySelectorAll(".label"), div =>
+        div.classList.add("label-animation")
+      );
+      [].forEach.call(document.querySelectorAll(".right-label"), div =>
+        div.classList.add("right-animation")
+      );
       hasBeenInViewport = true;
     }
-  }
+  };
   useEffect(() => {
     onScroll();
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    return () => window.removeEventListener("scroll", onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div ref={rootContainer} className="comparision-root" onScroll={onScroll}>
@@ -48,15 +68,19 @@ const Comparison = props => {
               <div className="line" style={{ width: `${width}%` }}></div>
               <div className="label">{label}</div>
             </div>
-          )
+          );
         })}
       </div>
       <div className="right">
-        <h5></h5>
-        {right.map((item, index) => <div key={index} className="product-container right-label">{`${item.isBenchmark ? "1" : `${item.multiple}x`}`}</div>)}
+        <h5>&nbsp;</h5>
+        {right.map((item, index) => (
+          <div key={index} className="product-container right-label">{`${
+            item.isBenchmark ? "1" : `${item.multiple}x`
+          }`}</div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Comparison
+export default Comparison;

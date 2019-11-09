@@ -95,7 +95,7 @@ main.wrapper {
   background-size: 100%;
   position: relative;
   @include media("<=1000px") {
-    top: 0;
+    top: 50px;
   }
 }
 .inner-container {
