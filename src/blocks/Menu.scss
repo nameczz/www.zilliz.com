@@ -21,6 +21,8 @@
   box-sizing: border-box;
   color: #fff;
   transition: all 0.2s linear;
+  overflow: auto;
+
   @include media("<=1000px") {
     padding: 0 20px;
     &.hide {
@@ -42,6 +44,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    font-size: 20px;
   }
   .border-bottom {
     border-bottom: 2px solid #60606f;
@@ -109,10 +112,10 @@
   .menu-child-wrapper {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms linear;
+    transition: max-height 400ms linear;
 
     &.open {
-      max-height: 90vh;
+      max-height: 1000px;
     }
     .menu_name-wrapper {
       margin-bottom: 10px;
