@@ -26,7 +26,6 @@
   // }
   ul {
     display: inline-flex;
-    justify-content: space-between;
     width: 750px;
     margin: 0 auto;
     li {
@@ -40,7 +39,7 @@
         @include media("<=1000px") {
           margin: 0 3px;
         }
-        margin-right: 20px;
+        margin-right: 60px;
       }
     }
   }

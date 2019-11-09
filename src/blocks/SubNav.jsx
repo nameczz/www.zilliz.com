@@ -25,7 +25,7 @@ const SubNav = ({ data, locale, current }) => (
         MEGAWISE
       </LocalizeLink>
     </li>
-    <li>
+    {/* <li>
       {current === "infini" && <Current />}
       <LocalizeLink
         locale={locale}
@@ -37,7 +37,7 @@ const SubNav = ({ data, locale, current }) => (
     </li>
     <li>
       <a href="#!">Live Demo</a>
-    </li>
+    </li> */}
   </>
 );
 export default SubNav;

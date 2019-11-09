@@ -62,7 +62,7 @@ const Megawise = ({ data, locale }) => {
         <LocalizeLink
           className="button rect-button transparent-button"
           locale={locale}
-          to="/docs/megawise_intro"
+          to="/docs/analytics_overview"
         >
           {features.viewDoc}
         </LocalizeLink>
