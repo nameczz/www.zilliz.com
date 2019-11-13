@@ -78,8 +78,22 @@ const Menu = props => {
       });
     };
 
+    const sortMenu = list => {
+      list.sort((a, b) => {
+        return a.order - b.order
+      })
+      list.forEach(v => {
+        if (v.children && v.children.length) {
+          sortMenu(v.children)
+        }
+      })
+
+    }
+
     const arr = generateMenu(menuList)();
     checkActive(arr);
+    sortMenu(arr)
+    console.log(arr)
     setRealMenuList(arr);
   }, [menuList, activeDoc]);
 
