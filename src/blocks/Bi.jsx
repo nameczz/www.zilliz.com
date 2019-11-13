@@ -3,6 +3,8 @@ import f1 from "../images/infini_img_1.png";
 import f2 from "../images/infini_img_2.png";
 import f3 from "../images/infini_img_3.png";
 import f4 from "../images/infini_img_4.png";
+import logo from "../images/infini_logo.png";
+import LocalizeLink from "../components/localizedLink";
 
 import "./bi.scss";
 
@@ -11,12 +13,17 @@ const Bi = ({ data, locale }) => {
   return (
     <section className={`bi section ${locale}`}>
       <section className="landing">
-        <h3>{landing.h3}</h3>
+        <img src={logo} alt="infini logo" className="logo"></img>
+        {/* <h3>{landing.h3}</h3> */}
         <h4>{landing.h4}</h4>
         <p>{landing.p}</p>
-        <a href="/docs" className="button rect-button">
+        <LocalizeLink
+          locale={locale}
+          className="button rect-button"
+          to={"/docs/install_infini"}
+        >
           {landing.readMore}
-        </a>
+        </LocalizeLink>
       </section>
 
       <section className="features">
@@ -53,9 +60,13 @@ const Bi = ({ data, locale }) => {
           </li>
         </ul>
         <h3 className="learnMore">{features.learnMore}</h3>
-        <a href="/docs" className="button rect-button transparent-button">
+        <LocalizeLink
+          locale={locale}
+          className="button rect-button transparent-button"
+          to={"/docs/install_infini"}
+        >
           {features.viewDoc}
-        </a>
+        </LocalizeLink>
       </section>
     </section>
   );

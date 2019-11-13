@@ -143,11 +143,11 @@
       },
       "f2": {
         "h4": "Full visualization and interactivity",
-        "p": "Visually interacts with plots, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+        "p": "Visually interacts with charts, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
       },
       "f3": {
-        "h4": "Multiple customizable plots",
-        "p": "Customizes multiple plot types. You can freely choose your favorite style."
+        "h4": "Multiple customizable charts",
+        "p": "Customizes multiple chart types. You can freely choose your favorite style."
       },
       "f4": {
         "h4": "Real-time map rendering",

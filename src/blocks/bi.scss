@@ -14,7 +14,9 @@
     padding: 150px 0;
     text-align: center;
     color: #fff;
-
+    .logo {
+      width: 158px;
+    }
     p,
     h3,
     h4 {
@@ -35,10 +37,12 @@
       margin: 0 auto 20px;
       font-size: 16px;
     }
-    .rect-button{
+    .rect-button {
+      display: inline-block;
       padding: 20px 60px;
+      margin-top: 24px;
       font-weight: bold;
-      background: #3F9CD1;
+      background: #3f9cd1;
     }
     @include media("<=1000px") {
       width: auto;
@@ -99,7 +103,7 @@
     li {
       display: block;
       margin: 100px 50px 20px;
-  
+
       h4 {
         font-size: 34px;
         line-height: 1.2;
@@ -145,7 +149,6 @@
     }
   }
 }
-
 
 main.wrapper-bi {
   background: url(../images/megawise-bg.png) no-repeat top center;

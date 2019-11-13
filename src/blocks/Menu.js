@@ -46,12 +46,13 @@ const Menu = props => {
         });
 
         topMenu.forEach(v => {
+          console.log(v, labelKeys[index]);
           const item = {
             ...v,
             children: [],
             showChildren: true,
             isActive: false,
-            isLast: !labelKeys[index],
+            isLast: !labelKeys[index + 1],
           };
           if (index === 0) {
             copyMenu.push(item);
@@ -80,20 +81,19 @@ const Menu = props => {
 
     const sortMenu = list => {
       list.sort((a, b) => {
-        return a.order - b.order
-      })
+        return a.order - b.order;
+      });
       list.forEach(v => {
         if (v.children && v.children.length) {
-          sortMenu(v.children)
+          sortMenu(v.children);
         }
-      })
-
-    }
+      });
+    };
 
     const arr = generateMenu(menuList)();
     checkActive(arr);
-    sortMenu(arr)
-    console.log(arr)
+    sortMenu(arr);
+    console.log(arr);
     setRealMenuList(arr);
   }, [menuList, activeDoc]);
 
@@ -110,28 +110,36 @@ const Menu = props => {
     };
   }, []);
 
-  const menuRef = useRef(null)
+  const menuRef = useRef(null);
   useEffect(() => {
-    let targetY = null
-    menuRef.current.addEventListener('touchstart', function (e) {
+    let targetY = null;
+    menuRef.current.addEventListener("touchstart", function(e) {
       // use to confirm move direction  clientY-客户区坐标Y 、pageY-页面坐标Y
       targetY = Math.floor(e.targetTouches[0].clientY);
     });
-    menuRef.current.addEventListener('touchmove', e => {
-      let newTargetY = Math.floor(e.targetTouches[0].clientY)
-      let diff = menuRef.current.scrollHeight - document.body.clientHeight
-      if (diff <= 0) {
-        e.cancelable && e.preventDefault()
-        return
-      }
-      // direction down && touch bottom
-      if (newTargetY - targetY < 0 && diff <= menuRef.current.scrollTop) {
-        e.cancelable && e.preventDefault()
-      } else if (newTargetY - targetY >= 0 && diff > menuRef.current.scrollTop) { // up && touch top
-        e.cancelable && e.preventDefault()
-      }
-    }, true)
-  }, [])
+    menuRef.current.addEventListener(
+      "touchmove",
+      e => {
+        let newTargetY = Math.floor(e.targetTouches[0].clientY);
+        let diff = menuRef.current.scrollHeight - document.body.clientHeight;
+        if (diff <= 0) {
+          e.cancelable && e.preventDefault();
+          return;
+        }
+        // direction down && touch bottom
+        if (newTargetY - targetY < 0 && diff <= menuRef.current.scrollTop) {
+          e.cancelable && e.preventDefault();
+        } else if (
+          newTargetY - targetY >= 0 &&
+          diff > menuRef.current.scrollTop
+        ) {
+          // up && touch top
+          e.cancelable && e.preventDefault();
+        }
+      },
+      true
+    );
+  }, []);
 
   const generageMenuDom = (list, className = "") => {
     return list.map(doc => (
@@ -148,20 +156,20 @@ const Menu = props => {
           ) : doc.isMenu === "true" ? (
             <span className="text">{doc.title}</span>
           ) : (
-                <LocalizeLink
-                  locale={doc.lang}
-                  className="text"
-                  to={`${preLink}/${doc.id}`}
-                >
-                  {doc.title}
-                </LocalizeLink>
-              )}
+            <LocalizeLink
+              locale={doc.lang}
+              className="text"
+              to={`${preLink}/${doc.id}`}
+            >
+              {doc.title}
+            </LocalizeLink>
+          )}
 
           {doc.children && doc.children.length ? (
             <i
               className={`fas fa-chevron-down arrow ${
                 doc.showChildren ? "" : "top"
-                }`}
+              }`}
               onClick={() => {
                 toggleMenuChild(doc);
               }}
@@ -190,7 +198,10 @@ const Menu = props => {
 
   return (
     <>
-      <section className={`menu-container ${menuStatus ? "" : "hide"}`} ref={menuRef} >
+      <section
+        className={`menu-container ${menuStatus ? "" : "hide"}`}
+        ref={menuRef}
+      >
         {screenWidth <= 1000 ? (
           <i
             className="fas fa-times close"
@@ -202,7 +213,6 @@ const Menu = props => {
 
         <h1 className="title border-bottom">ZILLIZ ANALYTICS</h1>
         {generageMenuDom(realMenuList, "menu-top-level border-bottom")}
-
       </section>
       {!menuStatus ? (
         <div
