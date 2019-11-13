@@ -1,6 +1,6 @@
 [submodule "src/pages/doc_en"]
 	path = src/pages/doc_en
-	url = https://github.com/Infini-Analytics/doc_en.git
+	url = https://github.com/zilliztech/doc_en.git
 [submodule "src/pages/doc_cn"]
 	path = src/pages/doc_cn
-	url = https://github.com/Infini-Analytics/doc_cn.git
+	url = https://github.com/zilliztech/doc_cn.git

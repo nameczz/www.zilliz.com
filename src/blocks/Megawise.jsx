@@ -62,7 +62,7 @@ const Megawise = ({ data, locale }) => {
         <LocalizeLink
           className="button rect-button transparent-button"
           locale={locale}
-          to="/docs/megawise_intro"
+          to="/docs/analytics_overview"
         >
           {features.viewDoc}
         </LocalizeLink>
@@ -71,10 +71,10 @@ const Megawise = ({ data, locale }) => {
         <Comparison
           title={'性能对比'}
           products={[
-            { label: `MegaWise -> node: 1`, performance: 0.01 },
-            { label: `Redshift -> node: 6`, performance: 1.56 },
-            { label: `Spark 2.4 -> node: 21`, performance: 2.36 },
-            { label: `Presto 0.214 -> node: 21`, performance: 3.54 }
+            { label: `MegaWise -> 1 node/48 cores/4 GPU/512G Mem/1TB SSD`, performance: 0.01 },
+            { label: `Redshift -> 6 nodes/192 cores/0 GPU/1464G Mem/15.4TB SSD`, performance: 1.56 },
+            { label: `Spark 2.4 -> 21 nodes/84 cores/0 GPU/315G Mem/1.7TB SSD`, performance: 2.36 },
+            { label: `Presto 0.214 -> 21 nodes/84 cores/0 GPU/315G Mem/1.7TB SSD`, performance: 3.54 }
           ]}
           reviseMultiple={true}
         />

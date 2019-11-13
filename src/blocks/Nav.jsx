@@ -78,6 +78,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
             </ul>
           </div>
           <a
+            href="#!"
             className="rightMenu"
             onClick={() => {
               setOpen(!open);
