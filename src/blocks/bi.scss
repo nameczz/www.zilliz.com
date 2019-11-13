@@ -19,6 +19,7 @@
     h3,
     h4 {
       margin-bottom: 15px;
+      font-weight: bold;
     }
     h3 {
       font-size: 60px;
@@ -26,12 +27,18 @@
     }
     h4 {
       font-size: 25px;
+      font-weight: bold;
     }
 
     p {
       width: 600px;
       margin: 0 auto 20px;
       font-size: 16px;
+    }
+    .rect-button{
+      padding: 20px 60px;
+      font-weight: bold;
+      background: #3F9CD1;
     }
     @include media("<=1000px") {
       width: auto;
@@ -88,51 +95,57 @@
       font-size: 22px;
     }
   }
-}
-.item-list2 {
-  li {
-    margin: 0 50px 20px;
-    clear: both;
-    overflow: hidden;
-    display: flex;
-    justify-content: between;
-
-    h4 {
-      font-size: 20px;
-      line-height: 1.2;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      @include media("<=1000px") {
-        font-size: 20px;
-      }
-    }
-    p {
-      font-size: 13px;
-      line-height: 1.9;
-    }
-  }
-  img {
-    width: 60%;
-    margin-right: 20px;
-  }
-  @include media("<=1000px") {
+  .item-list2 {
     li {
       display: block;
-      margin: 0 0 20px 20px;
+      margin: 100px 50px 20px;
+  
       h4 {
-        margin-bottom: 10px;
-      }
-      img {
-        width: 95%;
+        font-size: 34px;
+        line-height: 1.2;
+        font-weight: bold;
         margin-bottom: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        @include media("<=1000px") {
+          font-size: 20px;
+        }
+      }
+      p {
+        width: 540px;
+        margin: 0 auto 26px auto;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.9;
+
+        @include media("<=1000px") {
+          width: auto;
+          font-size: 13px;
+        }
       }
     }
     img {
-      margin-bottom: 20px;
+      width: 100%;
+    }
+    @include media("<=1000px") {
+      li {
+        display: block;
+        margin: 0 0 20px 20px;
+        h4 {
+          margin-bottom: 10px;
+        }
+        img {
+          width: 95%;
+          margin-bottom: 20px;
+        }
+      }
+      img {
+        margin-bottom: 20px;
+      }
     }
   }
 }
+
 
 main.wrapper-bi {
   background: url(../images/megawise-bg.png) no-repeat top center;
