@@ -1,0 +1,158 @@
+{
+  "layout": {
+    "header": {
+      "analytics": "Analytics",
+      "milvus": "Milvus",
+      "product": "产品",
+      "aboutus": "公司",
+      "joinus": "加入我们",
+      "doc": "文档",
+      "infiniAnalytics": "ZILLIZ ANALYTICS",
+      "feature": "特性",
+      "arch": "架构",
+      "solution": "解决方案",
+      "mission": "愿景",
+      "roadmap": "历程",
+      "chance": "加入我们",
+      "overview": "概览",
+      "demo": "在线Demo"
+    },
+    "footer": {
+      "contactButton": "联系我们",
+      "contactLeading": "充分挖掘数据潜力",
+      "address": "上海徐汇区桂箐路69号桂箐园28栋6C",
+      "phone": "021-33687058",
+      "email": "info@zilliz.com",
+      "infiniAnalytics": "ZILLIZ Analytics",
+      "aboutZilliz": "关于 ZILLIZ",
+      "news": "新闻",
+      "product": "产品",
+      "company": "公司",
+      "joinus": "加入我们",
+      "culture": "Z星文化",
+      "socialCareer": "社会招聘",
+      "schoolCareer": "校园招聘"
+    }
+  },
+  "contact": {
+    "leading": "充分挖掘数据潜力"
+  },
+  "infini": {
+    "landing": {
+      "h3": "ZILLIZ Analytics",
+      "h4": "面向海量时空数据的可视化交互分析平台",
+      "leading": "使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势。",
+      "button": "文档",
+      "buttonMega": "MegaWise GPU 数据库"
+    },
+    "features": {
+      "h2": "对十亿级数据集的查询分析<br />提供亚秒级响应",
+      "h3": "ZILLIZ Analytics 特性",
+      "f1Title": "融合数据分析和数据科学",
+      "f1P": "将传统数据分析、现代数据科学以及基于时空数据分析的智能工作流程融合在同一个开放平台。原生支持 SQL 查询和可视化交互分析，兼容多种主流机器学习框架。",
+      "f2Title": "充分挖掘硬件算力",
+      "f2P": "充分利用 GPU 和 CPU 硬件的并行处理能力。无需索引、预聚合、降采样等预处理就能实现海量数据集的 SQL 查询和可视化交互分析。",
+      "f3Title": "高效整合多源异构时空数据",
+      "f3P": "融合空间和时间数据的分析，能够帮您洞悉事件全貌，时间地点信息一目了然。细粒度的地理空间和时间序列数据的可视化使您不仅能够纵览数据的海洋，还能对海洋中的每一滴水了如指掌。"
+    },
+    "arch": {
+      "h3": "ZILLIZ Analytics 架构与组件"
+    },
+    "solution": {
+      "h3": "解决方案",
+      "leading": "ZILLIZ Analytics 使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势，显著降低单位算力成本，对十亿级数据集的查询分析提供亚秒级响应。",
+      "tab1": "物流行业",
+      "tab2": "电信行业",
+      "question": "问题",
+      "solution": "解决方案",
+      "effect": "效果",
+      "q1": "随着车辆运行数据和供应链管理数据的高速增长，物流行业迫切希望在最短的时间里作出有效决策来减少燃油消耗，提高操作员安全系数，降低维护成本，优化车辆利用率。",
+      "s1": "ZILLIZ Analytics 时空数据分析平台为物流行业提供了从生产线到最后一公里的全供应链分析能力，为数据分析师提供了对数十亿行车辆运行数据和供应链管理数据进行实时分析的新方法。",
+      "detail": "查看技术详情",
+      "el1-1": "提高及时交付率。",
+      "el1-2": "通过机器学习算法优化投递路线。",
+      "el1-3": "对车辆运行信息进行全方位的时空数据分析。",
+      "el1-4": "实时监控司机行为。",
+      "el1-5": "实现基于车辆状态的实时维护。",
+      "q2": "超大规模的互联网终端日志以及传感器数据在整个电信网络中实时流动。伴随着 5G 通信技术带来的更大规模的数据风暴，电信公司希望通过实时数据分析来快速发现并解决网络异常，从而有效提高服务可用性和网络可靠性。",
+      "s2": "ZILLIZ Analytics 时空数据平台可直观显示数十亿条数据记录，为电信行业分析师提供了网络运营优化、客户流失分析，以及不同数据集或地理位置之间的模式和相关性研究的新方法。",
+      "el2-1": "实时检测网络异常以进行现场服务和预防性维护。",
+      "el2-2": "了解客户流失的历史模式以建立预测性机器学习模型。",
+      "el2-3": "通过信号强度的地理空间分析改善客户体验。"
+    }
+  },
+  "aboutus": {
+    "mission": {
+      "p": "我们的愿景",
+      "h2": "重新定义数据科学"
+    },
+    "roadmap": {
+      "p": "我们专注于",
+      "h2": "研发面向AI的数据处理和分析平台"
+    },
+    "joinus": {
+      "p": "加入我们",
+      "h2": "ZILLIZ 正在成长，期待你的加入",
+      "h3": "“Be Hero”的团队文化，致力于打造一支精干、战斗力强、勇于创新的队伍，提倡以数据为基础、系统化解决复杂问题的工作方法，鼓励学习，奖励创新。",
+      "button": "查看职位和机会"
+    }
+  },
+  "megawise": {
+    "landing": {
+      "h3": "MegaWise",
+      "h4": "大数据分析引擎",
+      "p": "新一代 OLAP 分析引擎，使用 GPU 的大规模并行处理能力对 SQL 操作进行加速",
+      "readMore": "查看详情"
+    },
+    "features": {
+      "h3": "特性",
+      "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
+      "viewDoc": "查看文档",
+      "f1": {
+        "h4": "对 SQL 的原生支持",
+        "p": "MegaWise 支持标准 SQL 和 PostgreSQL 语法，并提供以下接口: <br /> - 命令行界面 (CLI)  <br /> - Java 数据库连接 (JDBC) 和开放式数据库连接 (ODBC)  <br />"
+      },
+      "f2": {
+        "h4": "多级数据缓存",
+        "p": "MegaWise 对内存和计算层进行了深度优化，以提供极致性能。MegaWise 在每个物理单节点内构建了 GPU 显存、主存、 SSD 三级缓存，以实现最快的访问速度。"
+      },
+      "f3": {
+        "h4": "动态查询编译",
+        "p": "ZILLIZ 在 MegaWise 平台中构建了基于 LLVM 的 JIT 编译系统, 保证 MegaWise 具有良好的跨平台跨设备能力，当前 MegaWise 可在 NVIDIA GPU ，x64 CPU ，POWER CPU 和 ARM CPU 上高效运行。"
+      },
+      "f4": {
+        "h4": "终结复杂索引、降采样、预聚合",
+        "p": "MegaWise 无需事先构建索引、降采样或预聚合，借助 GPU 等硬件加速器的性能红利提供即时查询能力，即使面向十亿级数据记录也可以达到几十到几百毫秒的响应速度。"
+      }
+    }
+  },
+  "bi": {
+    "landing": {
+      "h3": "Infini",
+      "h4": "Analytics Interface",
+      "p": "Browser-based data visualization interface that provides visualized, interactive representations of massive-scale geospatial and temporal data in real time.",
+      "readMore": "查看详情"
+    },
+    "features": {
+      "h3": "特性",
+      "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
+      "viewDoc": "查看文档",
+      "f1": {
+        "h4": "Faster than light",
+        "p": "Completes all procedures from data query to graphic rendering in a flash for massive-scale geospatial and temporal data."
+      },
+      "f2": {
+        "h4": "Full visualization and interactivity",
+        "p": "Visually interacts with plots, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+      },
+      "f3": {
+        "h4": "Multiple customizable plots",
+        "p": "Customizes multiple plot types. You can freely choose your favorite style."
+      },
+      "f4": {
+        "h4": "Real-time map rendering",
+        "p": "Renders billions of geospatial data on the map in a flash. Seamless merge with maps will add tremendous business value to data."
+      }
+    }
+  }
+}

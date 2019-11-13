@@ -1,0 +1,134 @@
+@import "../components/include_media.scss";
+.footer-wrapper {
+  background-color: #28292e;
+}
+.footer {
+  height: 310px;
+  background-color: #28292e;
+  display: flex;
+  justify-content: space-between;
+  
+  .logo {
+    display: block;
+    width: 227px;
+  }
+  .left {
+    padding-top: 50px;
+    text-align: left;
+    color: rgba(216, 216, 216, 0.46);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 20px;
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .right {
+    padding-top: 50px;
+    color: #d8d8d8;
+    line-height: 1.7;
+    a {
+      color: #d8d8d8;
+    }
+    padding-right: 20px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    h4 {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media("<=1000px") {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 0 10px !important;
+
+    .logo {
+      display: none;
+    }
+    .left {
+      margin-bottom: 20px;
+      order: 2;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      width: 90%;
+      margin-bottom: 0px;
+      .item {
+        margin-bottom: 30px;
+      }
+      h4 {
+        font-weight: bold;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+.bottom-footer {
+  .bottom-footer-container {
+    border-top: 1px solid #52545c;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  sup {
+    position: relative;
+    font-size: 9px;
+  }
+  background-color: #28292e;
+  height: 70px;
+  line-height: 40px;
+  color: rgba(216, 216, 216, 0.46);;
+  a {
+    color: #d8d8d8;
+    &:hover {
+      color: #4fc4f9;
+    }
+  }
+  .wechat:hover svg {
+    fill: #5cc928;
+  }
+  .locale {
+    margin-right: 10px;
+    font-family: "Noto Sans CJK SC";
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+  }
+
+  .wechat {
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    img {
+      display: none;
+      position: absolute;
+      top: -154px;
+      right: 0;
+    }
+    svg {
+      position: relative;
+      top: 6px;
+    }
+  }
+  .wechat:hover img {
+    display: block;
+    top: -154px;
+  }
+  .github {
+    margin-left: 10px;
+    svg {
+      position: relative;
+      top: 3px;
+    }
+  }
+  @include media("<=1000px") {
+    padding: 0 10px !important;
+  }
+}
