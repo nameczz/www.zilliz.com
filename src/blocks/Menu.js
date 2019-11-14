@@ -150,7 +150,7 @@ const Menu = props => {
       >
         <div className="menu_name-wrapper">
           {doc.outLink ? (
-            <a href={doc.outLink} className="text">
+            <a href={doc.outLink} target="_blank" className="text">
               {doc.title}
             </a>
           ) : doc.isMenu === true ? (
