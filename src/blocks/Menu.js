@@ -113,7 +113,7 @@ const Menu = props => {
   const menuRef = useRef(null);
   useEffect(() => {
     let targetY = null;
-    menuRef.current.addEventListener("touchstart", function(e) {
+    menuRef.current.addEventListener("touchstart", function (e) {
       // use to confirm move direction  clientY-客户区坐标Y 、pageY-页面坐标Y
       targetY = Math.floor(e.targetTouches[0].clientY);
     });
@@ -153,23 +153,23 @@ const Menu = props => {
             <a href={doc.outLink} className="text">
               {doc.title}
             </a>
-          ) : doc.isMenu === "true" ? (
+          ) : doc.isMenu === true ? (
             <span className="text">{doc.title}</span>
           ) : (
-            <LocalizeLink
-              locale={doc.lang}
-              className="text"
-              to={`${preLink}/${doc.id}`}
-            >
-              {doc.title}
-            </LocalizeLink>
-          )}
+                <LocalizeLink
+                  locale={doc.lang}
+                  className="text"
+                  to={`${preLink}/${doc.id}`}
+                >
+                  {doc.title}
+                </LocalizeLink>
+              )}
 
           {doc.children && doc.children.length ? (
             <i
               className={`fas fa-chevron-down arrow ${
                 doc.showChildren ? "" : "top"
-              }`}
+                }`}
               onClick={() => {
                 toggleMenuChild(doc);
               }}
