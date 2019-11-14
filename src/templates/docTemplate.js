@@ -64,6 +64,8 @@ export const pageQuery = graphql`
               label2
               label3
               order
+              isMenu
+              outLink
             }
           }
           childLayoutJson {
