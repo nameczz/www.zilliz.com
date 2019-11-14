@@ -14,7 +14,9 @@
     padding: 150px 0;
     text-align: center;
     color: #fff;
-
+    img{
+      height: 5rem;
+    }
     p,
     h3,
     h4 {
@@ -85,30 +87,30 @@
       margin-bottom: 100px;
     }
     .learnMore {
-      font-size: 22px;
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 54px;
     }
   }
 }
 .item-list2 {
   li {
-    margin: 0 50px 20px;
+    margin: 0 50px 100px;
     clear: both;
-    overflow: hidden;
     display: flex;
     justify-content: between;
 
     h4 {
-      font-size: 20px;
+      font-size: 32px;
       line-height: 1.2;
       font-weight: bold;
       margin-bottom: 20px;
-      text-transform: uppercase;
       @include media("<=1000px") {
         font-size: 20px;
       }
     }
     p {
-      font-size: 13px;
+      font-size: 16px;
       line-height: 1.9;
     }
   }

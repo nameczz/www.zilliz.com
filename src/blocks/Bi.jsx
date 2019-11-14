@@ -19,7 +19,7 @@ const Bi = ({ data, locale }) => {
         <p>{landing.p}</p>
         <LocalizeLink
           locale={locale}
-          className="button rect-button"
+          className="button primary-button"
           to={"/docs/install_infini"}
         >
           {landing.readMore}
@@ -62,7 +62,7 @@ const Bi = ({ data, locale }) => {
         <h3 className="learnMore">{features.learnMore}</h3>
         <LocalizeLink
           locale={locale}
-          className="button rect-button transparent-button"
+          className="button"
           to={"/docs/install_infini"}
         >
           {features.viewDoc}

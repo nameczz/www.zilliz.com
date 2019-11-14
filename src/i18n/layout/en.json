@@ -43,7 +43,7 @@
       "h4": "Analytics Platform for Massive-Scale Geospatial and Temporal Data",
       "leading": "Implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency.",
       "button": "Documentation",
-      "buttonMega": "MegaWise GPU Database"
+      "buttonMega": "Read More"
     },
     "features": {
       "h2": "Returns query results for billion-scale datasets in subseconds",
@@ -108,6 +108,7 @@
       "h3": "Features",
       "learnMore": "Learn more about how the GPU-accelerated analytics database speeds up your geospatial and temporal data analytics.",
       "viewDoc": "View Doc",
+      "comparison": "Performance Comparison",
       "f1": {
         "h4": "Native support for SQL",
         "p": "MegaWise supports standard SQL and PostgreSQL grammar. The following interfaces are provided for MegaWise: <br /> - Command-line interface <br /> - JDBC and ODBC <br />"

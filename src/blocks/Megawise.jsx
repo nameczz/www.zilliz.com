@@ -3,6 +3,7 @@ import f1 from "../images/megawise_img_a.png";
 import f2 from "../images/megawise_img_b.png";
 import f3 from "../images/megawise_img_c.png";
 import f4 from "../images/megawise_img_d.png";
+import MW_logo from "../images/logo-MW.png"
 import LocalizeLink from "../components/localizedLink";
 import Comparison from "../components/Comparison"
 
@@ -10,14 +11,15 @@ import "./Megawise.scss";
 
 const Megawise = ({ data, locale }) => {
   const { landing, features } = data;
+  console.log(features)
   return (
     <section className={`megawise section ${locale}`}>
       <section className="landing">
-        <h3>{landing.h3}</h3>
+        <img src={MW_logo} alt="MW_logo" />
         <h4>{landing.h4}</h4>
         <p>{landing.p}</p>
         <LocalizeLink
-          className="button rect-button"
+          className="button primary-button"
           locale={locale}
           to="/docs/megawise_intro"
         >
@@ -58,9 +60,9 @@ const Megawise = ({ data, locale }) => {
             </div>
           </li>
         </ul>
-        <h3 className="learnMore">{features.learnMore}</h3>
+        <p className="learnMore">{features.learnMore}</p>
         <LocalizeLink
-          className="button rect-button transparent-button"
+          className="button"
           locale={locale}
           to="/docs/analytics_overview"
         >
@@ -69,7 +71,7 @@ const Megawise = ({ data, locale }) => {
       </section>
       <section>
         <Comparison
-          title={'性能对比'}
+          title={features.comparison}
           products={[
             { label: `MegaWise -> 1 node/48 cores/4 GPU/512G Mem/1TB SSD`, performance: 0.01 },
             { label: `Redshift -> 6 nodes/192 cores/0 GPU/1464G Mem/15.4TB SSD`, performance: 1.56 },

@@ -43,7 +43,7 @@
       "h4": "面向海量时空数据的可视化交互分析平台",
       "leading": "使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势。",
       "button": "文档",
-      "buttonMega": "MegaWise GPU 数据库"
+      "buttonMega": "查看详情"
     },
     "features": {
       "h2": "对十亿级数据集的查询分析<br />提供亚秒级响应",
@@ -108,6 +108,7 @@
       "h3": "特性",
       "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
       "viewDoc": "查看文档",
+      "comparison": "性能对比",
       "f1": {
         "h4": "对 SQL 的原生支持",
         "p": "MegaWise 支持标准 SQL 和 PostgreSQL 语法，并提供以下接口: <br /> - 命令行界面 (CLI)  <br /> - Java 数据库连接 (JDBC) 和开放式数据库连接 (ODBC)  <br />"
@@ -129,7 +130,7 @@
   "bi": {
     "landing": {
       "h3": "Infini",
-      "h4": "Infini 可视化交互分析界面",
+      "h4": "可视化交互分析界面",
       "p": "基于浏览器的数据可视化交互分析界面，支持对海量时空数据进行实时可视化处理和交互。",
       "readMore": "查看详情"
     },
