@@ -28,7 +28,7 @@ const Infini = ({ data, locale }) => {
           <LocalizeLink
             className="button buttonMega"
             locale={locale}
-            to="/docs/megawise_intro"
+            to="/docs/analytics_overview"
           >
             {data.landing.buttonMega}
           </LocalizeLink>
@@ -103,7 +103,7 @@ const Infini = ({ data, locale }) => {
               <img src={s2} alt={data.solution.solution} />
               <h5>{data.solution.solution}</h5>
               <p>{data.solution.s1}</p>
-              <a href="https://infini-analytics.github.io/#/white_paper_logistics">
+              <a href="https://github.com/zilliztech/Infini-Analytics.github.io/blob/master/whitepaper_pdf/ZILLIZ%20Analytics_logistics_whitepaper.pdf">
                 {data.solution.detail}
               </a>
             </li>
@@ -131,7 +131,7 @@ const Infini = ({ data, locale }) => {
               <img src={s2} alt={data.solution.solution} />
               <h5>{data.solution.solution}</h5>
               <p>{data.solution.s2}</p>
-              <a href="https://infini-analytics.github.io/#/white_paper_telco">
+              <a href="https://github.com/zilliztech/Infini-Analytics.github.io/blob/master/whitepaper_pdf/ZILLIZ%20Analytics_telco_whitepaper.pdf">
                 {data.solution.detail}
               </a>
             </li>
