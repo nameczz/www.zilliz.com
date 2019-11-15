@@ -10,7 +10,7 @@ const Contact = ({ data }) => {
             {data.footer && data.footer.contactLeading}
           </p>
           <a
-            className="contact-button rect-button"
+            className="contact-button primary-button"
             href="http://megawise-apply-2019.mikecrm.com/CQ2YcFR"
           >
             {data.footer && data.footer.contactButton}

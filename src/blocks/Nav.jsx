@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import LocalizeLink from "../components/localizedLink";
 import logo from "../images/logo.svg"; // Tell Webpack this JS file uses this image
+import { globalHistory } from '@reach/router'
+
 import "./Nav.scss";
 
 const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
@@ -8,8 +10,12 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
   const isZilliz =
     ["/", "index", "megawise", "infini"].indexOf(nav.current) !== -1 &&
     open;
-    console.log(nav.current)
+  console.log(nav.current)
+
   const showSubNav = !open && nav.current !== "doc" && nav.current !== "aboutus";
+  const l = locale === "cn" ? "en" : "cn";
+  let to = globalHistory.location.pathname.replace("/en/", "/").replace("/cn/", "/");
+
   return (
     <>
       <nav className="wrapper nav-wrapper">
@@ -66,7 +72,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                   <LocalizeLink
                     className={`${
                       nav.current === "doc" ? "current" : ""
-                    } right`}
+                      } right`}
                     locale={locale}
                     to="/docs/analytics_overview"
                     target="_blank"
@@ -77,27 +83,40 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
               )}
             </ul>
           </div>
-          <a
-            href="#!"
-            className="rightMenu"
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            {!open ? (
-              <i className="fas fa-bars"></i>
-            ) : (
-              <i className="fas fa-times"></i>
-            )}
-          </a>
-          <LocalizeLink
-            className={`${nav.current === "doc" ? "current" : ""} right`}
-            locale={locale}
-            to="/docs/analytics_overview"
-            target="_blank"
-          >
-            {data.doc}
-          </LocalizeLink>
+          <div className="rightMenu">
+            <LocalizeLink className="locale" locale={l} to={to}>
+              {locale === "cn" ? "EN" : "中"}
+            </LocalizeLink>
+
+            <a
+              href="#!"
+
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              {!open ? (
+                <i className="fas fa-bars"></i>
+              ) : (
+                  <i className="fas fa-times"></i>
+                )}
+            </a>
+          </div>
+
+          <div className="right">
+            <LocalizeLink className="locale" locale={l} to={to}>
+              {locale === "cn" ? "EN" : "中"}
+            </LocalizeLink>
+            <LocalizeLink
+              className={`${nav.current === "doc" ? "current" : ""} `}
+              locale={locale}
+              to="/docs/analytics_overview"
+              target="_blank"
+            >
+              {data.doc}
+            </LocalizeLink>
+          </div>
+
         </div>
       </nav>
       {showSubNav && (

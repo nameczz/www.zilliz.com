@@ -14,11 +14,14 @@
     padding: 150px 0;
     text-align: center;
     color: #fff;
-
+    .logo {
+      height: 5rem;
+    }
     p,
     h3,
     h4 {
       margin-bottom: 15px;
+      font-weight: bold;
     }
     h3 {
       font-size: 60px;
@@ -26,6 +29,7 @@
     }
     h4 {
       font-size: 25px;
+      font-weight: bold;
     }
 
     p {
@@ -33,6 +37,7 @@
       margin: 0 auto 20px;
       font-size: 16px;
     }
+ 
     @include media("<=1000px") {
       width: auto;
       padding: 70px 0;
@@ -65,7 +70,6 @@
   }
   .features {
     h3 {
-      text-transform: uppercase;
       text-align: center;
       font-size: 40px;
       @include media("<=1000px") {
@@ -88,54 +92,64 @@
       font-size: 22px;
     }
   }
-}
-.item-list2 {
-  li {
-    margin: 0 50px 20px;
-    clear: both;
-    overflow: hidden;
-    display: flex;
-    justify-content: between;
-
-    h4 {
-      font-size: 20px;
-      line-height: 1.2;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      @include media("<=1000px") {
-        font-size: 20px;
-      }
-    }
-    p {
-      font-size: 13px;
-      line-height: 1.9;
-    }
-  }
-  img {
-    width: 60%;
-    margin-right: 20px;
-  }
-  @include media("<=1000px") {
+  .item-list2 {
     li {
       display: block;
-      margin: 0 0 20px 20px;
+      margin: 100px 50px 20px;
+
       h4 {
-        margin-bottom: 10px;
-      }
-      img {
-        width: 95%;
+        font-size: 34px;
+        line-height: 1.2;
+        font-weight: bold;
         margin-bottom: 20px;
+        text-align: center;
+        @include media("<=1000px") {
+          font-size: 20px;
+        }
+      }
+      p {
+        width: 540px;
+        margin: 0 auto 26px auto;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.9;
+
+        @include media("<=1000px") {
+          width: auto;
+          font-size: 13px;
+        }
       }
     }
+
     img {
-      margin-bottom: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #fafafa;
+      box-shadow: 0 25px 50px 0 rgba(16,16,16,0.5);
+    }
+
+    @include media("<=1000px") {
+      li {
+        display: block;
+        margin: 0 0 20px 20px;
+        h4 {
+          margin-bottom: 10px;
+        }
+        img {
+          box-sizing: border-box;
+          width: 95%;
+          margin-bottom: 20px;
+        }
+      }
+      img {
+        margin-bottom: 20px;
+      }
     }
   }
 }
 
 main.wrapper-bi {
-  background: url(../images/megawise-bg.png) no-repeat top center;
+  background: url(../images/infini_bg.png) no-repeat top center;
   background-size: 100%;
   position: relative;
   @include media("<=1000px") {

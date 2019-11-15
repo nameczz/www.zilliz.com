@@ -52,36 +52,6 @@ module.exports = {
         path: `${__dirname}/src/pages/doc_en/assets`,
       },
     },
-
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `docs_cn`,
-    //     path: `${__dirname}/src/pages/doc_cn_mock`,
-    //   },
-    // },
-
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `docs_cn_assets`,
-    //     path: `${__dirname}/src/pages/doc_cn_mock/assets`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `docs_en`,
-    //     path: `${__dirname}/src/pages/doc_en_mock`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `docs_en_assets`,
-    //     path: `${__dirname}/src/pages/doc_en_mock/assets`,
-    //   },
-    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

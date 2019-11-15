@@ -30,8 +30,8 @@
       "company": "Company",
       "joinus": "Join Us",
       "culture": "Z Star",
-      "socialCareer": "Social Recruiting",
-      "schoolCareer": "Campus Recruiting"
+      "socialCareer": "Professions",
+      "schoolCareer": "Graduates"
     }
   },
   "contact": {
@@ -43,7 +43,7 @@
       "h4": "Analytics Platform for Massive-Scale Geospatial and Temporal Data",
       "leading": "Implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency.",
       "button": "Documentation",
-      "buttonMega": "MegaWise GPU Database"
+      "buttonMega": "Read More"
     },
     "features": {
       "h2": "Returns query results for billion-scale datasets in subseconds",
@@ -108,6 +108,7 @@
       "h3": "Features",
       "learnMore": "Learn more about how the GPU-accelerated analytics database speeds up your geospatial and temporal data analytics.",
       "viewDoc": "View Doc",
+      "comparison": "Performance Comparison",
       "f1": {
         "h4": "Native support for SQL",
         "p": "MegaWise supports standard SQL and PostgreSQL grammar. The following interfaces are provided for MegaWise: <br /> - Command-line interface <br /> - JDBC and ODBC <br />"
@@ -135,7 +136,7 @@
     },
     "features": {
       "h3": "Features",
-      "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
+      "learnMore": "Learn more about how Infini comprehensively visualizes massive-scale data in real time",
       "viewDoc": "View Doc",
       "f1": {
         "h4": "Faster than light",
@@ -143,11 +144,11 @@
       },
       "f2": {
         "h4": "Full visualization and interactivity",
-        "p": "Visually interacts with plots, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+        "p": "Visually interacts with charts, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
       },
       "f3": {
-        "h4": "Multiple customizable plots",
-        "p": "Customizes multiple plot types. You can freely choose your favorite style."
+        "h4": "Multiple customizable charts",
+        "p": "Customizes multiple chart types. You can freely choose your favorite style."
       },
       "f4": {
         "h4": "Real-time map rendering",

@@ -2,14 +2,10 @@ import React from "react";
 import logo from "../images/footer-logo.png"; // Tell Webpack this JS file uses this image
 import qrCode from "../images/qrcode.jpeg"; // Tell Webpack this JS file uses this image
 import LocalizeLink from "../components/localizedLink";
-import { globalHistory } from '@reach/router'
-
 import "./Footer.scss";
 
 const Footer = (props) => {
   const { data, locale } = props;
-  const l = locale === "cn" ? "en" : "cn";
-  let to = globalHistory.location.pathname.replace("/en/", "/").replace("/cn/", "/");
 
   return (
     <>
@@ -79,9 +75,7 @@ const Footer = (props) => {
             @ {new Date().getFullYear()} ZILLIZ <sup>TM</sup>
           </div>
           <div>
-            <LocalizeLink className="locale" locale={l} to={to}>
-              {locale === "cn" ? "EN" : "中"}
-            </LocalizeLink>
+
             <a href="#!" className="wechat" onClick={e => e.preventDefault()}>
               <svg
                 fill="#EEE"

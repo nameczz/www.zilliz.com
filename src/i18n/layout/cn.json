@@ -43,7 +43,7 @@
       "h4": "面向海量时空数据的可视化交互分析平台",
       "leading": "使用 GPU 的大规模并行处理和视觉渲染能力实现数据可视化。与传统方案相比，ZILLIZ Analytics 平台具备高吞吐、高性价比、低延时三重优势。",
       "button": "文档",
-      "buttonMega": "MegaWise GPU 数据库"
+      "buttonMega": "查看详情"
     },
     "features": {
       "h2": "对十亿级数据集的查询分析<br />提供亚秒级响应",
@@ -108,6 +108,7 @@
       "h3": "特性",
       "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
       "viewDoc": "查看文档",
+      "comparison": "性能对比",
       "f1": {
         "h4": "对 SQL 的原生支持",
         "p": "MegaWise 支持标准 SQL 和 PostgreSQL 语法，并提供以下接口: <br /> - 命令行界面 (CLI)  <br /> - Java 数据库连接 (JDBC) 和开放式数据库连接 (ODBC)  <br />"
@@ -129,29 +130,29 @@
   "bi": {
     "landing": {
       "h3": "Infini",
-      "h4": "Analytics Interface",
-      "p": "Browser-based data visualization interface that provides visualized, interactive representations of massive-scale geospatial and temporal data in real time.",
+      "h4": "可视化交互分析界面",
+      "p": "基于浏览器的数据可视化交互分析界面，支持对海量时空数据进行实时可视化处理和交互。",
       "readMore": "查看详情"
     },
     "features": {
       "h3": "特性",
-      "learnMore": "了解 GPU 加速分析数据库如何加速时空数据分析",
+      "learnMore": "了解 Infini 可视化交互界面如何全方位实时呈现海量数据",
       "viewDoc": "查看文档",
       "f1": {
-        "h4": "Faster than light",
-        "p": "Completes all procedures from data query to graphic rendering in a flash for massive-scale geospatial and temporal data."
+        "h4": "光一般的速度",
+        "p": "对于海量时空数据，可以在极短时间内完成从查询到渲染的全部流程。"
       },
       "f2": {
-        "h4": "Full visualization and interactivity",
-        "p": "Visually interacts with plots, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+        "h4": "全面可视化交互",
+        "p": "全面实现图表、表格和地图的可视化交互。任何交互操作都会实时反映到您的可视化界面中。"
       },
       "f3": {
-        "h4": "Multiple customizable plots",
-        "p": "Customizes multiple plot types. You can freely choose your favorite style."
+        "h4": "多种自定义图表",
+        "p": "自定义配置多种图表类型。您可以任意选择各种可视化风格。"
       },
       "f4": {
-        "h4": "Real-time map rendering",
-        "p": "Renders billions of geospatial data on the map in a flash. Seamless merge with maps will add tremendous business value to data."
+        "h4": "实时地图渲染",
+        "p": "瞬间在地图上渲染十亿级地理数据。与地图的无缝融合将极大提升数据的商业价值。"
       }
     }
   }

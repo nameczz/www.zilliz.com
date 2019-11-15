@@ -69,11 +69,15 @@ a {
   padding: 0.5rem 2rem;
 }
 
-.rect-button {
+.primary-button {
+  display: inline-block;
+  padding: 10px 60px;
+  margin-top: 24px;
+  font-weight: bold;
+  background: #3f9cd1;
   color: #fff;
   border-radius: 0;
-  padding: 5px 40px;
-  background-color: rgba(79, 196, 249, 0.9);
+  border: 0;
 }
 
 .wrapper {
@@ -94,8 +98,10 @@ main.wrapper {
   background: url(../images/hero.png) no-repeat top center;
   background-size: 100%;
   position: relative;
+  transform: translateY(-60px);
   @include media("<=1000px") {
     top: 50px;
+    transform: translateY(0);
   }
 }
 .inner-container {
@@ -104,6 +110,20 @@ main.wrapper {
     width: auto;
   }
   margin: 0 auto;
+}
+main.wrapper-bi,.wrapper-megawise{
+  transform: translateY(-60px);
+  @include media("<=1400px") {
+    transform: translateY(0px);
+  }
+  .inner-container{
+    width: 1400px;
+    margin: 0 auto;
+    
+    @include media("<=1400px") {
+      width: auto;
+    }
+  }
 }
 main.wrapper-about {
   position: relative;

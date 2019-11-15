@@ -8,13 +8,15 @@ export default function Template({
   data,
   pageContext, // this prop will be injected by the GraphQL query below.
 }) {
-  const { locale, menuList } = pageContext;
+  const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
+  const menuList = data.allFile.edges[1].node.childMenuStructureJson.menuList
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   const nav = {
     current: "doc",
   };
+  console.log(data)
   return (
     <Layout
       data={layout}
@@ -47,11 +49,25 @@ export const pageQuery = graphql`
         title
       }
     }
+    
     allFile(
-      filter: { name: { eq: $locale }, relativeDirectory: { in: ["layout"] } }
+      filter: { name: { eq: $locale }, relativeDirectory: { in: ["layout", "menuStructure"] } }
     ) {
       edges {
         node {
+          childMenuStructureJson {
+            menuList {
+              id
+              title
+              lang
+              label1
+              label2
+              label3
+              order
+              isMenu
+              outLink
+            }
+          }
           childLayoutJson {
             layout {
               header {
