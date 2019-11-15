@@ -26,7 +26,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
             </LocalizeLink>
 
             <ul className={`nav-links ${open ? "show" : "hide"}`}>
-              {isZilliz && <li>ZILLIZ Analaytics</li>}
+              {isZilliz && <li>ZILLIZ Analytics</li>}
               {open && subNav}
               {!isZilliz && (
                 <li className="root">
@@ -35,7 +35,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                     locale={locale}
                     to="/"
                   >
-                    {open ? `ZILLIZ Analaytics` : data.analytics}
+                    {open ? `ZILLIZ Analytics` : data.analytics}
                   </LocalizeLink>
                 </li>
               )}
