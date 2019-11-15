@@ -7,6 +7,8 @@ import s2 from "../images/icon-solution-2.png";
 import s3 from "../images/icon-solution-3.png";
 import cn from "../images/horizontal-cn.png";
 import en from "../images/horizontal-en.png";
+import ZA_logo from "../images/logo-ZA.png";
+
 import LocalizeLink from "../components/localizedLink";
 import "./Infini.scss";
 
@@ -19,7 +21,7 @@ const Infini = ({ data, locale }) => {
   return (
     <section className={`infini section ${locale}`}>
       <section className="landing">
-        <h3>{data.landing.h3}</h3>
+        <img src={ZA_logo} alt="ZA_logo"></img>
         <h4>{data.landing.h4}</h4>
         <p>{data.landing.leading}</p>
         <div className="button-area">

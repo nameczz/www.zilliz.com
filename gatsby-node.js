@@ -34,11 +34,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               id
-              title
-              lang
-              label1
-              label2
-              label3
+              lang        
             }
           }
         }

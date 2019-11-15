@@ -93,6 +93,7 @@ export const Query = graphql`
                 }
                 learnMore
                 viewDoc
+                comparison
               }
             }
           }
