@@ -1,5 +1,6 @@
 const path = require(`path`);
 const locales = require("./src/constants/locales");
+const DOC_LANG_FOLDERS = ["doc_en", "doc_cn"];
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -34,8 +35,9 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               id
-              lang        
+              lang
             }
+            fileAbsolutePath
           }
         }
       }
@@ -45,29 +47,47 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    // get menulist from md file
-    const menuList = result.data.allMarkdownRemark.edges.map(
-      ({ node }) => node.frontmatter
-    );
-    console.log(menuList);
     const defaultLang = Object.keys(locales).find(
       lang => locales[lang].default
     );
+    const findVersion = str => {
+      const regx = /versions\/([v\d\.]*)/;
+      const match = str.match(regx);
+      return match ? match[1] : "";
+    };
+    const versions = new Set()
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const fileAbsolutePath = node.fileAbsolutePath;
+      const version = findVersion(fileAbsolutePath)
+      versions.add(version)
+    });
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const locale = node.frontmatter.lang;
+      const fileAbsolutePath = node.fileAbsolutePath;
+      let version = findVersion(fileAbsolutePath);
+      if (!version) {
+        throw new Error("need a version folder, like: /version/1.0.0 ");
+      }
+
+      const fileLang = DOC_LANG_FOLDERS.reduce((pre, cur) => {
+        if (fileAbsolutePath.includes(cur)) {
+          pre = cur.split("_")[1];
+        }
+        return pre;
+      }, "");
       const localizedPath =
-        locale === defaultLang
-          ? `/docs/${node.frontmatter.id}`
-          : `${locale}/docs/${node.frontmatter.id}`;
+        fileLang === defaultLang
+          ? `/docs/${version}/${node.frontmatter.id}`
+          : `${fileLang}/docs/${version}/${node.frontmatter.id}`;
+      console.log(fileLang, version);
 
       return createPage({
         path: localizedPath,
-        // path: node.frontmatter.path,
         component: docTemplate,
         context: {
-          locale,
-          menuList: menuList.filter(v => v.lang === locale),
+          locale: fileLang,
+          version,
+          versions: Array.from(versions),
           old: node.frontmatter.id,
         }, // additional data can be passed via context
       });

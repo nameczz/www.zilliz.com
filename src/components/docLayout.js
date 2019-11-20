@@ -15,6 +15,8 @@ export default props => {
     subNav,
     menuList,
     id,
+    versions,
+    version,
     wrapperClass = "doc-wrapper",
   } = props;
   const { header, footer } = data;
@@ -22,7 +24,13 @@ export default props => {
     <div>
       <Nav nav={nav} data={header} locale={locale} subNav={subNav} />
       <main className={wrapperClass}>
-        <Menu menuList={menuList} activeDoc={id}></Menu>
+        <Menu
+          menuList={menuList}
+          versions={versions}
+          activeDoc={id}
+          version={version}
+          locale={locale}
+        ></Menu>
         <div className="inner-container">{children}</div>
       </main>
       <Contact data={data} locale={locale} />

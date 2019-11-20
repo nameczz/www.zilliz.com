@@ -10,7 +10,7 @@ const MegawisePage = ({ data, pageContext }) => {
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const megawise = data.allFile.edges[0].node.childLayoutJson.megawise;
 
-  console.log(`locale in index page is: ${locale}`, data, pageContext);
+  // console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
     current: "index",
   };

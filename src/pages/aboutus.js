@@ -8,7 +8,6 @@ const AboutUsPage = ({ data, pageContext }) => {
   const { locale } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const aboutus = data.allFile.edges[0].node.childLayoutJson.aboutus;
-  console.log(`locale in index page is: ${locale}`, data, pageContext);
   const nav = {
     current: "aboutus",
   };

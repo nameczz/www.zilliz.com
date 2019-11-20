@@ -10,7 +10,6 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
   const isZilliz =
     ["/", "index", "megawise", "infini"].indexOf(nav.current) !== -1 &&
     open;
-  console.log(nav.current)
 
   const showSubNav = !open && nav.current !== "doc" && nav.current !== "aboutus";
   const l = locale === "cn" ? "en" : "cn";

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import LocalizeLink from "../components/localizedLink";
+import VersionSelector from "../components/Selector";
 import "./Menu.scss";
 
 const findItem = (key, value, arr) => {
@@ -16,9 +17,8 @@ const findItem = (key, value, arr) => {
 };
 
 const Menu = props => {
-  const preLink = "/docs";
-  const { menuList, activeDoc } = props;
-
+  const { menuList, activeDoc, version, versions, locale } = props;
+  const preLink = `/docs/${version}`;
   const [menuStatus, setMenuStatus] = useState(false);
 
   const [realMenuList, setRealMenuList] = useState([]);
@@ -46,7 +46,6 @@ const Menu = props => {
         });
 
         topMenu.forEach(v => {
-          console.log(v, labelKeys[index]);
           const item = {
             ...v,
             children: [],
@@ -93,7 +92,6 @@ const Menu = props => {
     const arr = generateMenu(menuList)();
     checkActive(arr);
     sortMenu(arr);
-    console.log(arr);
     setRealMenuList(arr);
   }, [menuList, activeDoc]);
 
@@ -211,7 +209,11 @@ const Menu = props => {
           ></i>
         ) : null}
 
-        <h1 className="title border-bottom">ZILLIZ ANALYTICS</h1>
+        <div className="border-bottom">
+          <h1 className="title">ZILLIZ ANALYTICS</h1>
+          <VersionSelector options={[1, 2, 3, 4, 'v1.0.0']} selected={version} locale={locale} activeDoc={activeDoc}></VersionSelector>
+        </div>
+
         {generageMenuDom(realMenuList, "menu-top-level border-bottom")}
       </section>
       {!menuStatus ? (

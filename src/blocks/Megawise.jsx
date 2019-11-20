@@ -11,7 +11,7 @@ import "./Megawise.scss";
 
 const Megawise = ({ data, locale }) => {
   const { landing, features } = data;
-  console.log(features)
+
   return (
     <section className={`megawise section ${locale}`}>
       <section className="landing">

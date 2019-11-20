@@ -31,27 +31,27 @@ module.exports = {
         path: `${__dirname}/src/pages/doc_cn`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs_cn_assets`,
-        path: `${__dirname}/src/pages/doc_cn/assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs_en`,
-        path: `${__dirname}/src/pages/doc_en`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs_en_assets`,
-        path: `${__dirname}/src/pages/doc_en/assets`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `docs_cn_assets`,
+    //     path: `${__dirname}/src/pages/doc_cn/assets`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `docs_en`,
+    //     path: `${__dirname}/src/pages/doc_en`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `docs_en_assets`,
+    //     path: `${__dirname}/src/pages/doc_en/assets`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
