@@ -32,7 +32,7 @@ const SubNav = ({ data, locale, current }) => (
         to="/infini"
         className={current === "infini" ? "current" : ""}
       >
-        INIFNI
+        INFINI
       </LocalizeLink>
     </li>
     {/* <li>

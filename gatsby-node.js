@@ -1,6 +1,11 @@
-const path = require(`path`);
+const path = require("path");
+const ReadVersionJson = require("./walkFile");
 const locales = require("./src/constants/locales");
 const DOC_LANG_FOLDERS = ["doc_en", "doc_cn"];
+
+// the version is same for different lang, so we only need one
+const DOC_ROOT = "src/pages/doc_cn/versions";
+const versionInfo = ReadVersionJson(DOC_ROOT);
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -55,11 +60,19 @@ exports.createPages = ({ actions, graphql }) => {
       const match = str.match(regx);
       return match ? match[1] : "";
     };
+
+    // get all version for version menu
     const versions = new Set();
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const fileAbsolutePath = node.fileAbsolutePath;
       const version = findVersion(fileAbsolutePath);
-      versions.add(version);
+
+      // released: no -> not show , yes -> show
+      console.log(version)
+      console.log(versionInfo)
+      if (versionInfo[version] && versionInfo[version].released === "yes") {
+        versions.add(version);
+      }
     });
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -72,10 +85,14 @@ exports.createPages = ({ actions, graphql }) => {
         }
         return pre;
       }, "");
+
       const localizedPath =
         fileLang === defaultLang
           ? `/docs/${version}/${node.frontmatter.id}`
           : `${fileLang}/docs/${version}/${node.frontmatter.id}`;
+
+      // the newest doc version is master so we need to make route without version.
+      // for easy link to the newest doc
       if (!version && fileAbsolutePath.includes("master")) {
         const masterPath =
           fileLang === defaultLang
@@ -86,13 +103,14 @@ exports.createPages = ({ actions, graphql }) => {
           component: docTemplate,
           context: {
             locale: fileLang,
-            version,
+            version: versionInfo.master.version, // get master version
             versions: Array.from(versions),
             old: node.frontmatter.id,
           }, // additional data can be passed via context
         });
       }
 
+      //  normal pages
       return createPage({
         path: localizedPath,
         component: docTemplate,
