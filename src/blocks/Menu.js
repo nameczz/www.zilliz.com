@@ -211,7 +211,7 @@ const Menu = props => {
 
         <div className="border-bottom">
           <h1 className="title">ZILLIZ ANALYTICS</h1>
-          <VersionSelector options={[1, 2, 3, 4, 'v1.0.0']} selected={version} locale={locale} activeDoc={activeDoc}></VersionSelector>
+          <VersionSelector options={versions} selected={version} locale={locale} activeDoc={activeDoc}></VersionSelector>
         </div>
 
         {generageMenuDom(realMenuList, "menu-top-level border-bottom")}

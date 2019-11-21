@@ -55,19 +55,16 @@ exports.createPages = ({ actions, graphql }) => {
       const match = str.match(regx);
       return match ? match[1] : "";
     };
-    const versions = new Set()
+    const versions = new Set();
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const fileAbsolutePath = node.fileAbsolutePath;
-      const version = findVersion(fileAbsolutePath)
-      versions.add(version)
+      const version = findVersion(fileAbsolutePath);
+      versions.add(version);
     });
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const fileAbsolutePath = node.fileAbsolutePath;
       let version = findVersion(fileAbsolutePath);
-      if (!version) {
-        throw new Error("need a version folder, like: /version/1.0.0 ");
-      }
 
       const fileLang = DOC_LANG_FOLDERS.reduce((pre, cur) => {
         if (fileAbsolutePath.includes(cur)) {
@@ -79,7 +76,22 @@ exports.createPages = ({ actions, graphql }) => {
         fileLang === defaultLang
           ? `/docs/${version}/${node.frontmatter.id}`
           : `${fileLang}/docs/${version}/${node.frontmatter.id}`;
-      console.log(fileLang, version);
+      if (!version && fileAbsolutePath.includes("master")) {
+        const masterPath =
+          fileLang === defaultLang
+            ? `/docs/${node.frontmatter.id}`
+            : `${fileLang}/docs/${node.frontmatter.id}`;
+        return createPage({
+          path: masterPath,
+          component: docTemplate,
+          context: {
+            locale: fileLang,
+            version,
+            versions: Array.from(versions),
+            old: node.frontmatter.id,
+          }, // additional data can be passed via context
+        });
+      }
 
       return createPage({
         path: localizedPath,
