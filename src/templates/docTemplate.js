@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/docLayout";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
+import hljs from "highlight.js";
+// import sql from "highlight.js/lib/languages/sql";
+// import bash from "highlight.js/lib/languages/bash";
+import "highlight.js/styles/github.css";
 import "./docTemplate.scss";
+// hljs.registerLanguage("sql", sql);
+// hljs.registerLanguage("bash", bash);
 
 export default function Template({
   data,
@@ -17,6 +23,13 @@ export default function Template({
   const nav = {
     current: "doc",
   };
+
+  useEffect(() => {
+    document.querySelectorAll("code").forEach(block => {
+      hljs.highlightBlock(block);
+    });
+  }, []);
+
   return (
     <Layout
       data={layout}
@@ -52,11 +65,7 @@ export const pageQuery = graphql`
       }
     }
 
-    allFile(
-      filter: {
-        name: { eq: $locale }
-      }
-    ) {
+    allFile(filter: { name: { eq: $locale } }) {
       edges {
         node {
           childMenuStructureJson {
