@@ -37,7 +37,9 @@ export default props => {
 
   const generateAnchorMenu = (headings, className) => {
     return headings.map(v => {
-      const anchor = v.value.split(" ").join("-");
+      const normalVal = v.value.replace(/[\,\/]/g, "");
+      console.log(normalVal);
+      const anchor = normalVal.split(" ").join("-");
       let childDom = null;
       if (v.children && v.children.length) {
         childDom = generateAnchorMenu(v.children, "child-item");
