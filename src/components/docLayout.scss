@@ -1,7 +1,9 @@
 @import "./include_media.scss";
+
 html {
   height: 100%;
 }
+
 body,
 ul,
 li,
@@ -15,6 +17,7 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
 h1,
 h2,
 h3,
@@ -37,10 +40,12 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-size: 15px;
+
   @include media("<=1000px") {
     font-size: 14px;
   }
 }
+
 ::selection {
   background-color: #4fc4f9;
 }
@@ -51,9 +56,17 @@ a {
 }
 
 main.doc-wrapper {
-  display: flex;
+  background: #28292e;
+
   .menu-container {
-    flex: 0 0 420px;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    width: 30%;
+    min-width: 200px;
+    max-width: 420px;
+
     @include media("<=1000px") {
       position: fixed;
       top: 0;
@@ -66,12 +79,49 @@ main.doc-wrapper {
       z-index: 1000;
     }
   }
+
   .inner-container {
-    flex: 1;
+    width: 50%;
+    max-width: 1000px;
+    margin-left: 420px;
+
     @include media("<=1000px") {
       width: 100%;
-      margin-top: 50px;
+      margin: 0;
+      padding-top: 50px;
     }
+  }
+
+  .anchor-wrapper {
+    position: fixed;
+    top: 80px;
+    right: 40px;
+    padding-left: 30px;
+    border-left: 1px solid #fff;
+    font-size: 14px;
+
+    @include media("<=1000px") {
+      display: none;
+    }
+
+    .item {
+      margin: 10px 0;
+
+      .child-item {
+        margin-left: 8px;
+      }
+    }
+
+    a {
+      color: #717171;
+
+      &:hover,
+      &.active {
+        color: #33b6f2;
+      }
+
+    }
+
   }
 }
 
@@ -81,11 +131,14 @@ main.doc-wrapper {
 
 .inner-container {
   width: 1000px;
+
   @include media("<=1000px") {
     width: auto;
   }
+
   margin: 0 auto;
 }
+
 .not-found {
   background: #fff;
   height: 100%;

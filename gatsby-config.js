@@ -50,12 +50,11 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-autolink-headers',
+            resolve: "gatsby-remark-autolink-headers",
             options: {
-              maintainCase: true
-            }
-          }
-
+              maintainCase: true,
+            },
+          },
         ],
       },
     },

@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import hljs from "highlight.js";
 // import sql from "highlight.js/lib/languages/sql";
 // import bash from "highlight.js/lib/languages/bash";
-import "highlight.js/styles/github.css";
+import "highlight.js/styles/atom-one-dark.css";
 import "./docTemplate.scss";
 // hljs.registerLanguage("sql", sql);
 // hljs.registerLanguage("bash", bash);
@@ -14,8 +14,7 @@ export default function Template({
   data,
   pageContext, // this prop will be injected by the GraphQL query below.
 }) {
-  const { locale, version, versions } = pageContext;
-  // console.log(data, pageContext)
+  const { locale, version, versions, headings } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
   const menuList = data.allFile.edges[1].node.childMenuStructureJson.menuList;
   const { markdownRemark } = data; // data.markdownRemark holds our post data
@@ -25,7 +24,7 @@ export default function Template({
   };
 
   useEffect(() => {
-    document.querySelectorAll("code").forEach(block => {
+    document.querySelectorAll("pre code").forEach(block => {
       hljs.highlightBlock(block);
     });
   }, []);
@@ -38,6 +37,7 @@ export default function Template({
       pageContext={pageContext}
       menuList={menuList}
       version={version}
+      headings={headings}
       versions={versions}
       id={frontmatter.id}
     >

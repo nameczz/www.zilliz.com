@@ -38,6 +38,10 @@ exports.createPages = ({ actions, graphql }) => {
       allMarkdownRemark(limit: 1000) {
         edges {
           node {
+            headings {
+              value
+              depth
+            }
             frontmatter {
               id
               lang
@@ -61,15 +65,13 @@ exports.createPages = ({ actions, graphql }) => {
       return match ? match[1] : "";
     };
 
-    // get all version for version menu
+    // get all version and header(h1,h2)
     const versions = new Set();
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const fileAbsolutePath = node.fileAbsolutePath;
       const version = findVersion(fileAbsolutePath);
 
       // released: no -> not show , yes -> show
-      console.log(version)
-      console.log(versionInfo)
       if (versionInfo[version] && versionInfo[version].released === "yes") {
         versions.add(version);
       }
@@ -119,6 +121,7 @@ exports.createPages = ({ actions, graphql }) => {
           version,
           versions: Array.from(versions),
           old: node.frontmatter.id,
+          headings: node.headings.filter(v => v.depth < 4 && v.depth > 1),
         }, // additional data can be passed via context
       });
     });
