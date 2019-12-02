@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../blocks/Nav";
 import Menu from "../blocks/Menu";
 import Contact from "../blocks/Contact";
@@ -33,12 +33,18 @@ export default props => {
       }
       return pre;
     }, []);
-  const hash = window.location.hash.slice(1);
+  const [hash, setHash] = useState(null);
+  useEffect(() => {
+    console.log("in");
+    if (window) {
+      const hash = window.location.hash.slice(1);
+      setHash(hash);
+    }
+  });
 
   const generateAnchorMenu = (headings, className) => {
     return headings.map(v => {
       const normalVal = v.value.replace(/[\,\/]/g, "");
-      console.log(normalVal);
       const anchor = normalVal.split(" ").join("-");
       let childDom = null;
       if (v.children && v.children.length) {
