@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import LocalizeLink from "../components/localizedLink";
 import logo from "../images/logo.svg"; // Tell Webpack this JS file uses this image
-import { globalHistory } from '@reach/router'
+import { globalHistory } from "@reach/router";
 
 import "./Nav.scss";
 
-const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
+const Nav = ({ data, locale, nav = {}, subNav = <></>, className }) => {
   const [open, setOpen] = useState(false);
   const isZilliz =
-    ["/", "index", "megawise", "infini"].indexOf(nav.current) !== -1 &&
-    open;
-  console.log(nav.current)
+    ["/", "index", "megawise", "infini"].indexOf(nav.current) !== -1 && open;
 
-  const showSubNav = !open && nav.current !== "doc" && nav.current !== "aboutus";
+  const showSubNav =
+    !open && nav.current !== "doc" && nav.current !== "aboutus";
   const l = locale === "cn" ? "en" : "cn";
-  let to = globalHistory.location.pathname.replace("/en/", "/").replace("/cn/", "/");
+  let to = globalHistory.location.pathname
+    .replace("/en/", "/")
+    .replace("/cn/", "/");
 
   return (
     <>
-      <nav className="wrapper nav-wrapper">
+      <nav className={`wrapper nav-wrapper ${className}`}>
         <div className="inner-container nav">
           <div className="left">
             <LocalizeLink locale={locale} to="/" className="logo">
@@ -72,7 +73,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
                   <LocalizeLink
                     className={`${
                       nav.current === "doc" ? "current" : ""
-                      } right`}
+                    } right`}
                     locale={locale}
                     to="/docs/analytics_overview"
                     target="_blank"
@@ -90,7 +91,6 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
 
             <a
               href="#!"
-
               onClick={() => {
                 setOpen(!open);
               }}
@@ -98,8 +98,8 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
               {!open ? (
                 <i className="fas fa-bars"></i>
               ) : (
-                  <i className="fas fa-times"></i>
-                )}
+                <i className="fas fa-times"></i>
+              )}
             </a>
           </div>
 
@@ -116,7 +116,6 @@ const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
               {data.doc}
             </LocalizeLink>
           </div>
-
         </div>
       </nav>
       {showSubNav && (

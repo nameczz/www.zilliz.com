@@ -1,6 +1,24 @@
-[submodule "src/pages/doc_en"]
-	path = src/pages/doc_en
-	url = https://github.com/zilliztech/doc_en.git
-[submodule "src/pages/doc_cn"]
-	path = src/pages/doc_cn
+[submodule "src/pages/doc_cn/versions/master"]
+	path = src/pages/doc_cn/versions/master
 	url = https://github.com/zilliztech/doc_cn.git
+	branch = master
+[submodule "src/pages/doc_cn/versions/v0.4.0"]
+	path = src/pages/doc_cn/versions/v0.4.0
+	url = https://github.com/zilliztech/doc_cn.git
+	branch = v0.4.0
+[submodule "src/pages/doc_cn/versions/v0.5.0"]
+	path = src/pages/doc_cn/versions/v0.5.0
+	url = https://github.com/zilliztech/doc_cn.git
+	branch = v0.5.0
+[submodule "src/pages/doc_en/versions/v0.4.0"]
+	path = src/pages/doc_en/versions/v0.4.0
+	url = https://github.com/zilliztech/doc_en.git
+	branch = v0.4.0
+[submodule "src/pages/doc_en/versions/master"]
+	path = src/pages/doc_en/versions/master
+	url = https://github.com/zilliztech/doc_en.git
+	branch = master
+[submodule "src/pages/doc_en/versions/v0.5.0"]
+	path = src/pages/doc_en/versions/v0.5.0
+	url = https://github.com/zilliztech/doc_en.git
+	branch = v0.5.0

@@ -3,16 +3,23 @@
 .nav-wrapper {
   background: #101010;
   padding: 0 !important;
+
   @include media("<=1000px") {
     position: fixed;
     width: 100%;
     z-index: 100;
+
+    .inner-container {
+      margin: 0;
+    }
   }
+
   .inner-container {
     width: 95%;
     padding: 0 auto;
   }
 }
+
 .nav {
   height: 50px;
   display: flex;
@@ -20,31 +27,39 @@
   left: 0;
   z-index: 1000;
   justify-content: space-between;
+
   .logo {
     display: inline-flex;
     margin-right: 50px;
     align-items: center;
+
     img {
       width: 80px;
       display: inline-block;
     }
   }
+
   .nav-links {
     display: inline-flex;
     align-items: center;
+
     li {
       display: inline-block;
       margin-right: 50px;
+
       a {
         color: #fff;
         opacity: 0.5;
+
         &.current {
           opacity: 1;
           font-weight: bold;
         }
+
         &.current svg {
           color: #4fc4f9;
         }
+
         &:hover {
           color: #4fc4f9;
           opacity: 1;
@@ -52,17 +67,21 @@
       }
     }
   }
+
   .left {
     display: flex;
   }
+
   .right {
     display: inline-flex;
     align-items: center;
     letter-spacing: 5px;
-    .locale{
+
+    .locale {
       margin-right: 14px;
     }
   }
+
   .rightMenu {
     display: none;
 
@@ -71,13 +90,16 @@
   @include media("<=1000px") {
     position: sticky;
     top: 0;
+
     .logo {
       margin-right: 20px;
       margin-left: 10px;
+
       img {
         width: 75px;
       }
     }
+
     .nav-links {
       position: fixed;
       z-index: 100;
@@ -87,6 +109,7 @@
       left: 0;
       width: 100%;
       display: block;
+
       li {
         color: #fff;
         font-weight: 700;
@@ -96,34 +119,41 @@
         display: block;
         margin-right: 10px;
         text-align: center;
+
         a {
           display: block;
         }
+
         &.root a {
           width: 90%;
           margin: 0 auto;
           border-bottom: 1px solid #333;
         }
+
         &.root {
           height: 50px;
           line-height: 50px;
         }
       }
     }
+
     .show {
       transition: all 0.2s;
       width: 100%;
     }
+
     .hide {
       transition: all 0.2s;
       opacity: 0;
       height: 0;
       pointer-events: none;
     }
+
     .right {
       display: none;
       letter-spacing: 0;
     }
+
     .rightMenu {
       display: inline-block;
       font-size: 20px;
@@ -131,14 +161,17 @@
       top: 10px;
       right: 10px;
       color: gray;
-      a{
+
+      a {
         color: gray;
       }
-      .locale{
+
+      .locale {
         display: inline-block;
         margin-right: 10px;
       }
     }
+
     svg {
       display: none;
     }
