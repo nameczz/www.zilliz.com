@@ -33,6 +33,8 @@ export default props => {
       return pre;
     }, []);
   const [hash, setHash] = useState(null);
+  const effectVariable =
+    typeof window !== "undefined" ? [window.location.hash] : [];
   useEffect(() => {
     if (window) {
       console.log(window.location.hash);
@@ -41,7 +43,7 @@ export default props => {
       setHash(window.decodeURI(hash));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [window && window.location.hash]);
+  }, effectVariable);
 
   const generateAnchorMenu = (headings, className) => {
     return headings.map(v => {
