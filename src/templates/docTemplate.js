@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/docLayout";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
+import hljs from "highlight.js";
+// import sql from "highlight.js/lib/languages/sql";
+// import bash from "highlight.js/lib/languages/bash";
+import "highlight.js/styles/atom-one-dark.css";
 import "./docTemplate.scss";
+// hljs.registerLanguage("sql", sql);
+// hljs.registerLanguage("bash", bash);
 
 export default function Template({
   data,
   pageContext, // this prop will be injected by the GraphQL query below.
 }) {
-  const { locale } = pageContext;
+  const { locale, version, versions, headings } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
-  const menuList = data.allFile.edges[1].node.childMenuStructureJson.menuList
+  const menuList = data.allFile.edges.find(v =>
+    v.node.relativeDirectory.includes(version)
+  ).node.childMenuStructureJson.menuList;
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   const nav = {
     current: "doc",
   };
-  console.log(data)
+
+  useEffect(() => {
+    document.querySelectorAll("pre code").forEach(block => {
+      hljs.highlightBlock(block);
+    });
+  }, []);
   return (
     <Layout
       data={layout}
@@ -24,6 +37,9 @@ export default function Template({
       nav={nav}
       pageContext={pageContext}
       menuList={menuList}
+      version={version}
+      headings={headings}
+      versions={versions}
       id={frontmatter.id}
     >
       <SEO title="ZILLIZ Analytics" lang={locale} />
@@ -41,20 +57,26 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($locale: String, $old: String) {
-    markdownRemark(frontmatter: { id: { eq: $old }, lang: { eq: $locale } }) {
+  query($locale: String, $old: String, $fileAbsolutePath: String) {
+    markdownRemark(
+      fileAbsolutePath: { eq: $fileAbsolutePath }
+      frontmatter: { id: { eq: $old }, lang: { eq: $locale } }
+    ) {
       html
       frontmatter {
         id
         title
       }
     }
-    
     allFile(
-      filter: { name: { eq: $locale }, relativeDirectory: { in: ["layout", "menuStructure"] } }
+      filter: {
+        name: { eq: $locale }
+        relativeDirectory: { regex: "/(?:layout|menuStructure)/" }
+      }
     ) {
       edges {
         node {
+          relativeDirectory
           childMenuStructureJson {
             menuList {
               id

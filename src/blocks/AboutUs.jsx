@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/aboutus-logo.png";
-import moon from "../images/aboutus-moon.png"
-import calendar from "../images/aboutus-roadmap.png"
+import moon from "../images/aboutus-moon.png";
+import calendar from "../images/aboutus-roadmap.png";
 import "./Aboutus.scss";
 
 const AboutUs = ({ data }) => {
@@ -11,12 +11,9 @@ const AboutUs = ({ data }) => {
         <img src={logo} alt="logo" />
       </section>
       <section className="mission" id="mission">
-        <div className="mission-icon icon">
-        </div>
+        <div className="mission-icon icon"></div>
         <p>{data.mission.p}</p>
-        <h2>
-          {data.mission.h2}
-        </h2>
+        <h2>{data.mission.h2}</h2>
         <div className="mission-pic big-pic">
           <img src={moon} alt="moon" />
         </div>
@@ -35,7 +32,13 @@ const AboutUs = ({ data }) => {
         <div className="joinus-icon icon"></div>
         <p>{data.joinus.p}</p>
         <h2>{data.joinus.h2}</h2>
-        <button className="button">{data.joinus.button}</button>
+        <a
+          className="button"
+          href="https://zilliz.gllue.com/portal/zilliz"
+          target="_blank"
+        >
+          {data.joinus.button}
+        </a>
       </section>
     </section>
   );

@@ -1,14 +1,28 @@
+const queries = require("./src/algolia");
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.zilliz.com`,
     title: `ZILLIZ`,
     description: `ZILLIZ专注于研发基于异构众核加速的新一代数据库系统。公司核心产品MegaWise数据库和传统数据库相比，查询性能提升100倍以上，硬件和运维成本降低10倍。同时，ZILLIZ提供使用异构众核加速数据ETL，到加速数据仓库，再到加速AI模型训练，最后到加速数据可视化的端到端数据智能整体解决方案。ZILLIZ的产品和解决方案在金融、电信、医疗、智慧城市和电子商务等领域有着广泛应用。`,
     author: `@ZILLIZ.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     // i18n plugin
     "gatsby-transformer-json",
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     // appId: process.env.GATSBY_ALGOLIA_APP_ID,
+    //     // apiKey: process.env.ALGOLIA_ADMIN_KEY,
+    //     queries,
+    //     chunkSize: 10000, // default: 1000
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,24 +48,11 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `docs_cn_assets`,
-        path: `${__dirname}/src/pages/doc_cn/assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `docs_en`,
         path: `${__dirname}/src/pages/doc_en`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs_en_assets`,
-        path: `${__dirname}/src/pages/doc_en/assets`,
-      },
-    },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -63,12 +64,11 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-autolink-headers',
+            resolve: "gatsby-remark-autolink-headers",
             options: {
-              maintainCase: true
-            }
-          }
-
+              maintainCase: true,
+            },
+          },
         ],
       },
     },

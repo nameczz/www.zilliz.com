@@ -16,6 +16,9 @@
     color: #fff;
     .logo {
       height: 5rem;
+      @include media("<=1000px") {
+        height: 8rem;
+      }
     }
     p,
     h3,
