@@ -57,8 +57,11 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($locale: String, $old: String) {
-    markdownRemark(frontmatter: { id: { eq: $old }, lang: { eq: $locale } }) {
+  query($locale: String, $old: String, $fileAbsolutePath: String) {
+    markdownRemark(
+      fileAbsolutePath: { eq: $fileAbsolutePath }
+      frontmatter: { id: { eq: $old }, lang: { eq: $locale } }
+    ) {
       html
       frontmatter {
         id

@@ -109,9 +109,11 @@ exports.createPages = ({ actions, graphql }) => {
             version: versionInfo.master.version, // get master version
             versions: Array.from(versions),
             old: node.frontmatter.id,
+            fileAbsolutePath,
           }, // additional data can be passed via context
         });
       }
+      console.log(fileAbsolutePath);
       //  normal pages
       return createPage({
         path: localizedPath,
@@ -122,6 +124,7 @@ exports.createPages = ({ actions, graphql }) => {
           versions: Array.from(versions),
           old: node.frontmatter.id,
           headings: node.headings.filter(v => v.depth < 4 && v.depth > 1),
+          fileAbsolutePath,
         }, // additional data can be passed via context
       });
     });
