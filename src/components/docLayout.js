@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../blocks/Nav";
 import Menu from "../blocks/Menu";
-import Contact from "../blocks/Contact";
 import Footer from "../blocks/Footer";
 
 import "./docLayout.scss";
@@ -35,15 +34,18 @@ export default props => {
     }, []);
   const [hash, setHash] = useState(null);
   useEffect(() => {
-    console.log("in");
     if (window) {
+      console.log(window.location.hash);
+
       const hash = window.location.hash.slice(1);
-      setHash(hash);
+      setHash(window.decodeURI(hash));
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window && window.location.hash]);
 
   const generateAnchorMenu = (headings, className) => {
     return headings.map(v => {
+      /* eslint-disable-next-line */
       const normalVal = v.value.replace(/[\,\/]/g, "");
       const anchor = normalVal.split(" ").join("-");
       let childDom = null;
@@ -63,7 +65,13 @@ export default props => {
 
   return (
     <div>
-      <Nav nav={nav} data={header} locale={locale} subNav={subNav} />
+      <Nav
+        nav={nav}
+        className="doc-fixed-header"
+        data={header}
+        locale={locale}
+        subNav={subNav}
+      />
       <main className={wrapperClass}>
         <Menu
           menuList={menuList}

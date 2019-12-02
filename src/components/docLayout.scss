@@ -143,3 +143,11 @@ main.doc-wrapper {
   background: #fff;
   height: 100%;
 }
+
+.doc-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}

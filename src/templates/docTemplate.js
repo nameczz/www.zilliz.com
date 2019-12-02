@@ -16,7 +16,9 @@ export default function Template({
 }) {
   const { locale, version, versions, headings } = pageContext;
   const layout = data.allFile.edges[0].node.childLayoutJson.layout;
-  const menuList = data.allFile.edges[1].node.childMenuStructureJson.menuList;
+  const menuList = data.allFile.edges.find(v =>
+    v.node.relativeDirectory.includes(version)
+  ).node.childMenuStructureJson.menuList;
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   const nav = {
@@ -28,7 +30,6 @@ export default function Template({
       hljs.highlightBlock(block);
     });
   }, []);
-
   return (
     <Layout
       data={layout}
@@ -64,10 +65,15 @@ export const pageQuery = graphql`
         title
       }
     }
-
-    allFile(filter: { name: { eq: $locale } }) {
+    allFile(
+      filter: {
+        name: { eq: $locale }
+        relativeDirectory: { regex: "/(?:layout|menuStructure)/" }
+      }
+    ) {
       edges {
         node {
+          relativeDirectory
           childMenuStructureJson {
             menuList {
               id

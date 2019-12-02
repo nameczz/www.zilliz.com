@@ -75,6 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
       if (versionInfo[version] && versionInfo[version].released === "yes") {
         versions.add(version);
       }
+      console.log(versions);
     });
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -111,7 +112,6 @@ exports.createPages = ({ actions, graphql }) => {
           }, // additional data can be passed via context
         });
       }
-
       //  normal pages
       return createPage({
         path: localizedPath,
