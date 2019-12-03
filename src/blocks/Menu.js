@@ -111,7 +111,7 @@ const Menu = props => {
   const menuRef = useRef(null);
   useEffect(() => {
     let targetY = null;
-    menuRef.current.addEventListener("touchstart", function (e) {
+    menuRef.current.addEventListener("touchstart", function(e) {
       // use to confirm move direction  clientY-客户区坐标Y 、pageY-页面坐标Y
       targetY = Math.floor(e.targetTouches[0].clientY);
     });
@@ -139,6 +139,17 @@ const Menu = props => {
     );
   }, []);
 
+  const handleMenuClick = e => {
+    const menuContainer = menuRef.current;
+    window.localStorage.setItem("zilliz-height", menuContainer.scrollTop);
+  };
+
+  useEffect(() => {
+    const menuContainer = menuRef.current;
+    const scrollTop = window.localStorage.getItem("zilliz-height") || 0;
+    menuContainer.scrollTop = scrollTop;
+  }, [props]);
+
   const generageMenuDom = (list, className = "") => {
     return list.map(doc => (
       <div
@@ -148,26 +159,32 @@ const Menu = props => {
       >
         <div className="menu_name-wrapper">
           {doc.outLink ? (
-            <a href={doc.outLink} target="_blank" rel="noopener noreferrer" className="text">
+            <a
+              href={doc.outLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text"
+            >
               {doc.title}
             </a>
           ) : doc.isMenu === true ? (
             <span className="text">{doc.title}</span>
           ) : (
-                <LocalizeLink
-                  locale={doc.lang}
-                  className="text"
-                  to={`${preLink}/${doc.id}`}
-                >
-                  {doc.title}
-                </LocalizeLink>
-              )}
+            <LocalizeLink
+              locale={doc.lang}
+              className="text"
+              to={`${preLink}/${doc.id}`}
+              onClick={handleMenuClick}
+            >
+              {doc.title}
+            </LocalizeLink>
+          )}
 
           {doc.children && doc.children.length ? (
             <i
               className={`fas fa-chevron-down arrow ${
                 doc.showChildren ? "" : "top"
-                }`}
+              }`}
               onClick={() => {
                 toggleMenuChild(doc);
               }}
@@ -211,7 +228,12 @@ const Menu = props => {
 
         <div className="border-bottom">
           <h1 className="title">ZILLIZ ANALYTICS</h1>
-          <VersionSelector options={versions} selected={version} locale={locale} activeDoc={activeDoc}></VersionSelector>
+          <VersionSelector
+            options={versions}
+            selected={version}
+            locale={locale}
+            activeDoc={activeDoc}
+          ></VersionSelector>
         </div>
 
         {generageMenuDom(realMenuList, "menu-top-level border-bottom")}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Nav from "../blocks/Nav";
 import Menu from "../blocks/Menu";
 import Footer from "../blocks/Footer";
@@ -33,6 +33,8 @@ export default props => {
       return pre;
     }, []);
   const [hash, setHash] = useState(null);
+  const docContainer = useRef(null);
+
   const effectVariable =
     typeof window !== "undefined" ? [window.location.hash] : [];
   useEffect(() => {
@@ -45,6 +47,12 @@ export default props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, effectVariable);
 
+  // fixed header will cover h1 header. fix by translate
+  const handleAnchorClick = e => {
+    const container = docContainer.current;
+    container.style.transform = "translate3d(0, 60px, 0 )";
+  };
+
   const generateAnchorMenu = (headings, className) => {
     return headings.map(v => {
       /* eslint-disable-next-line */
@@ -55,7 +63,11 @@ export default props => {
         childDom = generateAnchorMenu(v.children, "child-item");
       }
       return (
-        <div className={`item ${className}`} key={v.value}>
+        <div
+          className={`item ${className}`}
+          key={v.value}
+          onClick={handleAnchorClick}
+        >
           <a href={`#${anchor}`} className={anchor === hash ? "active" : ""}>
             {v.value}
           </a>
@@ -82,7 +94,9 @@ export default props => {
           version={version}
           locale={locale}
         ></Menu>
-        <div className="inner-container">{children}</div>
+        <div className="inner-container" ref={docContainer}>
+          {children}
+        </div>
         {formatHeadings && (
           <div className="anchor-wrapper">
             {generateAnchorMenu(formatHeadings, "parent-item")}

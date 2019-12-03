@@ -12,6 +12,7 @@
   background: black;
   color: #fff;
   z-index: 1000;
+
 }
 
 .menu-container {
@@ -60,15 +61,14 @@
     box-sizing: border-box;
 
     .menu_name-wrapper {
-      margin-bottom: 30px;
       letter-spacing: 4px;
 
       &:lang(en) {
-        font-size: 26px;
+        font-size: 22px;
       }
 
       &:lang(cn) {
-        font-size: 30px;
+        font-size: 24px;
       }
 
       @include media("<=1000px") {
