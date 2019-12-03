@@ -100,6 +100,7 @@ main.doc-wrapper {
     border-left: 1px solid #fff;
     font-size: 14px;
 
+
     @include media("<=1000px") {
       display: none;
     }
@@ -113,7 +114,12 @@ main.doc-wrapper {
     }
 
     a {
+      display: block;
       color: #717171;
+      max-width: 120px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &:hover,
       &.active {
@@ -122,6 +128,10 @@ main.doc-wrapper {
 
     }
 
+  }
+
+  .footer-wrapper {
+    margin-top: 20px;
   }
 }
 
