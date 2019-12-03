@@ -718,6 +718,7 @@
 
   th:first-child,
   td:first-child {
+    min-width: 100px;
     padding-left: 0;
   }
 
