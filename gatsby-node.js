@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 const ReadVersionJson = require("./walkFile");
 const locales = require("./src/constants/locales");
 const DOC_LANG_FOLDERS = ["doc_en", "doc_cn"];
@@ -64,6 +65,39 @@ exports.createPages = ({ actions, graphql }) => {
       const match = str.match(regx);
       return match ? match[1] : "";
     };
+    const flatten = arr =>
+      arr
+        .filter(
+          ({ node: { fileAbsolutePath } }) => !!findVersion(fileAbsolutePath)
+        )
+        .map(
+          ({ node: { frontmatter, fileAbsolutePath, headings, ...rest } }) => {
+            const fileLang = DOC_LANG_FOLDERS.reduce((pre, cur) => {
+              if (fileAbsolutePath.includes(cur)) {
+                pre = cur.split("_")[1];
+              }
+              return pre;
+            }, "");
+            const version = findVersion(fileAbsolutePath);
+            const headingVals = headings.map(v => v.value);
+            return {
+              ...frontmatter,
+              fileLang,
+              version,
+              // the value we need compare with search query
+              values: [...headingVals, frontmatter.id],
+            };
+          }
+        );
+    const fileData = flatten(result.data.allMarkdownRemark.edges);
+    fs.writeFile(
+      `${__dirname}/src/search.json`,
+      JSON.stringify(fileData),
+      err => {
+        if (err) throw err;
+        console.log("It's saved!");
+      }
+    );
 
     // get all version and header(h1,h2)
     const versions = new Set();
@@ -75,7 +109,6 @@ exports.createPages = ({ actions, graphql }) => {
       if (versionInfo[version] && versionInfo[version].released === "yes") {
         versions.add(version);
       }
-      console.log(versions);
     });
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -113,7 +146,6 @@ exports.createPages = ({ actions, graphql }) => {
           }, // additional data can be passed via context
         });
       }
-      console.log(fileAbsolutePath);
       //  normal pages
       return createPage({
         path: localizedPath,
