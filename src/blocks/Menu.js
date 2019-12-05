@@ -109,35 +109,35 @@ const Menu = props => {
   }, []);
 
   const menuRef = useRef(null);
-  useEffect(() => {
-    let targetY = null;
-    menuRef.current.addEventListener("touchstart", function(e) {
-      // use to confirm move direction  clientY-客户区坐标Y 、pageY-页面坐标Y
-      targetY = Math.floor(e.targetTouches[0].clientY);
-    });
-    menuRef.current.addEventListener(
-      "touchmove",
-      e => {
-        let newTargetY = Math.floor(e.targetTouches[0].clientY);
-        let diff = menuRef.current.scrollHeight - document.body.clientHeight;
-        if (diff <= 0) {
-          e.cancelable && e.preventDefault();
-          return;
-        }
-        // direction down && touch bottom
-        if (newTargetY - targetY < 0 && diff <= menuRef.current.scrollTop) {
-          e.cancelable && e.preventDefault();
-        } else if (
-          newTargetY - targetY >= 0 &&
-          diff > menuRef.current.scrollTop
-        ) {
-          // up && touch top
-          e.cancelable && e.preventDefault();
-        }
-      },
-      true
-    );
-  }, []);
+  // useEffect(() => {
+  //   let targetY = null;
+  //   menuRef.current.addEventListener("touchstart", function(e) {
+  //     // use to confirm move direction  clientY-客户区坐标Y 、pageY-页面坐标Y
+  //     targetY = Math.floor(e.targetTouches[0].clientY);
+  //   });
+  //   menuRef.current.addEventListener(
+  //     "touchmove",
+  //     e => {
+  //       let newTargetY = Math.floor(e.targetTouches[0].clientY);
+  //       let diff = menuRef.current.scrollHeight - document.body.clientHeight;
+  //       if (diff <= 0) {
+  //         e.cancelable && e.preventDefault();
+  //         return;
+  //       }
+  //       // direction down && touch bottom
+  //       if (newTargetY - targetY < 0 && diff <= menuRef.current.scrollTop) {
+  //         e.cancelable && e.preventDefault();
+  //       } else if (
+  //         newTargetY - targetY >= 0 &&
+  //         diff > menuRef.current.scrollTop
+  //       ) {
+  //         // up && touch top
+  //         e.cancelable && e.preventDefault();
+  //       }
+  //     },
+  //     true
+  //   );
+  // }, []);
 
   const handleMenuClick = e => {
     const menuContainer = menuRef.current;
