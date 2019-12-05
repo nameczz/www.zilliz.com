@@ -30,7 +30,8 @@ const Search = props => {
           : "";
         return find
           ? {
-              title: highlight,
+              title: find,
+              highlight: highlight,
               id,
               lang: fileLang,
               version,
@@ -74,7 +75,7 @@ const Search = props => {
         <ul className="result-list">
           {matchData.length
             ? matchData.map((v, index) => {
-                const { lang, version, id, title, isId } = v;
+                const { lang, version, id, title, isId, highlight } = v;
                 /* eslint-disable-next-line */
                 const normalVal = title.replace(/[\,\/]/g, "");
                 const anchor = normalVal.split(" ").join("-");
@@ -86,7 +87,7 @@ const Search = props => {
                     >
                       <span
                         dangerouslySetInnerHTML={{
-                          __html: `${title} ${version} ${
+                          __html: `${highlight} ${version} ${
                             lang === "cn" ? "中文" : "en"
                           }`,
                         }}
