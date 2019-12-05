@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Nav from "../blocks/Nav";
 import Menu from "../blocks/Menu";
 import Footer from "../blocks/Footer";
-
 import "./docLayout.scss";
 
 export default props => {
@@ -39,19 +38,14 @@ export default props => {
     typeof window !== "undefined" ? [window.location.hash] : [];
   useEffect(() => {
     if (window) {
-      console.log(window.location.hash);
-
       const hash = window.location.hash.slice(1);
+      const container = docContainer.current;
+      // fixed header will cover h1 header. fix by translate\
+      container.style.transform = "translate3d(0, 60px, 0)";
       setHash(window.decodeURI(hash));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, effectVariable);
-
-  // fixed header will cover h1 header. fix by translate
-  const handleAnchorClick = e => {
-    const container = docContainer.current;
-    container.style.transform = "translate3d(0, 60px, 0 )";
-  };
 
   const generateAnchorMenu = (headings, className) => {
     return headings.map(v => {
@@ -63,11 +57,7 @@ export default props => {
         childDom = generateAnchorMenu(v.children, "child-item");
       }
       return (
-        <div
-          className={`item ${className}`}
-          key={v.value}
-          onClick={handleAnchorClick}
-        >
+        <div className={`item ${className}`} key={v.value}>
           <a href={`#${anchor}`} className={anchor === hash ? "active" : ""}>
             {v.value}
           </a>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LocalizeLink from "../components/localizedLink";
+import Search from "./Search";
 import logo from "../images/logo.svg"; // Tell Webpack this JS file uses this image
 import { globalHistory } from "@reach/router";
 
@@ -85,6 +86,8 @@ const Nav = ({ data, locale, nav = {}, subNav = <></>, className }) => {
             </ul>
           </div>
           <div className="rightMenu">
+            <Search></Search>
+
             <LocalizeLink className="locale" locale={l} to={to}>
               {locale === "cn" ? "EN" : "中"}
             </LocalizeLink>
@@ -104,6 +107,7 @@ const Nav = ({ data, locale, nav = {}, subNav = <></>, className }) => {
           </div>
 
           <div className="right">
+            <Search></Search>
             <LocalizeLink className="locale" locale={l} to={to}>
               {locale === "cn" ? "EN" : "中"}
             </LocalizeLink>
