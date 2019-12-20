@@ -11,7 +11,7 @@ const Contact = ({ data }) => {
           </p>
           <a
             className="contact-button primary-button"
-            href="http://megawise-apply-2019.mikecrm.com/CQ2YcFR"
+            href="http://zilliztech.mikecrm.com/CQ2YcFR"
           >
             {data.footer && data.footer.contactButton}
           </a>
