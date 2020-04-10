@@ -4,7 +4,7 @@
   Base
 */
 @import './base/fonts';
-
+@import './base/link';
 /*
   Utils
 */
@@ -16,6 +16,7 @@
 /*
   Components
 */
+@import './components/header';
 @import './components/footer';
 @import './components/button';
 @import './components/link';

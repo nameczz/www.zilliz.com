@@ -4,31 +4,51 @@
   box-sizing: border-box;
   outline: none;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
-  @include isFlex(center, center);
   font-family: $quicksand;
-  background: $darkslategray;
-  color: white;
+  background: #fff;
+  color: #000;
   margin: 0;
   padding: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
+
 a {
   text-decoration: none;
 }
+
 p {
   margin: 0;
 }
+
 ul {
   margin: 0;
   padding: 0;
 }
+
 li {
   list-style: none;
+}
+
+:root {
+  --color-primary: #4FC4F9;
+  --color-primary-light: #D0F0FF;
+  --color-primary-dark: #3F9CD1;
+  --color-secondary: #F8B109;
+  --color-secondary-light: #FAD06C;
+  font-size: 16px;
 }
