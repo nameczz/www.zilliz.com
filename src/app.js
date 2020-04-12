@@ -5,7 +5,7 @@ import 'styles/_app.scss';
 
 $(document).ready(() => {
   console.log('Ready!');
-
+  require('scripts/footer');
   require('scripts/index');
 
 });

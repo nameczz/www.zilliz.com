@@ -1,25 +1,22 @@
 /* src/assets/styles/components/_footer.scss  */
 
 .footer {
-  background: $lightseagreen;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 250px;
-  padding: 10px;
-  border-top-left-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+
   p {
-    font-size: 12px;
+    font-size: 16px;
   }
-  a {
-    font-size: 15px;
+
+  span {
+    margin-right: 8px;
   }
+
+
 }
 
 /*
   Responsive
 */
 
-@media screen and(max-width: $grid-width) {
-
-}
+@media screen and(max-width: $grid-width) {}

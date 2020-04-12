@@ -11,7 +11,6 @@
     height: calc(100vh - 16rem - 64px);
     color: #fff;
     box-sizing: border-box;
-
     /* BG Animation */
     background-image: linear-gradient(45deg, #20073A, var(--color-primary), var(--color-secondary), #03F7C9);
     background-size: 600%;
@@ -31,6 +30,23 @@
       font-weight: bold;
       margin-bottom: 1rem;
     }
+  }
+  .home__content{
+    position: relative;
+  }
+  .fixed-video {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0
+  }
+
+  .bottom-video {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0
   }
 }
 
