@@ -31,15 +31,52 @@
       margin-bottom: 1rem;
     }
   }
-  .home__content{
+
+  .home__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
     position: relative;
+
+    #video_title {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 42px;
+      letter-spacing: 4px;
+      line-height: 49px;
+    }
+
+    #video_sub_title {
+      position: absolute;
+      top: 4rem;
+      left: 1rem;
+      color: #4FC4F9;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 24px;
+    }
+
+    #video_desc {
+      position: absolute;
+      bottom: 20%;
+      left: 1rem;
+      color: #101010;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 24px;
+    }
   }
+
   .fixed-video {
     position: fixed;
     top: 64px;
     left: 0;
     right: 0;
-    bottom: 0
+    bottom: 0;
+    max-width: var(--max-width);
+    margin: 0 auto;
   }
 
   .bottom-video {
@@ -48,8 +85,82 @@
     right: 0;
     bottom: 0
   }
+
+  .home__tech {
+    max-width: var(--max-width);
+    margin: 200px auto 0 auto;
+
+    h2 {
+      color: #000000;
+      font-size: 42px;
+      letter-spacing: 4px;
+      line-height: 49px;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      margin-top: 90px;
+
+      .logo,
+      ul {
+        flex: 0 0 40%;
+      }
+
+      ul {
+        flex: 0 0 60%;
+        text-align: center;
+
+        li {
+          position: relative;
+          margin-bottom: 1rem;
+
+          img {
+            width: 100%;
+          }
+
+          p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 58px;
+            line-height: 58px;
+            background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 52.94%);
+            color: #101010;
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
 }
 
+@keyframes gradients {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 50% 0;
+  }
+
+  50% {
+    background-position: 90% 0;
+  }
+
+  60% {
+    background-position: 60%;
+  }
+
+  75% {
+    background-position: 40%;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
 
 /*
   Responsive

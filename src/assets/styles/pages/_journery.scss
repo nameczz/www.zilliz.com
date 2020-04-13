@@ -7,7 +7,9 @@
     padding: 8rem;
     height: calc(100vh - 16rem - 64px);
     box-sizing: border-box;
-    justify-content: space-around;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
 
     h2 {
       font-size: 2rem;
@@ -28,6 +30,11 @@
     img {
       width: 300px;
     }
+  }
+
+  .journey__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
   }
 
   .year_2017,
