@@ -1,14 +1,12 @@
 /* src/assets/styles/pages/_index.scss  */
 
 .home__page {
-  margin-top: 64px;
-
   .home__header {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 8rem 0;
-    height: calc(100vh - 16rem - 64px);
+    height: calc(100vh - 16rem);
     color: #fff;
     box-sizing: border-box;
     /* BG Animation */
@@ -71,7 +69,7 @@
 
   .fixed-video {
     position: fixed;
-    top: 64px;
+    top: var(--header-height);
     left: 0;
     right: 0;
     bottom: 0;

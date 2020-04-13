@@ -1,11 +1,11 @@
 .journey__page {
-  margin-top: 64px;
+  margin-top: var(--header-height);
 
   .journey__header {
     display: flex;
     align-items: center;
     padding: 8rem;
-    height: calc(100vh - 16rem - 64px);
+    height: calc(100vh - 16rem - var(--header-height));
     box-sizing: border-box;
     justify-content: space-between;
     max-width: var(--max-width);
@@ -24,6 +24,7 @@
     }
 
     .left {
+      width: 100%;
       max-width: 600px;
     }
 
@@ -112,5 +113,84 @@
   .year_2020 {
     background: rgba(79, 196, 249, 1);
     padding-bottom: 0;
+  }
+
+  .journey__mobile {
+    padding-left: 2rem;
+
+    .year_mobile_2017,
+    .year_mobile_2019,
+    .year_mobile_2018,
+    .year_mobile_2020 {
+      margin-top: 2rem;
+
+      .year {
+        color: #3978D7;
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: 0;
+        line-height: 59px;
+      }
+
+      ul {
+        background-color: #3978D7;
+        padding: 2rem;
+        line-height: 1.6;
+        color: #fff;
+
+        li {
+          margin-bottom: 1rem;
+
+          .date {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .year_mobile_2018 {
+      ul {
+        background: rgba(79, 143, 249, 1);
+      }
+    }
+
+    .year_mobile_2019 {
+      ul {
+        background: rgba(79, 185, 249, 1);
+      }
+    }
+
+    .year_mobile_2020 {
+      ul {
+        background: rgba(79, 196, 249, 1);
+      }
+    }
+  }
+
+  @media (max-width:1024px) {
+    .journey__header {
+      height: auto;
+      flex-direction: column-reverse;
+      justify-content: start;
+      padding: 4rem 1rem;
+      margin-bottom: 4rem;
+
+      .left {
+        text-align: center;
+
+        h2 {
+          font-size: 28px;
+          margin-top: 20px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      img {
+        width: 142px;
+      }
+    }
   }
 }
