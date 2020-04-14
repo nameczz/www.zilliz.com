@@ -1,8 +1,8 @@
 
 header.header#layout-header
   a(href="/" alt="home page")
-    img(src="../../assets/images/zilliz-logo.svg", alt="logo", srcset="" id="header-color-logo")
-    img(src="../../assets/images/zilliz-logo-white.svg", alt="logo", srcset="" id="header-white-logo")
+    img(src=require("../../assets/images/zilliz-logo.svg"), alt="logo", srcset="" id="header-color-logo")
+    img(src=require("../../assets/images/zilliz-logo-white.svg"), alt="logo", srcset="" id="header-white-logo")
 
   ul.route#header-route
     li 
@@ -11,6 +11,6 @@ header.header#layout-header
     li
       a(href="/journey") JOURNEY
   span.list-icon#mobile-list
-    img(src="../../assets/images/list.svg" alt="list")
+    img(src=require("../../assets/images/list.svg") alt="list")
       
       

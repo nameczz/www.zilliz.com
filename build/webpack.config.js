@@ -84,6 +84,15 @@ module.exports = env => {
           ]
         },
         {
+          test: /\.html$/,
+          use: [{
+            loader: 'html-loader',
+            options: {
+              minimize: true
+            }
+          }],
+        },
+        {
           test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
           loader: 'url-loader',
           options: {
