@@ -1,9 +1,12 @@
 
 header.header#layout-header
-  a(href="/")
-    img(src="../../assets/images/zilliz-logo.svg", alt="logo", srcset="")
+  a(href="/" alt="home page")
+    img(src="../../assets/images/zilliz-logo.svg", alt="logo", srcset="" id="header-color-logo")
+    img(src="../../assets/images/zilliz-logo-white.svg", alt="logo", srcset="" id="header-white-logo")
+
   ul.route#header-route
-    li MISSION
+    li 
+      a(href="/") MISSION
     li TECHNOLOGY
     li
       a(href="/journey") JOURNEY

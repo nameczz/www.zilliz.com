@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
     padding: 8rem 0;
-    height: calc(100vh - 16rem);
+    height: calc(100vh);
     color: #fff;
     box-sizing: border-box;
     /* BG Animation */
@@ -33,6 +33,7 @@
   .home__content {
     max-width: var(--max-width);
     margin: 0 auto;
+    margin-top: 10rem;
     position: relative;
 
     #video_title {
@@ -42,6 +43,9 @@
       font-size: 42px;
       letter-spacing: 4px;
       line-height: 49px;
+      text-transform: uppercase;
+      color: rgb(32, 32, 32);
+
     }
 
     #video_sub_title {
@@ -59,11 +63,12 @@
       position: absolute;
       bottom: 20%;
       left: 1rem;
-      color: #101010;
+      color: rgb(32, 32, 32);
       font-size: 28px;
       font-weight: bold;
       letter-spacing: 0;
-      line-height: 24px;
+      line-height: 1.5;
+      max-width: 50rem;
     }
   }
 
@@ -81,7 +86,9 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0
+    bottom: 0;
+    max-width: var(--max-width);
+    margin: 0 auto;
   }
 
   .home__tech {
@@ -102,11 +109,11 @@
 
       .logo,
       ul {
-        flex: 0 0 40%;
+        flex: 0 0 50%;
       }
 
       ul {
-        flex: 0 0 60%;
+        // flex: 0 0 60%;
         text-align: center;
 
         li {
