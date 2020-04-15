@@ -1,9 +1,11 @@
 {
   "layout": {
     "header": {
+      "analytics": "Analytics",
+      "milvus": "Milvus",
       "product": "Products",
-      "aboutus": "About Us",
-      "joinus": "Join Us",
+      "aboutus": "Company",
+      "joinus": "Careers",
       "feature": "Features",
       "arch": "Architecture",
       "solution": "Solutions",
@@ -11,7 +13,9 @@
       "doc": "Doc",
       "mission": "mission",
       "roadmap": "roadmap",
-      "chance": "opportunities"
+      "chance": "opportunities",
+      "overview": "Overview",
+      "demo": "Live Demo"
     },
     "footer": {
       "contactButton": "Contact Us",
@@ -26,8 +30,8 @@
       "company": "Company",
       "joinus": "Join Us",
       "culture": "Z Star",
-      "socialCareer": "Social Recruiting",
-      "schoolCareer": "Campus Recruiting"
+      "socialCareer": "Professions",
+      "schoolCareer": "Graduates"
     }
   },
   "contact": {
@@ -39,7 +43,7 @@
       "h4": "Analytics Platform for Massive-Scale Geospatial and Temporal Data",
       "leading": "Implements data visualization based on the massively parallel processing power and graphic rendering power of GPUs. Compared with traditional solutions, ZILLIZ Analytics has higher throughput, higher cost-effectiveness, and lower latency.",
       "button": "Documentation",
-      "buttonMega": "MegaWise GPU Database"
+      "buttonMega": "Read More"
     },
     "features": {
       "h2": "Returns query results for billion-scale datasets in subseconds",
@@ -91,6 +95,65 @@
       "h2": "ZILLIZ is growing. Come and join us!",
       "h3": "“Be Hero”的团队文化，致力于打造一支精干、战斗力强、勇于创新的队伍，提倡以数据为基础、系统化解决复杂问题的工作方法，鼓励学习，奖励创新。",
       "button": "View Open Positions"
+    }
+  },
+  "megawise": {
+    "landing": {
+      "h3": "MegaWise",
+      "h4": "Data Analytics Engine",
+      "p": " Next-generation OLAP analytics engine that uses the massively parallel processing power of GPUs to speed up SQL operations",
+      "readMore": "Read More"
+    },
+    "features": {
+      "h3": "Features",
+      "learnMore": "Learn more about how the GPU-accelerated analytics database speeds up your geospatial and temporal data analytics.",
+      "viewDoc": "View Doc",
+      "comparison": "Performance Comparison",
+      "f1": {
+        "h4": "Native support for SQL",
+        "p": "MegaWise supports standard SQL and PostgreSQL grammar. The following interfaces are provided for MegaWise: <br /> - Command-line interface <br /> - JDBC and ODBC <br />"
+      },
+      "f2": {
+        "h4": "Multilayer data cache",
+        "p": "MegaWise completely optimized the memory and the computing layer for the best performance. MegaWise builds 3 layers of cache in each physical node, including GPU video memory, main memory, and SSD, thus reaching the highest access speed."
+      },
+      "f3": {
+        "h4": "Dynamic query compilation",
+        "p": "ZILLIZ builds a JIT compilation system based on LLVM in MegaWise. Currently, MegaWise can run with high efficiency in NVIDIA GPU, x64 CPU, POWER CPU, and ARM CPU."
+      },
+      "f4": {
+        "h4": "No complex indexing, <br /> downsampling, or pre-aggregation",
+        "p": "MegaWise does not need indexing, downsampling, or pre-aggregation. With the support of GPUs, MegaWise can perform real-time queries for billion-scale datasets in tens or hundreds of milliseconds."
+      }
+    }
+  },
+  "bi": {
+    "landing": {
+      "h3": "Infini",
+      "h4": "Analytics Interface",
+      "p": "Browser-based data visualization interface that provides visualized, interactive representations of massive-scale geospatial and temporal data in real time.",
+      "readMore": "Read More"
+    },
+    "features": {
+      "h3": "Features",
+      "learnMore": "Learn more about how Infini comprehensively visualizes massive-scale data in real time",
+      "viewDoc": "View Doc",
+      "f1": {
+        "h4": "Faster than light",
+        "p": "Completes all procedures from data query to graphic rendering in a flash for massive-scale geospatial and temporal data."
+      },
+      "f2": {
+        "h4": "Full visualization and interactivity",
+        "p": "Visually interacts with charts, tables, and maps. Any interactive operation will be reflected in your visualized interface in real time."
+      },
+      "f3": {
+        "h4": "Multiple customizable charts",
+        "p": "Customizes multiple chart types. You can freely choose your favorite style."
+      },
+      "f4": {
+        "h4": "Real-time map rendering",
+        "p": "Renders billions of geospatial data on the map in a flash. Seamless merge with maps will add tremendous business value to data."
+      }
     }
   }
 }

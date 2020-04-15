@@ -7,7 +7,9 @@ import s2 from "../images/icon-solution-2.png";
 import s3 from "../images/icon-solution-3.png";
 import cn from "../images/horizontal-cn.png";
 import en from "../images/horizontal-en.png";
+import ZA_logo from "../images/logo-ZA.png";
 
+import LocalizeLink from "../components/localizedLink";
 import "./Infini.scss";
 
 const Infini = ({ data, locale }) => {
@@ -17,20 +19,19 @@ const Infini = ({ data, locale }) => {
   };
 
   return (
-    <section className={`infini ${locale}`}>
+    <section className={`infini section ${locale}`}>
       <section className="landing">
-        <h3>{data.landing.h3}</h3>
+        <img src={ZA_logo} alt="ZA_logo"></img>
         <h4>{data.landing.h4}</h4>
         <p>{data.landing.leading}</p>
         <div className="button-area">
-          <a
-            rel="noopener noreferrer"
+          <LocalizeLink
             className="button buttonMega"
-            href="https://github.com/megawise/docs"
-            target="_blank"
+            locale={locale}
+            to="/docs/analytics_overview"
           >
             {data.landing.buttonMega}
-          </a>
+          </LocalizeLink>
         </div>
       </section>
 
@@ -61,7 +62,11 @@ const Infini = ({ data, locale }) => {
       <section className="arch" id="arch">
         <h3>{data.arch.h3}</h3>
         <div className="content">
-          <img width="100%" src={locale === "cn" ? cn : en} alt={data.arch.h3} />
+          <img
+            width="100%"
+            src={locale === "cn" ? cn : en}
+            alt={data.arch.h3}
+          />
         </div>
       </section>
 
@@ -98,7 +103,7 @@ const Infini = ({ data, locale }) => {
               <img src={s2} alt={data.solution.solution} />
               <h5>{data.solution.solution}</h5>
               <p>{data.solution.s1}</p>
-              <a href="https://infini-analytics.github.io/#/white_paper_logistics">
+              <a href="https://github.com/zilliztech/Infini-Analytics.github.io/blob/master/whitepaper_pdf/ZILLIZ%20Analytics_logistics_whitepaper.pdf">
                 {data.solution.detail}
               </a>
             </li>
@@ -126,7 +131,7 @@ const Infini = ({ data, locale }) => {
               <img src={s2} alt={data.solution.solution} />
               <h5>{data.solution.solution}</h5>
               <p>{data.solution.s2}</p>
-              <a href="https://infini-analytics.github.io/#/white_paper_telco">
+              <a href="https://github.com/zilliztech/Infini-Analytics.github.io/blob/master/whitepaper_pdf/ZILLIZ%20Analytics_telco_whitepaper.pdf">
                 {data.solution.detail}
               </a>
             </li>

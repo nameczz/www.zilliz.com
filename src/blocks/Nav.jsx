@@ -1,99 +1,134 @@
-import React from "react";
+import React, { useState } from "react";
 import LocalizeLink from "../components/localizedLink";
+import Search from "./Search";
 import logo from "../images/logo.svg"; // Tell Webpack this JS file uses this image
+import { globalHistory } from "@reach/router";
+
 import "./Nav.scss";
-const Current = () => (
-  <svg
-    width="13"
-    height="13"
-    viewBox="0 0 13 13"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      x="2.96447"
-      y="9.32837"
-      width="4"
-      height="4"
-      transform="rotate(-135 2.96447 9.32837)"
-      fill="#4FC4F9"
-    />
-    <rect
-      x="6.5"
-      y="5.79272"
-      width="4"
-      height="4"
-      transform="rotate(-135 6.5 5.79272)"
-      fill="#4FC4F9"
-    />
-    <rect
-      x="6.5"
-      y="12.864"
-      width="4"
-      height="4"
-      transform="rotate(-135 6.5 12.864)"
-      fill="#4FC4F9"
-    />
-    <rect
-      x="10.0355"
-      y="9.32837"
-      width="4"
-      height="4"
-      transform="rotate(-135 10.0355 9.32837)"
-      fill="#4FC4F9"
-    />
-  </svg>
-);
-const Nav = ({ data, locale, nav = {}, subNav = <></> }) => {
+
+const Nav = ({ data, locale, nav = {}, subNav = <></>, className }) => {
+  const [open, setOpen] = useState(false);
+  const isZilliz =
+    ["/", "index", "megawise", "infini"].indexOf(nav.current) !== -1 && open;
+
+  const showSubNav =
+    !open && nav.current !== "doc" && nav.current !== "aboutus";
+  const l = locale === "cn" ? "en" : "cn";
+  let to = globalHistory.location.pathname
+    .replace("/en/", "/")
+    .replace("/cn/", "/");
+
   return (
     <>
-      <nav className="wrapper nav-wrapper">
+      <nav className={`wrapper nav-wrapper ${className}`}>
         <div className="inner-container nav">
-        <div className="left">
-          <LocalizeLink locale={locale} to="/" className="logo">
-            <img src={logo} alt="logo" />
-          </LocalizeLink>
-          <ul className="nav-links">
-            <li>
-              {nav.current === "index" && <Current />}
-              <LocalizeLink
-                className={nav.current === "index" ? "current" : ""}
-                locale={locale}
-                to="/"
-              >
-                {data.product}
-              </LocalizeLink>
-            </li>
-            <li>
-              {nav.current === "aboutus" && <Current />}
-              <LocalizeLink
-                className={nav.current === "aboutus" ? "current" : ""}
-                locale={locale}
-                to="/aboutus"
-                target="_blank"
-              >
-                {data.aboutus}
-              </LocalizeLink>
-            </li>
-            <li>
-              {nav.current === "joinUs" && <Current />}
-              <a href="https://zilliz.gllue.com/portal/zilliz">
-                {data.joinus}
-              </a>
-            </li>
-          </ul>
-        </div>
-        <a
-          className="right"
-          href="http://infini-analytics.github.io/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {data.doc}
-        </a>
+          <div className="left">
+            <LocalizeLink locale={locale} to="/" className="logo">
+              <img src={logo} alt="logo" />
+            </LocalizeLink>
+
+            <ul className={`nav-links ${open ? "show" : "hide"}`}>
+              {isZilliz && <li>ZILLIZ Analytics</li>}
+              {open && subNav}
+              {!isZilliz && (
+                <li className="root">
+                  <LocalizeLink
+                    className={nav.current === "index" ? "current" : ""}
+                    locale={locale}
+                    to="/"
+                  >
+                    {open ? `ZILLIZ Analytics` : data.analytics}
+                  </LocalizeLink>
+                </li>
+              )}
+              <li className="root">
+                <a
+                  href="http://milvus.io"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {data.milvus}
+                </a>
+              </li>
+              <li className="root">
+                <LocalizeLink
+                  className={nav.current === "aboutus" ? "current" : ""}
+                  locale={locale}
+                  to="/aboutus"
+                  target="_blank"
+                >
+                  {data.aboutus}
+                </LocalizeLink>
+              </li>
+              <li className="root">
+                <a
+                  href="https://zilliz.gllue.com/portal/zilliz"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {data.joinus}
+                </a>
+              </li>
+              {open && (
+                <li className="root">
+                  <LocalizeLink
+                    className={`${
+                      nav.current === "doc" ? "current" : ""
+                    } right`}
+                    locale={locale}
+                    to="/docs/analytics_overview"
+                    target="_blank"
+                  >
+                    {data.doc}
+                  </LocalizeLink>
+                </li>
+              )}
+            </ul>
+          </div>
+          <div className="rightMenu">
+            <Search></Search>
+
+            <LocalizeLink className="locale" locale={l} to={to}>
+              {locale === "cn" ? "EN" : "中"}
+            </LocalizeLink>
+
+            <a
+              href="#!"
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              {!open ? (
+                <i className="fas fa-bars"></i>
+              ) : (
+                <i className="fas fa-times"></i>
+              )}
+            </a>
+          </div>
+
+          <div className="right">
+            <Search></Search>
+            <LocalizeLink className="locale" locale={l} to={to}>
+              {locale === "cn" ? "EN" : "中"}
+            </LocalizeLink>
+            <LocalizeLink
+              className={`${nav.current === "doc" ? "current" : ""} `}
+              locale={locale}
+              to="/docs/analytics_overview"
+              target="_blank"
+            >
+              {data.doc}
+            </LocalizeLink>
+          </div>
         </div>
       </nav>
-      {subNav}
+      {showSubNav && (
+        <nav className="wrapper sub-nav-wrapper">
+          <div className="inner-container sub-nav">
+            <ul> {subNav}</ul>
+          </div>
+        </nav>
+      )}
     </>
   );
 };

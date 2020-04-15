@@ -66,14 +66,24 @@ a {
   background: none;
   box-sizing: border-box;
   border: 2px solid #4fc4f9;
-  border-radius: 22.5px;
-  padding: 0.5rem 2rem;
+  padding: 10px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 24px;
+  font-weight: bold;
+  background: #3f9cd1;
+  color: #fff;
+  border-radius: 0;
+  border: 0;
 }
 
 .wrapper {
   @include media("<=1000px") {
     min-width: auto;
-    padding: 0 10px;
+    padding: 0;
   }
   min-width: 1100px;
   margin: 0 auto;
@@ -88,8 +98,10 @@ main.wrapper {
   background: url(../images/hero.png) no-repeat top center;
   background-size: 100%;
   position: relative;
+  transform: translateY(-60px);
   @include media("<=1000px") {
-    top: 0;
+    top: 50px;
+    transform: translateY(0);
   }
 }
 .inner-container {
@@ -99,6 +111,20 @@ main.wrapper {
   }
   margin: 0 auto;
 }
+main.wrapper-bi,.wrapper-megawise{
+  transform: translateY(-60px);
+  @include media("<=1400px") {
+    transform: translateY(0px);
+  }
+  .inner-container{
+    width: 1400px;
+    margin: 0 auto;
+    
+    @include media("<=1400px") {
+      width: auto;
+    }
+  }
+}
 main.wrapper-about {
   position: relative;
 }
@@ -106,4 +132,24 @@ main.wrapper-about {
 .not-found {
   background: #fff;
   height: 100%;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(right, #eee, rgba(79, 196, 249, 0.9));
+  color: rgba(79, 196, 249, 0.9);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  padding-bottom: 50px;
+  section {
+    padding-top: 75px;
+    padding-bottom: 70px;
+    margin-bottom: 75px;
+    @include media("<=1000px") {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+    }
+  }
 }

@@ -1,0 +1,163 @@
+@import "./include_media.scss";
+
+html {
+  height: 100%;
+}
+
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+}
+
+#gatsby-focus-wrapper,
+#___gatsby {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(180deg, #28292e 0%, #52545c 100%);
+  background-attachment: fixed;
+  height: 100%;
+  font-family: "Noto Sans SC Thin", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+
+  @include media("<=1000px") {
+    font-size: 14px;
+  }
+}
+
+::selection {
+  background-color: #4fc4f9;
+}
+
+a {
+  color: #4fc4f9;
+  text-decoration: none;
+}
+
+main.doc-wrapper {
+  background: #28292e;
+
+  .menu-container {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    width: 30%;
+    min-width: 200px;
+    max-width: 420px;
+
+    @include media("<=1000px") {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 80vw;
+      max-width: 320px;
+      height: 100vh;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+  }
+
+  .inner-container {
+    width: 50%;
+    max-width: 1000px;
+    margin-left: 420px;
+
+    @include media("<=1000px") {
+      width: 100%;
+      margin: 0;
+      padding-top: 50px;
+    }
+  }
+
+  .anchor-wrapper {
+    position: fixed;
+    top: 80px;
+    right: 40px;
+    padding-left: 30px;
+    border-left: 1px solid #fff;
+    font-size: 14px;
+
+
+    @include media("<=1000px") {
+      display: none;
+    }
+
+    .item {
+      margin: 10px 0;
+
+      .child-item {
+        margin-left: 8px;
+      }
+    }
+
+    a {
+      display: block;
+      color: #717171;
+      max-width: 120px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover,
+      &.active {
+        color: #33b6f2;
+      }
+
+    }
+
+  }
+
+  .footer-wrapper {
+    margin-top: 20px;
+  }
+}
+
+.wrapper-aboutus {
+  padding: 0 5rem;
+}
+
+.inner-container {
+  width: 1000px;
+
+  @include media("<=1000px") {
+    width: auto;
+  }
+
+  margin: 0 auto;
+}
+
+.not-found {
+  background: #fff;
+  height: 100%;
+}
+
+.doc-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
