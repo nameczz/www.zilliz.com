@@ -31,7 +31,7 @@
   }
   .mission__header {
     max-width: var(--max-width);
-    padding: 4rem 0 6rem;
+    padding: 6rem 0 6rem;
     margin: 0 auto;
     h2 {
       font-size: 2rem;
@@ -63,7 +63,7 @@
         top: 2rem;
         left: 2rem;
         font-size: 42px;
-        letter-spacing: 4px;
+        letter-spacing: 1px;
         line-height: 49px;
         text-transform: uppercase;
       }
@@ -168,7 +168,7 @@
     h2 {
       color: rgb(32, 32, 32);
       font-size: 42px;
-      letter-spacing: 4px;
+      letter-spacing: 1px;
       line-height: 49px;
     }
 
@@ -224,6 +224,9 @@
         line-height: 28px;
         width: 100%;
       }
+    }
+    .mission__header {
+      width: 80%;
     }
 
     .home__content {
