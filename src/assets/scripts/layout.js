@@ -5,7 +5,7 @@ if (window.location.pathname === "/") {
     if (colored) {
       $("#layout-header").css("background-color", "#fff");
       $("#layout-header").css("box-shadow", " 0 1px 0 0 #CECECE");
-      $("#layout-header").css("color", "#000");
+      $("#layout-header").css("color", "rgb(32,32,32)");
 
       $("#header-white-logo").hide()
       $("#header-color-logo").show()
@@ -18,14 +18,18 @@ if (window.location.pathname === "/") {
     $("#header-white-logo").show()
     $("#header-color-logo").hide()
   }
-  homePageLogoControl(false)
+  const isMobile = $(window).width() <= 1024
+  if (!isMobile) {
+    homePageLogoControl(false)
 
-  window.addEventListener("scroll", () => {
-    const scrollHeight = $(document).scrollTop();
-    const windowHeight = $(window).height();
-    scrollHeight <= windowHeight ? homePageLogoControl(false) : homePageLogoControl(true)
+    window.addEventListener("scroll", () => {
+      const scrollHeight = $(document).scrollTop();
+      const windowHeight = $(window).height();
+      scrollHeight <= windowHeight ? homePageLogoControl(false) : homePageLogoControl(true)
 
-  })
+    })
+  }
+
 
 }
 

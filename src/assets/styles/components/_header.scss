@@ -4,7 +4,7 @@
   right: 0;
   left: 0;
   padding: 10px 50px;
-  color: #000;
+  color: rgb(32,32,32);
   height: var(--header-height);
   box-sizing: border-box;
   display: flex;
@@ -19,7 +19,7 @@
   }
 
   img {
-    width: 100px;
+    width: 120px;
   }
 
   ul {
@@ -56,14 +56,19 @@
       top: 64px;
       left: 0;
       right: 0;
-      background-color: rgba($color: #000000, $alpha: 0.4);
+      background-color: rgba($color: rgb(32,32,32), $alpha: 0.4);
       color: #fff;
 
       li {
         text-align: center;
         padding: 1rem;
         margin: 0;
-
+        a{
+          color: rgb(32,32,32);
+        }
+        a:visited{
+          color: inherit;
+        }
 
       }
 

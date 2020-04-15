@@ -1,12 +1,11 @@
 extends ./layouts/master.pug
 
 block title
-  title My Page - Home
+  title Zilliz
 
 block manifestBrowserconfigFiles
   link(href='../manifest.json', rel='manifest')
   meta(name='msapplication-config' content='../browserconfig.xml')
-  script(src="//vjs.zencdn.net/7.3.0/video.min.js")
 block content
   //- Desktop page
   section.home__page
@@ -16,16 +15,41 @@ block content
       p.desc Software For the Era Of AI & LoT
       //- a.text-link(href="www.baidu.com") Learn More
     section.home__content#video-wrapper
-      .video_wrapper#video-title-wrapper
-        video(id="home-video" src=require("../assets/video.mp4") width="100%" )
-        #video_title The new data challenge
-        #video_sub_title —— Unstructured data are explosively growing
-        #video_desc In 5 years, the global Datasphere will grow up to 175 ZB
-    section.home__tech
+      //- .video_wrapper#video-title-wrapper
+      //-   video(id="home-video" src=require("../assets/video.mp4") width="100%" )
+      //-   #video_title The new data challenge
+      //-   #video_sub_title —— Unstructured data are explosively growing
+      //-   #video_desc In 5 years, the global Datasphere will grow up to 175 ZB
+      ul
+        li
+          img(src=require("images/illustration/challege-illustratio__1.png"), alt="illustratio")
+          .title The new data challenge
+          .sub-title —— Unstructured data are explosively growing
+          .desc In 5 years, the global Datasphere will grow up to 175 ZB
+        li
+          img(src=require("images/illustration/challege-illustratio__2.png"), alt="illustratio")
+
+          .desc Unstructured data (image, video, voice, text and etc) are everywhere 80% of all data
+        li
+          img(src=require("images/illustration/challege-illustratio__3.png"), alt="illustratio")
+
+          .desc Vector is the new representation of unstructured data
+        li
+          img(src=require("images/illustration/challege-illustratio__4.png"), alt="illustratio")
+          .sub-title —— IoT is transforming the way people live and work
+          .desc IoT is the new network for all networks
+        li
+          img(src=require("images/illustration/challege-illustratio__5.png"), alt="illustratio")
+          .desc By 2025, the number of total connected IoT devices will reach 75B. 10x more than human beings.
+        li
+          img(src=require("images/illustration/challege-illustratio__6.png"), alt="illustratio")
+          .desc IoT data are driving decision-making process in industries like retail, transportation, healthcare and etc.
+    section.home__tech#zilliz-technology
       h2 ZILLIZ Technology
       .product
         .logo
-          img(src=require("../assets/images/index_tech_milvus.svg"), alt="index_tech_milvus.svg", srcset="")
+          a(href="https://milvus.io/", target="_blank", rel="noopener noreferrer")
+            img(src=require("../assets/images/index_tech_milvus.svg"), alt="index_tech_milvus.svg", srcset="")
         ul
           li
             img(src=require("../assets/images/index_milvus1.jpg"), alt="index_milvus", srcset="")
