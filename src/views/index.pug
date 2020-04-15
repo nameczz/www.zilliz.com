@@ -6,6 +6,7 @@ block title
 block manifestBrowserconfigFiles
   link(href='../manifest.json', rel='manifest')
   meta(name='msapplication-config' content='../browserconfig.xml')
+  link(href='https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet' rel="stylesheet")
 block content
   //- Desktop page
   section.home__page
@@ -14,6 +15,10 @@ block content
       p.desc We're Building The New Data Science
       p.desc Software For the Era Of AI & LoT
       //- a.text-link(href="www.baidu.com") Learn More
+
+    section.mission__header
+      h2.title Our Mission
+      .sub-title ZILLIZ aligns itself on developing open source data science software leveraging new generation heterogeneous computing technologies. <br />ZILLIZ software products could accelerate the AI adoption in the world.
     section.home__content#video-wrapper
       //- .video_wrapper#video-title-wrapper
       //-   video(id="home-video" src=require("../assets/video.mp4") width="100%" )
