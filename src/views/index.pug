@@ -1,0 +1,51 @@
+extends ./layouts/master.pug
+
+block title
+  title My Page - Home
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+  script(src="//vjs.zencdn.net/7.3.0/video.min.js")
+block content
+  //- Desktop page
+  section.home__page
+    section.home__header
+      h2 Reinvent Data Science
+      p.desc We're Building The New Data Science
+      p.desc Software For the Era Of AI & LoT
+      //- a.text-link(href="www.baidu.com") Learn More
+    section.home__content#video-wrapper
+      .video_wrapper#video-title-wrapper
+        video(id="home-video" src=require("../assets/video.mp4") width="100%" )
+        #video_title The new data challenge
+        #video_sub_title —— Unstructured data are explosively growing
+        #video_desc In 5 years, the global Datasphere will grow up to 175 ZB
+    section.home__tech
+      h2 ZILLIZ Technology
+      .product
+        .logo
+          img(src=require("../assets/images/index_tech_milvus.svg"), alt="index_tech_milvus.svg", srcset="")
+        ul
+          li
+            img(src=require("../assets/images/index_milvus1.jpg"), alt="index_milvus", srcset="")
+            p Vector similarity search engine for unstructured data
+          li
+            img(src=require("../assets/images/index_milvus2.jpg"), alt="index_milvus", srcset="")
+            p Support all AI scenarios (computer vision, voice, NLP and etc.)
+          li
+            img(src=require("../assets/images/index_milvus3.jpg"), alt="index_milvus", srcset="")
+            p Open source and incubating in LF AI Foundation
+      .product
+        .logo
+          img(src=require("../assets/images/index_tech_arctern.svg"), alt="index_tech_milvus.svg", srcset="")
+        ul
+          li
+            img(src=require("../assets/images/index_arctern1.jpg"), alt="index_arctern", srcset="")
+            p Spatiotemporal analysis platform for IoT
+          li
+            img(src=require("../assets/images/index_arctern2.jpg"), alt="index_arctern", srcset="")
+            p High performance computing engine for large scale data
+          li
+            img(src=require("../assets/images/index_arctern3.jpg"), alt="index_arctern", srcset="")
+            p Novel visualization methods

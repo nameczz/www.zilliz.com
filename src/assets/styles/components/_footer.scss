@@ -1,0 +1,23 @@
+/* src/assets/styles/components/_footer.scss  */
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  margin: 5rem 0;
+
+  p {
+    font-size: 16px;
+  }
+
+  span {
+    margin-right: 8px;
+  }
+
+
+}
+
+/*
+  Responsive
+*/
+
+@media screen and(max-width: $grid-width) {}

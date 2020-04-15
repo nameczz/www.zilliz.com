@@ -1,0 +1,134 @@
+extends ../layouts/master.pug
+
+block title
+  title Zilliz Journery
+
+block manifestBrowserconfigFiles
+  link(href='../../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../../browserconfig.xml')
+
+block content
+  //- Desktop page
+  section.journey__page
+    section.journey__header
+      .left 
+        h2 Our Journey
+        p.desc We’ve been building data science software since 2017.
+      .right
+        img(src=require("../../assets/images/journey.png"), alt="journey")
+    section.journey__content#journey-pc
+      .year_2017
+        .left
+          .line
+          .year 2017
+        ul.content
+          li
+            p.date May
+            p.desc ZILLIZ was founded
+          li
+            p.date June
+            p.desc Joined OpenPower Foundation
+          li
+            p.date July
+            p.desc Accpeted in Nvidia Inception Program
+          li
+            p.date August
+            p.desc Raised tens of millions of RMB on Angel round, led by Yunqi Partners and Eminence Ventures
+          li
+            p.date December
+            p.desc Released MegaWise Database Solutions
+      .year_2018
+        .left
+          .line
+          .year 2018
+        ul.content
+          li
+            p.date January
+            p.desc Raised US $ 10 million in A1 round, ** led by Morningside Venture Capital **
+          li
+            p.date August
+            p.desc Released hardware-accelerated AI big data overall solution.
+      .year_2019
+        .left
+          .line
+          .year 2019
+        ul.content
+          li
+            p.date Feburary
+            p.desc Selected as a member of Microsoft Accelerator. (Shanghai 5th batch)
+          li
+            p.date May
+            p.desc Released vector search engine- Milvus
+          li
+            p.date August
+            p.desc Selected as a member of VMWare Innovation Network accelerator
+          li
+            p.date September
+            p.desc Released geospatial big data analysis tools
+          li
+            p.date October
+            p.desc Open sourced Milvus vector search engine
+      .year_2020
+        .left
+          .line
+          .year 2020
+        ul.content
+          li
+            p.date March
+            p.desc Milvus joined LF AI (umbrella organization within the Linux Foundation supporting AI field) as an incubation project.
+    section.journey__mobile#journey-mobile  
+      .year_mobile_2017
+        p.year 2017
+         ul.content
+          li
+            p.date May
+            p.desc ZILLIZ was founded
+          li
+            p.date June
+            p.desc Joined OpenPower Foundation
+          li
+            p.date July
+            p.desc Accpeted in Nvidia Inception Program
+          li
+            p.date August
+            p.desc Raised tens of millions of RMB on Angel round, led by Yunqi Partners and Eminence Ventures
+          li
+            p.date December
+            p.desc Released MegaWise Database Solutions  
+      .year_mobile_2018
+        p.year 2018
+        ul.content
+          li
+            p.date January
+            p.desc Raised US $ 10 million in A1 round, ** led by Morningside Venture Capital **
+          li
+            p.date August
+            p.desc Released hardware-accelerated AI big data overall solution. 
+      .year_mobile_2019
+        p.year 2019
+        ul.content
+          li
+            p.date Feburary
+            p.desc Selected as a member of Microsoft Accelerator. (Shanghai 5th batch)
+          li
+            p.date May
+            p.desc Released vector search engine- Milvus
+          li
+            p.date August
+            p.desc Selected as a member of VMWare Innovation Network accelerator
+          li
+            p.date September
+            p.desc Released geospatial big data analysis tools
+          li
+            p.date October
+            p.desc Open sourced Milvus vector search engine
+      .year_mobile_2020
+        p.year 2020
+        ul.content
+          li
+            p.date March
+            p.desc Milvus joined LF AI (umbrella organization within the Linux Foundation supporting AI field) as an incubation project.
+
+
+
+

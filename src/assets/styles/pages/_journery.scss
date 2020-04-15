@@ -1,0 +1,196 @@
+.journey__page {
+  margin-top: var(--header-height);
+
+  .journey__header {
+    display: flex;
+    align-items: center;
+    padding: 8rem;
+    height: calc(100vh - 16rem - var(--header-height));
+    box-sizing: border-box;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .desc {
+      font-size: 2rem;
+      font-weight: 500;
+      color: rgba(50, 50, 50, 1);
+      line-height: 40px;
+    }
+
+    .left {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    img {
+      width: 300px;
+    }
+  }
+
+  .journey__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .year_2017,
+  .year_2018,
+  .year_2019,
+  .year_2020 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: #3978D7;
+    padding: 3rem;
+
+
+
+    .left {
+      position: relative;
+      flex: 0 0 50%;
+
+      .year {
+        position: absolute;
+        width: 148px;
+        height: 148px;
+        top: -128px;
+        left: 45%;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #3978D7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid rgba(57, 120, 215, 1);
+        font-size: 40px;
+      }
+
+      .line {
+        position: absolute;
+        left: calc(45% + 74px);
+        bottom: 0;
+        width: 4px;
+        background-color: #Fff;
+        height: 100%;
+      }
+    }
+
+    .content {
+      flex: 0 0 50%;
+      text-align: left;
+      color: #fff;
+
+      li {
+        margin-bottom: 2rem;
+
+        .date {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .desc {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  .year_2018 {
+    background: rgba(79, 143, 249, 1);
+  }
+
+  .year_2019 {
+    background: rgba(79, 185, 249, 1);
+  }
+
+  .year_2020 {
+    background: rgba(79, 196, 249, 1);
+    padding-bottom: 0;
+  }
+
+  .journey__mobile {
+    padding-left: 2rem;
+
+    .year_mobile_2017,
+    .year_mobile_2019,
+    .year_mobile_2018,
+    .year_mobile_2020 {
+      margin-top: 2rem;
+
+      .year {
+        color: #3978D7;
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: 0;
+        line-height: 59px;
+      }
+
+      ul {
+        background-color: #3978D7;
+        padding: 2rem;
+        line-height: 1.6;
+        color: #fff;
+
+        li {
+          margin-bottom: 1rem;
+
+          .date {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .year_mobile_2018 {
+      ul {
+        background: rgba(79, 143, 249, 1);
+      }
+    }
+
+    .year_mobile_2019 {
+      ul {
+        background: rgba(79, 185, 249, 1);
+      }
+    }
+
+    .year_mobile_2020 {
+      ul {
+        background: rgba(79, 196, 249, 1);
+      }
+    }
+  }
+
+  @media (max-width:1024px) {
+    .journey__header {
+      height: auto;
+      flex-direction: column-reverse;
+      justify-content: start;
+      padding: 4rem 1rem;
+      margin-bottom: 4rem;
+
+      .left {
+        text-align: center;
+
+        h2 {
+          font-size: 28px;
+          margin-top: 20px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      img {
+        width: 142px;
+      }
+    }
+  }
+}
