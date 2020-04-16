@@ -13,7 +13,7 @@ body {
 body {
   font-family: $quicksand;
   background: #fff;
-  color: rgb(32,32,32);
+  color: rgb(32, 32, 32);
   margin: 0;
   padding: 0;
 }
@@ -29,6 +29,7 @@ h6 {
 
 a {
   text-decoration: none;
+  color: rgb(32, 32, 32);
 
   &:visited {
     color: inherit;
